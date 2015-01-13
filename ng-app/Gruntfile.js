@@ -18,7 +18,8 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    appBase: 'app'
   };
 
   // Define the configuration for all the tasks
@@ -76,11 +77,18 @@ module.exports = function (grunt) {
         host: 'localhost',
         port: 3000
       }],
+      rules: [
+        {from: '^/<%= yeoman.appBase %>/(?!(bower_components|fonts|images|scripts|styles|views|api)/).*$', to: '/'},
+        {from: '^/<%= yeoman.appBase %>$', to: '/'},
+        {from: '^/<%= yeoman.appBase %>/(.*)$', to: '/$1'},
+        {from: '^/(?!(<%= yeoman.appBase %>|api)/).*$', to: '/404.html'}
+      ],
       livereload: {
         options: {
           open: true,
           middleware: function (connect) {
             return [
+              require('grunt-connect-rewrite/lib/utils').rewriteRequest,
               require('grunt-connect-proxy/lib/utils').proxyRequest,
               connect.static('.tmp'),
               connect().use(
@@ -404,6 +412,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'configureProxies:server',
+      'configureRewriteRules',
       'autoprefixer',
       'connect:livereload',
       'watch'
