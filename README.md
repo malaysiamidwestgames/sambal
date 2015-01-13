@@ -14,11 +14,11 @@ Installation instructions
 
 2. Install [Nodejs](http://nodejs.org/)
 
-   Test installation by typing `node -v` in terminal/command line
+   Test installation by typing `node -v` in terminal/command line. It should output the version.
 
 3. Install [Git](http://git-scm.com/)
 
-   Test installlation by typing `git -v` in terminal/command line
+   Test installlation by typing `git -v` in terminal/command line. It should output the version.
 
 4. Install compass
 
