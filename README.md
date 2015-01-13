@@ -18,6 +18,8 @@ Installation instructions
 
 3. Install [Git](http://git-scm.com/)
 
+   For windows users, when given the option [git Bash only, windows command prompt, or linux tools on command prompt](https://bardevblog.files.wordpress.com/2013/10/102613_2336_asimpletuto11.png?w=640), choose windows command prompt.
+   
    Test installlation by typing `git -v` in terminal/command line. It should output the version.
 
 4. Install compass
