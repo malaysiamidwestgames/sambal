@@ -1,15 +1,26 @@
-<form>
+<form name="form">
   <div class="form-group">
     <label for="email">Enter e-mail address</label>
     <input type="email" class="form-control"  placeholder="E-mail address" ng-model="email">
+    <div class="error" ng-show="form.email.$dirty && form.email.$invalid">
+		<span ng-show="form.email.$error.required">Email is required</span>
+		<span ng-show="form.email.$error.email">Please enter a valid email</span>
+	</div>
   </div>
   <div class="form-group">
     <label for="password1">Password</label>
-    <input type="password" class="form-control" placeholder="Password" ng-model="pass1">
-  </div>
+    <input name="pass1" type="password" class="form-control" placeholder="Password" ng-model="pass1"  minlength="6" >
+    <span ng-show="form.pass1.$invalid">
+		Password length must be at least 6 characters
+	</span>
+
+
   <div class="form-group">
     <label for="password2">Re-enter Password</label>
-    <input type="password" class="form-control" placeholder="Password" ng-model="pass2">
+    <input name="pass2" type="password" class="form-control" placeholder="Password" ng-model="pass2" >
+    <span ng-show="form.pass2.$invalid">
+		Password length must be at least 6 characters
+	</span>
   </div>
   <div class="form-group">
     <label for="school"> Enter school name</label>
