@@ -1,30 +1,30 @@
 <form name="form">
   <div class="form-group">
     <label for="email">Enter e-mail address</label>
-    <input type="email" class="form-control"  placeholder="E-mail address" ng-model="email">
+    <input name="email" type="email" class="form-control"  placeholder="E-mail address" ng-model="email" required>
     <div class="error" ng-show="form.email.$dirty && form.email.$invalid">
-		<span ng-show="form.email.$error.required">Email is required</span>
-		<span ng-show="form.email.$error.email">Please enter a valid email</span>
+		<span ng-show="form.email.$error.required">E-mail is required</span>
+		<span ng-show="form.email.$error.email">Please enter a valid e-mail</span>
 	</div>
   </div>
   <div class="form-group">
     <label for="password1">Password</label>
-    <input name="pass1" type="password" class="form-control" placeholder="Password" ng-model="pass1"  minlength="6" >
-    <span ng-show="form.pass1.$invalid">
+    <input name="pass1" type="password" class="form-control" placeholder="Password" ng-model="pass1" ui-validate="'$value.length>=6'" required>
+    <div class="error" ng-show="form.pass1.$invalid && form.pass1.$dirty">
 		Password length must be at least 6 characters
-	</span>
-
+	</div>
 
   <div class="form-group">
     <label for="password2">Re-enter Password</label>
-    <input name="pass2" type="password" class="form-control" placeholder="Password" ng-model="pass2" >
-    <span ng-show="form.pass2.$invalid">
-		Password length must be at least 6 characters
-	</span>
+    <input name="pass2" type="password" class="form-control" placeholder="Password" ng-model="pass2"  ui-validate="'$value==pass1'" ui-validate-watch="'pass1'" required>
+    <div ng-show="form.pass2.$invalid && form.pass2.$dirty" class="error">
+		Passwords do not match
+	</div>
+
   </div>
   <div class="form-group">
     <label for="school"> Enter school name</label>
     <input type="text" class="form-control" placeholder="School name" ng-model="school">
   </div>
-  <button type="submit" class="btn btn-default" ng-click="reg()">Register</button>
+  <button type="submit" class="btn btn-default" ng-click="reg()" ng-disabled="form.$invalid">Register</button>
 </form>
