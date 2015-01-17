@@ -15,3 +15,15 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Angular
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+
+# Misc
+.idea/
+*~
+
