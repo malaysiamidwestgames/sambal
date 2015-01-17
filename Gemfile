@@ -7,6 +7,8 @@ gem 'rails-api'
 # To use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.2'
 
+gem 'tzinfo-data'
+
 # Development dependecies.
 group :development do
   gem 'spring'

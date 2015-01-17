@@ -117,6 +117,8 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2014.10)
+      tzinfo (>= 1.0.0)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
@@ -136,4 +138,5 @@ DEPENDENCIES
   rails-api
   spring
   sqlite3
+  tzinfo-data
   unicorn
