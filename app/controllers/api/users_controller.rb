@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :set_user, only: [:show, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -51,6 +52,11 @@ class Api::UsersController < ApplicationController
   private
     
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.permit(:email, :password, :password_confirmation)
     end
+
+    def set_user
+      @user = params[:id] == 'me' ? current_user : User.find(params[:id])
+    end
+
 end
