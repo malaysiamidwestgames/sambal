@@ -8,10 +8,6 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('LoginCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('LoginCtrl', function($scope) {
+
   });
