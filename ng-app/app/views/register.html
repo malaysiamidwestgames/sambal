@@ -1,19 +1,19 @@
 <form>
   <div class="form-group">
     <label for="email">Enter e-mail address</label>
-    <input type="email" class="form-control"  placeholder="E-mail address">
+    <input type="email" class="form-control"  placeholder="E-mail address" ng-model="email">
   </div>
   <div class="form-group">
     <label for="password1">Password</label>
-    <input type="password" class="form-control" placeholder="Password">
+    <input type="password" class="form-control" placeholder="Password" ng-model="pass1">
   </div>
   <div class="form-group">
     <label for="password2">Re-enter Password</label>
-    <input type="password" class="form-control" placeholder="Password">
+    <input type="password" class="form-control" placeholder="Password" ng-model="pass2">
   </div>
   <div class="form-group">
     <label for="school"> Enter school name</label>
-    <input type="text" class="form-control" placeholder="School name">
+    <input type="text" class="form-control" placeholder="School name" ng-model="school">
   </div>
-  <button type="submit" class="btn btn-default">Register</button>
+  <button type="submit" class="btn btn-default" ng-click="reg()">Register</button>
 </form>

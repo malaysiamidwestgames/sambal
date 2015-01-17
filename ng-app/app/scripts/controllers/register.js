@@ -9,9 +9,7 @@
  */
 angular.module('midwestApp')
   .controller('RegisterCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.reg = function() {
+      console.log($scope.email, $scope.pass1, $scope.pass2, $scope.school);
+    }
   });
