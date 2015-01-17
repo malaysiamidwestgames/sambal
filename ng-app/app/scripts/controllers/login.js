@@ -8,9 +8,10 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('LoginCtrl', function ($scope) {
+  .controller('LoginCtrl', function ($scope, $http ) {
 	$scope.submit = function() {
-      console.log($scope.email,$scope.password);
+
+	  $http.post ('/', {email: $scope.email, password: $scope.password});
     };
 
   });
