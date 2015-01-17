@@ -13,7 +13,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, '104.131.38.207'
-set :deploy_to, '/home/deployer/sambal/'
+set :deploy_to, '/home/deployer/sambal'
 set :repository, 'git@github.com:vanblaze/sambal.git'
 set :branch, 'master'
 set :user, 'deployer'
