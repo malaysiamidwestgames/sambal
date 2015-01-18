@@ -8,6 +8,7 @@ gem 'rails-api'
 gem 'bcrypt', '~> 3.1.2'
 
 gem 'tzinfo-data'
+gem 'compass'
 
 # Development dependecies.
 group :development do
