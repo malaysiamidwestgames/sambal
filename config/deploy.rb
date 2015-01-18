@@ -20,7 +20,6 @@ set :user, 'deployer'
 set :port, '22'
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 set :forward_agent, true
-set :compass_path, "/home/deployer/.rvm/gems/ruby-2.2.0/bin/"
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
@@ -76,8 +75,13 @@ desc "Builds ng-app and copies to public folder"
 task :build_ng_app do
   queue %[ln -s #{deploy_to}/shared/frontend/node_modules ng-app/node_modules]
   queue %[ln -s #{deploy_to}/shared/frontend/bower_components ng-app/bower_components]
-  queue %[cd ng-app && npm install && bower install && grunt build]
-  #queue %[cd ng-app &&  export PATH=#{compass_path}:$PATH && grunt build]
+  queue %{echo "-----> Installing npm packages"}
+  queue %[cd ng-app && npm install]
+  queue %{echo "-----> Installing bower packages"}
+  queue %[cd ng-app && bower install]
+  queue %{echo "-----> Building frontend assets"}
+  queue %[cd ng-app && grunt build]
+  queue %{echo "-----> Moving app file"}
   queue %[mv ng-app/dist public/app]
 end
 
