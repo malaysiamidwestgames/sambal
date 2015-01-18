@@ -71,6 +71,15 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/cache/twitter"]
 end
 
+desc "Builds ng-app and copies to public folder"
+task :build_ng_app do
+  queue %[cd ng-app]
+  queue! %[npm install]
+  queue! %[bower install]
+  queue %[cd ..]
+  queue %[mv ng-app/dist public/app]
+end
+
 desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
@@ -81,6 +90,7 @@ task :deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
+    invoke : 'build_ng_app'
     invoke :'rails:db_migrate'
     invoke :'deploy:cleanup'
 
