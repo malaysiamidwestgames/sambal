@@ -66,6 +66,9 @@ task :setup => :environment do
 
   queue! %[mkdir -p "#{deploy_to}/shared/sockets/"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/sockets"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/cache/twitter"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/cache/twitter"]
 end
 
 desc "Deploys the current version to the server."
