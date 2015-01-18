@@ -44,4 +44,17 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+
+  .config(function($httpProvider) {
+  $httpProvider.interceptors.push(function($browser) {
+    return {
+      request: function(config) {
+        /* jshint -W106 */
+        config.headers.access_token = $browser.cookies().access_token;
+        /* jshint +W106 */
+        return config;
+      }
+    };
   });
+});
