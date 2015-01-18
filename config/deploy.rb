@@ -73,10 +73,9 @@ end
 
 desc "Builds ng-app and copies to public folder"
 task :build_ng_app do
-  queue %[cd ng-app]
-  queue! %[npm install]
-  queue! %[bower install]
-  queue %[cd ..]
+  queue %[ln -s #{deploy_to}/shared/frontend/node_modules ng-app/node_modules]
+  queue %[ln -s #{deploy_to}/shared/frontend/bower_components ng-app/bower_components]
+  queue %[cd ng-app && npm install && bower install && grunt build]
   queue %[mv ng-app/dist public/app]
 end
 
@@ -90,7 +89,7 @@ task :deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-    invoke : 'build_ng_app'
+    invoke :'build_ng_app'
     invoke :'rails:db_migrate'
     invoke :'deploy:cleanup'
 
