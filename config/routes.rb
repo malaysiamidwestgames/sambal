@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mailers, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -59,7 +60,11 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     resources :sessions, only: [:create, :destroy]
     resources :universities, only: [:index]
+    resources :sessions, only: [:create]
+    delete '/sessions' => 'sessions#destroy'
   end
+
+  get '/test' => 'test#test'
 
 
 

@@ -13,7 +13,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, '104.131.38.207'
-set :deploy_to, '/home/deployer/sambal/'
+set :deploy_to, '/home/deployer/sambal'
 set :repository, 'git@github.com:vanblaze/sambal.git'
 set :branch, 'master'
 set :user, 'deployer'
@@ -66,6 +66,23 @@ task :setup => :environment do
 
   queue! %[mkdir -p "#{deploy_to}/shared/sockets/"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/sockets"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/cache/twitter"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/cache/twitter"]
+end
+
+desc "Builds ng-app and copies to public folder"
+task :build_ng_app do
+  queue %[ln -s #{deploy_to}/shared/frontend/node_modules ng-app/node_modules]
+  queue %[ln -s #{deploy_to}/shared/frontend/bower_components ng-app/bower_components]
+  queue %{echo "-----> Installing npm packages"}
+  queue %[cd ng-app && npm install]
+  queue %{echo "-----> Installing bower packages"}
+  queue %[cd ng-app && bower install]
+  queue %{echo "-----> Building frontend assets"}
+  queue %[cd ng-app && grunt build]
+  queue %{echo "-----> Moving app file"}
+  queue %[mv ng-app/dist public/app]
 end
 
 desc "Deploys the current version to the server."
@@ -78,6 +95,7 @@ task :deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
+    invoke :'build_ng_app'
     invoke :'rails:db_migrate'
     invoke :'deploy:cleanup'
 
