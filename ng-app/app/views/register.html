@@ -22,9 +22,10 @@
 		Password length must be at least 6 characters
 	</span>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-controller="TypeaheadCtrl">
     <label for="school"> Enter school name</label>
-    <input type="text" class="form-control" placeholder="School name" ng-model="school">
+    <input type="text" class="form-control" placeholder="School name" ng-model="selected" typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" class="form-control">
   </div>
   <button type="submit" class="btn btn-default" ng-click="reg()">Register</button>
 </form>
+

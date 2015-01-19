@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'sysofwan.httpWrapper'
+    'sysofwan.httpWrapper',
+    'ui.bootstrap'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
