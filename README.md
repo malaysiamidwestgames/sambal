@@ -53,6 +53,9 @@ You should be all set! Open two terminal tabs, cd into sambal directory and run 
 
 Build
 ----------------------------
-1. Populating University Database 
+Firstly, you guys need to migrate your model to your database. Do so by:
 
+      rake db:migrate
+
+1. Populating University Database 
       rake csv_model_import[universities.csv,University]
