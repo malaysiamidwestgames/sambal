@@ -9,11 +9,17 @@
  */
 angular.module('midwestApp')
   .controller('RegisterCtrl', function ($scope, $http, $location, session) {
+    // retreive list of universities
+    $http.get('/api/universities')
+    .success(function(data){
+      $scope.universities = data;
+    });
+
+    // TODO: move to a factory
     $scope.register = function() {
       $http
-        .post('/api/users', {email: $scope.email, password: $scope.pass1, password_confirmation: $scope.pass2})
+        .post('/api/users', {email: $scope.email, password: $scope.pass1, password_confirmation: $scope.pass2, university: $scope.selectedUniversity})
         .success(function(user) {
-          console.log('success');
           console.log(user);
           session.login($scope.email, $scope.pass1)
             .then(function() {
@@ -29,14 +35,3 @@ angular.module('midwestApp')
         });
     };
   });
-
-angular.module('ui.bootstrap')
-.controller('TypeaheadCtrl', function($scope, $http) {
-	$scope.selected = undefined;
-   	$http.get('/api/universities')
-   	.success(function(data){
-   		$scope.universities = data;
-	});
-
-});
-	
