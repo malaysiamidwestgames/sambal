@@ -3,8 +3,8 @@
 	<input type="search" ng-model="q" placeholder="               filter" />
 	<table style="width:100%">
 		<tr ng-repeat = "user in users | filter:q">
-			<td>{{user.name}}</td>
-			<td>{{user.age}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.password}}</td>
 		</tr>
 	</table>
 </div>
