@@ -1054,3 +1054,45 @@
 			body.touch .poptrox-popup .closer {
 				opacity: 1.0 !important;
 			}
+
+/*********************************************************************************/
+/* Title styles                                                                  */
+/*********************************************************************************/
+div.title-detail p {
+	margin-bottom: 0;
+	font-size: 1.5em;
+	line-height: 1.2em;
+}
+
+/*********************************************************************************/
+/* Counter styles                                                                */
+/*********************************************************************************/
+
+div.countdown {
+	margin-top: 6em;
+	margin-bottom: 2em;
+}
+
+div.countdown .number {
+	font-size: 5em;
+}
+
+div.countdown .desc {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 13px;
+}
+
+div.facts > div {
+	display: inline-block;
+	width: 30%;
+}
+div.facts .number {
+	font-size: 3em;
+}
+div.facts .desc {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
