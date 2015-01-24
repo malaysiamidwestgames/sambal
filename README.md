@@ -54,4 +54,5 @@ You should be all set! Open two terminal tabs, cd into sambal directory and run 
 Build
 ----------------------------
 1. Populating University Database 
+
       rake csv_model_import[universities.csv,University]
