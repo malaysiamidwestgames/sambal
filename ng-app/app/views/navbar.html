@@ -1,7 +1,7 @@
-<nav class="navbar navbar-theamed navbar-fixed-top">
+<nav class="navbar navbar-theamed navbar-fixed-top" ng-controller="NavigationCtrl">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="">
+			<a class="navbar-brand" href="/app">
 				Midwest Games
 			</a>
 		</div>
@@ -10,10 +10,17 @@
 				<li><a href="">Social Feeds</a></li>
 				<li><a href="">Accommodation</a></li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<button class="btn btn-default navbar-btn">
-					<a href="login">Login</a>
+			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
+				<button class="btn btn-default navbar-btn" ng-click="logout()">
+					Logout: {{ currentUser.email }}
 				</button>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" ng-hide="currentUser">
+				<a href="login">
+					<button class="btn btn-default navbar-btn">
+						Login
+					</button>
+				</a>
 			</ul>
 		</div>
 	</div>
