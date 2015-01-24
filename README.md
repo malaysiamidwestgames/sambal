@@ -50,3 +50,8 @@ Installation instructions
         npm install && bower install
         
 You should be all set! Open two terminal tabs, cd into sambal directory and run `rails s` on one tab. cd into ng-app directory and run `grunt serve`. Now you have the app running on your machine!
+
+Build
+----------------------------
+1. Populating University Database 
+      rake csv_model_import[universities.csv,University]
