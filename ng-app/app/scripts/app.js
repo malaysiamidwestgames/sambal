@@ -42,6 +42,10 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/social_feeds', {
+        templateUrl: 'views/social_feeds.html',
+        controller: 'SocialFeedsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
