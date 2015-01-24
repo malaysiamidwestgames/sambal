@@ -57,32 +57,32 @@ Build
 
 2. Install gems:
 
-      bundle install
+       bundle install
 
 3. Migrate your model to your database. Do so by:
 
-      rake db:migrate
+       rake db:migrate
 
 4. Populating University Database:
 
-      rake csv_model_import[universities.csv,University]
+       rake csv_model_import[universities.csv,University]
 
 5. Start rails local back-end server:
 
-      rails s
+       rails s
 
-6. In a browser, enter the following (url): [http://localhost:3000/]
+6. In a browser, open (url)[http://localhost:3000/]
 
 7. On a new terminal tab/window, cd into ng-app directory
 
 8. Install all front-end dependencies:
 
-      npm install && bower install
+       npm install && bower install
 
 9. Start local front-end server:
 
-      grunt serve
+       grunt serve
 
-10. In a browser, enter the following (url): [http://localhost:9000/app/]
+10. In a browser, open this (url)[http://localhost:9000/app/]
 
 
