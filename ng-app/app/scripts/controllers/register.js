@@ -23,7 +23,5 @@ angular.module('ui.bootstrap')
    		$scope.universities = data;
 	});
 
-	//$scope.universities = ['herro','pundek']
-
 });
 	
