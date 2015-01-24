@@ -5,7 +5,9 @@ class Api::UniversitiesController < ApplicationController
 
 		# Gather all university data
 
-		@universities = University.all 
+		@universities = University.all
+
+		puts 'babiiiiii' 
 		render json: @universities
 		# Respond to request with university data in json format
 		#respond_with(universities) do |format|

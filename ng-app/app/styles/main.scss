@@ -116,3 +116,7 @@ body {
     }
 }
 
+.navbar-right ~ .navbar-right {
+  margin-right: 5px;
+}
+
