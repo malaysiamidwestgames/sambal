@@ -11,13 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117220454) do
-  create_table "universities", force: :cascade do |t|
-    t.string   "name"
-  end
-end
-
 ActiveRecord::Schema.define(version: 20150118043504) do
+
   create_table "mailers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
