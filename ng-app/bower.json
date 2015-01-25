@@ -23,10 +23,6 @@
   },
   "appPath": "app",
   "resolutions": {
-<<<<<<< HEAD
     "angular": "1.3.10"
-=======
-    "angular": "1.3.8"
->>>>>>> 31a7dca9fec1f7d3dd6fb5aae0529dbddcf7c767
   }
 }

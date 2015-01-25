@@ -43,15 +43,12 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
-<<<<<<< HEAD
       .when('/social_feeds', {
-        templateUrl: 'views/social_feeds.html',
-        controller: 'SocialFeedsCtrl'
-=======
+        templateUrl: 'views/social_feeds.html'
+      })
       .when('/userlist' , {
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl'
->>>>>>> 31a7dca9fec1f7d3dd6fb5aae0529dbddcf7c767
       })
       .otherwise({
         redirectTo: '/'
