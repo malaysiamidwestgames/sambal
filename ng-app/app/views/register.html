@@ -22,10 +22,12 @@
 	</div>
 
   </div>
-  <div class="form-group" ng-controller="TypeaheadCtrl">
-    <label for="school"> Enter school name</label>
-    <input type="text" class="form-control" placeholder="School name" ng-model="selected" typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" class="form-control">
+  <!-- <div class="form-group" ng-controller="TypeaheadCtrl"> -->
+  <div class="form-group">
+    <label for="school"> Enter school name</label> {{selectedUniversity}}
+    <input type="text" class="form-control" placeholder="School name" ng-model="selectedUniversity" typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" class="form-control">
   </div>
-  <button type="submit" class="btn btn-default" ng-click="reg()" ng-disabled="form.$invalid">Register</button>
+
+  <button type="submit" class="btn btn-default" ng-click="register()" ng-disabled="form.$invalid">Register</button>
 </form>
 
