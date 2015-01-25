@@ -115,6 +115,10 @@ body {
     background-color: $secondary-blue;
   }
 }
+.navbar-right ~ .navbar-right {
+  margin-right: 5px;
+}
+
 
 .social-feeds {
   * {
