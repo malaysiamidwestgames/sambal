@@ -10,6 +10,8 @@ gem 'bcrypt', '~> 3.1.2'
 gem 'tzinfo-data'
 gem 'compass'
 
+gem 'active_model_serializers'
+
 # Development dependecies.
 group :development do
   gem 'spring'

@@ -33,7 +33,7 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        requireLogin: true
+        requireLogin: true // testing restricted access
       })
       .when('/login', {
         templateUrl: 'views/login.html',
@@ -44,7 +44,8 @@ angular
         controller: 'RegisterCtrl'
       })
       .when('/social_feeds', {
-        templateUrl: 'views/social_feeds.html'
+        templateUrl: 'views/social_feeds.html',
+        controller: 'SocialFeedsCtrl'
       })
       .when('/userlist' , {
         templateUrl: 'views/userlist.html',
