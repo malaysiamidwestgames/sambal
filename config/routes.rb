@@ -59,10 +59,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, except: [:new, :edit]
     resources :sessions, only: [:create]
+    resources :account_activations, only: [:edit]
     delete '/sessions' => 'sessions#destroy'
   end
 
-  get '/test' => 'test#test'
+  
 
 
 

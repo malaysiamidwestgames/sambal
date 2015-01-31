@@ -41,6 +41,10 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/activation/:token' , {
+        templateUrl: 'views/activation.html',
+        controller: 'ActivationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -21,6 +21,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       render json: @user, status: :created
+      @user.send_activation_email
     else
       render json: @user.errors, status: :unprocessable_entity
     end
