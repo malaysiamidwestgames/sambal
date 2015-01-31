@@ -21,7 +21,7 @@
 		font-size: 1.5em;
 		letter-spacing: -1px;
 	}
-	
+
 	/* Box */
 
 		.box {
@@ -47,10 +47,14 @@
 					letter-spacing: -3px;
 				}
 
+				.main.style1 .button.anchored {
+					display: none;
+				}
+
 			.main.style2 {
 				padding: 6em 15px 6em 15px;
 			}
-			
+
 				.main.style2 .button.anchored {
 					display: none;
 				}
@@ -60,7 +64,7 @@
 					left: 0% !important;
 					text-align: center;
 				}
-				
+
 				.main.style2 .tmp {
 					width: 100%;
 					height: 10em;
@@ -93,11 +97,11 @@
 		height: 2.5em;
 		line-height: 2.5em;
 	}
-	
+
 		#logo a {
 			font-size: 1em;
 		}
-	
+
 	#nav {
 		display: none;
 	}
@@ -105,35 +109,35 @@
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
-	
+
 	#footer {
 	}
-		
+
 		#footer .menu {
 		}
-		
+
 			#footer .menu li {
 				border-left: 0;
 				padding: 1em 0 0 0;
 				margin: 0;
 				display: block;
 			}
-			
+
 				#footer .menu li:first-child {
 					padding-top: 0;
 				}
-				
+
 				#footer .menu li a {
 					line-height: 1.5em;
 				}
-				
+
 /*********************************************************************************/
 /* Poptrox                                                                       */
 /*********************************************************************************/
 
 	.poptrox-popup {
 	}
-	
+
 		.poptrox-popup .nav-next,
 		.poptrox-popup .nav-previous {
 		}
@@ -145,10 +149,10 @@
 				background-size: contain;
 				margin: -16px 0 0 0;
 			}
-			
+
 		.poptrox-popup .closer {
 		}
-		
+
 			.poptrox-popup .closer:before {
 				right: 12px;
 				top: 12px;
