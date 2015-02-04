@@ -7,27 +7,13 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="social_feeds">Social Feeds</a></li>
-				<li><a href="">Accommodation</a></li>
+				<li><a href="">Feeds</a></li>
+				<li><a href="">Info</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
 				<button class="btn btn-default navbar-btn" ng-click="logout()">
 					Logout: {{ currentUser.email }}
 				</button>
-			</ul>
-			<ul class="nav navbar-nav navbar-right" ng-hide="currentUser">
-				<a href="login">
-					<button class="btn btn-default navbar-btn">
-						Login
-					</button>
-				</a>
-			</ul>
-			<ul class="nav navbar-nav navbar-right" ng-hide="currentUser">
-				<a href="register">
-					<button class="btn btn-default navbar-btn">
-						Sign Up
-					</button>
-				</a>
 			</ul>
 		</div>
 	</div>
