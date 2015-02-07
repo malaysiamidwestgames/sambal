@@ -63,6 +63,14 @@ angular
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
+      })
+      .when('/paylist', {
+        templateUrl: 'views/paylist.html',
+        controller: 'PaylistCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       })
