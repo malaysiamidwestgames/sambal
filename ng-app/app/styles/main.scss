@@ -161,3 +161,20 @@ body {
     margin-right: 10px;
   } 
 }
+
+.twitter {
+  * {
+    word-wrap: break-word;
+  }
+
+  .fullname {
+    font-weight: bold;
+    color: #292f33;
+  }
+
+  b {
+    font-weight: normal;
+    font-size: 13px;
+    color: #8899a6;
+  }
+}

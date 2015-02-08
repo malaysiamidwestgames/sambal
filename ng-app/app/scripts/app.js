@@ -51,6 +51,10 @@ angular
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl'
       })
+      .when('/twitter', {
+        templateUrl: 'views/twitter.html',
+        controller: 'TwitterCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       })
