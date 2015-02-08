@@ -51,10 +51,10 @@ angular
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl'
       })
-      .when('/twitter', {
-        templateUrl: 'views/twitter.html',
-        controller: 'TwitterCtrl'
-      })
+       .when('/accommodations' , {
+        templateUrl: 'views/accommodations.html'
+        //controller: 'UserlistCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       })

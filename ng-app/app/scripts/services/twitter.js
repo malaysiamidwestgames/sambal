@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('midwestApp')
-.constant('twitterUrl', 'http://104.131.38.207/api/twitter')
+.constant('twitterUrl', 'http://104.131.38.207/api/twitter/?count=30')
 .factory('twitter', function ($http, twitterUrl) {
 	var unloadedPosts = [];
 	var maxTagId = 0;
