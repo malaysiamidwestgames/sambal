@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+  attr_accessor :remember_token, :activation_token
   before_save { self.email = email.downcase }
-  before_create :create_access_token
+  before_create :create_access_token, :create_activation_digest
   has_many :payments
+  belongs_to :university
 
   VALID_EMAIL_REGEX = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
 
@@ -19,9 +21,34 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  # Activates an account.
+  def activate
+    update_attribute(:activated, true)
+  end
+
+  # Sends activation email.
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
   private
 
     def create_access_token
       self.access_token = User.digest(User.new_access_token)
     end
+
+    def create_activation_digest
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
+
 end

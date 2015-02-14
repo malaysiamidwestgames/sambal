@@ -44,6 +44,10 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/activation/:token' , {
+        templateUrl: 'views/activation.html',
+        controller: 'ActivationCtrl'
+      })
       .when('/social_feeds', {
         templateUrl: 'views/social_feeds.html',
         controller: 'SocialFeedsCtrl'
@@ -56,22 +60,6 @@ angular
         templateUrl: 'views/accommodations.html'
         //controller: 'UserlistCtrl'
         })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/payment', {
-        templateUrl: 'views/payment.html',
-        controller: 'PaymentCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/paylist', {
-        templateUrl: 'views/paylist.html',
-        controller: 'PaylistCtrl'
-      })
       .otherwise({
         redirectTo: '/'
       });

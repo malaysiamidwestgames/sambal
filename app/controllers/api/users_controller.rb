@@ -17,10 +17,12 @@ class Api::UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    university = University.find_or_initialize_by(name: university_params)
+    @user = User.new(user_params.merge(university: university))
 
     if @user.save
       render json: @user, status: :created
+      @user.send_activation_email
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -50,7 +52,11 @@ class Api::UsersController < ApplicationController
   private
     
     def user_params
-      params.permit(:email, :password, :password_confirmation, :university)
+      params.permit(:email, :password, :password_confirmation)
+    end
+
+    def university_params
+      params.require(:university)      
     end
 
     def set_user

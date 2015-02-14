@@ -62,13 +62,14 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     resources :universities, only: [:index]
     resources :sessions, only: [:create]
+    resources :account_activations, only: [:update]
     resources :payments, only: [:create, :show, :index]
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
     post '/hook' => 'payments#hook'
   end
 
-  get '/test' => 'test#test'
+  
 
 
 
