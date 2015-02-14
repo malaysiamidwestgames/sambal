@@ -51,6 +51,10 @@ angular
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl'
       })
+       .when('/accommodations' , {
+        templateUrl: 'views/accommodations.html'
+        //controller: 'UserlistCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       })

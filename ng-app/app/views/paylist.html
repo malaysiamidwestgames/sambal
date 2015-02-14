@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-offset-4>">
+    <div ng-controller="PaylistCtrl">
+      <input type="search" ng-model="searchText" placeholder="Enter search query">
+      <table class="table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Payer email</th>
+            <th>Date of payment</th>
+            <th>Amount paid</th>
+            <th>Registration type</th>
+            <th>Payment status</th>
+            <th>Transaction ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat=" payment in payments | filter: searchText">
+            <td>{{payment.user.email}}</td>
+            <td>{{payment.purchased_at | date}}</td>
+            <td>{{payment.amount | currency}}</td>
+            <td>{{payment.regtype}}</td>
+            <td>{{payment.status}}</td>
+            <td>{{payment.transaction_id}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
