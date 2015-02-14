@@ -1,0 +1,30 @@
+<div class="social-feeds container" ng-controller="SocialFeedsCtrl">
+	<button class="btn btn-primary btn-block" ng-click="loadNewPosts()" 
+					ng-show="newCount">
+		{{ newCount }} new posts
+	</button>
+	<div ng-repeat="post in posts track by $index" class="instagram-post">
+		<div class="row">
+			<a href="{{ post.link }}" class="col-md-8 col-md-offset-2">
+				<img src="{{ post.images.standard_resolution.url }}" class="img-responsive">
+			</a>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<p>
+					<a class="nameLink" href="http://instagram.com/{{ post.user.username }}"> 
+						<img class="thumbnail pull-left" src="{{ post.user.profile_picture }}">
+					</a>
+					<a class="nameLink" href="http://instagram.com/{{ post.user.username }}"> 
+						{{ post.user.username }} 
+					</a>
+					{{ post.caption.text }}
+				</p>
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-primary btn-block" ng-click="loadOldPosts()" 
+					ng-hide="loadedAllPosts">
+		load more posts
+	</button>
+</div>

@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_model_serializers (0.8.3)
+      activemodel (>= 3.0)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -55,6 +57,7 @@ GEM
       sass (>= 3.2, < 3.5)
     erubis (2.7.0)
     ffi (1.9.6)
+    ffi (1.9.6-x86-mingw32)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -147,6 +150,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  active_model_serializers (~> 0.8.0)
   bcrypt (~> 3.1.2)
   compass
   mina

@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'sysofwan.httpWrapper',
+    'ui.bootstrap',
     'ui.validate'
   ])
   .config(function($locationProvider) {
@@ -31,13 +32,14 @@ angular
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        requireLogin: true // testing restricted access
       })
-      .when('/login' , {
+      .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/register' , {
+      .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
@@ -45,20 +47,44 @@ angular
         templateUrl: 'views/activation.html',
         controller: 'ActivationCtrl'
       })
+      .when('/social_feeds', {
+        templateUrl: 'views/social_feeds.html',
+        controller: 'SocialFeedsCtrl'
+      })
+      .when('/userlist' , {
+        templateUrl: 'views/userlist.html',
+        controller: 'UserlistCtrl'
+      })
+       .when('/accommodations' , {
+        templateUrl: 'views/accommodations.html'
+        //controller: 'UserlistCtrl'
+        })
       .otherwise({
         redirectTo: '/'
-      });
+      })
   })
 
+  .constant('_', window._)
+
   .config(function($httpProvider) {
-  $httpProvider.interceptors.push(function($browser) {
-    return {
-      request: function(config) {
-        /* jshint -W106 */
-        config.headers.access_token = $browser.cookies().access_token;
-        /* jshint +W106 */
-        return config;
+    $httpProvider.interceptors.push(function($browser) {
+      return {
+        request: function(config) {
+          /* jshint -W106 */
+          config.headers.access_token = $browser.cookies().access_token;
+          /* jshint +W106 */
+          return config;
+        }
+      };
+    });
+  })
+
+  .run(function($rootScope, session, $location) {
+    $rootScope.$on('$routeChangeStart', function(event, next) {
+      if (next.requireLogin && !session.isLoggedIn()) {
+        $location.path('/login');
+        event.preventDefault();
       }
-    };
+
+    });
   });
-});

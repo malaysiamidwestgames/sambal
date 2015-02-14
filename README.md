@@ -50,3 +50,39 @@ Installation instructions
         npm install && bower install
         
 You should be all set! Open two terminal tabs, cd into sambal directory and run `rails s` on one tab. cd into ng-app directory and run `grunt serve`. Now you have the app running on your machine!
+
+Build
+----------------------------
+1. cd to sambal directory, using terminal/command prompt/cygwin:
+
+2. Install gems:
+
+       bundle install
+
+3. Migrate your model to your database. Do so by:
+
+       rake db:migrate
+
+4. Populating University Database:
+
+       rake csv_model_import[universities.csv,University]
+
+5. Start rails local back-end server:
+
+       rails s
+
+6. In a browser, open (url)[http://localhost:3000/]
+
+7. On a new terminal tab/window, cd into ng-app directory
+
+8. Install all front-end dependencies:
+
+       npm install && bower install
+
+9. Start local front-end server:
+
+       grunt serve
+
+10. In a browser, open this (url)[http://localhost:9000/app/]
+
+

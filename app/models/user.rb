@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token
   before_save { self.email = email.downcase }
   before_create :create_access_token, :create_activation_digest
+  has_many :payments
+  belongs_to :university
 
   VALID_EMAIL_REGEX = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
 

@@ -1,10 +1,15 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 $primary-blue: #00274c;
 $secondary-blue: #004586;
+$michigan-darkblue: #00274c;
+$michigan-lightblue: #2D71A2;
+$michigan-blue: #00468E;
+$michigan-maize: #FCD000;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -19,95 +24,101 @@ body {
   padding-bottom: 20px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.container {
+  max-width: 900px;
 }
 
 .navbar-theamed {
   background-color: $primary-blue;
   padding-left: 0.5em;
   padding-right: 0.5em;
-    .navbar-brand {
-      color: white;
+  .navbar-brand {
+    color: white;
+  }
+  .navbar-nav > li >a {
+    color: white;
+  }
+  .nav > li > a:hover, .nav > li > a:focus {
+    background-color: $secondary-blue;
+  }
+  .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+    background-color: $secondary-blue;
+  }
+}
+.navbar-right ~ .navbar-right {
+  margin-right: 7px;
+}
+
+.app-landing {
+  .marketing h1 {
+    margin-top: 0;
+  }
+  input {
+    margin-bottom: 5px;
+  }
+  .form-column {
+    form button {
+      float: right;
     }
-    .navbar-nav > li >a {
-      color: white;
-    }
-    .nav > li > a:hover, .nav > li > a:focus {
-      background-color: $secondary-blue;
-    }
-    .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-      background-color: $secondary-blue;
-    }
+  }
+}
+
+
+.social-feeds {
+  * {
+    margin-bottom: 5px;
+  }
+
+  body {
+    background-color: rgb(237, 238, 239);
+  }
+
+  .text, .nameLink {
+    font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .nameLink {
+    -webkit-tap-highlight-color: rgba(63, 114, 155, 0.298039);
+    color: rgb(63, 114, 155);
+    cursor: auto;
+    font-weight: bold;
+    height: 20px;
+    text-decoration: none;
+  }
+
+  .text {
+    color: rgb(34, 34, 34);
+    height: auto;
+    width: auto;
+  }
+
+  .instagram-post {
+    word-wrap: break-word;
+    padding: 10px;
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+
+.twitter {
+  * {
+    word-wrap: break-word;
+  }
+
+  .fullname {
+    font-weight: bold;
+    color: #292f33;
+  }
+
+  b {
+    font-weight: normal;
+    font-size: 13px;
+    color: #8899a6;
+  }
 }

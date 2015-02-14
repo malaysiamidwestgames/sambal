@@ -17,7 +17,8 @@ class Api::UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    university = University.find_or_initialize_by(name: university_params)
+    @user = User.new(user_params.merge(university: university))
 
     if @user.save
       render json: @user, status: :created
@@ -52,6 +53,10 @@ class Api::UsersController < ApplicationController
     
     def user_params
       params.permit(:email, :password, :password_confirmation)
+    end
+
+    def university_params
+      params.require(:university)      
     end
 
     def set_user
