@@ -74,7 +74,7 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      })
+      });
   })
 
   .constant('_', window._)

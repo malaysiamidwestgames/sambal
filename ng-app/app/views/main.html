@@ -2,10 +2,21 @@
   <div class="col-md-5 form-column">
     <div class="panel panel-theamed">
       <div class="panel-body">
-        <form>
-          <input type="email" class="form-control" placeholder="Email">
-          <input type="password" class="form-control" placeholder="Password">
-          <button type="submit" class="btn btn-theamed">Sign In</button>
+        <form name="signin" ng-submit="signInUser()">
+          <div class="input-error-group">
+            <input type="email" name="email" class="form-control" placeholder="Email" ng-model="signIn.email" required>
+            <div class="error" ng-show="signin.email.$dirty && signin.email.$invalid && signin.email.$touched">
+              <span ng-show="signin.email.$error.required">E-mail is required</span>
+              <span ng-show="signin.email.$error.email">Please enter a valid e-mail</span>
+            </div>
+          </div>
+          <div class="input-error-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="signIn.password" ui-validate="'$value.length>=6'" required>
+            <div class="error" ng-show="signin.password.$invalid && signin.password.$dirty && signin.password.$touched">
+              Password length must be at least 6 characters
+            </div>
+          </div>
+          <button type="submit" class="btn btn-theamed" ng-disabled="signin.$invalid">Sign In</button>
           <div class="clearfix"></div>
         </form>
       </div>
@@ -15,12 +26,34 @@
           <h3 class="panel-title"><span class="prompt">Don't have an account?</span> <span class="action">Register</span></h3>
         </div>
         <div class="panel-body">
-        <form>
-          <input type="email" class="form-control" placeholder="Email">
-          <input type="password" class="form-control" placeholder="Password">
-          <input type="password" class="form-control" placeholder="Confirm password">
-          <input type="text" class="form-control" placeholder="School name">
-          <button type="submit" class="btn btn-theamed">Register</button>
+        <form name="registration" ng-submit="register()">
+          <div class="input-error-group">
+            <input type="email" name="email" class="form-control" placeholder="Email" ng-model="reg.email" required>
+            <div class="error"
+            ng-show="registration.email.$dirty && registration.email.$invalid && registration.email.$touched">
+              <span ng-show="registration.email.$error.required">E-mail is required</span>
+              <span ng-show="registration.email.$error.email">Please enter a valid e-mail</span>
+            </div>
+          </div>
+          <div class="input-error-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="reg.password" ui-validate="'$value.length>=6'" required>
+            <div class="error"
+            ng-show="registration.password.$invalid && registration.password.$dirty && registration.password.$touched">
+              Password length must be at least 6 characters
+            </div>
+          </div>
+          <div class="input-error-group">
+            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password" ng-model="reg.password_confirmation" ui-validate="'$value==reg.password'" ui-validate-watch="'reg.password'" required>
+            <div ng-show="registration.password_confirmation.$invalid &&
+            registration.password_confirmation.$dirty && registration.password_confirmation.$touched" class="error">
+              Passwords do not match
+            </div>
+          </div>
+          <div class="input-error-group">
+            <input type="text" class="form-control" placeholder="School name" ng-model="reg.university"
+            typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" typeahead-editable="false" required>
+          </div>
+          <button type="submit" class="btn btn-theamed" ng-disabled="registration.$invalid">Register</button>
           <div class="clearfix"></div>
         </form>
       </div>
@@ -30,6 +63,6 @@
     <h1>Welcome to Malaysia Midwest Games site.</h1>
     <p>Get involved in Midwest Games 2015.</p>
     <p>
-    Login or register to manage your Midwest Games registrations, create teams, and get the latest update.</p>
+    Login or register to manage your Midwest Games registration, create teams, and get the latest updates.</p>
   </div>
 </div>

@@ -10,6 +10,7 @@ $michigan-blue: #00468E;
 $michigan-maize: #FCD000;
 $michigan-maize-light: #FCDE4C;
 $michigan-maize-dark: #7C6700;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -77,13 +78,21 @@ body {
     color: #FFF;
     background-color: $michigan-maize-light;
   }
+
+  &:disabled {
+    background-color: $michigan-maize-light;
+  }
 }
 
 .app-landing {
   position: absolute;
   top: 50%;
   margin-top: -220px;
-  width: 900px;
+  max-width: 900px;
+  &.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .marketing {
     h1 {
       color: #FFF;
@@ -96,12 +105,16 @@ body {
       font-weight: 300;
     }
   }
-  input {
-    margin-bottom: 5px;
-  }
   .form-column {
     form button {
       float: right;
+    }
+  }
+  .input-error-group {
+    margin-bottom: 5px;
+
+    .error {
+      color: $brand-danger;
     }
   }
   h3.panel-title {
@@ -112,6 +125,9 @@ body {
     .action {
       color: #B7DAFF;
     }
+  }
+  .ng-invalid.ng-touched.ng-dirty {
+    background-color: $brand-warning;
   }
 }
 
