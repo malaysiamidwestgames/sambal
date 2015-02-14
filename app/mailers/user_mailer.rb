@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
-  default from: "sohchienmin@gmail.com"
+  default from: "testingmidwestgames@gmail.com"
 
+  
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -9,7 +10,10 @@ class UserMailer < ApplicationMailer
   def account_activation(user)
     @user = user
 
-    mail to: user.email, subject: "Account activation" 
+    mail(to: @user.email,
+         subject: 'Account activation',
+         template_path: 'user_mailer',
+         template_name: 'account_activation')
 
   end
 
