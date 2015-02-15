@@ -28,7 +28,8 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        bodyClass: 'main-page'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -42,6 +43,10 @@ angular
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
+      })
+      .when('/activation/:token' , {
+        templateUrl: 'views/activation.html',
+        controller: 'ActivationCtrl'
       })
       .when('/social_feeds', {
         templateUrl: 'views/social_feeds.html',
@@ -57,7 +62,7 @@ angular
         })
       .otherwise({
         redirectTo: '/'
-      })
+      });
   })
 
   .constant('_', window._)
@@ -81,6 +86,6 @@ angular
         $location.path('/login');
         event.preventDefault();
       }
-
+      $rootScope.bodyClass = next.bodyClass;
     });
   });
