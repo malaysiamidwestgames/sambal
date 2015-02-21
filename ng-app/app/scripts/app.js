@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'sysofwan.httpWrapper',
     'ui.bootstrap',
-    'ui.validate'
+    'ui.validate',
+    'uiGmapgoogle-maps'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -55,6 +56,18 @@ angular
         templateUrl: 'views/accommodations.html'
         //controller: 'UserlistCtrl'
         })
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl'
+      })
+      .when('/paylist', {
+        templateUrl: 'views/paylist.html',
+        controller: 'PaylistCtrl'
+      })
+      .when('/eventmaps', {
+        templateUrl: 'views/eventmaps.html',
+        controller: 'EventmapsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       })
