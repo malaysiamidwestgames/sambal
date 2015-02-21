@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150119034218) do
+ActiveRecord::Schema.define(version: 20150214154203) do
 
   create_table "mailers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150119034218) do
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "access_token"
+    t.integer  "university_id"
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
