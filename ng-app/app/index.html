@@ -49,6 +49,10 @@
     <![endif]-->
     <!-- endbuild -->
 
+    <!-- scripts for angular-google-maps -->
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -64,6 +68,8 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,8 +86,11 @@
     <script src="scripts/services/session.js"></script>
     <script src="scripts/controllers/navigation.js"></script>
     <script src="scripts/services/instagram.js"></script>
+    <script src="scripts/services/twitter.js"></script>
+    <script src="scripts/controllers/twitter.js"></script>
     <script src="scripts/controllers/payment.js"></script>
     <script src="scripts/controllers/paylist.js"></script>
+    <script src="scripts/controllers/eventmaps.js"></script>
     <script src="scripts/services/universityresource.js"></script>
     <script src="scripts/services/user.js"></script>
     <!-- endbuild -->
