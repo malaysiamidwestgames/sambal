@@ -89,6 +89,9 @@ angular
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
       })
+      .when('/confirm_email', {
+        templateUrl: 'views/confirm_email.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

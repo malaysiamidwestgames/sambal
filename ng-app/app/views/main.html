@@ -16,9 +16,10 @@
               Password length must be at least 6 characters
             </div>
           </div>
-        <div class = "forgot-password">
-          <a href="/app/forgot-pass">Forgot your password?</a>
-        </div>
+          <div ng-show="signInError" class="error">{{ signInError }}</div>
+          <div class = "forgot-password">
+            <a href="/app/forgot-pass">Forgot your password?</a>
+          </div>
           <button type="submit" class="btn btn-theamed" ng-disabled="signin.$invalid">Sign In</button>
           <div class="clearfix"></div>
         </form>
@@ -39,6 +40,20 @@
             </div>
           </div>
           <div class="input-error-group">
+            <input type="first_name" name="first_name" class="form-control" placeholder="First name" ng-model="reg.first_name" required>
+            <div class="error"
+            ng-show="registration.first_name.$dirty && registration.first_name.$invalid && registration.first_name.$touched">
+              <span ng-show="registration.first_name.$error.required">First name is required</span>
+            </div>
+          </div>
+          <div class="input-error-group">
+            <input type="last_name" name="last_name" class="form-control" placeholder="Last name" ng-model="reg.last_name" required>
+            <div class="error"
+            ng-show="registration.last_name.$dirty && registration.last_name.$invalid && registration.last_name.$touched">
+              <span ng-show="registration.last_name.$error.required">Last name is required</span>
+            </div>
+          </div>
+          <div class="input-error-group">
             <input type="password" name="password" class="form-control" placeholder="Password" ng-model="reg.password" ui-validate="'$value.length>=6'" required>
             <div class="error"
             ng-show="registration.password.$invalid && registration.password.$dirty && registration.password.$touched">
@@ -56,6 +71,7 @@
             <input type="text" class="form-control" placeholder="School name" ng-model="reg.university"
             typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" typeahead-editable="false" required>
           </div>
+          <div class="error" ng-repeat="error in registerErrors">{{ error }}</div>
           <button type="submit" class="btn btn-theamed" ng-disabled="registration.$invalid">Register</button>
           <div class="clearfix"></div>
         </form>

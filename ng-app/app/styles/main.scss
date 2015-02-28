@@ -87,7 +87,7 @@ body {
 .app-landing {
   position: absolute;
   top: 50%;
-  margin-top: -220px;
+  margin-top: -250px;
   max-width: 900px;
   &.row {
     margin-left: 0;
@@ -112,10 +112,9 @@ body {
   }
   .input-error-group {
     margin-bottom: 5px;
-
-    .error {
-      color: $brand-danger;
-    }
+  }
+  .error {
+    color: $brand-danger;
   }
   h3.panel-title {
     font-weight: 300;

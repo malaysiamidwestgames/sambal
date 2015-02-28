@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('MainCtrl', function ($scope, universityResource, User, session) {
+  .controller('MainCtrl', function ($scope, universityResource, User, session, $location, _) {
     $scope.reg = new User();
     $scope.signIn = {};
     $scope.universities = [];
@@ -19,9 +19,12 @@ angular.module('midwestApp')
 
     $scope.register = function() {
       $scope.reg.$save(function(resp) {
-        console.log(resp);
+        $location.path('/confirm_email');
       }, function(resp) {
-        console.log(resp);
+        $scope.registerErrors = [];
+        _.each(resp.data, function(param, errors) {
+          $scope.registerErrors.push(errors + ' ' + param);
+        });
       });
     };
 
