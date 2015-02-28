@@ -55,21 +55,21 @@ angular
         templateUrl: 'views/accommodations.html'
         //controller: 'UserlistCtrl'
         })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
       .when('/payment', {
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl'
       })
+      .when('/paylist', {
+        templateUrl: 'views/paylist.html',
+        controller: 'PaylistCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/paylist', {
-        templateUrl: 'views/paylist.html',
-        controller: 'PaylistCtrl'
+      .when('/hotels', {
+        templateUrl: 'views/hotels.html',
+        controller: 'HotelsCtrl'
       })
       .otherwise({
         redirectTo: '/'
