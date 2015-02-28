@@ -1,0 +1,11 @@
+<form name="form">
+  <div class="form-group">
+    <label for="email">Enter e-mail address</label>
+    <input name="email" type="email" class="form-control"  placeholder="E-mail address" ng-model="email" required>
+    <div class="error" ng-show="form.email.$dirty && form.email.$invalid">
+		<span ng-show="form.email.$error.required">E-mail is required</span>
+		<span ng-show="form.email.$error.email">Please enter a valid e-mail</span>
+	  </div>
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="register()" ng-disabled="form.$invalid">Send e-mail</button>
+</form>

@@ -22,9 +22,12 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.password_reset.subject
   #
-  def password_reset
-    @greeting = "Hi"
+  def password_reset(user)
+  mail(to: @user.email,
+         subject: 'Password Reset',
+         template_path: 'user_mailer',
+         template_name: 'account_activation')
 
-    mail to: "to@example.org"
   end
+
 end

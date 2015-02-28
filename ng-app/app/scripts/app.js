@@ -56,10 +56,18 @@ angular
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl'
       })
-       .when('/accommodations' , {
+      .when('/accommodations' , {
         templateUrl: 'views/accommodations.html'
         //controller: 'UserlistCtrl'
-        })
+      })
+      .when('/forgot-pass' , {
+        templateUrl: 'views/forgotpass.html'
+        //controller: ''
+      })
+      .when('/pass-reset/:token' , {
+        templateUrl: 'views/passreset.html'
+        //controller: ''
+      })
       .otherwise({
         redirectTo: '/'
       });
