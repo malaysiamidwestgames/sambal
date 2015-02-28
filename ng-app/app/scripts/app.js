@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'sysofwan.httpWrapper',
     'ui.bootstrap',
-    'ui.validate'
+    'ui.validate',
+    'uiGmapgoogle-maps'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -28,7 +29,8 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        bodyClass: 'main-page'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -42,6 +44,10 @@ angular
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
+      })
+      .when('/activation/:token' , {
+        templateUrl: 'views/activation.html',
+        controller: 'ActivationCtrl'
       })
       .when('/social_feeds', {
         templateUrl: 'views/social_feeds.html',
@@ -59,6 +65,18 @@ angular
         templateUrl: 'views/accommodations.html'
         //controller: 'UserlistCtrl'
         })
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl'
+      })
+      .when('/paylist', {
+        templateUrl: 'views/paylist.html',
+        controller: 'PaylistCtrl'
+      })
+      .when('/eventmaps', {
+        templateUrl: 'views/eventmaps.html',
+        controller: 'EventmapsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -85,6 +103,6 @@ angular
         $location.path('/login');
         event.preventDefault();
       }
-
+      $rootScope.bodyClass = next.bodyClass;
     });
   });
