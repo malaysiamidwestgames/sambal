@@ -12,7 +12,8 @@ angular.module('midwestApp')
     $scope.participants = undefined;
     	$http.get('/api/users')
     	.success(function(data){
-    		$scope.users = data;
+    		console.log(data);
+    		$scope.users = data.users;
     		console.log(data.password);
     	});
   });

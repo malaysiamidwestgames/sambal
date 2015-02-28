@@ -14,7 +14,6 @@ angular.module('midwestApp')
       .success(function(data){
         console.log(data);
         $scope.payments = data.payments;
-        $scope.users = data.users;
       });
 
   });

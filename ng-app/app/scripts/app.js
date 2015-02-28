@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'sysofwan.httpWrapper',
     'ui.bootstrap',
-    'ui.validate'
+    'ui.validate',
+    'uiGmapgoogle-maps'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -28,7 +29,8 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        bodyClass: 'main-page'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -43,6 +45,10 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/activation/:token' , {
+        templateUrl: 'views/activation.html',
+        controller: 'ActivationCtrl'
+      })
       .when('/social_feeds', {
         templateUrl: 'views/social_feeds.html',
         controller: 'SocialFeedsCtrl'
@@ -50,6 +56,22 @@ angular
       .when('/userlist' , {
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl'
+      })
+      .when('/accommodations' , {
+        templateUrl: 'views/accommodations.html'
+        //controller: 'UserlistCtrl'
+      })
+      .when('/forgot-pass' , {
+        templateUrl: 'views/forgotpass.html'
+        //controller: ''
+      })
+      .when('/pass-reset/:token' , {
+        templateUrl: 'views/passreset.html'
+        //controller: ''
+      })
+      .when('/twitter' , {
+        templateUrl: 'views/twitter.html',
+        controller: 'TwitterCtrl'
       })
        .when('/accommodations' , {
         templateUrl: 'views/accommodations.html'
@@ -71,9 +93,13 @@ angular
         templateUrl: 'views/hotels.html',
         controller: 'HotelsCtrl'
       })
+      .when('/eventmaps', {
+        templateUrl: 'views/eventmaps.html',
+        controller: 'EventmapsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
-      })
+      });
   })
 
   .constant('_', window._)
@@ -97,6 +123,6 @@ angular
         $location.path('/login');
         event.preventDefault();
       }
-
+      $rootScope.bodyClass = next.bodyClass;
     });
   });

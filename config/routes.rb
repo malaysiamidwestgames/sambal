@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   resources :mailers, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -62,13 +66,15 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     resources :universities, only: [:index]
     resources :sessions, only: [:create]
+    resources :account_activations, only: [:update]
     resources :payments, only: [:create, :show, :index]
+    resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
     post '/hook' => 'payments#hook'
   end
 
-  get '/test' => 'test#test'
+  
 
 
 
