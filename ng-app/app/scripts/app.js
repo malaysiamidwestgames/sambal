@@ -68,7 +68,7 @@ angular
       .when('/pass-reset/:token' , {
         templateUrl: 'views/passreset.html'
         //controller: ''
-
+      })
       .when('/twitter' , {
         templateUrl: 'views/twitter.html',
         controller: 'TwitterCtrl'
