@@ -62,12 +62,12 @@ angular
         //controller: 'UserlistCtrl'
       })
       .when('/forgot-pass' , {
-        templateUrl: 'views/forgotpass.html'
-        //controller: ''
+        templateUrl: 'views/forgotpass.html',
+        controller: 'ForgotPassCtrl'
       })
       .when('/pass-reset/:token' , {
-        templateUrl: 'views/passreset.html'
-        //controller: ''
+        templateUrl: 'views/passreset.html',
+        controller: 'PassResetCtrl'
       })
       .when('/twitter' , {
         templateUrl: 'views/twitter.html',

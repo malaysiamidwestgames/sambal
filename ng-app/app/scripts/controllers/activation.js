@@ -9,35 +9,6 @@
  */
 
 
-/*
-angular.module('midwestApp')
-  .controller('ActivationCtrl', function ($scope, $routeParams, httpWrapper) {
-    var req = httpWrapper.patch('/api/account_activations/:token/');
-    console.log($routeParams.token);
-    console.log($routeParams.email);
-
-
-    req({token: $routeParams.token, email: $routeParams.email}).
-    then(function(resp){
-      console.log('success');
-
-      console.log(resp);
-
-
-
-    }, function(resp) {
-      console.log('fail :(');
-
-      console.log(resp);
-
-
-
-    });
-
-
-});
-*/
-
 angular.module('midwestApp')
   .controller('ActivationCtrl', function ($scope, $routeParams, httpWrapper) {
     var req = httpWrapper.patch('/api/account_activations/:token/');
