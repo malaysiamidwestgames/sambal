@@ -68,30 +68,32 @@ angular
       .when('/pass-reset/:token' , {
         templateUrl: 'views/passreset.html'
         //controller: ''
+      })
 
-      .when('/twitter' , {
-        templateUrl: 'views/twitter.html',
-        controller: 'TwitterCtrl'
-      })
-       .when('/accommodations' , {
-        templateUrl: 'views/accommodations.html'
-        //controller: 'UserlistCtrl'
-        })
-      .when('/payment', {
-        templateUrl: 'views/payment.html',
-        controller: 'PaymentCtrl'
-      })
-      .when('/paylist', {
-        templateUrl: 'views/paylist.html',
-        controller: 'PaylistCtrl'
-      })
-      .when('/eventmaps', {
-        templateUrl: 'views/eventmaps.html',
-        controller: 'EventmapsCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+          .when('/twitter', {
+            templateUrl: 'views/twitter.html',
+            controller: 'TwitterCtrl'
+          })
+          .when('/accommodations', {
+            templateUrl: 'views/accommodations.html'
+            //controller: 'UserlistCtrl'
+          })
+          .when('/payment', {
+            templateUrl: 'views/payment.html',
+            controller: 'PaymentCtrl'
+          })
+          .when('/paylist', {
+            templateUrl: 'views/paylist.html',
+            controller: 'PaylistCtrl'
+          })
+          .when('/eventmaps', {
+            templateUrl: 'views/eventmaps.html',
+            controller: 'EventmapsCtrl'
+          })
+          .otherwise({
+            redirectTo: '/'
+          })
+
   })
 
   .constant('_', window._)
