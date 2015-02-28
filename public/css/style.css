@@ -722,6 +722,32 @@
 	}
 
 /*********************************************************************************/
+/* Teaser                                                                        */
+/*********************************************************************************/
+
+	#teaser {
+		background: url('../images/teaser.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	height: 0; 
+	overflow: hidden; 
+	max-width: 100%; } 
+
+.embed-container iframe, .embed-container object, .embed-container embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+	}
+
+/*********************************************************************************/
 /* One                                                                           */
 /*********************************************************************************/
 
@@ -731,6 +757,7 @@
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
+
 
 /*********************************************************************************/
 /* Two                                                                           */
