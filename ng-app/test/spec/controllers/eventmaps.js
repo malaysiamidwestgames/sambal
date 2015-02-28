@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: TwitterCtrl', function () {
+describe('Controller: EventmapsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('midwestApp'));
 
-  var TwitterCtrl,
+  var EventmapsCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    TwitterCtrl = $controller('TwitterCtrl', {
+    EventmapsCtrl = $controller('EventmapsCtrl', {
       $scope: scope
     });
   }));

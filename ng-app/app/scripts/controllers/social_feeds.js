@@ -2,10 +2,6 @@
 
 angular.module('midwestApp')
 	.controller('SocialFeedsCtrl', function($scope, instagram, $interval) {
-		var requestNewPosts = function(latestId) {
-			return instagram.requestNewPosts(latestId);
-		};
-
 		$scope.posts = [];
 		$scope.newCount = 0;
 		$scope.loadedAllPosts = false;
@@ -22,12 +18,12 @@ angular.module('midwestApp')
 			});
 		};
 
-		requestNewPosts(0).then(function() {
+		instagram.requestNewPosts(0).then(function() {
 			$scope.loadNewPosts();
 		});
 		
 		$interval(function() {
-			requestNewPosts($scope.posts[0].id).then(function() {
+			instagram.requestNewPosts($scope.posts[0].id).then(function() {
 				$scope.newCount = instagram.unloadedPostsLength();
 			});
 		}, 10000);

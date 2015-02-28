@@ -1,0 +1,19 @@
+<form name="form">
+  <div class="form-group">
+    <label for="password1">New Password</label>
+    <input name="pass1" type="password" class="form-control" placeholder="Password" ng-model="pass1" ui-validate="'$value.length>=6'" required>
+    <div class="error" ng-show="form.pass1.$invalid && form.pass1.$dirty">
+		Password length must be at least 6 characters
+	</div>
+
+  <div class="form-group">
+    <label for="password2">Re-enter New Password</label>
+    <input name="pass2" type="password" class="form-control" placeholder="Password" ng-model="pass2"  ui-validate="'$value==pass1'" ui-validate-watch="'pass1'" required>
+    <div ng-show="form.pass2.$invalid && form.pass2.$dirty" class="error">
+		Passwords do not match
+	</div>
+
+
+  <button type="submit" class="btn btn-default" ng-click="register()" ng-disabled="form.$invalid">Reset password</button>
+</form>
+

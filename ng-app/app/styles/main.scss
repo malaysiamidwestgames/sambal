@@ -190,3 +190,15 @@ body {
     color: #8899a6;
   }
 }
+
+.angular-google-map-container {
+  height: 400px;
+}
+
+#panel {
+  position: absolute;
+  height: 300px;
+  float: right;
+  width: 390px;
+  overflow-y: auto;
+}
