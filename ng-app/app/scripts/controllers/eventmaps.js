@@ -7,6 +7,9 @@
  * # EventmapsCtrl
  * Controller of the midwestApp
  */
+
+
+
 angular.module('midwestApp')
   .controller('EventmapsCtrl', function ($scope) {
     $scope.map = {
