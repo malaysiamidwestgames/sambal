@@ -15,14 +15,14 @@ angular.module('midwestApp')
       control: {},
       routes: {
         start: [
-          {name: 'Central Campus Recreation Building', latlng: '42.278201,-83.732710 '},
-          {name: 'Mitchell Field', latlng: '42.285748,-83.719478'},
-          {name: 'Sports Coliseum', latlng: '42.272019,-83.745893 '}
+          {name: 'Central Campus Recreation Building', address: '401 Washtenaw Avenue, Ann Arbor, Michigan 48109'},
+          {name: 'Mitchell Field', address: '1910 Fuller Road, Ann Arbor, MI 48105'},
+          {name: 'Sports Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104 '}
         ],
         end: [
-          {name: 'Central Campus Recreation Building', latlng: '42.278201,-83.732710 '},
-          {name: 'Mitchell Field', latlng: '42.285748,-83.719478'},
-          {name: 'Sports Coliseum', latlng: '42.272019,-83.745893 '}
+          {name: 'Central Campus Recreation Building', address: '401 Washtenaw Avenue, Ann Arbor, Michigan, 48109'},
+          {name: 'Mitchell Field', address: '1910 Fuller Road, Ann Arbor, MI 48105'},
+          {name: 'Sports Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104'}
         ]
       }
     };
@@ -39,8 +39,8 @@ angular.module('midwestApp')
       directionsDisplay.setMap($scope.map.control.getGMap());
       directionsDisplay.setPanel(document.getElementById('panel'));
       var directionsService = new google.maps.DirectionsService();
-      var start = routePoints.start.latlng;
-      var end = routePoints.end.latlng;
+      var start = routePoints.start.address;
+      var end = routePoints.end.address;
       var request = {
         origin: start,
         destination: end,
