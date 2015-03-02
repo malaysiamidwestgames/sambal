@@ -8,12 +8,13 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ForgotPassCtrl', function ($scope, $http, $location, session) {
+  .controller('ForgotPassCtrl', function ($scope, $http, $location) {
 
     $scope.sendemail = function() {
+      console.log('asdas');
       $http
-        .post('/api/password_resets', {email: $scope.email})
+        .post('/api/password_resets/', {email: $scope.email});
 
-    }
+    };
 
   });

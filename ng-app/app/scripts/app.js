@@ -62,21 +62,21 @@ angular
         //controller: 'UserlistCtrl'
       })
       .when('/forgot-pass' , {
-        templateUrl: 'views/forgotpass.html'
-        //controller: ''
+        templateUrl: 'views/forgotpass.html',
+        controller: 'ForgotPassCtrl'
       })
       .when('/pass-reset/:token' , {
-        templateUrl: 'views/passreset.html'
-        //controller: ''
+        templateUrl: 'views/passreset.html',
+        controller: 'ForgotPassCtrl'
       })
-      .when('/twitter' , {
+      .when('/twitter', {
         templateUrl: 'views/twitter.html',
         controller: 'TwitterCtrl'
       })
-       .when('/accommodations' , {
+      .when('/accommodations', {
         templateUrl: 'views/accommodations.html'
-        //controller: 'UserlistCtrl'
-        })
+           //controller: 'UserlistCtrl'
+      })
       .when('/payment', {
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl'
