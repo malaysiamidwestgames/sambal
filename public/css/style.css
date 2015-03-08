@@ -833,9 +833,6 @@
 	#faq {
 	}
 
-	#faq .box{
-		text-align:left;
-	}
 
 	.faq-element .question {
 		cursor: pointer;
