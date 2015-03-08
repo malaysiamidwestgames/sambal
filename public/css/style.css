@@ -833,9 +833,35 @@
 	#faq {
 	}
 
-		#faq .box{
-			text-align:left;
-		}
+	#faq .box{
+		text-align:left;
+	}
+
+	.faq-element .question {
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	.faq-element .question:hover > .answer {
+	    opacity:1;
+	    height: 50px;
+	    padding: 8px;    
+	}
+
+	.faq-element .question .answer {
+	    opacity:0;
+	    clear: both;
+	    height: 0;
+	    padding: 0 8px;
+	    overflow: hidden;
+	    
+	    -webkit-transition: all .3s ease .15s;
+	    -moz-transition: all .3s ease .15s;
+	    -o-transition: all .3s ease .15s;
+	    -ms-transition: all .3s ease .15s;
+	    transition: all .3s ease .15s;
+	    
+	}
 	
 /*********************************************************************************/
 /* Contact                                                                       */
