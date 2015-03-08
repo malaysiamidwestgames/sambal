@@ -844,7 +844,7 @@
 
 	.faq-element .question:hover > .answer {
 	    opacity:1;
-	    height: 50px;
+	    height: auto;
 	    padding: 8px;    
 	}
 
