@@ -24,3 +24,14 @@
     <div id="panel"></div>
   </div>
 </div>
+<div class="row">
+  <form class="form-inline">
+    <div class="form-group">
+      <input name="searchTerm" type="text" class="form-control" id="searchbox" ng-model="searchTerm" ng-change="yelpSearchTerm()" placeholder="Search for restaurants, shops etc.">
+      <button class="btn btn-primary" type="submit" ng-click="yelpSearch(yelpTerm)">Search</button>
+    </div>
+  </form>
+</div>
+
+{{searchTerm}}
+{{yelpTerm}}
