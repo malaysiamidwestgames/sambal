@@ -831,10 +831,11 @@
 /*********************************************************************************/
 
 	#faq {
+		background-color:#f2f2f2;
 	}
 
-	#faq .box{
-		text-align:left;
+	#faq .container {
+		background-color:#ffffff;
 	}
 
 	.faq-element .question {
