@@ -3,8 +3,13 @@ class Api::SessionsController < ApplicationController
     check_params
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
-      create_token(user)
-      render json: user
+       if user.activated?
+        create_token(user)
+        render json: user
+      else
+         render json: { message: 'Account not activated. Please check your email for activation link' },
+             status: :bad_request
+      end
     else
       render json: { message: 'incorrect username or password combination' },
              status: :bad_request

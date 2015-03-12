@@ -26,4 +26,5 @@ bower_components
 # Misc
 .idea/
 *~
+.DS_Store
 

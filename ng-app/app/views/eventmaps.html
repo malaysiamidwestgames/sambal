@@ -1,0 +1,37 @@
+
+
+<div class="row">
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control" class="col-md-6"></ui-gmap-google-map>
+  <div class="col-sm-6" id="control">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Start</label>
+        <div class="col-sm-8">
+          <select class="form-control" ng-model="routePoints.start"
+                  ng-options="route.name for route in map.routes.start" ng-change="calcRoute(routePoints);">
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">End</label>
+        <div class="col-sm-8">
+          <select class="form-control" ng-model="routePoints.end"
+                  ng-options="route.name for route in map.routes.end" ng-change="calcRoute(routePoints);" >
+          </select>
+        </div>
+      </div>
+    </form>
+    <div id="panel"></div>
+  </div>
+</div>
+<div class="row">
+  <form class="form-inline">
+    <div class="form-group">
+      <input name="searchTerm" type="text" class="form-control" id="searchbox" ng-model="searchTerm" ng-change="yelpSearchTerm()" placeholder="Search for restaurants, shops etc.">
+      <button class="btn btn-primary" type="submit" ng-click="yelpSearch(yelpTerm)">Search</button>
+    </div>
+  </form>
+</div>
+
+{{searchTerm}}
+{{yelpTerm}}
