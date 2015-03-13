@@ -210,3 +210,16 @@ div.hotel-registration input {
   width: 350px;
   margin: 10px;
 }
+
+// wolverine logo
+.navbar-header img {
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin-left: -15px;
+}
+
+//offset default margin to accommodate wolverine logo 
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 0;
+  }
