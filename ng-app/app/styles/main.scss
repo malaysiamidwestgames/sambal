@@ -10,6 +10,7 @@ $michigan-blue: #00468E;
 $michigan-maize: #FCD000;
 $michigan-maize-light: #FCDE4C;
 $michigan-maize-dark: #7C6700;
+$blue-background: #40658f;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -22,6 +23,9 @@ $michigan-maize-dark: #7C6700;
 body {
   padding-top: 70px;
   padding-bottom: 20px;
+  background-color: $blue-background;
+  background-repeat: no-repeat;
+  background-size: 50%;
 
   &.main-page {
     background: linear-gradient(
@@ -39,7 +43,7 @@ body {
   max-width: 900px;
 }
 
-.navbar-theamed {
+.navbar-themed {
   background-color: $michigan-darkblue;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -60,7 +64,7 @@ body {
   margin-right: 7px;
 }
 
-.panel-theamed {
+.panel-themed {
   border-color: $michigan-lightblue;
   > .panel-heading {
     color: #FFF;
@@ -69,7 +73,7 @@ body {
   }
 }
 
-.btn-theamed {
+.btn-themed {
   color: #FFF;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
@@ -85,9 +89,7 @@ body {
 }
 
 .app-landing {
-  position: absolute;
-  top: 50%;
-  margin-top: -250px;
+  margin-top: 30px;
   max-width: 900px;
   &.row {
     margin-left: 0;
@@ -127,6 +129,20 @@ body {
   }
   .ng-invalid.ng-touched.ng-dirty {
     background-color: $brand-warning;
+  }
+}
+
+.dashboard {
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
   }
 }
 

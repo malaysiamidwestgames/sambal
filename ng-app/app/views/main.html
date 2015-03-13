@@ -1,6 +1,6 @@
 <div class="row app-landing">
   <div class="col-md-5 form-column">
-    <div class="panel panel-theamed">
+    <div class="panel panel-themed">
       <div class="panel-body">
         <form name="signin" ng-submit="signInUser()">
           <div class="input-error-group">
@@ -20,12 +20,12 @@
           <div class = "forgot-password">
             <a href="/app/forgot-pass">Forgot your password?</a>
           </div>
-          <button type="submit" class="btn btn-theamed" ng-disabled="signin.$invalid">Sign In</button>
+          <button type="submit" class="btn btn-themed" ng-disabled="signin.$invalid">Sign In</button>
           <div class="clearfix"></div>
         </form>
       </div>
     </div>
-    <div class="panel panel-theamed">
+    <div class="panel panel-themed">
         <div class="panel-heading">
           <h3 class="panel-title"><span class="prompt">Don't have an account?</span> <span class="action">Register</span></h3>
         </div>
@@ -72,7 +72,7 @@
             typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" typeahead-editable="false" required>
           </div>
           <div class="error" ng-repeat="error in registerErrors">{{ error }}</div>
-          <button type="submit" class="btn btn-theamed" ng-disabled="registration.$invalid">Register</button>
+          <button type="submit" class="btn btn-themed" ng-disabled="registration.$invalid">Register</button>
           <div class="clearfix"></div>
         </form>
       </div>
