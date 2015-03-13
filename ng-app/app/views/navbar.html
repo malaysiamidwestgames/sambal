@@ -9,11 +9,17 @@
 			<ul class="nav navbar-nav">
 				<li><a href="">Feeds</a></li>
 				<li><a href="">Info</a></li>
+				<li ng-show="currentUser">
+					<a href="">{{currentUser.user.first_name}}</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
-				<button class="btn btn-default navbar-btn" ng-click="logout()">
-					Logout: {{ currentUser.email }}
+				<li>
+					<button class="btn btn-default navbar-btn" ng-click="logout()">
+					Log Out
 				</button>
+				</li>
+
 			</ul>
 		</div>
 	</div>
