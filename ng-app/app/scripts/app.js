@@ -94,7 +94,8 @@ angular
       })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl'
+        controller: 'DashboardCtrl',
+        requireLogin: true 
       })
       .otherwise({
         redirectTo: '/'
@@ -119,7 +120,7 @@ angular
   .run(function($rootScope, session, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next) {
       if (next.requireLogin && !session.isLoggedIn()) {
-        $location.path('/login');
+        $location.path('/');
         event.preventDefault();
       }
       $rootScope.bodyClass = next.bodyClass;

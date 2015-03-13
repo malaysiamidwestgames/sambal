@@ -1,15 +1,15 @@
 <div class="row dashboard">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body">
-        <div class="first-name">Sayyid Sofwan</div>
-        <div>Syed Ahmad Helmi</div>
-        <div>University of Michigan</div>
-        <div>sysofwan@umich.edu</div>
+        <div class="first-name">{{currentUser.user.first_name}}</div>
+        <div>{{currentUser.user.first_name}} {{currentUser.user.last_name}}</div>
+        <div>{{currentUser.user.university.name}}</div>
+        <div>{{currentUser.user.email}}</div>
       </div>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-7">
     <div class="panel panel-themed">
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>
