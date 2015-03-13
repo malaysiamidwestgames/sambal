@@ -13,6 +13,10 @@ angular.module('midwestApp')
     $scope.signIn = {};
     $scope.universities = [];
 
+    if (session.isLoggedIn()) {
+      $location.path('/dashboard');
+    }
+
     universityResource().then(function(resp) {
       $scope.universities = resp.universities;
     });
@@ -31,7 +35,7 @@ angular.module('midwestApp')
     $scope.signInUser = function() {
       session.login($scope.signIn.email, $scope.signIn.password)
         .then(function() {
-          $location.path('/');
+          $location.path('/dashboard');
         }, function(req) {
           $scope.signInError = req.data.message;
         });
