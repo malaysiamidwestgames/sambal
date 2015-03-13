@@ -92,6 +92,10 @@ angular
       .when('/confirm_email', {
         templateUrl: 'views/confirm_email.html'
       })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
