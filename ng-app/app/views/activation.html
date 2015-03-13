@@ -1,3 +1,9 @@
-<div ng-show="activation">Account successfully activated!</div>
 
-<div ng-show="!activation">Account failed to activate.</div>
+<div ng-show="calledApi">
+    <div ng-show="isActivated" class="alert alert-success" role="alert">
+        Account successfully activated! Redirecting to home page...
+    </div>
+    <div ng-hide="isActivated" class="alert alert-danger" role="alert">
+        Account failed to activate...
+    </div>
+</div>

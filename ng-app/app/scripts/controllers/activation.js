@@ -10,32 +10,22 @@
 
 
 angular.module('midwestApp')
-  .controller('ActivationCtrl', function ($scope, $routeParams, httpWrapper) {
-    var req = httpWrapper.patch('/api/account_activations/:token/');
-    console.log($routeParams.token);
-    console.log($routeParams.email);
+  .controller('ActivationCtrl', function ($scope, $routeParams, $timeout, $location, httpWrapper) {
+    $scope.calledApi = false;
+    var accountActivationReq = httpWrapper.patch('/api/account_activations/:token/');
 
-
-    req({token: $routeParams.token, email: $routeParams.email}).
-    then(function(resp){
-      console.log('success');
-
-      console.log(resp);
-
-
-      
-      $scope.activation = true;      
-     
-
-    }, function(resp) {
-      console.log('fail :(');
-
-      console.log(resp);
-
-      $scope.activation = false;      
-      
-
-    });
+    accountActivationReq({token: $routeParams.token, email: $routeParams.email})
+      .then(function(){
+        $scope.calledApi = true;
+        $scope.isActivated = true;
+        // redirect to homepage so user can login
+        $timeout(function() {
+          $location.path('/');
+        }, 3000);
+      }, function() {
+        $scope.calledApi = true;
+        $scope.isActivated = false;
+      });
 
 
 });
