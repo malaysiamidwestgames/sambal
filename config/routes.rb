@@ -64,6 +64,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, except: [:new, :edit]
+    get 'users/activations/:id' => 'users#resend_activation_email'
     resources :universities, only: [:index]
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]

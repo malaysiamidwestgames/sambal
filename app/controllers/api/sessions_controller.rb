@@ -7,8 +7,8 @@ class Api::SessionsController < ApplicationController
         create_token(user)
         render json: user
       else
-         render json: { message: 'Account not activated. Please check your email for activation link' },
-             status: :bad_request
+         render json: { user_id: user.id, message: 'Account not activated. Please check your email for activation link' },
+             status: :forbidden
       end
     else
       render json: { message: 'incorrect username or password combination' },

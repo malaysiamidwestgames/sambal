@@ -17,6 +17,9 @@
             </div>
           </div>
           <div ng-show="signInError" class="error">{{ signInError }}</div>
+          <div class="resend-activation" ng-show="accountActivation.visible">
+            Click <a href="" ng-click="activateAccount()">here</a> to resend activation link to your email account
+          </div>          
           <div class = "forgot-password">
             <a href="/app/forgot-pass">Forgot your password?</a>
           </div>
