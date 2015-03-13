@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ForgotPassCtrl', function ($scope, $http, $location) {
+  .controller('ForgotPassCtrl', function ($scope, $http) {
 
     $scope.sendemail = function() {
       console.log('asdas');

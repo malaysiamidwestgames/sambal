@@ -9,13 +9,15 @@
  */
 function randomString(length, chars) {
   var result = '';
-  for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+  for (var i = length; i > 0; --i) {
+    result += chars[Math.round(Math.random() * (chars.length - 1))];
+  }
   return result;
 }
 
 angular.module('midwestApp')
   .factory('yelp', function ($http) {
-    var yelp = require("yelp").createClient({
+    var yelp = require('yelp').createClient({
       consumer_key: '7ByiNo9cOsiD7AwhH_harQ',
       consumer_secret: 'ZkTzSZUQD_cShJHjRlLOqGJrnfs',
       token: 'acH_orHKZx1651FvofqGHV5lTTuGvjaF',
@@ -41,8 +43,8 @@ angular.module('midwestApp')
     //    params['oauth_signature'] = signature;
     //    $http.jsonp(url, {params: params}).success(callback);
     //  }
-        "searchYelp": function(name, callback) {
+      searchYelp: function(name, callback) {
 
       }
-    }
+    };
   });

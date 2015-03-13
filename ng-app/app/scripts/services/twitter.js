@@ -11,7 +11,7 @@ angular.module('midwestApp')
 		requestNewPosts: function(latestId) {
 			return $http.get(twitterUrl).then(function(resp) {
 				console.log(resp);
-				if(resp.data.statuses.length == 0) {
+				if(resp.data.statuses.length === 0) {
 					return;
 				}
 				if(latestId === 0) {

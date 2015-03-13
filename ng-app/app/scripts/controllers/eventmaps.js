@@ -52,9 +52,9 @@ angular.module('midwestApp')
       };
 
       directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
+        if (status === google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(response);
-          console.log(response)
+          console.log(response);
         }
       });
       return;
@@ -67,9 +67,9 @@ angular.module('midwestApp')
     $scope.yelpSearch = function (yelpTerm) {
       yelp.searchYelp(yelpTerm, function(data,error) {
         console.log(data);
-        console.log(error)
+        console.log(error);
         $scope.businesses = data.businesses;
-      })
+      });
     };
 
   });

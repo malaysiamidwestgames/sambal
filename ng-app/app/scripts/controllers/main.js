@@ -22,7 +22,7 @@ angular.module('midwestApp')
     });
 
     $scope.register = function() {
-      $scope.reg.$save(function(resp) {
+      $scope.reg.$save(function() {
         $location.path('/confirm_email');
       }, function(resp) {
         $scope.registerErrors = [];
