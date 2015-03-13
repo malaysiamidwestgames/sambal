@@ -1,5 +1,5 @@
 
-<div ng-show="calledApi">
+<div ng-show="calledApi" ng-class="{'waiting-server' : serverBusy}">
     <div ng-show="isActivated" class="alert alert-success" role="alert">
         Account successfully activated! Redirecting to home page...
     </div>

@@ -238,4 +238,9 @@ div.hotel-registration input {
 //offset default margin to accommodate wolverine logo 
 .navbar > .container-fluid .navbar-brand {
   margin-left: 0;
-  }
+}
+
+
+.waiting-server {
+  cursor: progress !important;
+}
