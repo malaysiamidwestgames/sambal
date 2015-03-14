@@ -1,7 +1,7 @@
 class Api::PasswordResetsController < ApplicationController
-  before_action :get_user,         only: [:edit, :update]
-  before_action :valid_user,       only: [:edit, :update]
-  before_action :check_expiration, only: [:edit, :update]
+  before_action :get_user,         only: :update
+  before_action :valid_user,       only: :update
+  before_action :check_expiration, only: :update
 
   def new
   end
@@ -11,10 +11,12 @@ class Api::PasswordResetsController < ApplicationController
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
+
+      render json: {message: "E-mail has been sent! Please check your e-mail."}
           
     else
       
-      render 'new'
+      render json: {message: "E-mail does not exist. Please enter a valid e-mail."}, status: :bad_request
     end
   end
 
@@ -24,12 +26,12 @@ class Api::PasswordResetsController < ApplicationController
   def update
     if password_blank?
 
-      render json: { message: "Password can't be blank" }
+      render json: { message: "Password can't be blank" }, status: :bad_request
     elsif @user.update_attributes(user_params)
       render json: { message: "Password reset!" }
 
     else
-      render json: { message: "failed" }
+      render json: { message: "failed" }, status: :bad_request
     end
   end
 
@@ -55,15 +57,15 @@ class Api::PasswordResetsController < ApplicationController
 
     # Confirms a valid user.
     def valid_user
-      unless (@user && @user.activated? &&
-              @user.reset_digest == User.digest(params[:id]))
+      unless (@user && @user.activated? && @user.reset_digest == User.digest(params[:id]))
+        render json: { message: "unauthorized"}, status: :forbidden
       end
     end
 
     # Checks expiration of reset token.
     def check_expiration
       if @user.password_reset_expired?
-        render json: { message: "Password reset has expired."} 
+        render json: { message: "Password reset has expired."}, status: :bad_request
       end
     end
 end
