@@ -4,7 +4,7 @@
 
 
 angular.module('midwestApp')
-  .controller('PassResetCtrl', function ($scope, $routeParams, httpWrapper) {
+  .controller('PassResetCtrl', function ($scope, $routeParams, httpWrapper, $location, $timeout) {
     
     var req = httpWrapper.patch('/api/password_resets/:id/');
     console.log($routeParams.token);
@@ -17,43 +17,28 @@ angular.module('midwestApp')
 
       console.log(resp);
 
+      $scope.passResetform = true;
+      $scope.isResetted = true;
+      $scope.success = true;
+      $scope.hidepanel = true;
+      $scope.message = "Password successfully reset! Redirecting to main page....";
 
-      
-      $scope.activation = true;      
-     
-
+      $timeout(function() {
+          $location.path('/');
+      }, 3000);
     }, function(resp) {
       console.log('fail :(');
 
       console.log(resp);
 
-      $scope.activation = false;      
-      
+
+      $scope.passResetform = true;
+      $scope.isResetted = true;
+      $scope.failure = true;
+      $scope.hidepanel = true;
+      $scope.message = "Password FAILED to reset! Please contact us at............";
 
     });
 
   };
-
-/**
-    $scope.register = function() {
-      $http
-        .post('/api/users', {email: $scope.email, password: $scope.pass1, password_confirmation: $scope.pass2, university: $scope.selectedUniversity})
-        .success(function(user) {
-          console.log(user);
-          session.login($scope.email, $scope.pass1)
-            .then(function() {
-              $location.path('/');
-            }, function(req) {
-              $scope.errorMessage = req.data.message;
-            });
-        })
-        .error(function(error) {
-          console.log('error login in');
-          console.log(error);
-
-        });
-    };
-    */
-
-
 });
