@@ -147,6 +147,17 @@ body {
   }
 }
 
+.payment {
+  .promotion {
+    font-size: 15px;
+    h1.title {
+      font-weight: 300;
+      margin-top: 3px;
+      color: $michigan-blue;
+    }
+  }
+}
+
 
 .social-feeds {
   * {
@@ -236,7 +247,7 @@ div.hotel-registration input {
   margin-left: -15px;
 }
 
-//offset default margin to accommodate wolverine logo 
+//offset default margin to accommodate wolverine logo
 .navbar > .container-fluid .navbar-brand {
   margin-left: 0;
 }
