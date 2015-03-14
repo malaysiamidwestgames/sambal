@@ -75,7 +75,16 @@ angular
       })
       .when('/accommodations', {
         templateUrl: 'views/accommodations.html'
+
+        //controller: 'UserlistCtrl'
+        })
+       
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
+
            //controller: 'UserlistCtrl'
+
       })
       .when('/payment', {
         templateUrl: 'views/payment.html',

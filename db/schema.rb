@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20150312230612) do
     t.integer  "amount"
   end
 
+  create_table "all_games", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "universities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -42,14 +48,55 @@ ActiveRecord::Schema.define(version: 20150312230612) do
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "access_token"
-    t.integer  "university_id"
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.integer  "university_id"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.string   "first_name"
     t.string   "last_name"
+  end
+  
+  create_table "teams", force: :cascade do |t|
+    t.string   "name", 
+        null: false
+    t.datetime "created_at", 
+        null: false
+    t.datetime "updated_at", 
+        null: false
+    t.integer  "university_id"
+    t.integer  "player_id",
+        null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.datetime "created_at", 
+        null: false
+    t.datetime "updated_at", 
+        null: false
+    t.string  "team_1",
+        null: false
+    t.string  "team_2",
+        null: false
+    t.string  "winner"
+    t.datetime "start_at",
+        null: false
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",
+        null: false
+    t.datetime "updated_at",
+        null: false
+    t.integer  "team_id"
+    t.boolean  "isLeague",
+        null: false,
+        default: false
+    t.integer  "size",
+        null: false
+    t.integer  "match_ids"
   end
 
 end
