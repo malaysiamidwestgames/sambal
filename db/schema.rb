@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314065221) do
+ActiveRecord::Schema.define(version: 20150312230612) do
 
   create_table "mailers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(version: 20150314065221) do
     t.datetime "reset_sent_at"
     t.string   "first_name"
     t.string   "last_name"
+<<<<<<< HEAD
     t.boolean  "admin",             default: false
+=======
+>>>>>>> aa987538787d8fd4662e1c0483071e10c71899dc
   end
 
 end
