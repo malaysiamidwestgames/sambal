@@ -10,6 +10,7 @@ $michigan-blue: #00468E;
 $michigan-maize: #FCD000;
 $michigan-maize-light: #FCDE4C;
 $michigan-maize-dark: #7C6700;
+$blue-background: #40658f;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -22,6 +23,10 @@ $michigan-maize-dark: #7C6700;
 body {
   padding-top: 70px;
   padding-bottom: 20px;
+  background-color: $blue-background;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  font-weight: 200;
 
   &.main-page {
     background: linear-gradient(
@@ -39,7 +44,7 @@ body {
   max-width: 900px;
 }
 
-.navbar-theamed {
+.navbar-themed {
   background-color: $michigan-darkblue;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -60,7 +65,7 @@ body {
   margin-right: 7px;
 }
 
-.panel-theamed {
+.panel-themed {
   border-color: $michigan-lightblue;
   > .panel-heading {
     color: #FFF;
@@ -69,7 +74,7 @@ body {
   }
 }
 
-.btn-theamed {
+.btn-themed {
   color: #FFF;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
@@ -85,9 +90,7 @@ body {
 }
 
 .app-landing {
-  position: absolute;
-  top: 50%;
-  margin-top: -220px;
+  margin-top: 30px;
   max-width: 900px;
   &.row {
     margin-left: 0;
@@ -112,10 +115,9 @@ body {
   }
   .input-error-group {
     margin-bottom: 5px;
-
-    .error {
-      color: $brand-danger;
-    }
+  }
+  .error {
+    color: $brand-danger;
   }
   h3.panel-title {
     font-weight: 300;
@@ -128,6 +130,20 @@ body {
   }
   .ng-invalid.ng-touched.ng-dirty {
     background-color: $brand-warning;
+  }
+}
+
+.dashboard {
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
   }
 }
 
@@ -174,6 +190,10 @@ body {
   }
 }
 
+div.hotel-registration input {
+  margin-bottom: 5px;
+}
+
 .twitter {
   * {
     word-wrap: break-word;
@@ -201,4 +221,51 @@ body {
   float: right;
   width: 390px;
   overflow-y: auto;
+}
+
+#searchbox {
+  width: 350px;
+  margin: 10px;
+}
+
+// wolverine logo
+.navbar-header img {
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin-left: -15px;
+}
+
+//offset default margin to accommodate wolverine logo 
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 0;
+}
+
+.waiting-server {
+  cursor: progress !important;
+}
+
+.user-attribute {
+  width: 20%;
+}
+
+.user-data {
+  width: 70%;
+}
+
+.edit-user-data {
+  width: 10%;
+}
+
+
+#edit-user-info {
+  position: absolute;
+  top: 1px;
+  right: 20px;
+}
+
+#edit-user-info a {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 1px;
 }

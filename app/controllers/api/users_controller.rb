@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy, :resend_activation_email]
   # GET /users
   # GET /users.json
   def index
@@ -49,10 +49,15 @@ class Api::UsersController < ApplicationController
     head :no_content
   end
 
+  def resend_activation_email
+    @user.regenerate_activation_digest
+    @user.send_activation_email
+  end
+
   private
     
     def user_params
-      params.permit(:email, :password, :password_confirmation)
+      params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
     end
 
     def university_params

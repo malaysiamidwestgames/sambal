@@ -62,25 +62,29 @@ angular
         //controller: 'UserlistCtrl'
       })
       .when('/forgot-pass' , {
-        templateUrl: 'views/forgotpass.html'
-        //controller: ''
+        templateUrl: 'views/forgotpass.html',
+        controller: 'ForgotPassCtrl'
       })
       .when('/pass-reset/:token' , {
-        templateUrl: 'views/passreset.html'
-        //controller: ''
+        templateUrl: 'views/passreset.html',
+        controller: 'ForgotPassCtrl'
       })
-      .when('/twitter' , {
+      .when('/twitter', {
         templateUrl: 'views/twitter.html',
         controller: 'TwitterCtrl'
       })
-       .when('/accommodations' , {
+      .when('/accommodations', {
         templateUrl: 'views/accommodations.html'
+
         //controller: 'UserlistCtrl'
         })
        
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
+
+           //controller: 'UserlistCtrl'
+
       })
       .when('/payment', {
         templateUrl: 'views/payment.html',
@@ -93,6 +97,19 @@ angular
       .when('/eventmaps', {
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
+      })
+      .when('/confirm_email', {
+        templateUrl: 'views/confirm_email.html'
+      })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        requireLogin: true 
+      })
+      .when('/user-settings', {
+        templateUrl: 'views/user_settings.html',
+        controller: 'UserSettingsCtrl',
+        requireLogin: true 
       })
       .otherwise({
         redirectTo: '/'
@@ -117,7 +134,7 @@ angular
   .run(function($rootScope, session, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next) {
       if (next.requireLogin && !session.isLoggedIn()) {
-        $location.path('/login');
+        $location.path('/');
         event.preventDefault();
       }
       $rootScope.bodyClass = next.bodyClass;

@@ -31,6 +31,11 @@ class User < ActiveRecord::Base
     UserMailer.account_activation(self).deliver_now
   end
 
+  def regenerate_activation_digest
+    self.activation_token  = User.new_token
+    update_attribute(:activation_digest,  User.digest(activation_token))
+  end
+
   def User.new_token
     SecureRandom.urlsafe_base64
   end
@@ -42,7 +47,8 @@ class User < ActiveRecord::Base
 
   def create_reset_digest
     self.reset_token = User.new_token
-    
+    update_attribute(:reset_digest,  User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
   end
 
   def send_password_reset_email

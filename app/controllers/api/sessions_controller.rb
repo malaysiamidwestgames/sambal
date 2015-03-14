@@ -3,17 +3,12 @@ class Api::SessionsController < ApplicationController
     check_params
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
-      create_token(user)
-      render json: user
        if user.activated?
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_back_or user
+        create_token(user)
+        render json: user
       else
-        message  = "Account not activated. "
-        message += "Check your email for the activation link."
-        flash[:warning] = message
-        redirect_to root_url
+         render json: { user_id: user.id, message: 'Account not activated. Please check your email for activation link' },
+             status: :forbidden
       end
     else
       render json: { message: 'incorrect username or password combination' },

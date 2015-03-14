@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="midwestApp" class="{{ bodyClass }}">
+<body ng-app="midwestApp" class="{{ bodyClass }} main-page">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -25,10 +25,6 @@
 
       <div class="container">
         <div ng-view=""></div>
-
-        <div class="footer">
-          <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-        </div>
       </div>
 
 
@@ -70,6 +66,7 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -90,10 +87,18 @@
     <script src="scripts/services/twitter.js"></script>
     <script src="scripts/controllers/twitter.js"></script>
     <script src="scripts/controllers/payment.js"></script>
+    <script src="scripts/controllers/passreset.js"></script>
     <script src="scripts/controllers/paylist.js"></script>
+    <script src="scripts/controllers/hotels.js"></script>
     <script src="scripts/controllers/eventmaps.js"></script>
+    <script src="scripts/controllers/forgotpass.js"></script>
     <script src="scripts/services/universityresource.js"></script>
     <script src="scripts/services/user.js"></script>
+
+    <script src="scripts/services/yelp.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/usersettings.js"></script>
+    <script src="scripts/controllers/user_settings.js"></script>
     <!-- endbuild -->
   </body>
   </html>
