@@ -1,20 +1,39 @@
-<div class="col-md-offset-1 col-md-10">
-    <div class="panel panel-themed">
-      <div class="panel-heading">
-        <h3 class="panel-title">User settings</h3>
-      </div>
-    <table class="table table-hover table-user-settings">
-      <tr>
-        <td class="user-attribute">First Name</td>
-        <td class="user-data">{{user.first_name}}</td>
-        <td class="edit-user-data"><a>edit</a></td>
-      </tr>
-      <tr>
-        <td class="user-attribute">Last Name</td>
-        <td class="user-data">{{user.last_name}}</td>
-        <td class="edit-user-data"><a>edit</a></td>
-      </tr>
-    </table>
+<div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-themed row">
+        <div class="panel-heading">
+            <h3 class="panel-title">User settings</h3>
+        </div>
+        <table class="table table-hover table-user-settings">
+            <tr>
+                <td class="user-attribute">First Name</td>
+                <td class="user-data">
+                    <input type="text" ng-model="editedUser.first_name">
+                </td>
+            </tr>
+            <tr>
+                <td class="user-attribute">Last Name</td>
+                <td class="user-data">
+                    <input type="text" ng-model="editedUser.last_name">
+                </td>
+            </tr>
+            <tr>
+                <td class="user-attribute">University</td>
+                <td class="user-data">
+                    <input type="text"
+                           placeholder="School name" 
+                           ng-model="editedUser.university"
+                           typeahead="university.name for university in universities | filter:$viewValue | limitTo:8"
+                           typeahead-min-length="2"
+                           typeahead-editable="false">
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-primary pull-right" type="submit" ng-click="updateUserInfo()">Save</button>
+    </div>
+    <div class="row">
+        <div class="pull-right">
+            
+        </div>
     </div>
 </div>
 

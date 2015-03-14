@@ -245,18 +245,18 @@ div.hotel-registration input {
   cursor: progress !important;
 }
 
+.table-user-settings td input {
+  width: 100%;
+}
+
 .user-attribute {
   width: 20%;
+  font-weight: 500;
 }
 
 .user-data {
-  width: 70%;
+  width: 80%;
 }
-
-.edit-user-data {
-  width: 10%;
-}
-
 
 #edit-user-info {
   position: absolute;
