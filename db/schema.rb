@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312230612) do
+ActiveRecord::Schema.define(version: 20150314030951) do
 
   create_table "mailers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20150312230612) do
     t.integer  "user_id"
     t.integer  "amount"
   end
+
+  create_table "paytypes", force: :cascade do |t|
+    t.string   "payment_type"
+    t.integer  "quantity"
+    t.integer  "payment_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "paytypes", ["payment_id"], name: "index_paytypes_on_payment_id"
 
   create_table "universities", force: :cascade do |t|
     t.string   "name"
