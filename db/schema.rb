@@ -42,14 +42,18 @@ ActiveRecord::Schema.define(version: 20150312230612) do
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "access_token"
-    t.integer  "university_id"
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.integer  "university_id"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.string   "first_name"
     t.string   "last_name"
+<<<<<<< HEAD
+    t.boolean  "admin",             default: false
+=======
+>>>>>>> aa987538787d8fd4662e1c0483071e10c71899dc
   end
 
 end

@@ -145,6 +145,19 @@ body {
   .user-info-panel {
     background-color: $michigan-blue;
   }
+
+  .edit-user-info {
+   position: absolute;
+   top: 1px;
+   right: 20px;
+   font-size: 22px;
+  }
+
+  .edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
 }
 
 .payment {
@@ -269,14 +282,3 @@ div.hotel-registration input {
 }
 
 
-#edit-user-info {
-  position: absolute;
-  top: 1px;
-  right: 20px;
-}
-
-#edit-user-info a {
-  color: white;
-  font-weight: 200;
-  letter-spacing: 1px;
-}
