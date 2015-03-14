@@ -72,7 +72,7 @@ Build
 
          rails s
 
-6. In a browser, open (url)[http://localhost:3000/]
+6. In a browser, open (http://localhost:3000/)
 
 7. On a new terminal tab/window, cd into ng-app directory
 
@@ -84,4 +84,4 @@ Build
 
          grunt serve
 
-10. In a browser, open (url)[http://localhost:9000/app/]
+10. In a browser, open (http://localhost:9000/app/)
