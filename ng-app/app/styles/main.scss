@@ -26,6 +26,7 @@ body {
   background-color: $blue-background;
   background-repeat: no-repeat;
   background-size: 50%;
+  font-weight: 200;
 
   &.main-page {
     background: linear-gradient(
@@ -238,4 +239,33 @@ div.hotel-registration input {
 //offset default margin to accommodate wolverine logo 
 .navbar > .container-fluid .navbar-brand {
   margin-left: 0;
-  }
+}
+
+.waiting-server {
+  cursor: progress !important;
+}
+
+.user-attribute {
+  width: 20%;
+}
+
+.user-data {
+  width: 70%;
+}
+
+.edit-user-data {
+  width: 10%;
+}
+
+
+#edit-user-info {
+  position: absolute;
+  top: 1px;
+  right: 20px;
+}
+
+#edit-user-info a {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 1px;
+}

@@ -1,15 +1,78 @@
+<div class="row">
+  <div class="col-md-5" id="reminder">
+    <div class="panel panel-theamed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Reminder</h3>
+      </div>
+      <div class="panel-body">
+        <div>Payment status: <span>Paid/Not Paid</span></div>
+        <div>Register sports before: <span id="deadline">Current Date</span></div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="col-md-7" id="profile">
+    <div class="panel panel-theamed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Profile</h3>
+      </div>
+      <div class="panel-body">
+        <div>Player Name: <span id="name">Player Name</span></div>
+        <div>University: <span id="uni">University Name</span></div>
+      </div>
+
+      <table class="table-bordered table-striped" width="100%" id="sports">
+        <thead>
+          <tr>
+            <th>Sports</th>
+            <th>Team</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basketball</td>
+            <td>UMich</td>
+          </tr>
+        </tbody>
+      </table>        
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel panel-theamed">
+    <div class="panel-heading">
+      <h3 class="panel-title">Schedule</h3>
+    </div>
+    <table class="table-bordered table-striped" width="100%" id="schedule">
+      <thead>
+        <tr> 
+          <th>Sports name</th>
+          <th>Date</th>
+          <th>Starting time</th>
+          <th>Venue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
 <div class="row dashboard">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body">
-        <div class="first-name">Sayyid Sofwan</div>
-        <div>Syed Ahmad Helmi</div>
-        <div>University of Michigan</div>
-        <div>sysofwan@umich.edu</div>
+        <div class="first-name">{{currentUser.user.first_name}}</div>
+        <div>{{currentUser.user.first_name}} {{currentUser.user.last_name}}</div>
+        <div>{{currentUser.user.university.name}}</div>
+        <div>{{currentUser.user.email}}</div>
+        <span id="edit-user-info"><a href="/app/user-settings">edit</a></span>
       </div>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-7">
     <div class="panel panel-themed">
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>

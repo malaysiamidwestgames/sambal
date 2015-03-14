@@ -10,12 +10,19 @@
 			<ul class="nav navbar-nav">
 				<li><a href="">Feeds</a></li>
 				<li><a href="">Info</a></li>
-				<li ng-show="currentUser">
-					<a href="">{{currentUser.user.first_name}}</a>
-				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
-				<li><a href="" ng-click="logout()">Log out</a></li>
+				<li ng-show="currentUser">
+					<a href="/app/user-settings">{{currentUser.user.email}}</a>
+				</li>
+				<li>
+					<a href="" 
+					   ng-click="logout()" 
+					   tooltip-placement="bottom" 
+					   tooltip="Logout">
+						<span class="glyphicon glyphicon-log-out"></span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
