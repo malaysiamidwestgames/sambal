@@ -97,6 +97,11 @@ angular
         controller: 'DashboardCtrl',
         requireLogin: true 
       })
+      .when('/user-settings', {
+        templateUrl: 'views/user_settings.html',
+        controller: 'UserSettingsCtrl',
+        requireLogin: true 
+      })
       .otherwise({
         redirectTo: '/'
       });
