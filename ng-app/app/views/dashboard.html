@@ -6,7 +6,11 @@
         <div>{{currentUser.user.first_name}} {{currentUser.user.last_name}}</div>
         <div>{{currentUser.user.university.name}}</div>
         <div>{{currentUser.user.email}}</div>
-        <span id="edit-user-info"><a href="/app/user-settings">edit</a></span>
+        <span class="edit-user-info">
+          <a href="/app/user-settings">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+        </span>
       </div>
     </div>
   </div>
@@ -16,9 +20,18 @@
         <h3 class="panel-title">What to do next?</h3>
       </div>
       <ul class="list-group">
-        <li class="list-group-item">Pay for your registration</li>
-        <li class="list-group-item">Answer questionaire</li>
-        <li class="list-group-item">Register for sports</li>
+        <li class="list-group-item">
+          Pay for your registration
+          <a href="payment"  role="button" class="btn btn-primary btn-xs pull-right">Pay here</a>
+        </li>
+        <li class="list-group-item">
+          Answer questionaire
+          <a href="#"  role="button" class="btn btn-primary btn-xs pull-right" disabled="disable">Questionaire</a>
+        </li>
+        <li class="list-group-item">
+          Register for sports
+          <a href="#"  role="button" class="btn btn-primary btn-xs pull-right" disabled="disable">Register</a>
+        </li>
       </ul>
     </div>
     <div class="panel panel-themed">

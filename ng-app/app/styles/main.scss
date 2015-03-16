@@ -145,6 +145,30 @@ body {
   .user-info-panel {
     background-color: $michigan-blue;
   }
+
+  .edit-user-info {
+   position: absolute;
+   top: 1px;
+   right: 20px;
+   font-size: 22px;
+  }
+
+  .edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+}
+
+.payment {
+  .promotion {
+    font-size: 15px;
+    h1.title {
+      font-weight: 300;
+      margin-top: 3px;
+      color: $michigan-blue;
+    }
+  }
 }
 
 
@@ -236,7 +260,7 @@ div.hotel-registration input {
   margin-left: -15px;
 }
 
-//offset default margin to accommodate wolverine logo 
+//offset default margin to accommodate wolverine logo
 .navbar > .container-fluid .navbar-brand {
   margin-left: 0;
 }
@@ -269,3 +293,9 @@ div.hotel-registration input {
   font-weight: 200;
   letter-spacing: 1px;
 }
+
+.edit-user-data {
+  width: 10%;
+}
+
+
