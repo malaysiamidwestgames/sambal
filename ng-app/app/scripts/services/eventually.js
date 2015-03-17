@@ -13,9 +13,6 @@ angular.module('midwestApp')
           array = registry[type];
           _.each(array, function(handler) {
             var func = handler.method;
-
-            console.log('executing this fn: ', func);
-
             func.apply(that, handler.parameters || [event]);
           });
         }
@@ -23,15 +20,10 @@ angular.module('midwestApp')
       };
 
       that.on = function(type, method, parameters) {
-
-
         var handler = {
           method: method,
           parameters: parameters
         };
-
-        console.log('storign this fn: ', handler);
-
 
         if (_.has(registry, type)) {
           registry[type].push(handler);

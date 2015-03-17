@@ -38,6 +38,8 @@ angular.module('midwestApp')
       service.fire('userRemoved');
     });
 
+    service.checkCurrentUser = init;
+
     service.login = function(email, password) {
       return createSession({email: email, password: password})
         .then(function(user){

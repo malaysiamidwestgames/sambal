@@ -3,24 +3,19 @@
 angular.module('midwestApp')
   .controller('UserSettingsCtrl', function ($scope, $rootScope, universityResource, User, session, $timeout, $location) {
     $scope.universities = [];
-    $scope.error = false;
+    $scope.isReady = false;
+    $scope.isError = false;
 
-    // session.on('userAvailable', function() {
-    //   $scope.editedUser = new User({id: $rootScope.currentUser.user.id});
-    //   $scope.editedUser.first_name = $rootScope.currentUser.user.first_name;
-    //   $scope.editedUser.last_name = $rootScope.currentUser.user.last_name;
-    //   $scope.editedUser.university = $rootScope.currentUser.user.university.name;
-    //   $scope.editedUser.email = $rootScope.currentUser.user.email;
-    // });
+    session.checkCurrentUser();
 
-    // temporary solution 
-    $timeout(function() {
+    session.on('userAvailable', function() {
       $scope.editedUser = new User({id: 'me'});
       $scope.editedUser.first_name = $rootScope.currentUser.user.first_name;
       $scope.editedUser.last_name = $rootScope.currentUser.user.last_name;
       $scope.editedUser.university = $rootScope.currentUser.user.university.name;
       $scope.editedUser.email = $rootScope.currentUser.user.email;
-    }, 1500);
+      $scope.isReady = true;
+    });
 
     universityResource().then(function(resp) {
       $scope.universities = resp.universities;
@@ -31,7 +26,7 @@ angular.module('midwestApp')
         $rootScope.currentUser.user = resp.user;
         $location.path('/dashboard');
       }, function(resp) {
-        $scope.error = true;
+        $scope.isError = true;
         console.log('Failed to update user info, response : ', resp);
       });
     };
