@@ -3,8 +3,8 @@
 angular.module('midwestApp')
   .controller('UserSettingsCtrl', function ($scope, $rootScope, universityResource, User, session, $timeout, $location) {
     $scope.universities = [];
+    $scope.error = false;
 
-    console.log('in user settings');
     // session.on('userAvailable', function() {
     //   $scope.editedUser = new User({id: $rootScope.currentUser.user.id});
     //   $scope.editedUser.first_name = $rootScope.currentUser.user.first_name;
@@ -31,7 +31,8 @@ angular.module('midwestApp')
         $rootScope.currentUser.user = resp.user;
         $location.path('/dashboard');
       }, function(resp) {
-        console.log('fail', resp);
+        $scope.error = true;
+        console.log('Failed to update user info, response : ', resp);
       });
     };
 

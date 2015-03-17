@@ -1,4 +1,4 @@
-<div class="col-md-offset-2 col-md-8">
+<div class="col-md-offset-2 col-md-8 update-user-info">
     <div class="panel panel-themed row">
         <div class="panel-heading">
             <h3 class="panel-title">User settings</h3>
@@ -28,6 +28,9 @@
                 </td>
             </tr>
         </table>
+        <div class="error pull-left" ng-show="error">
+            <span>Aw snap! An error occurred. Please come back later.</span>
+        </div>
         <button class="btn btn-primary pull-right" type="submit" ng-click="updateUserInfo()">Save</button>
     </div>
     <div class="row">
