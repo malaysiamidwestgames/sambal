@@ -12,7 +12,7 @@ class Api::PasswordResetsController < ApplicationController
       @user.create_reset_digest
       @user.send_password_reset_email
 
-      render json: {message: "E-mail has been sent! Please check your e-mail."}
+      render json: {message: "E-mail has been sent! Please check your e-mail. Redirecting to homapage..."}
           
     else
       
