@@ -43,7 +43,6 @@ angular.module('midwestApp')
     service.login = function(email, password) {
       return createSession({email: email, password: password})
         .then(function(user){
-          console.log(user);
           service.fire({type: 'userLoggedIn', user:user});
           $rootScope.currentUser = user;
         });

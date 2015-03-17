@@ -60,7 +60,28 @@ body {
   .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
     background-color: $michigan-blue;
   }
+  // wolverine logo
+  .navbar-header img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-left: -15px;
+  }
+  //offset default margin to accommodate wolverine logo
+  &.navbar > .container-fluid .navbar-brand {
+    margin-left: 0;
+  }
+
+  a:hover {
+    color: #F4CF3E;
+  }
+
+  li a:hover {
+    // color: rgb(255, 237, 0);
+    color: $michigan-maize-light;
+  }
 }
+
 .navbar-right ~ .navbar-right {
   margin-right: 7px;
 }
@@ -104,8 +125,13 @@ body {
       top: 50%;
       left: 50%;
       margin-top: -15px;
+      margin-left: -15px;
       background: url('../images/ajax-loader.gif') no-repeat;
     }
+}
+
+ul.dropdown-menu {
+  cursor: pointer;
 }
 
 .app-landing {
@@ -278,25 +304,13 @@ div.hotel-registration input {
   margin: 10px;
 }
 
-// wolverine logo
-.navbar-header img {
-  width: 48px;
-  height: 48px;
-  float: left;
-  margin-left: -15px;
-}
-
-//offset default margin to accommodate wolverine logo
-.navbar > .container-fluid .navbar-brand {
-  margin-left: 0;
-}
-
 .update-user-info {
   .row {
     position: relative;
   }
   
   .table-user-settings {
+    margin-bottom: 0;
     td input {
       width: 100%;
     }

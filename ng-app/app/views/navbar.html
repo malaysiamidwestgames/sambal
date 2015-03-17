@@ -1,8 +1,14 @@
 <nav class="navbar navbar-themed navbar-fixed-top" ng-controller="NavigationCtrl">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<img src="images/logo.svg">
-			<a class="navbar-brand" href="/app">
+			<a href="/app">
+				<img src="images/logo.svg"  
+			   		 tooltip-placement="bottom"
+			   		 tooltip="Home">
+			</a>
+			<a class="navbar-brand" 
+			   href="/app" 
+			   ng-hide="currentUser">
 				Midwest Games
 			</a>
 		</div>
