@@ -95,7 +95,7 @@ body {
     left:0px;
     bottom:0px;
     right:0px;
-    background-color:rgba(255,255,255,0.85);
+    background-color:rgba(255,255,255,0.75);
 
     .loader-gif {
       width: 32px;
@@ -115,6 +115,11 @@ body {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .panel-body {
+    position: relative;
+  }
+
   .marketing {
     h1 {
       color: #FFF;
@@ -153,6 +158,8 @@ body {
 }
 
 .dashboard {
+  word-wrap:break-word;
+
   .user-info-panel {
     color: #FFF;
     .first-name {
@@ -284,13 +291,12 @@ div.hotel-registration input {
   margin-left: 0;
 }
 
-.waiting-server {
-  cursor: progress !important;
-}
-
-
 .update-user-info {
 
+  .row {
+    position: relative;
+  }
+  
   .table-user-settings td input {
     width: 100%;
   }

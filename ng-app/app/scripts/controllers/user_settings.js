@@ -22,11 +22,14 @@ angular.module('midwestApp')
     });
 
     $scope.updateUserInfo = function() {
+      $scope.isReady = false;
       $scope.editedUser.$update(function(resp) {
         $rootScope.currentUser.user = resp.user;
+        $scope.isReady = true;
         $location.path('/dashboard');
       }, function(resp) {
         $scope.isError = true;
+        $scope.isReady = true;
         console.log('Failed to update user info, response : ', resp);
       });
     };
