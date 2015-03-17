@@ -3,35 +3,49 @@
         <div class="panel-heading">
             <h3 class="panel-title">User settings</h3>
         </div>
-        <table class="table table-hover table-user-settings">
-            <tr>
-                <td class="user-attribute">First Name</td>
-                <td class="user-data">
-                    <input type="text" ng-model="editedUser.first_name">
-                </td>
-            </tr>
-            <tr>
-                <td class="user-attribute">Last Name</td>
-                <td class="user-data">
-                    <input type="text" ng-model="editedUser.last_name">
-                </td>
-            </tr>
-            <tr>
-                <td class="user-attribute">University</td>
-                <td class="user-data">
-                    <input type="text"
-                           placeholder="School name" 
-                           ng-model="editedUser.university"
-                           typeahead="university.name for university in universities | filter:$viewValue | limitTo:8"
-                           typeahead-min-length="2"
-                           typeahead-editable="false">
-                </td>
-            </tr>
-        </table>
+        <form name="registration">
+            <table class="table table-hover table-user-settings">
+                <tr>
+                    <td class="user-attribute">First Name</td>
+                    <td class="user-data">
+                        <input type="text" 
+                               ng-model="editedUser.first_name" 
+                               required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-attribute">Last Name</td>
+                    <td class="user-data">
+                        <input type="text" 
+                               ng-model="editedUser.last_name" 
+                               required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-attribute">University</td>
+                    <td class="user-data">
+                        <input type="text"
+                               placeholder="School name" 
+                               ng-model="editedUser.university"
+                               typeahead="university.name for university in universities | filter:$viewValue | limitTo:8"
+                               typeahead-min-length="2"
+                               typeahead-editable="false"
+                               required>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+
         <div class="error pull-left" ng-show="isError">
             <span>Aw snap! An error occurred. Please come back later.</span>
         </div>
-        <button class="btn btn-primary pull-right" type="submit" ng-click="updateUserInfo()">Save</button>
+        <button class="btn btn-primary pull-right" 
+                type="submit" 
+                ng-disabled="registration.$invalid" 
+                ng-click="updateUserInfo()">
+            Save
+        </button>
         <div class="overlay" ng-hide="isReady">
             <span class="loader-gif"></span>
         </div>
