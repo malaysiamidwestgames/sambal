@@ -292,17 +292,18 @@ div.hotel-registration input {
 }
 
 .update-user-info {
-
   .row {
     position: relative;
   }
   
-  .table-user-settings td input {
-    width: 100%;
-  }
+  .table-user-settings {
+    td input {
+      width: 100%;
+    }
 
-  .table-user-settings tr:last-child {
-    border-bottom: solid 1px rgb(223, 223, 223);
+    tr:last-child {
+      border-bottom: solid 1px rgb(223, 223, 223);
+    }
   }
 
   .user-attribute {
@@ -314,39 +315,20 @@ div.hotel-registration input {
     width: 80%;
   }
 
-  #edit-user-info {
-    position: absolute;
-    top: 1px;
-    right: 20px;
-  }
-
-  #edit-user-info a {
-    color: white;
-    font-weight: 200;
-    letter-spacing: 1px;
-  }
-
-  .edit-user-data {
-    width: 10%;
-  }
-
   .error {
     margin: 5px 8px;
     color: red;
     font-weight: 400;
-    height: 30px
-  }
+    height: 30px;
 
-  .error span {
-    vertical-align: middle;
+    span {
+      vertical-align: middle;
+    }
   }
 
   button {
     margin: 5px 8px;
   }
-
-
-
 }
 
 
