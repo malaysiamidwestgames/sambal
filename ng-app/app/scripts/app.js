@@ -79,11 +79,13 @@ angular
       })
       .when('/payment', {
         templateUrl: 'views/payment.html',
-        controller: 'PaymentCtrl'
+        controller: 'PaymentCtrl',
+        requireLogin: true
       })
       .when('/paylist', {
         templateUrl: 'views/paylist.html',
         controller: 'PaylistCtrl'
+
       })
       .when('/eventmaps', {
         templateUrl: 'views/eventmaps.html',
@@ -95,12 +97,12 @@ angular
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
-        requireLogin: true 
+        requireLogin: true
       })
       .when('/user-settings', {
         templateUrl: 'views/user_settings.html',
         controller: 'UserSettingsCtrl',
-        requireLogin: true 
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'
