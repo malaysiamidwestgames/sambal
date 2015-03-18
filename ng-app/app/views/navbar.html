@@ -1,8 +1,14 @@
 <nav class="navbar navbar-themed navbar-fixed-top" ng-controller="NavigationCtrl">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<img src="images/logo.svg">
-			<a class="navbar-brand" href="/app">
+			<a href="/app">
+				<img src="images/logo.svg"  
+			   		 tooltip-placement="bottom"
+			   		 tooltip="Home">
+			</a>
+			<a class="navbar-brand" 
+			   href="/app" 
+			   ng-hide="currentUser">
 				Midwest Games
 			</a>
 		</div>
@@ -13,15 +19,20 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
 				<li ng-show="currentUser">
-					<a href="/app/user-settings">{{currentUser.user.email}}</a>
+					<a href="/app/user-settings" 
+					   tooltip-placement="bottom" 
+					   tooltip="User settings">{{currentUser.user.email}}</a>
 				</li>
 				<li>
-					<a href="" 
-					   ng-click="logout()" 
-					   tooltip-placement="bottom" 
+					<a href=""
+					   ng-click="logout()"
+					   tooltip-placement="bottom"
 					   tooltip="Logout">
 						<span class="glyphicon glyphicon-log-out"></span>
 					</a>
+					<div class="overlay" ng-show="waiting.logoutResponse">
+          				<span class="loader-gif"></span>
+        			</div>
 				</li>
 			</ul>
 		</div>

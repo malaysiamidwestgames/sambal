@@ -21,6 +21,7 @@ angular.module('midwestApp')
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
           $rootScope.currentUser = user;
+          service.fire({type: 'userAvailable', user: user});
         }, function(resp) {
           if (resp.status === 401) {
             $cookieStore.remove('access_token');
@@ -37,10 +38,11 @@ angular.module('midwestApp')
       service.fire('userRemoved');
     });
 
+    service.checkCurrentUser = init;
+
     service.login = function(email, password) {
       return createSession({email: email, password: password})
         .then(function(user){
-          console.log(user);
           service.fire({type: 'userLoggedIn', user:user});
           $rootScope.currentUser = user;
         });

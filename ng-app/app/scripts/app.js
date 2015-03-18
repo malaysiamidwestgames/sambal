@@ -35,7 +35,7 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        requireLogin: true // testing restricted access
+        requireLogin: true
       })
       .when('/login', {
         templateUrl: 'views/login.html',
@@ -59,7 +59,6 @@ angular
       })
       .when('/accommodations' , {
         templateUrl: 'views/accommodations.html'
-        //controller: 'UserlistCtrl'
       })
       .when('/forgot-pass' , {
         templateUrl: 'views/forgotpass.html',
@@ -67,7 +66,7 @@ angular
       })
       .when('/pass-reset/:token' , {
         templateUrl: 'views/passreset.html',
-        controller: 'ForgotPassCtrl'
+        controller: 'PassResetCtrl'
       })
       .when('/twitter', {
         templateUrl: 'views/twitter.html',
@@ -75,11 +74,15 @@ angular
       })
       .when('/accommodations', {
         templateUrl: 'views/accommodations.html'
-           //controller: 'UserlistCtrl'
+      })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
       })
       .when('/payment', {
         templateUrl: 'views/payment.html',
-        controller: 'PaymentCtrl'
+        controller: 'PaymentCtrl',
+        requireLogin: true
       })
       .when('/paylist', {
         templateUrl: 'views/paylist.html',
@@ -95,12 +98,12 @@ angular
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
-        requireLogin: true 
+        requireLogin: true
       })
       .when('/user-settings', {
         templateUrl: 'views/user_settings.html',
         controller: 'UserSettingsCtrl',
-        requireLogin: true 
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'
@@ -110,13 +113,19 @@ angular
   .constant('_', window._)
 
   .config(function($httpProvider) {
-    $httpProvider.interceptors.push(function($browser) {
+    $httpProvider.interceptors.push(function($browser, $cookieStore, $q) {
       return {
         request: function(config) {
           /* jshint -W106 */
           config.headers.access_token = $browser.cookies().access_token;
           /* jshint +W106 */
           return config;
+        },
+        responseError: function(response) {
+          if (response.status == 403) {
+            $cookieStore.remove('access_token');
+          };
+          return $q.reject(response);
         }
       };
     });

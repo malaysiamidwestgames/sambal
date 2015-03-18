@@ -8,7 +8,6 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-
   .controller('PaymentCtrl', function ($scope, $http) {
 
     $scope.status = 'Processing payment';
