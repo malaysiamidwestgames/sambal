@@ -87,6 +87,7 @@ angular
       .when('/paylist', {
         templateUrl: 'views/paylist.html',
         controller: 'PaylistCtrl'
+
       })
       .when('/eventmaps', {
         templateUrl: 'views/eventmaps.html',

@@ -16,8 +16,10 @@ class Api::PaymentsController < ApplicationController
     render json: @payment
   end
 
+
   def index
-    @payments = Payment.all
+    @user = User.where(id: current_user.id)
+    @payments = Payment.where(user_id: @user)
     render json: @payments
   end
 
@@ -33,7 +35,7 @@ class Api::PaymentsController < ApplicationController
 
   private
     def payment_params
-      params.permit(:notification_params, :status, :transaction_id, :purchased_at, :regtype, :user_id, :amount)
+      params.permit(:notification_params, :status, :transaction_id, :purchased_at, :regtype, :user_id, :amount, :payment_type)
     end
 
 end

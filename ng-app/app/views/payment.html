@@ -12,15 +12,15 @@
     <div class="col-md-4 col-lg-offset-2">
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide">
       <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="business" value="mwgi2015@umich.edu">
+      <input type="hidden" name="business" value="chriseveraldo@yahoo.com">
       <input type="hidden" name="invoice" value="{{payId}}">
-      <input type="hidden" name="notify_url" value="https://56ff7058.ngrok.com/api/hook">
+      <input type="hidden" name="notify_url" value="https://54f2bc49.ngrok.com/api/hook">
       <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
       <input type="hidden" name="return" value="http://localhost:9000/app/payment">
       <input type="hidden" name="currency_code" value="USD">
       <input type="hidden" name="amount" value="{{amount}}">
-      <button ng-click="setAmount(18, 'Basic registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Basic registration</button>
-      <button ng-click="setAmount(23, 'Full registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Full registration</button>
+      <button ng-click="setAmount(20, 'General registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">General registration</button>
+      <button ng-click="setAmount(5, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Sports registration</button>
     </form>
     </div>
   </div>
@@ -29,6 +29,8 @@
 {{amount}}
 {{regType}}
 {{payId}}
+{{general}}
+{{sports}}
 
 
 

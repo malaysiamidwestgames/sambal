@@ -10,17 +10,32 @@
 angular.module('midwestApp')
   .controller('PaymentCtrl', function ($scope, $http) {
 
-    $scope.status = 'Processing payment';
-    $scope.txnid = 'nil';
-    $scope.notePrms = 'nil';
-    $scope.purchaseTime = '12/12/12';
-    $scope.amount = 0;
-    $scope.regType = 'Yoo';
+    angular.element(document).ready(function (){
+      $scope.general = false;
+      $scope.sports = false;
+      $http
+        .get('/api/payments')
+        .success(function(data) {
+          var payments = data.payments;
+          for ( var i = 0; i < payments.length; i++) {
+            if(payments[i].regtype == 'General registration') {
+              $scope.general = true;
+            }
+            else if(payments[i].regtype == 'Sports registration') {
+              $scope.sports = true;
+            }
+          }
+        })
+        .error(function(error) {
+          console.log(error);
+        })
+    })
+
     $scope.payId = 0;
 
     $scope.paymentInit = function () {
       $http
-        .post('/api/payments', {status: $scope.status, notification_params: $scope.notePrms, regtype: $scope.regType, transaction_id: $scope.txnid, purchased_at: $scope.purchaseTime  })
+        .post('/api/payments', {status: 'Processing payment', notification_params: 'nil', regtype: 'General payment', transaction_id: '0000', purchased_at: Date.now() })
         .success(function(data) {
           console.log(data);
           $scope.payId = data.id;
@@ -34,6 +49,5 @@ angular.module('midwestApp')
       $scope.amount = amount;
       $scope.regType = regType;
     };
-
 
   });
