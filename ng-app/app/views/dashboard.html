@@ -43,14 +43,14 @@
       <table class="table table-bordered">
         <tr>
           <th>General registration</th>
-          <td class="ng-hide" ng-show="general == false && payInit == false">Payment pending</td>
-          <td class="ng-hide" ng-show="general == false && payInit == true">Payment processing</td>
+          <td class="ng-hide" ng-show="general == false && genPayInit == false">Payment pending</td>
+          <td class="ng-hide" ng-show="general == false && genPayInit == true">Payment processing</td>
           <td class="ng-hide" ng-show="general == true">Payment received</td>
         </tr>
         <tr>
           <th>Sports registration</th>
-          <td class="ng-hide" ng-show="sports == false && payInit == false">Payment pending</td>
-          <td class="ng-hide" ng-show="sports == false && payInit == true">Payment processing</td>
+          <td class="ng-hide" ng-show="sports == false && spoPayInit == false">Payment pending</td>
+          <td class="ng-hide" ng-show="sports == false && spoPayInit == true">Payment processing</td>
           <td class="ng-hide" ng-show="sports == true">Payment received</td>
         </tr>
       </table>

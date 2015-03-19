@@ -12,9 +12,9 @@ angular.module('midwestApp')
 
     $scope.payId = 0;
 
-    $scope.paymentInit = function () {
+    $scope.paymentInit = function (regtype) {
       $http
-        .post('/api/payments', {status: 'Processing payment', notification_params: 'nil', regtype: 'General payment', transaction_id: '0000', purchased_at: Date.now() })
+        .post('/api/payments', {status: 'Processing payment', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now() })
         .success(function(data) {
           console.log(data);
           $scope.payId = data.id;

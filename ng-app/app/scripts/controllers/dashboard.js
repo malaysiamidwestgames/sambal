@@ -14,19 +14,23 @@ angular.module('midwestApp')
     angular.element(document).ready(function (){
       $scope.general = false;
       $scope.sports = false;
-      $scope.payInit = false;
+      $scope.genPayInit = false;
+      $scope.spoPayInit = false;
       $http
         .get('/api/payments')
         .success(function(data) {
           var payments = data.payments;
           for ( var i = 0; i < payments.length; i++) {
-            if (payments[i].regtype == 'General payment') {
-              $scope.payInit = true;
+            if (payments[i].regtype == 'General registration' && payments[i].status =='Processing payment') {
+              $scope.genPayInit = true;
             }
-            else if(payments[i].regtype == 'General registration') {
+            else if (payments[i].regtype == 'Sports registration' && payments[i].status =='Processing payment') {
+              $scope.genPayInit = true;
+            }
+            else if(payments[i].regtype == 'General registration' && payments[i].status == 'Completed') {
               $scope.general = true;
             }
-            else if(payments[i].regtype == 'Sports registration') {
+            else if(payments[i].regtype == 'Sports registration' && payments[i].status == 'Completed') {
               $scope.sports = true;
             }
           }
