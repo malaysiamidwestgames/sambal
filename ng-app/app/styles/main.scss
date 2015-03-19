@@ -181,6 +181,13 @@ ul.dropdown-menu {
   .ng-invalid.ng-touched.ng-dirty {
     background-color: $brand-warning;
   }
+
+  label {
+    font-weight: 200;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .dashboard {

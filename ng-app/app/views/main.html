@@ -136,6 +136,9 @@
                    typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="2" 
                    typeahead-editable="false" 
                    required>
+            <label>
+              <input type="checkbox" ng-model="noUniversityCheckbox"> I'm not associated with a university
+            </label>
           </div>
           <div class="error" 
                ng-repeat="error in registerErrors">
