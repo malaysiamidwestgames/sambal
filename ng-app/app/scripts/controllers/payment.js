@@ -11,27 +11,6 @@ angular.module('midwestApp')
 
   .controller('PaymentCtrl', function ($scope, $http) {
 
-    angular.element(document).ready(function (){
-      $scope.general = false;
-      $scope.sports = false;
-      $http
-        .get('/api/payments')
-        .success(function(data) {
-          var payments = data.payments;
-          for ( var i = 0; i < payments.length; i++) {
-            if(payments[i].regtype == 'General registration') {
-              $scope.general = true;
-            }
-            else if(payments[i].regtype == 'Sports registration') {
-              $scope.sports = true;
-            }
-          }
-        })
-        .error(function(error) {
-          console.log(error);
-        })
-    })
-
     $scope.payId = 0;
 
     $scope.paymentInit = function () {
