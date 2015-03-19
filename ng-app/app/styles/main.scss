@@ -343,10 +343,6 @@ div.hotel-registration input {
         vertical-align: middle;
       }
     }
-
-    button {
-      margin: 5px 8px;
-    }
   }
 
   .forgot-password-form {
@@ -360,6 +356,10 @@ div.hotel-registration input {
     font-weight: 200;
     letter-spacing: 1px;
   }
+}
+
+button#update-info-btn {
+      margin: 5px 8px;
 }
 
 
