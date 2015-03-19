@@ -319,50 +319,47 @@ div.hotel-registration input {
       border-bottom: solid 1px rgb(223, 223, 223);
     }
 
-//offset default margin to accommodate wolverine logo
-.navbar > .container-fluid .navbar-brand {
-  margin-left: 0;
-}
+    //offset default margin to accommodate wolverine logo
+    .navbar > .container-fluid .navbar-brand {
+      margin-left: 0;
+    }
 
+    .user-attribute {
+      width: 20%;
+      font-weight: 500;
+    }
 
-  .user-attribute {
-    width: 20%;
-    font-weight: 500;
-  }
+    .user-data {
+      width: 80%;
+    }
 
-  .user-data {
-    width: 80%;
-  }
+    .error {
+      margin: 5px 8px;
+      color: red;
+      font-weight: 400;
+      height: 30px;
 
-  .error {
-    margin: 5px 8px;
-    color: red;
-    font-weight: 400;
-    height: 30px;
+      span {
+        vertical-align: middle;
+      }
+    }
 
-    span {
-      vertical-align: middle;
+    button {
+      margin: 5px 8px;
     }
   }
 
-  button {
-    margin: 5px 8px;
+  .forgot-password-form {
+    .panel-body {
+      position: relative;
+    }
   }
-}
 
-.forgot-password-form {
-  .panel-body {
-    position: relative;
+  #edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
   }
-}
-
-
-
-
-#edit-user-info a {
-  color: white;
-  font-weight: 200;
-  letter-spacing: 1px;
 }
 
 
