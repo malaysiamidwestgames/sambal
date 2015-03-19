@@ -308,17 +308,24 @@ div.hotel-registration input {
   .row {
     position: relative;
   }
-  
+
   .table-user-settings {
     margin-bottom: 0;
     td input {
       width: 100%;
     }
 
+<<<<<<< HEAD
     tr:last-child {
       border-bottom: solid 1px rgb(223, 223, 223);
     }
   }
+=======
+//offset default margin to accommodate wolverine logo
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 0;
+}
+>>>>>>> create-payment-type
 
   .user-attribute {
     width: 20%;
@@ -352,6 +359,13 @@ div.hotel-registration input {
 }
 
 
+
+
+#edit-user-info a {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
 
 
 
