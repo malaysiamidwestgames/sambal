@@ -6,17 +6,6 @@ angular.module('midwestApp')
     $scope.isReady = false;
     $scope.isError = false;
 
-    session.checkCurrentUser();
-
-    session.on('userAvailable', function() {
-      $scope.editedUser = new User({id: 'me'});
-      $scope.editedUser.first_name = $rootScope.currentUser.user.first_name;
-      $scope.editedUser.last_name = $rootScope.currentUser.user.last_name;
-      $scope.editedUser.university = $rootScope.currentUser.user.university.name;
-      $scope.editedUser.email = $rootScope.currentUser.user.email;
-      $scope.isReady = true;
-    });
-
     universityResource().then(function(resp) {
       $scope.universities = resp.universities;
     });
@@ -33,5 +22,18 @@ angular.module('midwestApp')
         console.log('Failed to update user info, response : ', resp);
       });
     };
+
+    var populateForm = function(currentUserVal) {
+      if (currentUserVal !== undefined && $scope.editedUser === undefined) {
+        $scope.editedUser = new User({id: 'me'});
+        $scope.editedUser.first_name = $rootScope.currentUser.user.first_name;
+        $scope.editedUser.last_name = $rootScope.currentUser.user.last_name;
+        $scope.editedUser.university = $rootScope.currentUser.user.university.name;
+        $scope.editedUser.email = $rootScope.currentUser.user.email;
+        $scope.isReady = true;
+      }
+    };
+
+    $rootScope.$watch('currentUser', populateForm);
 
   });

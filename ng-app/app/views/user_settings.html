@@ -38,7 +38,8 @@
         <div class="error pull-left">
             <span ng-show="isError">Aw snap! An error occurred. Please come back later.</span>
         </div>
-        <button class="btn btn-primary pull-right" 
+        <button class="btn btn-primary pull-right"
+                id="update-info-btn"
                 type="submit" 
                 ng-disabled="registration.$invalid" 
                 ng-click="updateUserInfo()">

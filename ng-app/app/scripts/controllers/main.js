@@ -78,4 +78,14 @@ angular.module('midwestApp')
         });
     };
 
+    var noUniversityHandler = function(isChecked) {
+       if (isChecked) {
+        $scope.reg.university = 'Free Agent';
+      } else {
+        $scope.reg.university = '';
+      }     
+    };
+
+    $scope.$watch('noUniversityCheckbox', noUniversityHandler);
+
   });

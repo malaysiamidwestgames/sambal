@@ -7,8 +7,8 @@
         <div>{{currentUser.user.university.name}}</div>
         <div>{{currentUser.user.email}}</div>
         <span class="edit-user-info">
-          <a href="/app/user-settings" 
-             tooltip-placement="bottom" 
+          <a href="/app/user-settings"
+             tooltip-placement="bottom"
              tooltip="User settings">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
@@ -27,8 +27,8 @@
           <a href="payment"  role="button" class="btn btn-primary btn-xs pull-right">Pay here</a>
         </li>
         <li class="list-group-item">
-          Answer questionaire
-          <a href="#"  role="button" class="btn btn-primary btn-xs pull-right" disabled="disable">Questionaire</a>
+          Answer questionnaire
+          <a href="#"  role="button" class="btn btn-primary btn-xs pull-right" disabled="disable">Questionnaire</a>
         </li>
         <li class="list-group-item">
           Register for sports
@@ -38,12 +38,20 @@
     </div>
     <div class="panel panel-themed">
       <div class="panel-heading">
-        <h3 class="panel-title">Your registration</h3>
+        <h3 class="panel-title">Payments and registrations</h3>
       </div>
       <table class="table table-bordered">
         <tr>
-          <th>General payment</th>
-          <td>Paid</td>
+          <th>General registration</th>
+          <td class="ng-hide" ng-show="general == false && genPayInit == false">Payment pending</td>
+          <td class="ng-hide" ng-show="general == false && genPayInit == true">Payment processing</td>
+          <td class="ng-hide" ng-show="general == true">Payment received</td>
+        </tr>
+        <tr>
+          <th>Sports registration</th>
+          <td class="ng-hide" ng-show="sports == false && spoPayInit == false">Payment pending</td>
+          <td class="ng-hide" ng-show="sports == false && spoPayInit == true">Payment processing</td>
+          <td class="ng-hide" ng-show="sports == true">Payment received</td>
         </tr>
       </table>
     </div>

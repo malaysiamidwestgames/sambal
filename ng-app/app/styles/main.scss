@@ -181,6 +181,13 @@ ul.dropdown-menu {
   .ng-invalid.ng-touched.ng-dirty {
     background-color: $brand-warning;
   }
+
+  label {
+    font-weight: 200;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .dashboard {
@@ -308,7 +315,7 @@ div.hotel-registration input {
   .row {
     position: relative;
   }
-  
+
   .table-user-settings {
     margin-bottom: 0;
     td input {
@@ -318,35 +325,54 @@ div.hotel-registration input {
     tr:last-child {
       border-bottom: solid 1px rgb(223, 223, 223);
     }
-  }
 
-  .user-attribute {
-    width: 20%;
-    font-weight: 500;
-  }
+    //offset default margin to accommodate wolverine logo
+    .navbar > .container-fluid .navbar-brand {
+      margin-left: 0;
+    }
 
-  .user-data {
-    width: 80%;
-  }
+    .user-attribute {
+      width: 20%;
+      font-weight: 500;
+    }
 
-  .error {
-    margin: 5px 8px;
-    color: red;
-    font-weight: 400;
-    height: 30px;
+    .user-data {
+      width: 80%;
+    }
 
-    span {
-      vertical-align: middle;
+    .error {
+      margin: 5px 8px;
+      color: red;
+      font-weight: 400;
+      height: 30px;
+
+      span {
+        vertical-align: middle;
+      }
     }
   }
 
-  button {
-    margin: 5px 8px;
+  .forgot-password-form {
+    .panel-body {
+      position: relative;
+    }
+  }
+
+  #edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
   }
 }
 
-.forgot-password-form {
-  .panel-body {
+button#update-info-btn {
+      margin: 5px 8px;
+}
+
+
+.activation-page {
+
+  .resend-activation-posterror {
     position: relative;
   }
 }
@@ -372,3 +398,4 @@ div.hotel-registration input {
     background-color: $michigan-lightblue;
   }
 }
+

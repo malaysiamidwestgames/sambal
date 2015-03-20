@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312230612) do
+ActiveRecord::Schema.define(version: 20150317230112) do
 
   create_table "mailers", force: :cascade do |t|
     t.datetime "created_at", null: false

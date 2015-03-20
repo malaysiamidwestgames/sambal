@@ -1,15 +1,18 @@
 
-<div ng-show="calledApi" ng-class="{'waiting-server' : serverBusy}">
-    <div ng-show="isActivated" class="alert alert-success" role="alert">
-        Account successfully activated! Redirecting to home page...
+<div class="activation-page" ng-show="calledApi">
+    <div ng-show="isActivated" class="alert alert-success col-md-8 col-md-offset-2" role="alert">
+        <p>Account successfully activated!</p>
+        <p>Redirecting to home page...</p>
     </div>
-    <div ng-hide="isActivated" class="alert alert-danger" role="alert">
+    <div ng-hide="isActivated" class="alert alert-danger resend-activation-posterror col-md-8 col-md-offset-2" role="alert">
         <p>Account failed to activate...</p>
         <p ng-show="accountActivation.visible">
             Click <a href="" 
-                     ng-click="activateAccount()" 
-                     ng-class="{'waiting-server' : serverBusy}">here</a>
+                     ng-click="activateAccount()">here</a>
             to retry account activation
         </p>
+        <div class="overlay" ng-show="waiting.activateAccountResponse">
+            <span class="loader-gif"></span>
+        </div>
     </div>
 </div>

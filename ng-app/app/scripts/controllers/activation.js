@@ -12,18 +12,20 @@
 angular.module('midwestApp')
   .controller('ActivationCtrl', function ($scope, $routeParams, $timeout, $location, $http, httpWrapper) {
     $scope.calledApi = false;
-    $scope.serverBusy = false;
     $scope.accountActivation = {
       visible: false,
       UserId: null
     };
+    $scope.waiting = {
+      activateAccountResponse: false
+    };
+
     var accountActivationReq = httpWrapper.patch('/api/account_activations/:token/');
 
     accountActivationReq({token: $routeParams.token, email: $routeParams.email})
       .then(function(){
         $scope.calledApi = true;
         $scope.isActivated = true;
-        $scope.serverBusy = true;
         // redirect to homepage so user can login
         $timeout(function() {
           $location.path('/');
@@ -38,10 +40,11 @@ angular.module('midwestApp')
       });
 
     $scope.activateAccount = function() {
-      $scope.serverBusy = true;
+      $scope.waiting.activateAccountResponse = true;
       // resend activation email
       $http.get('/api/users/activations/' + $scope.accountActivation.UserId)
         .success(function() {
+          $scope.waiting.activateAccountResponse = false;
           $location.path('/confirm_email');
         });
     };
