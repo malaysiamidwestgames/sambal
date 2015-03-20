@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150312230612) do
     t.datetime "reset_sent_at"
     t.string   "first_name"
     t.string   "last_name"
+    t.boolean  "admin",             default: false
   end
 
 end
