@@ -1,6 +1,8 @@
 class Api::PaymentsController < ApplicationController
   #respond_to :json
   #protect_from_forgery except: :hook
+  before_action :signed_in_user, only: [:create, :show, :index]
+  before_action :admin_user, only: [:show]
 
   def create
     @payment = current_user.payments.build(payment_params)
