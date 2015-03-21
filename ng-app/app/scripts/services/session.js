@@ -17,10 +17,18 @@ angular.module('midwestApp')
       return getAccessToken() ? true : false;
     };
 
+    var isAdmin = function() {
+      if ($rootScope.currentUser === undefined) {
+        return false;
+      }
+      return $rootScope.currentUser.user.authorization_level == 'admin';
+    }
+
     var init = function() {
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
           $rootScope.currentUser = user;
+          console.log(user.user);
           service.fire({type: 'userAvailable', user: user});
         }, function(resp) {
           if (resp.status === 401) {
@@ -59,6 +67,7 @@ angular.module('midwestApp')
       });
     };
 
+    service.isAdmin = isAdmin;
     service.isLoggedIn = isLoggedIn;
     service.getAccessToken = getAccessToken;
 

@@ -352,11 +352,6 @@ div.hotel-registration input {
     }
   }
 
-  .forgot-password-form {
-    .panel-body {
-      position: relative;
-    }
-  }
 
   #edit-user-info a {
     color: white;
@@ -369,6 +364,12 @@ button#update-info-btn {
       margin: 5px 8px;
 }
 
+
+.forgot-password-form {
+  .panel-body {
+    position: relative;
+  }
+}
 
 .activation-page {
 
