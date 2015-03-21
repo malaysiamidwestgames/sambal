@@ -66,6 +66,7 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     get 'users/activations/:id' => 'users#resend_activation_email'
     resources :universities, only: [:index]
+    get 'universities/count' => 'universities#count'
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]
     resources :payments, only: [:create, :show, :index]

@@ -17,6 +17,16 @@ angular.module('midwestApp')
       return getAccessToken() ? true : false;
     };
 
+    var isAdmin = function() {
+      if ($rootScope.currentUser === undefined) {
+        return false;
+      }
+      return $rootScope.currentUser.user.admin;
+    }
+
+    // resolve current user
+    // limit api calls
+
     var init = function() {
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
@@ -59,6 +69,7 @@ angular.module('midwestApp')
       });
     };
 
+    service.isAdmin = isAdmin;
     service.isLoggedIn = isLoggedIn;
     service.getAccessToken = getAccessToken;
 

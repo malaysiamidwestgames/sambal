@@ -378,5 +378,25 @@ button#update-info-btn {
   }
 }
 
-
+.university {
+  ul.dropdown-menu {
+    width: 100%;
+    max-height: 700px;
+    overflow: auto;
+  }
+  li.dropdown-list {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+  }
+  li:hover{
+    background-color: $michigan-maize-light;
+  }
+  .badge-themed {
+    background-color: $michigan-lightblue;
+  }
+}
 

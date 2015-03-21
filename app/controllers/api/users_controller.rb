@@ -9,7 +9,6 @@ class Api::UsersController < ApplicationController
   def index
     @users = User.all
     if name = params[:name]
-      #@users = User.where(university: university)
       @users = User.joins(:university).where(universities: {name: name})
     end
     render json: @users
