@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
+  enum authorization_level: { regular: 0, admin: 1, contingent_leader: 2 }
   before_save { self.email = email.downcase }
   before_create :create_access_token, :create_activation_digest
   has_many :payments

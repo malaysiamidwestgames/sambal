@@ -21,16 +21,14 @@ angular.module('midwestApp')
       if ($rootScope.currentUser === undefined) {
         return false;
       }
-      return $rootScope.currentUser.user.admin;
+      return $rootScope.currentUser.user.authorization_level == 'admin';
     }
-
-    // resolve current user
-    // limit api calls
 
     var init = function() {
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
           $rootScope.currentUser = user;
+          console.log(user.user);
           service.fire({type: 'userAvailable', user: user});
         }, function(resp) {
           if (resp.status === 401) {
