@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   def registration_payment_status
     idx = self.payments.index { |payment| payment.regtype == 'General registration'}
     if idx
-      return self.payments[idx].regtype
+      return self.payments[idx].status
     end
     return 'Payment pending'
   end
