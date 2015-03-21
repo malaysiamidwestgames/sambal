@@ -9,7 +9,6 @@ class Api::UsersController < ApplicationController
   def index
     @users = User.all
     if name = params[:name]
-      #@users = User.where(university: university)
       @users = User.joins(:university).where(universities: {name: name})
     end
     render json: @users
@@ -38,11 +37,20 @@ class Api::UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    @user = User.find(params[:id])
+    university = University.find_or_initialize_by(name: university_params)
+    # @user = User.find(params[:id])
 
-    if @user.update(user_params)
-      render json: @user, status: :updated
+    puts 'updating this motherfucker'
+    if @user.update(user_params.merge(university: university))
+      puts 'updating success'
+      puts @user.first_name
+      puts @user.university.name
+      puts @user.university.id
+
+      render json: @user
     else
+      puts 'updating failed'
+
       render json: @user.errors, status: :unprocessable_entity
     end
   end

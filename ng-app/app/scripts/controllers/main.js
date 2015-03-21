@@ -16,7 +16,10 @@ angular.module('midwestApp')
       visible: false,
       UserId: null
     };
-    $scope.serverBusy = false;
+    $scope.waiting = {
+      registerResponse: false,
+      loginResponse: false,
+    };
 
     // redirect to dashboard for logged in users
     if (session.isLoggedIn()) {
@@ -33,11 +36,11 @@ angular.module('midwestApp')
     });
 
     $scope.register = function() {
-      $scope.serverBusy = true;
+      $scope.waiting.registerResponse = true;
       $scope.reg.$save(function() {
         $location.path('/confirm_email');
       }, function(resp) {
-        $scope.serverBusy = false;
+        $scope.waiting.registerResponse = false;
         $scope.registerErrors = [];
         _.each(resp.data, function(param, errors) {
           $scope.registerErrors.push(errors + ' ' + param);
@@ -46,14 +49,15 @@ angular.module('midwestApp')
     };
 
     $scope.signInUser = function() {
-      $scope.serverBusy = true;
+      $scope.waiting.loginResponse = true;
       session.login($scope.signIn.email, $scope.signIn.password)
         .then(function() {
           // clear query param if came from account activation redirect
           $location.url($location.path());
+          $scope.waiting.loginResponse = false;
           $location.path('/dashboard');
         }, function(req) {
-          $scope.serverBusy = false;
+          $scope.waiting.loginResponse = false;
           $scope.signInError = req.data.message;
           // handle registered user but haven't activate account
           if (req.status === 403 && req.data.user_id !== null) {
@@ -64,12 +68,24 @@ angular.module('midwestApp')
     };
 
     $scope.activateAccount = function() {
-      $scope.serverBusy = true;
+      $scope.waiting.loginResponse = true;
+      console.log('$scope.waiting.loginResponse: ', $scope.waiting.loginResponse)
       // resend activation email
       $http.get('/api/users/activations/' + $scope.accountActivation.UserId)
         .success(function() {
+          $scope.waiting.loginResponse = false;
           $location.path('/confirm_email');
         });
     };
+
+    var noUniversityHandler = function(isChecked) {
+       if (isChecked) {
+        $scope.reg.university = 'Free Agent';
+      } else {
+        $scope.reg.university = '';
+      }     
+    };
+
+    $scope.$watch('noUniversityCheckbox', noUniversityHandler);
 
   });

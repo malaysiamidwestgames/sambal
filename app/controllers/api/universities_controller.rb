@@ -13,4 +13,15 @@ class Api::UniversitiesController < ApplicationController
 		#end
 
 	end
+
+	def count
+		@lists = []
+		University.find_each do |university|
+			@count = university.user.size
+			if @count > 0
+				@lists << {:name => university.name, :count => university.user.count}
+			end
+		end
+		render json: @lists
+	end
 end

@@ -1,4 +1,4 @@
-<div class="row app-landing" ng-class="{'waiting-server' : serverBusy}">
+<div class="row app-landing">
   <div class="col-md-5 form-column">
     <div class="panel panel-themed">
       <div class="panel-body">
@@ -40,12 +40,15 @@
             <a href="/app/forgot-pass">Forgot your password?</a>
           </div>
           <button type="submit" 
-                  class="btn btn-themed" 
+                  class="btn btn-primary" 
                   ng-disabled="signin.$invalid">
             Sign In
           </button>
           <div class="clearfix"></div>
         </form>
+        <div class="overlay" ng-show="waiting.loginResponse">
+          <span class="loader-gif"></span>
+        </div>
       </div>
     </div>
     <div class="panel panel-themed">
@@ -130,22 +133,27 @@
                    class="form-control" 
                    placeholder="School name" 
                    ng-model="reg.university"
-                   typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="3" 
+                   typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="2" 
                    typeahead-editable="false" 
                    required>
+            <label>
+              <input type="checkbox" ng-model="noUniversityCheckbox"> I'm not associated with a university
+            </label>
           </div>
           <div class="error" 
                ng-repeat="error in registerErrors">
             {{ error }}
           </div>
           <button type="submit" 
-                  class="btn btn-themed" 
-                  ng-disabled="registration.$invalid" 
-                  ng-class="{'waiting-server': serverBusy}">
+                  class="btn btn-primary" 
+                  ng-disabled="registration.$invalid">
             Register
           </button>
           <div class="clearfix"></div>
         </form>
+        <div class="overlay" ng-show="waiting.registerResponse">
+          <span class="loader-gif"></span>
+        </div>
       </div>
     </div>
   </div>

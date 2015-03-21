@@ -60,7 +60,28 @@ body {
   .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
     background-color: $michigan-blue;
   }
+  // wolverine logo
+  .navbar-header img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-left: -15px;
+  }
+  //offset default margin to accommodate wolverine logo
+  &.navbar > .container-fluid .navbar-brand {
+    margin-left: 0;
+  }
+
+  a:hover {
+    color: #F4CF3E;
+  }
+
+  li a:hover {
+    // color: rgb(255, 237, 0);
+    color: $michigan-maize-light;
+  }
 }
+
 .navbar-right ~ .navbar-right {
   margin-right: 7px;
 }
@@ -89,6 +110,30 @@ body {
   }
 }
 
+.overlay {
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    background-color:rgba(255,255,255,0.75);
+
+    .loader-gif {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -15px;
+      margin-left: -15px;
+      background: url('../images/ajax-loader.gif') no-repeat;
+    }
+}
+
+ul.dropdown-menu {
+  cursor: pointer;
+}
+
 .app-landing {
   margin-top: 30px;
   max-width: 900px;
@@ -96,6 +141,11 @@ body {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .panel-body {
+    position: relative;
+  }
+
   .marketing {
     h1 {
       color: #FFF;
@@ -131,9 +181,18 @@ body {
   .ng-invalid.ng-touched.ng-dirty {
     background-color: $brand-warning;
   }
+
+  label {
+    font-weight: 200;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .dashboard {
+  word-wrap:break-word;
+
   .user-info-panel {
     color: #FFF;
     .first-name {
@@ -157,6 +216,17 @@ body {
     color: white;
     font-weight: 200;
     letter-spacing: 1px;
+  }
+}
+
+.payment {
+  .promotion {
+    font-size: 15px;
+    h1.title {
+      font-weight: 300;
+      margin-top: 3px;
+      color: $michigan-blue;
+    }
   }
 }
 
@@ -241,33 +311,91 @@ div.hotel-registration input {
   margin: 10px;
 }
 
-// wolverine logo
-.navbar-header img {
-  width: 48px;
-  height: 48px;
-  float: left;
-  margin-left: -15px;
+.update-user-info {
+  .row {
+    position: relative;
+  }
+
+  .table-user-settings {
+    margin-bottom: 0;
+    td input {
+      width: 100%;
+    }
+
+    tr:last-child {
+      border-bottom: solid 1px rgb(223, 223, 223);
+    }
+
+    //offset default margin to accommodate wolverine logo
+    .navbar > .container-fluid .navbar-brand {
+      margin-left: 0;
+    }
+
+    .user-attribute {
+      width: 20%;
+      font-weight: 500;
+    }
+
+    .user-data {
+      width: 80%;
+    }
+
+    .error {
+      margin: 5px 8px;
+      color: red;
+      font-weight: 400;
+      height: 30px;
+
+      span {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .forgot-password-form {
+    .panel-body {
+      position: relative;
+    }
+  }
+
+  #edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
 }
 
-//offset default margin to accommodate wolverine logo 
-.navbar > .container-fluid .navbar-brand {
-  margin-left: 0;
+button#update-info-btn {
+      margin: 5px 8px;
 }
 
-.waiting-server {
-  cursor: progress !important;
+
+.activation-page {
+
+  .resend-activation-posterror {
+    position: relative;
+  }
 }
 
-.user-attribute {
-  width: 20%;
+.university {
+  ul.dropdown-menu {
+    width: 100%;
+    max-height: 700px;
+    overflow: auto;
+  }
+  li.dropdown-list {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+  }
+  li:hover{
+    background-color: $michigan-maize-light;
+  }
+  .badge-themed {
+    background-color: $michigan-lightblue;
+  }
 }
-
-.user-data {
-  width: 70%;
-}
-
-.edit-user-data {
-  width: 10%;
-}
-
 

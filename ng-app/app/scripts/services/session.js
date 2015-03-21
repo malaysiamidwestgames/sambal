@@ -31,6 +31,7 @@ angular.module('midwestApp')
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
           $rootScope.currentUser = user;
+          service.fire({type: 'userAvailable', user: user});
         }, function(resp) {
           if (resp.status === 401) {
             $cookieStore.remove('access_token');
