@@ -26,6 +26,14 @@ class User < ActiveRecord::Base
     update_attribute(:activated, true)
   end
 
+  def registration_payment_status
+    idx = self.payments.index { |payment| payment.regtype == 'General registration'}
+    if idx
+      return self.payments[idx].regtype
+    end
+    return 'Payment pending'
+  end
+
   # Sends activation email.
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
