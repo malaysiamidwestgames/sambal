@@ -55,7 +55,9 @@ angular
       })
       .when('/userlist' , {
         templateUrl: 'views/userlist.html',
-        controller: 'UserlistCtrl'
+        controller: 'UserlistCtrl',
+        requireLogin: true,
+        requireAdmin: true
       })
       .when('/accommodations' , {
         templateUrl: 'views/accommodations.html'
@@ -135,6 +137,10 @@ angular
   .run(function($rootScope, session, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next) {
       if (next.requireLogin && !session.isLoggedIn()) {
+        $location.path('/');
+        event.preventDefault();
+      }
+      else if (next.requireAdmin && !session.isAdmin()) {
         $location.path('/');
         event.preventDefault();
       }

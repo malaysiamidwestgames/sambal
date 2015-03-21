@@ -14,8 +14,9 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="">Feeds</a></li>
+				<li><a href="#">Feeds</a></li>
 				<li><a href="">Info</a></li>
+				<li><a href="/app/userlist" ng-show="currentUser.user.authorization_level == 'admin'">Admin</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
 				<li ng-show="currentUser">

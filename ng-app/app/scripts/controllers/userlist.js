@@ -12,28 +12,27 @@ angular.module('midwestApp')
     $scope.participants = undefined;
     $scope.uniname = "";
     $scope.toggle = function(uniname) {
-    	$scope.uniname = uniname;
-    	
-    	$http.get('/api/users?name' + $scope.uniname)
-    	.success(function(data){
-    		console.log(data);
-    		$scope.users = data.users;
-    		console.log(data.password);
-    	});
+        $scope.uniname = uniname;
+        
+        $http.get('/api/users?name' + $scope.uniname)
+        .success(function(data){
+            console.log(data);
+            $scope.users = data.users;
+            console.log(data.password);
+        });
     }
 
-    	$http.get('/api/users')
-    	.success(function(data){
-    		console.log(data);
-    		$scope.users = data.users;
-    		console.log(data.password);
-    	});
+        $http.get('/api/users')
+        .success(function(data){
+            console.log(data);
+            $scope.users = data.users;
+            console.log(data.password);
+        });
 
-    	$http.get('/api/universities/count')
-    	.success(function(data){
-    		$scope.universities = data.universities;
-    	});
+        $http.get('/api/universities/count')
+        .success(function(data){
+            $scope.universities = data.universities;
+        });
     
 
   });
-

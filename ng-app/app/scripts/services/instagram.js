@@ -2,7 +2,7 @@
 
 angular.module('midwestApp')
 .constant('instagramUrl', 'https://api.instagram.com/v1/tags/paleo/media/recent' +
-	'?count=30&client_id=2aafa51114a14efda303e22ffa48c6e2&callback=JSON_CALLBACK')
+					'?count=30&client_id=2aafa51114a14efda303e22ffa48c6e2&callback=JSON_CALLBACK')
 .factory('instagram', function ($http, instagramUrl) {
 	var unloadedPosts = [];
 	var maxTagId = 0;
@@ -48,6 +48,10 @@ angular.module('midwestApp')
 
 		unloadedPostsLength: function() {
 			return unloadedPosts.length;
+		},
+
+		loadedAllPosts: function() {
+			return maxTagId === undefined;
 		}
 	};
 
