@@ -108,6 +108,9 @@ angular
         controller: 'UserSettingsCtrl',
         requireLogin: true
       })
+      .when('/contact-us', {
+        templateUrl: 'views/contact.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
