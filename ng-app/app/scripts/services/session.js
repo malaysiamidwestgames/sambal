@@ -51,7 +51,7 @@ angular.module('midwestApp')
       return createSession({email: email, password: password})
         .then(function(user){
           service.fire({type: 'userLoggedIn', user:user});
-          $rootScope.currentUser = user;
+          $rootScope.currentUser = user.user;
         });
     };
 
@@ -76,8 +76,8 @@ angular.module('midwestApp')
           getCurrentUser().then(function(user) {
             resolve(user.user);
           }, function() {
-            reject();
             revokeAccess();
+            reject();
           });
         }
       });

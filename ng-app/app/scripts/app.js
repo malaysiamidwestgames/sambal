@@ -80,6 +80,9 @@ angular
         controller: 'UserSettingsCtrl',
         requireLogin: true
       })
+      .when('/promo/auditions', {
+        templateUrl: 'views/promos/auditions.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -28,11 +28,10 @@ class User < ActiveRecord::Base
   end
 
   def registration_payment_status
-    idx = self.payments.index { |payment| payment.regtype == 'General registration'}
-    if idx
-      return self.payments[idx].status
+    idx = self.payments.index do |payment|
+      payment.regtype == 'General registration' && payment.status == 'Completed'
     end
-    return 'Payment pending'
+    return idx != nil
   end
 
   # Sends activation email.

@@ -6,15 +6,15 @@
       <form name="form">
         <div class="form-group">
           <input name="pass1" type="password" class="form-control" placeholder="Password" ng-model="pass1" ui-validate="'$value.length>=6'" required>
-          <div class="error" ng-show="form.pass1.$invalid && form.pass1.$dirty">Password length must be at least 6 characters</div>
+          <div class="error" ng-show="form.pass1.$touched && form.pass1.$invalid && form.pass1.$dirty">Password length must be at least 6 characters</div>
         </div>
 
         <div class="form-group">
           <input name="pass2" type="password" class="form-control" placeholder="Confirm password" ng-model="pass2"  ui-validate="'$value==pass1'" ui-validate-watch="'pass1'" required>
-          <div ng-show="form.pass2.$invalid && form.pass2.$dirty" class="error">Passwords do not match</div>
+          <div ng-show="form.pass2.$touched && form.pass2.$invalid && form.pass2.$dirty" class="error">Passwords do not match</div>
         </div>
 
-        <button type="submit" class="btn btn-default" ng-click="changepass()" ng-disabled="form.$invalid">Reset password</button>
+        <button type="submit" class="btn btn-themed" ng-click="changepass()" ng-disabled="form.$invalid">Reset</button>
       </form>
     </div>
   </div>

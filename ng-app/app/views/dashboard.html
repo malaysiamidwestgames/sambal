@@ -24,7 +24,7 @@
       <ul class="list-group" ng-repeat="todo in todos">
         <li class="list-group-item">
           {{ todo.title }}
-          <a href="{{ todo.link }}"  role="button" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
+          <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>
       </ul>
     </div>
@@ -35,7 +35,7 @@
       <table class="table table-bordered">
         <tr>
           <th>General registration</th>
-          <td>{{currentUser.registration_payment_status}}</td>
+          <td>{{(currentUser.registration_payment_status && "Paid") || "Payment pending"}}</td>
         </tr>
       </table>
     </div>
