@@ -69,7 +69,6 @@ angular.module('midwestApp')
 
     $scope.activateAccount = function() {
       $scope.waiting.loginResponse = true;
-      console.log('$scope.waiting.loginResponse: ', $scope.waiting.loginResponse)
       // resend activation email
       $http.get('/api/users/activations/' + $scope.accountActivation.UserId)
         .success(function() {
@@ -83,7 +82,7 @@ angular.module('midwestApp')
         $scope.reg.university = 'Free Agent';
       } else {
         $scope.reg.university = '';
-      }     
+      }
     };
 
     $scope.$watch('noUniversityCheckbox', noUniversityHandler);

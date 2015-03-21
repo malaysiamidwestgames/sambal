@@ -5,7 +5,7 @@
 
 angular.module('midwestApp')
   .controller('PassResetCtrl', function ($scope, $routeParams, httpWrapper, $location, $timeout) {
-    
+
     var req = httpWrapper.patch('/api/password_resets/:id/');
     console.log($routeParams.token);
     console.log($routeParams.email);
@@ -21,22 +21,18 @@ angular.module('midwestApp')
       $scope.isResetted = true;
       $scope.success = true;
       $scope.hidepanel = true;
-      $scope.message = "Password successfully reset! Redirecting to main page....";
+      $scope.message = 'Password successfully reset! Redirecting to main page....';
 
       $timeout(function() {
           $location.path('/');
       }, 3000);
-    }, function(resp) {
-      console.log('fail :(');
-
-      console.log(resp);
-
+    }, function() {
 
       $scope.passResetform = true;
       $scope.isResetted = true;
       $scope.failure = true;
       $scope.hidepanel = true;
-      $scope.message = "Password FAILED to reset! Please contact us at............";
+      $scope.message = 'Password FAILED to reset! Please contact us for help.';
 
     });
 

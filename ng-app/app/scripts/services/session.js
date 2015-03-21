@@ -21,20 +21,21 @@ angular.module('midwestApp')
       if ($rootScope.currentUser === undefined) {
         return false;
       }
-      return $rootScope.currentUser.user.authorization_level == 'admin';
-    }
+      return $rootScope.currentUser.authorization_level === 'admin';
+    };
+
+    var revokeAccess = function(resp) {
+      if (resp.status === 401) {
+        $cookieStore.remove('access_token');
+      }
+    };
 
     var init = function() {
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
-          $rootScope.currentUser = user;
-          console.log(user.user);
-          service.fire({type: 'userAvailable', user: user});
-        }, function(resp) {
-          if (resp.status === 401) {
-            $cookieStore.remove('access_token');
-          }
-        });
+          $rootScope.currentUser = user.user;
+          service.fire({type: 'userAvailable', user: user.user});
+        }, revokeAccess);
       }
     };
 
@@ -64,6 +65,21 @@ angular.module('midwestApp')
       }
       return $q(function(resolve, reject) {
         reject({message: 'User not logged in'});
+      });
+    };
+
+    service.getUser = function() {
+      return $q(function(resolve, reject) {
+        if ($rootScope.currentUser) {
+          resolve($rootScope.currentUser);
+        } else {
+          getCurrentUser().then(function(user) {
+            resolve(user.user);
+          }, function() {
+            reject();
+            revokeAccess();
+          });
+        }
       });
     };
 

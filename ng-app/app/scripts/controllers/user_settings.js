@@ -13,7 +13,7 @@ angular.module('midwestApp')
     $scope.updateUserInfo = function() {
       $scope.isReady = false;
       $scope.editedUser.$update(function(resp) {
-        $rootScope.currentUser.user = resp.user;
+        $rootScope.currentUser = resp.user;
         $scope.isReady = true;
         $location.path('/dashboard');
       }, function(resp) {
@@ -26,10 +26,10 @@ angular.module('midwestApp')
     var populateForm = function(currentUserVal) {
       if (currentUserVal !== undefined && $scope.editedUser === undefined) {
         $scope.editedUser = new User({id: 'me'});
-        $scope.editedUser.first_name = $rootScope.currentUser.user.first_name;
-        $scope.editedUser.last_name = $rootScope.currentUser.user.last_name;
-        $scope.editedUser.university = $rootScope.currentUser.user.university.name;
-        $scope.editedUser.email = $rootScope.currentUser.user.email;
+        $scope.editedUser.first_name = $rootScope.currentUser.first_name;
+        $scope.editedUser.last_name = $rootScope.currentUser.last_name;
+        $scope.editedUser.university = $rootScope.currentUser.university.name;
+        $scope.editedUser.email = $rootScope.currentUser.email;
         $scope.isReady = true;
       }
     };

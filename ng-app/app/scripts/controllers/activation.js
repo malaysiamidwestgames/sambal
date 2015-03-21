@@ -33,10 +33,12 @@ angular.module('midwestApp')
       }, function(res) {
         $scope.calledApi = true;
         $scope.isActivated = false;
+        /* jshint -W106 */
         if (res.data.user_id !== undefined) {
           $scope.accountActivation.visible = true;
           $scope.accountActivation.UserId = res.data.user_id;
         }
+        /* jshint +W106 */
       });
 
     $scope.activateAccount = function() {

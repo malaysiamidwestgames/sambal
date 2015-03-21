@@ -2,12 +2,12 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a href="/app">
-				<img src="images/logo.svg"  
+				<img src="images/logo.svg"
 			   		 tooltip-placement="bottom"
 			   		 tooltip="Home">
 			</a>
-			<a class="navbar-brand" 
-			   href="/app" 
+			<a class="navbar-brand"
+			   href="/app"
 			   ng-hide="currentUser">
 				Midwest Games
 			</a>
@@ -16,13 +16,13 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">Feeds</a></li>
 				<li><a href="">Info</a></li>
-				<li><a href="/app/userlist" ng-show="currentUser.user.authorization_level == 'admin'">Admin</a></li>
+				<li><a href="/app/userlist" ng-show="currentUser.authorization_level == 'admin'">Admin</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
 				<li ng-show="currentUser">
-					<a href="/app/user-settings" 
-					   tooltip-placement="bottom" 
-					   tooltip="User settings">{{currentUser.user.email}}</a>
+					<a href="/app/user-settings"
+					   tooltip-placement="bottom"
+					   tooltip="User settings">{{currentUser.email}}</a>
 				</li>
 				<li>
 					<a href=""

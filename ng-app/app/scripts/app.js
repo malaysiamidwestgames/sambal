@@ -32,11 +32,6 @@ angular
         controller: 'MainCtrl',
         bodyClass: 'main-page'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        requireLogin: true
-      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
@@ -49,18 +44,11 @@ angular
         templateUrl: 'views/activation.html',
         controller: 'ActivationCtrl'
       })
-      .when('/social_feeds', {
-        templateUrl: 'views/social_feeds.html',
-        controller: 'SocialFeedsCtrl'
-      })
       .when('/userlist' , {
         templateUrl: 'views/userlist.html',
         controller: 'UserlistCtrl',
         requireLogin: true,
         requireAdmin: true
-      })
-      .when('/accommodations' , {
-        templateUrl: 'views/accommodations.html'
       })
       .when('/forgot-pass' , {
         templateUrl: 'views/forgotpass.html',
@@ -70,13 +58,6 @@ angular
         templateUrl: 'views/passreset.html',
         controller: 'PassResetCtrl'
       })
-      .when('/twitter', {
-        templateUrl: 'views/twitter.html',
-        controller: 'TwitterCtrl'
-      })
-      .when('/accommodations', {
-        templateUrl: 'views/accommodations.html'
-      })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
@@ -85,15 +66,6 @@ angular
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl',
         requireLogin: true
-      })
-      .when('/paylist', {
-        templateUrl: 'views/paylist.html',
-        controller: 'PaylistCtrl'
-
-      })
-      .when('/eventmaps', {
-        templateUrl: 'views/eventmaps.html',
-        controller: 'EventmapsCtrl'
       })
       .when('/confirm_email', {
         templateUrl: 'views/confirm_email.html'
@@ -125,9 +97,9 @@ angular
           return config;
         },
         responseError: function(response) {
-          if (response.status == 403) {
+          if (response.status === 403) {
             $cookieStore.remove('access_token');
-          };
+          }
           return $q.reject(response);
         }
       };

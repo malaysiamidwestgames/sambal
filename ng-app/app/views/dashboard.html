@@ -2,10 +2,10 @@
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body">
-        <div class="first-name">{{currentUser.user.first_name}}</div>
-        <div>{{currentUser.user.first_name}} {{currentUser.user.last_name}}</div>
-        <div>{{currentUser.user.university.name}}</div>
-        <div>{{currentUser.user.email}}</div>
+        <div class="first-name">{{currentUser.first_name}}</div>
+        <div>{{currentUser.first_name}} {{currentUser.last_name}}</div>
+        <div>{{currentUser.university.name}}</div>
+        <div>{{currentUser.email}}</div>
         <span class="edit-user-info">
           <a href="/app/user-settings"
              tooltip-placement="bottom"
@@ -17,22 +17,14 @@
     </div>
   </div>
   <div class="col-md-7">
-    <div class="panel panel-themed">
+    <div class="panel panel-themed" ng-show="todos.length">
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>
       </div>
-      <ul class="list-group">
+      <ul class="list-group" ng-repeat="todo in todos">
         <li class="list-group-item">
-          Pay for your registration
-          <a href="payment"  role="button" class="btn btn-primary btn-xs pull-right">Pay here</a>
-        </li>
-        <li class="list-group-item">
-          Answer questionnaire
-          <a href="#"  role="button" class="btn btn-primary btn-xs pull-right" disabled="disable">Questionnaire</a>
-        </li>
-        <li class="list-group-item">
-          Register for sports
-          <a href="#"  role="button" class="btn btn-primary btn-xs pull-right" disabled="disable">Register</a>
+          {{ todo.title }}
+          <a href="{{ todo.link }}"  role="button" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>
       </ul>
     </div>
@@ -43,15 +35,7 @@
       <table class="table table-bordered">
         <tr>
           <th>General registration</th>
-          <td class="ng-hide" ng-show="general == false && genPayInit == false">Payment pending</td>
-          <td class="ng-hide" ng-show="general == false && genPayInit == true">Payment processing</td>
-          <td class="ng-hide" ng-show="general == true">Payment received</td>
-        </tr>
-        <tr>
-          <th>Sports registration</th>
-          <td class="ng-hide" ng-show="sports == false && spoPayInit == false">Payment pending</td>
-          <td class="ng-hide" ng-show="sports == false && spoPayInit == true">Payment processing</td>
-          <td class="ng-hide" ng-show="sports == true">Payment received</td>
+          <td>{{currentUser.registration_payment_status}}</td>
         </tr>
       </table>
     </div>
