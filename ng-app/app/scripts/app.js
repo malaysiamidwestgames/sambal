@@ -108,6 +108,11 @@ angular
         controller: 'UserSettingsCtrl',
         requireLogin: true
       })
+      .when('/rules', {
+        templateUrl: 'views/info.html',
+        controller: 'InfoCtrl',
+        requireLogin: false
+      })
       .otherwise({
         redirectTo: '/'
       });
