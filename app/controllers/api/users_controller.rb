@@ -82,7 +82,6 @@ class Api::UsersController < ApplicationController
     end
 
     def correct_user
-      @user = User.find(params[:id])
       if not current_user?(@user)
         render json: { message: 'Wrong User' }, status: :forbidden
       end

@@ -8,13 +8,11 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('UserlistCtrl', function ($scope, $http) {
+  .controller('UserlistCtrl', function ($scope, $http, $location) {
     $scope.participants = undefined;
-    	$http.get('/api/users')
-    	.success(function(data){
-    		console.log(data);
-    		$scope.users = data.users;
-    		console.log(data.password);
-    	});
+	$http.get('/api/users')
+		.success(function(data){
+			$scope.users = data.users;
+		})
   });
 
