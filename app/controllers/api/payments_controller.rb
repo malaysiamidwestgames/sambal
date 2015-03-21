@@ -18,9 +18,7 @@ class Api::PaymentsController < ApplicationController
 
 
   def index
-    @user = User.where(id: current_user.id)
-    @payments = Payment.where(user_id: @user)
-    render json: @payments
+    render json: current_user.payments
   end
 
   def hook
