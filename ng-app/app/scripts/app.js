@@ -83,6 +83,11 @@ angular
       .when('/promo/auditions', {
         templateUrl: 'views/promos/auditions.html'
       })
+      .when('/rules', {
+        templateUrl: 'views/info.html',
+        controller: 'InfoCtrl',
+        requireLogin: false
+      })
       .otherwise({
         redirectTo: '/'
       });

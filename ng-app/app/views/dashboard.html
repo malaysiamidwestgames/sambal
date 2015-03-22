@@ -21,8 +21,8 @@
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>
       </div>
-      <ul class="list-group" ng-repeat="todo in todos">
-        <li class="list-group-item">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="todo in todos">
           {{ todo.title }}
           <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>

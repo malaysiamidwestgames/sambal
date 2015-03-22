@@ -334,10 +334,15 @@ div.hotel-registration input {
     .user-attribute {
       width: 30%;
       font-weight: 500;
+      vertical-align: middle;
     }
 
     .user-data {
       width: 70%;
+    }
+
+    input.form-control {
+      height: 25px;
     }
 
   }
