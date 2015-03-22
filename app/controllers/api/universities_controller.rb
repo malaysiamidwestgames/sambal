@@ -4,7 +4,6 @@ class Api::UniversitiesController < ApplicationController
 	def index
 		# Gather all university data
 		@universities = University.all
-		puts @universities
 		render json: @universities
 	end
 
