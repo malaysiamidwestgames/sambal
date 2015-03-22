@@ -91,6 +91,10 @@ angular
       .when('/contact-us', {
         templateUrl: 'views/contact-us.html'
       })
+      .when('/accommodation', {
+        templateUrl: 'views/accommodation.html',
+        controller: 'AccommodationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
