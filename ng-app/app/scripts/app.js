@@ -88,6 +88,9 @@ angular
         controller: 'InfoCtrl',
         requireLogin: false
       })
+      .when('/contact-us', {
+        templateUrl: 'views/contact-us.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

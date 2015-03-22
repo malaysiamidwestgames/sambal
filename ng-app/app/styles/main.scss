@@ -402,3 +402,17 @@ button#update-info-btn {
   }
 }
 
+.contact-us {
+  textarea {
+    margin-top: 5px;
+    resize: none;
+    height: 300px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+  input[type=text] {
+    margin-bottom: 5px;
+  }
+}
+
