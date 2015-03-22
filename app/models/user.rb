@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
+  enum authorization_level: { regular: 0, admin: 1, contingent_leader: 2 }
   before_save { self.email = email.downcase }
   before_create :create_access_token, :create_activation_digest
   has_many :payments
@@ -24,6 +25,14 @@ class User < ActiveRecord::Base
   # Activates an account.
   def activate
     update_attribute(:activated, true)
+  end
+
+  def registration_payment_status
+    idx = self.payments.index { |payment| payment.regtype == 'General registration'}
+    if idx
+      return self.payments[idx].regtype
+    end
+    return 'Payment pending'
   end
 
   # Sends activation email.
