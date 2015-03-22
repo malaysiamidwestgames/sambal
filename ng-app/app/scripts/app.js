@@ -112,6 +112,7 @@ angular
         templateUrl: 'views/info.html',
         controller: 'InfoCtrl',
         requireLogin: false
+      })
       .when('/contact-us', {
         templateUrl: 'views/contact.html'
       })
