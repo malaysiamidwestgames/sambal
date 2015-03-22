@@ -102,8 +102,8 @@ angular
 
   .constant('_', window._)
 
-  .config(function($httpProvider) {
-    $httpProvider.interceptors.push(function($browser, $cookieStore, $q) {
+  .config(/*@ngInject*/function($httpProvider) {
+    $httpProvider.interceptors.push( /*@ngInject*/function($browser, $cookieStore, $q) {
       return {
         request: function(config) {
           /* jshint -W106 */
