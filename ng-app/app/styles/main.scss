@@ -403,6 +403,9 @@ button#update-info-btn {
 }
 
 .contact-us {
+  .error {
+    color: #d9534f;
+  }
   textarea {
     margin-top: 5px;
     resize: none;
@@ -411,8 +414,12 @@ button#update-info-btn {
   .btn {
     margin-top: 10px;
   }
-  input[type=text] {
+  .row {
     margin-bottom: 5px;
+  }
+
+  .ng-invalid.ng-touched.ng-dirty {
+    background-color: $brand-warning;
   }
 }
 
