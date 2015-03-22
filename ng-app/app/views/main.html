@@ -104,7 +104,13 @@
             </div>
           </div>
           <div class="input-error-group">
-            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="reg.password" ui-validate="'$value.length>=6'" required>
+            <input type="password" 
+                   name="password" 
+                   class="form-control" 
+                   placeholder="Password" 
+                   ng-model="reg.password" 
+                   ui-validate="'$value.length>=6'" 
+                   required>
             <div class="error"
                  ng-show="registration.password.$invalid && 
                           registration.password.$dirty && 
@@ -133,8 +139,10 @@
                    class="form-control" 
                    placeholder="School name" 
                    ng-model="reg.university"
-                   typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" typeahead-min-length="2" 
-                   typeahead-editable="false" 
+                   typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" 
+                   typeahead-min-length="2" 
+                   typeahead-editable="false"
+                   ng-readonly="noUniversityCheckbox" 
                    required>
             <label>
               <input type="checkbox" ng-model="noUniversityCheckbox"> I'm not associated with a university
