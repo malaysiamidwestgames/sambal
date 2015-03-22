@@ -88,6 +88,10 @@ angular
         controller: 'InfoCtrl',
         requireLogin: false
       })
+      .when('/accommodation', {
+        templateUrl: 'views/accommodation.html',
+        controller: 'AccommodationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
