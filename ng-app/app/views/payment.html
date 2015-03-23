@@ -12,6 +12,8 @@
             <input type="hidden" name="notify_url" value="http://malaysiamidwestgames.com/api/hook">
             <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
             <input type="hidden" name="return" value="http://malaysiamidwestgames.com/app/payment">
+            <input type="hidden" name="rm" value="1">
+            <input type="hidden" name="no_shipping" value="1">
             <input type="hidden" name="currency_code" value="USD">
             <input type="hidden" name="amount" value="{{amount}}">
             <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(20, 'General registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay $20?</button>
