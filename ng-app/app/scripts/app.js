@@ -32,14 +32,6 @@ angular
         controller: 'MainCtrl',
         bodyClass: 'main-page'
       })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .when('/register', {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
-      })
       .when('/activation/:token' , {
         templateUrl: 'views/activation.html',
         controller: 'ActivationCtrl'

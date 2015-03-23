@@ -4,7 +4,8 @@ module SessionsHelper
     access_token = User.new_access_token
     cookies[:access_token] = {
       value: access_token,
-      expires: 1.hour.from_now
+      expires: 1.hour.from_now,
+      path: '/app/'
     }
     user.update_attribute(:access_token, User.digest(access_token))
     self.current_user = user

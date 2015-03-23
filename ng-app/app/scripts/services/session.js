@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('midwestApp')
-  .factory('session', function (httpWrapper, eventually, $rootScope, $cookieStore, $q, $browser) {
+  .factory('session', function (httpWrapper, eventually, $rootScope, $cookieStore, $q, $browser, $location) {
     var createSession = httpWrapper.post('/api/sessions');
     var destroySession = httpWrapper.delete('/api/sessions');
     var getCurrentUser = httpWrapper.get('/api/users/me');
@@ -27,6 +27,7 @@ angular.module('midwestApp')
     var revokeAccess = function(resp) {
       if (resp.status === 401 || resp.status === 403) {
         $cookieStore.remove('access_token');
+        $location.path('/');
       }
     };
 
