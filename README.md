@@ -60,7 +60,7 @@ Build
 
          bundle install
 
-3. Reset database. Do so by:
+3. If you ran "db:migrate" before, reset database. Do so by:
 
          rake db:reset
 
