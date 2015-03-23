@@ -12,7 +12,7 @@ module SessionsHelper
 
   def destroy_token
     cookies.delete :access_token
-    access_token = User.digest(request.headers['access-token'])
+    access_token = User.digest(request.headers[:HTTP_ACCESS_TOKEN])
     current_user.update_attribute(:access_token, User.digest(access_token))
     self.current_user = nil
   end
@@ -24,9 +24,7 @@ module SessionsHelper
   end
 
   def current_user
-    logger.debug 'lol'
-    logger.debug request.headers['access-token']
-    access_token = User.digest(request.headers['access-token'])
+    access_token = User.digest(request.headers[:HTTP_ACCESS_TOKEN])
     @current_user ||= User.find_by(access_token: access_token)
   end
 
