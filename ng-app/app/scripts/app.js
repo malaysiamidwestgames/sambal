@@ -59,6 +59,9 @@ angular
         controller: 'PaymentCtrl',
         requireLogin: true
       })
+      .when('/payment/done', {
+        templateUrl: 'views/payment_done.html'
+      })
       .when('/confirm_email', {
         templateUrl: 'views/confirm_email.html'
       })
