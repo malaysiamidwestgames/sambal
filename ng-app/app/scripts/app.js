@@ -50,17 +50,14 @@ angular
         templateUrl: 'views/passreset.html',
         controller: 'PassResetCtrl'
       })
-      .when('/dashboard', {
-        templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl'
-      })
       .when('/payment', {
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl',
         requireLogin: true
       })
       .when('/payment/done', {
-        templateUrl: 'views/payment_done.html'
+        templateUrl: 'views/payment_done.html',
+        requireLogin: true
       })
       .when('/confirm_email', {
         templateUrl: 'views/confirm_email.html'
@@ -80,8 +77,7 @@ angular
       })
       .when('/rules', {
         templateUrl: 'views/info.html',
-        controller: 'InfoCtrl',
-        requireLogin: false
+        controller: 'InfoCtrl'
       })
       .when('/contact-us', {
         templateUrl: 'views/contact-us.html',
