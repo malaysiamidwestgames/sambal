@@ -30,7 +30,8 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        bodyClass: 'main-page'
+        bodyClass: 'main-page',
+        requireLogout: true
       })
       .when('/activation/:token' , {
         templateUrl: 'views/activation.html',
@@ -120,6 +121,10 @@ angular
       }
       else if (next.requireAdmin && !session.isAdmin()) {
         $location.path('/');
+        event.preventDefault();
+      }
+      else if (next.requireLogout && session.isLoggedIn()) {
+        $location.path('/dashboard/');
         event.preventDefault();
       }
       $rootScope.bodyClass = next.bodyClass;

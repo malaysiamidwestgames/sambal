@@ -21,11 +21,6 @@ angular.module('midwestApp')
       loginResponse: false,
     };
 
-    // redirect to dashboard for logged in users
-    if (session.isLoggedIn()) {
-      $location.path('/dashboard');
-    }
-
     // populate email field if user came from account activation redirect
     if ($routeParams.email) {
       $scope.signIn.email = $routeParams.email;
