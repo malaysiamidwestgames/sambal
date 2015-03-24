@@ -74,7 +74,7 @@ angular
         requireLogin: true
       })
       .when('/promo/auditions', {
-        templateUrl: 'views/promos/auditions.html'
+        templateUrl: 'views/auditions.html'
       })
       .when('/rules', {
         templateUrl: 'views/info.html',
