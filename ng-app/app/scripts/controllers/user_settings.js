@@ -7,7 +7,7 @@ angular.module('midwestApp')
     $scope.waiting = {
       userinfo: false,
       passwordreset: false
-    }
+    };
     $scope.isReady = false;
     $scope.isError = false;
 

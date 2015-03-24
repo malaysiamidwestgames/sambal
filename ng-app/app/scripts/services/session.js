@@ -25,7 +25,7 @@ angular.module('midwestApp')
     };
 
     var revokeAccess = function(resp) {
-      if (resp.status === 401) {
+      if (resp.status === 401 || resp.status === 403) {
         $cookieStore.remove('access_token');
       }
     };
@@ -75,9 +75,9 @@ angular.module('midwestApp')
         } else {
           getCurrentUser().then(function(user) {
             resolve(user.user);
-          }, function() {
-            revokeAccess();
-            reject();
+          }, function(resp) {
+            revokeAccess(resp);
+            reject({message: 'User not logged in'});
           });
         }
       });

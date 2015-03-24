@@ -402,3 +402,24 @@ button#update-info-btn {
   }
 }
 
+.contact-us {
+  .error {
+    color: #d9534f;
+  }
+  textarea {
+    margin-top: 5px;
+    resize: none;
+    height: 300px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+  .row {
+    margin-bottom: 5px;
+  }
+
+  .ng-invalid.ng-touched.ng-dirty {
+    background-color: $brand-warning;
+  }
+}
+

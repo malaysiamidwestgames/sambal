@@ -88,9 +88,12 @@ angular
         controller: 'InfoCtrl',
         requireLogin: false
       })
+      .when('/contact-us', {
+        templateUrl: 'views/contact-us.html',
+        controller: 'ContctUsCtrl'
+      })
       .when('/accommodation', {
-        templateUrl: 'views/accommodation.html',
-        controller: 'AccommodationCtrl'
+        templateUrl: 'views/accommodation.html'
       })
       .otherwise({
         redirectTo: '/'
@@ -109,7 +112,7 @@ angular
           return config;
         },
         responseError: function(response) {
-          if (response.status === 403) {
+          if (response.status === 403 || response.status === 401) {
             $cookieStore.remove('access_token');
           }
           return $q.reject(response);
