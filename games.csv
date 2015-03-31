@@ -1,33 +1,36 @@
-name
-AMAIZE-ing Race
-Badminton Men's Singles
-Badminton Men's Doubles
-Badminton Women's Singles
-Badminton Women's Doubles
-Badminton Mixed Doubles
-Basketball
-Carom
-Chess
-Congkak
-CS:GO
-Dodgeball
-Dota 2
-FIFA 15 Individual
-FIFA 15 Team
-Flag Rugby
-Futsal Men
-Futsal Women
-Jeopardy
-Netball
-Pool
-Soccer
-Table Tennis Men's Singles
-Table Tennis Women's Singles
-Table Tennis Mixed Doubles
-Takraw
-Tennis Men's Singles
-Tennis Women's Singles
-Tennis Mixed Doubles
-Tug of War
-Volleyball Men
-Volleyball Open
+name,min_players_per_team,max_players_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id
+AMAIZE-ing Race,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",1
+Badminton Men's Singles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",2
+Badminton Men's Doubles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",3
+Badminton Women's Singles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",4
+Badminton Women's Doubles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",5
+Badminton Mixed Doubles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",6
+Basketball,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",7
+Carom,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",8
+Chess,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",9
+Congkak,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",10
+CS:GO,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",11
+Dodgeball,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",12
+Dota 2,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",13
+FIFA 15 Individual,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",14
+FIFA 15 Dual,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",15
+Flag Rugby,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",16
+Futsal Men,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",17
+Futsal Women,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",18
+Jeopardy,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",19
+Netball,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",20
+Pool,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",21
+Squash Men,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",22
+Squash Women,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",23
+Soccer,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",24
+Table Tennis Men's Singles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",25
+Table Tennis Women's Singles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",26
+Table Tennis Mixed Doubles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",27
+Takraw,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",28
+Tennis Men's Singles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",29
+Tennis Women's Singles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",30
+Tennis Mixed Doubles,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",31
+Tug of War,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",32
+Ultimate Frisbee Open,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",33
+Volleyball Men,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",34
+Volleyball Open,5,10,5,10,5,-1,-1,-1,20,"Mitchell Field","Individual_Race",35

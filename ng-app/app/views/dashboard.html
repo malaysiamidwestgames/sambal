@@ -39,5 +39,16 @@
         </tr>
       </table>
     </div>
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sports</h3>
+      </div>
+      <table class="table table-bordered">
+        <tr>
+          <th>General registration</th>
+          <td>{{(currentUser.registration_payment_status && "Paid") || "Payment pending"}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
