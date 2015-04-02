@@ -14,6 +14,7 @@ angular.module('midwestApp')
     $scope.amount = 0;
     $scope.individual = false;
     $scope.doubles = false;
+    $scope.registered = false;
     $scope.games = [];
     $scope.teams = [];
     $scope.selectedAction = {
@@ -40,10 +41,17 @@ angular.module('midwestApp')
 
     $scope.setAction = function(action) {
       $scope.selectedAction = action;
+      $scope.registered = false;
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
           console.log(data);
           $scope.teams = data.teams;
+          $scope.spotsLeft = $scope.selectedAction.max_teams - $scope.teams.length;
+          for (var i = 0; i < $scope.teams.length; i++ ) {
+            if ($scope.teams[i].team_captain == $rootScope.currentUser.id) {
+              $scope.registered = true;
+            }
+          }
         }
       )
       if ($scope.selectedAction.max_players_per_team  == 1) {

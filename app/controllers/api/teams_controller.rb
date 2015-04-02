@@ -17,9 +17,11 @@ class Api::TeamsController < ApplicationController
     render json: @teams
   end
 
+
+
   private
 
     def team_params
-      params.permit(:name, :team_captain, :tournaments_id, :contingent, :ranking, :participants_id, :game_id)
+      params.permit(:name, :team_captain, :tournaments_id, :contingent, :ranking, :participants_id, :game_id, :payment_id)
     end
 end
