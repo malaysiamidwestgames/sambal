@@ -4,6 +4,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :name
       t.integer :min_players_per_team, null: false
       t.integer :max_players_per_team, null: false
+      t.integer :price_per_team, null: false
       t.integer :min_players_on_court, null: false
       t.integer :max_players_on_court, null: false
       t.integer :kms_to_finish
