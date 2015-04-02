@@ -71,6 +71,7 @@ Rails.application.routes.draw do
     get 'universities/count' => 'universities#count'
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]
+    resources :teams, only: [:index, :create]
     resources :payments, only: [:create, :show, :index]
     resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'

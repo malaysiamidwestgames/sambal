@@ -3,8 +3,8 @@
   <div class="col-md-12">
     <div class="panel panel-themed promotion">
       <div class="panel-body">
-        <h1 class="title">Sports Registration and Payment <small>$5</small>
-          <button class="btn btn-themed pull-right btn-lg" ng-show="payId == 0" class="ng-hide" ng-click="paymentInit('General registration')">Pay now</button>
+        <h1 class="title">Sports Registration and Payment
+          <button class="btn btn-themed pull-right btn-lg" ng-show="payId == 0" ng-disabled="amount == 0" class="ng-hide" ng-click="paymentInit('General registration')">Pay ${{amount}}</button>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
             <input type="hidden" name="cmd" value="_xclick">
             <input type="hidden" name="business" value="midwestmalaysia@gmail.com">
@@ -16,38 +16,56 @@
             <input type="hidden" name="no_shipping" value="1">
             <input type="hidden" name="currency_code" value="USD">
             <input type="hidden" name="amount" value="{{amount}}">
-            <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(5, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay $5?</button>
+            <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
           </form>
         </h1>
-        <div class="clearfix"></div>
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            {{ selectedAction.name }}
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li role="presentation menuitem" ng-repeat="sport in sports">
-              <a ng-click="setAction(sport)">{{ sport.name }}</a>
-            </li>
-          </ul>
+        <div class="clearfix">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              {{ selectedAction.name }}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation menuitem" ng-repeat="game in games">
+                <a ng-click="setAction(game)">{{ game.name }}</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row dashboard">
   <div class="col-md-4">
-    <div class="panel panel-themed">
-      <div class="panel-heading">
-        <h3 class="panel-title">General information</h3>
+    <div class="panel panel-themed user-info-panel">
+      <div class="panel-body">
+        <div class="first-name">Quick facts</div>
+        <div>{{(individual && selectedAction.max_players_per_team) || (doubles && selectedAction.max_players_per_team) || selectedAction.min_players_per_team + " - " + selectedAction.max_players_per_team}}</div>
+        <div>{{selectedAction.price_per_team}}</div>
+        <div>{{selectedAction.max_teams}} {{teamName}}</div>
       </div>
     </div>
   </div>
   <div class="col-md-8">
     <div class="panel panel-themed">
       <div class="panel-heading">
-        <h3 class="panel-title">Team listings/create a team</h3>
+        <h3 class="panel-title">{{individual && "Register for this event" || "Team listings/Create a team"}}</h3>
       </div>
+      <table class="table table-bordered">
+        <tr>
+         <b class="instructions">{{ individual && selectedAction.name + " is an individual event. You can go ahead and register for this event by clicking the button" || selectedAction.name + " is a team based event. You can either request to join a team in the list below or start your own team as a captain."}}</b>
+        </tr>
+        <tr>
+          <th class="row" ng-show="individual != true">
+            <div class="form-group">
+              <input type="text" class="form-control" id="usr" placeholder="Enter team name" ng-model="teamName">
+            </div>
+          </th>
+          <td ng-show="individual != true"><button class="btn btn-themed pull-right btn-lg" ng-click="setTeam(teamName)">Create team</button></td>
+          <td ng-show="individual"><button class="btn btn-themed pull-right btn-lg">Register</button></td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

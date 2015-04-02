@@ -445,7 +445,11 @@ button#update-info-btn {
     }
     ul.dropdown-menu {
       width: 300px;
+      overflow-y: auto;
     }
+  }
+  .instructions {
+    padding: 100px;
   }
 }
 

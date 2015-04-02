@@ -1,5 +1,5 @@
 name,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id
-AMAIZEing Race,5,10,5,5,10,5,0,0,0,20,Mitchell Field,individual race,1
+"AMAIZEing Race",10,10,5,5,10,5,0,0,0,20,"Mitchell Field","individual race",1
 Badminton Men's Singles,1,1,5,1,1,0,21,3,0,32,CCRB,knockout,2
 Badminton Women's Singles,1,1,10,1,1,0,21,3,0,8,CCRB,knockout,3
 Badminton Men's Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,knockout,4
