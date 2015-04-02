@@ -439,6 +439,21 @@ button#update-info-btn {
 }
 
 .sportsreg {
+  word-wrap:break-word;
+
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+    height: 300px;
+  }
+
   .dropdown {
     .btn {
       width: 300px;
@@ -446,10 +461,20 @@ button#update-info-btn {
     ul.dropdown-menu {
       width: 300px;
       overflow-y: auto;
+      max-height: 200px;
     }
   }
-  .instructions {
-    padding: 100px;
+
+  .form-group {
+    margin: 20px;
+    .form-control {
+      width: 300px;
+      margin-right: 10px;
+    }
+  }
+
+  .infostat {
+    font-size: xx-large;
   }
 }
 

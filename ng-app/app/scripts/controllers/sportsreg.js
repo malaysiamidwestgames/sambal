@@ -15,6 +15,7 @@ angular.module('midwestApp')
     $scope.individual = false;
     $scope.doubles = false;
     $scope.games = [];
+    $scope.teams = [];
     $scope.selectedAction = {
       name: 'Choose a sport to register for'
     };
@@ -36,8 +37,15 @@ angular.module('midwestApp')
         $scope.games = data.allgames;
       });
 
+
     $scope.setAction = function(action) {
       $scope.selectedAction = action;
+      $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
+        .success(function(data) {
+          console.log(data);
+          $scope.teams = data.teams;
+        }
+      )
       if ($scope.selectedAction.max_players_per_team  == 1) {
         $scope.individual = true;
       }
@@ -53,7 +61,7 @@ angular.module('midwestApp')
 
     $scope.setTeam = function(name) {
       $http
-        .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id})
+        .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id })
         .success(function (data) {
           console.log(data);
           $scope.amount += $scope.selectedAction.price_per_team;
