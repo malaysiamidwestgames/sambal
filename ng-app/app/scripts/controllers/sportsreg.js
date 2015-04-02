@@ -13,7 +13,7 @@ angular.module('midwestApp')
     $scope.payId = 0;
     $scope.sports = [];
     $scope.selectedAction = {
-      name: 'Please choose a sports you would like to register'
+      name: 'Choose a sport to register for'
     };
 
     /*$scope.todos = [
