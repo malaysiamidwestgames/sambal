@@ -1,1 +1,40 @@
-name,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_idAMAIZE-ing Race,5,10,,5,10,5,-1,-1,-1,20,Mitchell Field,individual race,1Badminton Men's Singles,1,1,5,1,1,-1,21,3,-1,32,CCRB,knockout,2Badminton Women's Singles,1,1,5,1,1,-1,21,3,-1,8,CCRB,knockout,3Badminton Men's Doubles,2,2,10,2,2,-1,21,3,-1,16,CCRB,knockout,4Badminton Women's Doubles,2,2,10,2,2,-1,21,3,-1,16,CCRB,knockout,5Badminton Mixed Doubles,2,2,10,2,2,-1,21,3,-1,16,CCRB,knockout,6Basketball,5,12,50,5,5,-1,-1,-1,20,8,CCRB,league 2 groups,7Bowling,3,4,20,3,3,-1,-1,3,-1,8,Colonial Lanes,knockout,8Carom,1,1,5,1,1,-1,-1,-1,-1,8,?,knockout,9Chess,1,1,5,1,1,-1,-1,-1,-1,16,?,knockout,10Congkak,1,1,5,1,1,-1,-1,-1,-1,8,?,knockout,11CS:GO,5,6,20,5,5,-1,-1,-1,-1,8,?,knockout,12Dodgeball,6,10,35,6,6,-1,-1,-1,-1,8,Palmer Field,league 2 groups,13Dota 2,5,6,20,5,5,-1,-1,-1,-1,8,?,knockout,14FIFA 15 Individual,1,1,5,1,1,-1,-1,-1,-1,16,?,knockout,15FIFA 15 Dual,2,2,10,2,2,-1,-1,-1,-1,8,?,knockout,16Flag Rugby,7,15,50,7,7,-1,-1,-1,-1,6,Mitchell Field,round robin ,17Futsal Men,5,12,50,5,5,-1,-1,-1,-1,12,Coliseum,league 4 groups,18Futsal Women,5,12,50,5,5,-1,-1,-1,-1,8,Coliseum,league 2 groups,19Jeopardy,3,3,20,3,3,-1,-1,-1,-1,10,?,?,20Netball,7,12,50,7,7,-1,-1,-1,-1,8,Coliseum,league 2 groups,21Pool,1,1,5,1,1,-1,-1,-1,-1,16,Michigan Union,knockout,22Racquetball Men,1,1,5,1,1,-1,-1,-1,-1,8,CCRB,knockout,23Racquetball Women,1,1,5,1,1,-1,-1,-1,-1,8,CCRB,knockout,24Squash Men,1,1,5,1,1,-1,-1,-1,-1,8,CCRB,knockout,25Squash Women,1,1,5,1,1,-1,-1,-1,-1,8,CCRB,knockout,26Soccer,9,15,50,9,9,-1,-1,-1,-1,16,Mitchell Field,league 4 groups,27Table Tennis Men's Singles,1,1,5,1,1,-1,-1,-1,-1,16,Coliseum,league 4 groups,28Table Tennis Women's Singles,1,1,5,1,1,-1,-1,-1,-1,8,Coliseum,league 2 groups,29Table Tennis Men's Doubles,2,2,10,2,2,-1,-1,-1,-1,8,Coliseum,league 2 groups,30Table Tennis Men's Doubles,2,2,10,2,2,-1,-1,-1,-1,4,Coliseum,round robin ,31Takraw,3,5,20,3,3,-1,-1,-1,-1,4,Mitchell Field,round robin ,32Tennis Men's Singles,1,1,5,1,1,-1,-1,-1,-1,8,Palmer Field,league 2 groups,33Tennis Women's Singles,1,1,5,1,1,-1,-1,-1,-1,4,Palmer Field,round robin ,34Tennis Mixed Doubles,2,2,10,2,2,-1,-1,-1,-1,4,Palmer Field,round robin ,35Tug of War,15,18,50,15,15,-1,-1,-1,-1,12,Mitchell Field,knockout,36Ultimate Frisbee Open,7,15,50,7,7,-1,-1,-1,-1,4,Mitchell Field,round robin ,37Volleyball Men,6,12,50,6,6,-1,-1,-1,-1,16,CCRB,league 4 groups,38Volleyball Open,6,12,50,6,6,-1,-1,-1,-1,16,CCRB,league 4 groups,39
+name,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id
+AMAIZEing Race,5,10,5,5,10,5,0,0,0,20,Mitchell Field,individual race,1
+Badminton Men's Singles,1,1,5,1,1,0,21,3,0,32,CCRB,knockout,2
+Badminton Women's Singles,1,1,10,1,1,0,21,3,0,8,CCRB,knockout,3
+Badminton Men's Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,knockout,4
+Badminton Women's Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,knockout,5
+Badminton Mixed Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,knockout,6
+Basketball,5,12,50,5,5,0,0,0,20,8,CCRB,league 2 groups,7
+Bowling,3,4,20,3,3,0,0,3,0,8,Mason Hall,knockout,8
+Carom,1,1,5,1,1,0,0,0,0,8,Mason Hall,knockout,9
+Chess,1,1,5,1,1,0,0,0,0,16,Mason Hall,knockout,10
+Congkak,1,1,5,1,1,0,0,0,0,8,Mason Hall,knockout,11
+CS:GO,5,6,20,5,5,0,0,0,0,8,Mason Hall,knockout,12
+Dodgeball,6,10,35,6,6,0,0,0,0,8,Palmer Field,league 2 groups,13
+Dota 2,5,6,20,5,5,0,0,0,0,8,Mason Hall,knockout,14
+FIFA 15 Individual,1,1,5,1,1,0,0,0,0,16,Mason Hall,knockout,15
+FIFA 15 Dual,2,2,10,2,2,0,0,0,0,8,Mason Hall,knockout,16
+Flag Rugby,7,15,50,7,7,0,0,0,0,6,Mitchell Field,round robin,17
+Futsal Men,5,12,50,5,5,0,0,0,0,12,Coliseum,league 4 groups,18
+Futsal Women,5,12,50,5,5,0,0,0,0,8,Coliseum,league 2 groups,19
+Jeopardy,3,3,20,3,3,0,0,0,0,10,Mason Hall,knockout,20
+Netball,7,12,50,7,7,0,0,0,0,8,Coliseum,league 2 groups,21
+Pool,1,1,5,1,1,0,0,0,0,16,Michigan Union,knockout,22
+Racquetball Men,1,1,5,1,1,0,0,0,0,8,CCRB,knockout,23
+Racquetball Women,1,1,5,1,1,0,0,0,0,8,CCRB,knockout,24
+Squash Men,1,1,5,1,1,0,0,0,0,8,CCRB,knockout,25
+Squash Women,1,1,5,1,1,0,0,0,0,8,CCRB,knockout,26
+Soccer,9,15,50,9,9,0,0,0,0,16,Mitchell Field,league 4 groups,27
+Table Tennis Men's Singles,1,1,5,1,1,0,0,0,0,16,Coliseum,league 4 groups,28
+Table Tennis Women's Singles,1,1,5,1,1,0,0,0,0,8,Coliseum,league 2 groups,29
+Table Tennis Men's Doubles,2,2,10,2,2,0,0,0,0,8,Coliseum,league 2 groups,30
+Table Tennis Men's Doubles,2,2,10,2,2,0,0,0,0,4,Coliseum,round robin ,31
+Takraw,3,5,20,3,3,0,0,0,0,4,Mitchell Field,round robin ,32
+Tennis Men's Singles,1,1,5,1,1,0,0,0,0,8,Palmer Field,league 2 groups,33
+Tennis Women's Singles,1,1,5,1,1,0,0,0,0,4,Palmer Field,round robin ,34
+Tennis Mixed Doubles,2,2,10,2,2,0,0,0,0,4,Palmer Field,round robin ,35
+Tug of War,15,18,50,15,15,0,0,0,0,12,Mitchell Field,knockout,36
+Ultimate Frisbee Open,7,15,50,7,7,0,0,0,0,4,Mitchell Field,round robin ,37
+Volleyball Men,6,12,50,6,6,0,0,0,0,16,CCRB,league 4 groups,38
+Volleyball Open,6,12,50,6,6,0,0,0,0,16,CCRB,league 4 groups,39
