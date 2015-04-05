@@ -15,7 +15,6 @@ angular.module('midwestApp')
     $scope.individual = false;
     $scope.doubles = false;
     $scope.registered = false;
-    $scope.unpaid = false;
     $scope.games = [];
     $scope.teams = [];
     $scope.selectedAction = {
@@ -29,7 +28,12 @@ angular.module('midwestApp')
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
-          $scope.unpaid = true;
+         /* $http
+            .get('api/teams?payment_id=' + $scope.payId)
+            .success(function(data) {
+              console.log(data);
+              $scope.teams = data.teams
+            })*/
         }
         if (data.length == 0) {
           $http
@@ -65,12 +69,16 @@ angular.module('midwestApp')
     $scope.setAction = function(action) {
       $scope.selectedAction = action;
       $scope.registered = false;
+      $scope.paid = false;
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
           console.log(data);
           $scope.teams = data.teams;
           $scope.spotsLeft = $scope.selectedAction.max_teams - $scope.teams.length;
           for (var i = 0; i < $scope.teams.length; i++ ) {
+            if ($scope.teams[i].payment != null && $scope.teams[i].payment.status == "Completed") {
+              $scope.paid = true;
+            }
             if ($scope.teams[i].team_captain == $rootScope.currentUser.id) {
               $scope.registered = true;
             }
@@ -96,11 +104,12 @@ angular.module('midwestApp')
         .success(function (data) {
           console.log(data);
           $http
-            .post('api/participants', {team_id: data.id, user_id:$rootScope.currentUser.id})
+            .post('api/participants', {team_id: data.team.id, user_id:$rootScope.currentUser.id})
             .success(function(data) {
               console.log(data);
             })
           $scope.amount += $scope.selectedAction.price_per_team;
+          $scope.registered = true;
       })
         .error(function(error) {
           console.log(error);

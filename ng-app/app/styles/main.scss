@@ -454,6 +454,17 @@ button#update-info-btn {
     height: 550px;
   }
 
+  .panel {
+    .panel-body {
+      height: 150px;
+    }
+  }
+
+  table.participants {
+    height: 300px;
+    overflow-y: auto;
+  }
+
   .dropdown {
     .btn {
       width: 300px;
@@ -486,8 +497,15 @@ button#update-info-btn {
     }
   }
 
-  td.teamname {
+  .teamname {
     font-size: 2em;
+    .captainname {
+      font-size: large;
+    }
+  }
+
+  .paystatus {
+    width: 550px;
   }
 }
 

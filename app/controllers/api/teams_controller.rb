@@ -37,6 +37,8 @@ class Api::TeamsController < ApplicationController
 
 
 
+
+
   private
 
     def team_params

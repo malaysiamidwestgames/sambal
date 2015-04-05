@@ -36,9 +36,16 @@ class User < ActiveRecord::Base
     return idx != nil
   end
 
-  def sports_payment_status
+  def sports_payment_unpaid
     idx = self.payments.index do |payment|
       payment.regtype == 'Sports registration' && payment.status == 'Payment initiated'
+    end
+    return idx != nil
+  end
+
+  def sports_payment_status
+    idx = self.payments.index do |payment|
+      payment.regtype == 'Sports registration' && payment.status == 'Completed'
     end
     return idx != nil
   end

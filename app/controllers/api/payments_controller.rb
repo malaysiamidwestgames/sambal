@@ -35,7 +35,7 @@ class Api::PaymentsController < ApplicationController
 
   def retrieve_payment
     @payment = current_user.payments.where(regtype: "Sports registration", status: "Payment initiated")
-    render json: @payment, root: false
+    render json: @payment
   end
 
   private
