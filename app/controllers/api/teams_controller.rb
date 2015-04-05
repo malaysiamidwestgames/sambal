@@ -17,6 +17,24 @@ class Api::TeamsController < ApplicationController
     render json: @teams
   end
 
+  def update_payment
+    @teams = current_user.teams.where(payment_id: 0)
+    if payId = params[:payment_id]
+      @teams.update_all(payment_id: payId)
+    end
+    render json: @teams
+  end
+
+
+  def retrieve_amount
+    @teams = current_user.teams.where(payment_id: 0)
+    @amount = 0
+    @teams.each do |team|
+      @amount += team.game.price_per_team
+    end
+    render json: @amount
+  end
+
 
 
   private

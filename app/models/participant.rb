@@ -1,4 +1,4 @@
-class Participants < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :teams
+class Participant < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :team
 end

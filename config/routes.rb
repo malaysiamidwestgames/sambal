@@ -73,10 +73,14 @@ Rails.application.routes.draw do
     resources :account_activations, only: [:update]
     resources :teams, only: [:index, :create]
     resources :payments, only: [:create, :show, :index]
+    resources :participants, only: [:create]
     resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
     post '/hook' => 'payments#hook'
+    get '/payupdate' => 'teams#update_payment'
+    get '/outpay' => 'payments#retrieve_payment'
+    get '/paybalance' => 'teams#retrieve_amount'
   end
 
   
