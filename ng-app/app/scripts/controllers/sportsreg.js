@@ -28,17 +28,18 @@ angular.module('midwestApp')
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
-         /* $http
+          $http
             .get('api/teams?payment_id=' + $scope.payId)
             .success(function(data) {
               console.log(data);
               $scope.teams = data.teams
-            })*/
+            })
         }
         if (data.length == 0) {
           $http
             .get('/api/paybalance')
             .success(function(data) {
+              console.log(data)
               if(data > 0) {
                 $scope.amount = data
               }
@@ -76,7 +77,7 @@ angular.module('midwestApp')
           $scope.teams = data.teams;
           $scope.spotsLeft = $scope.selectedAction.max_teams - $scope.teams.length;
           for (var i = 0; i < $scope.teams.length; i++ ) {
-            if ($scope.teams[i].payment != null && $scope.teams[i].payment.status == "Completed") {
+            if ($scope.teams[i].team_payment_status == true) {
               $scope.paid = true;
             }
             if ($scope.teams[i].team_captain == $rootScope.currentUser.id) {

@@ -5,11 +5,11 @@
       <div class="panel-body">
         <h1 class="title">Sports Registration and Payment
           <button class="btn btn-themed pull-right btn-lg" ng-show="payId == 0" ng-disabled="amount == 0" class="ng-hide" ng-click="paymentInit('Sports registration')">Pay ${{amount}}</button>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
+          <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="midwestmalaysia@gmail.com">
+            <input type="hidden" name="business" value="everaldo@umich.edu">
             <input type="hidden" name="invoice" value="{{payId}}">
-            <input type="hidden" name="notify_url" value="http://malaysiamidwestgames.com/api/hook">
+            <input type="hidden" name="notify_url" value="http://13c56538.ngrok.com/api/hook">
             <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
             <input type="hidden" name="return" value="http://malaysiamidwestgames.com/app/payment/done">
             <input type="hidden" name="rm" value="1">
@@ -18,6 +18,7 @@
             <input type="hidden" name="amount" value="{{amount}}">
             <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
           </form>
+          <a class="btn btn-themed pull-right btn-lg contact-us" ng-show="currentUser.sports_payment_unpaid" ng-href="contact-us" role="button">Contact us</a>
         </h1>
         <div class="clearfix" ng-hide="currentUser.sports_payment_unpaid">
           <div class="dropdown">
@@ -33,7 +34,7 @@
           </div>
         </div>
         <div ng-show="currentUser.sports_payment_unpaid" class="paystatus">
-          There are outstanding payments from previous registrations. Please complete the payment first if you want to register for other sports. Payment is still pending for the following sports<br><br>
+          There are outstanding payments from previous registrations. Please complete the payment first if you want to register for other sports. Payment is still pending for the following sports:<br><br>
           <table class="table table-bordered">
             <tr>
               <th>Sports</th>

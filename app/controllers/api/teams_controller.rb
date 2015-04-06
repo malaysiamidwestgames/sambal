@@ -13,6 +13,8 @@ class Api::TeamsController < ApplicationController
     @teams = Team.all
     if tournaments_id = params[:tournaments_id]
       @teams = Team.joins(:game).where(games: {id:tournaments_id})
+    elsif payId = params[:payment_id]
+      @teams = Team.where(payment_id: payId)
     end
     render json: @teams
   end

@@ -10,4 +10,11 @@ class Team < ActiveRecord::Base
     @teamleader = User.where(id: captain)
     return @teamleader
   end
+
+  def team_payment_status
+    idx = self.payment do |payment|
+      payment.regtype == 'Sports registration' && payment.status == 'Completed'
+    end
+    return idx != nil
+  end
 end

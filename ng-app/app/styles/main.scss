@@ -454,7 +454,7 @@ button#update-info-btn {
     height: 550px;
   }
 
-  .panel {
+  .col-md-8 {
     .panel-body {
       height: 150px;
     }
@@ -474,6 +474,10 @@ button#update-info-btn {
       overflow-y: auto;
       max-height: 200px;
     }
+  }
+
+  .contact-us {
+    margin-right: 10px;
   }
 
   .form-group {
