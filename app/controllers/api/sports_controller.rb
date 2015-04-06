@@ -1,4 +1,4 @@
-class Api::AllsportsController < ApplicationController
+class Api::SportsController < ApplicationController
 	#respond_to :json
 
 	def index

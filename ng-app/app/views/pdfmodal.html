@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4">
+
+    <div class="btn-group-vertical btn-block">
+      <div class="panel panel-themed" style="margin-bottom: 0px">
+        <div class="panel-heading">
+          <h4>Choose a sports</h4>
+        </div>
+      </div>
+      <label ng-repeat="sport in sports" class="btn btn-themed" ng-model="$parent.selectedSport" btn-radio="sport">
+        {{ sport.name }}
+      </label>
+      <p>{{ item }}</p>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h4>{{ selectedSport.name }} Rules</h4>
+      </div>
+      <div class="panel-body">
+        <script type="text/ng-template" id="rules.html">
+          <div class="modal-header">
+            <h3 class="modal-title">{{ selectedSport.name }}</h3>
+          </div>
+          <div class="modal-body">
+            <iframe ng-src="{{ selectedSport.link }}" width="100%" height="400px"></iframe>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="close()">Close</button>
+          </div>
+        </script>
+        <button class="btn btn-default" ng-click="open('lg')">Rules</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,5 +9,5 @@
  */
 angular.module('midwestApp')
   .factory('gamesResource', function (httpWrapper) {
-    return httpWrapper.get('/api/allgames');
+    return httpWrapper.get('/api/games');
   });

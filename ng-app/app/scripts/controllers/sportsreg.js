@@ -61,9 +61,9 @@ angular.module('midwestApp')
         link: 'promo/auditions'
       }];
 */
-    $http.get('/api/allgames')
+    $http.get('/api/games')
       .success(function(data){
-        $scope.games = data.allgames;
+        $scope.games = data.games;
       });
 
 

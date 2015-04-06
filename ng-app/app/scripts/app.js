@@ -92,6 +92,10 @@ angular
         controller: 'SportsregCtrl',
         requireLogin: true
       })
+      .when('/testing', {
+        templateUrl: 'views/pdfmodal.html',
+        controller: 'PdfmodalCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
