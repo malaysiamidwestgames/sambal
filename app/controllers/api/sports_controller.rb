@@ -5,5 +5,10 @@ class Api::SportsController < ApplicationController
 		# Gather all sports data
 		@sports = Sport.all
 		render json: @sports
-	end
+  end
+
+  def show
+    @sport = Sport.find(params[:id])
+    render json: @sport
+  end
 end

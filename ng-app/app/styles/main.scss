@@ -125,6 +125,21 @@ body {
   }
 }
 
+.btn-themed-inverse {
+  color: #FFF;
+  background-color: $michigan-blue;
+  border-color: $michigan-lightblue;
+
+  &:hover {
+    color: #FFF;
+    background-color: $michigan-lightblue;
+  }
+
+  &:disabled {
+    background-color: $michigan-lightblue;
+  }
+}
+
 .overlay {
     position:absolute;
     top:0px;
