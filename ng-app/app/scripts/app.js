@@ -77,8 +77,8 @@ angular
         templateUrl: 'views/auditions.html'
       })
       .when('/rules', {
-        templateUrl: 'views/info.html',
-        controller: 'InfoCtrl'
+        templateUrl: 'views/pdfmodal.html',
+        controller: 'PdfmodalCtrl'
       })
       .when('/contact-us', {
         templateUrl: 'views/contact-us.html',

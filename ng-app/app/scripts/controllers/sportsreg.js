@@ -39,7 +39,6 @@ angular.module('midwestApp')
           $http
             .get('/api/paybalance')
             .success(function(data) {
-              console.log(data)
               if(data > 0) {
                 $scope.amount = data
               }
@@ -47,23 +46,10 @@ angular.module('midwestApp')
         }
       });
 
-
-
-    /*$scope.todos = [
-      {
-        title: 'Register for sports',
-        label: 'Register now',
-        link: 'sportsreg'
-      },
-      {
-        title: 'Audition for Midwest Night',
-        label: 'More info',
-        link: 'promo/auditions'
-      }];
-*/
     $http.get('/api/games')
       .success(function(data){
         $scope.games = data.games;
+        console.log($scope.games);
       });
 
 
@@ -85,7 +71,8 @@ angular.module('midwestApp')
             }
           }
         }
-      )
+      );
+
       if ($scope.selectedAction.max_players_per_team  == 1) {
         $scope.individual = true;
       }
@@ -108,7 +95,7 @@ angular.module('midwestApp')
             .post('api/participants', {team_id: data.team.id, user_id:$rootScope.currentUser.id})
             .success(function(data) {
               console.log(data);
-            })
+            });
           $scope.amount += $scope.selectedAction.price_per_team;
           $scope.registered = true;
       })
@@ -116,9 +103,6 @@ angular.module('midwestApp')
           console.log(error);
         });
     };
-
-
-    ;
 
     $scope.paymentInit = function (regtype) {
       $http

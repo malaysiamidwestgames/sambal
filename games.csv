@@ -1,39 +1,39 @@
-name,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id,sport_id
-AMAIZEing Race,10,10,5,5,10,5,0,0,0,20,Mitchell Field,Team Race,1,1
-Men's Singles,1,1,5,1,1,0,21,3,0,32,CCRB,Knockout,2,2
-Women's Singles,1,1,10,1,1,0,21,3,0,8,CCRB,Knockout,3,2
-Men's Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,4,2
-Women's Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,5,2
-Mixed Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,6,2
-Basketball,5,12,50,5,5,0,0,0,20,8,CCRB,League-2 Knockout,7,3
-Bowling,3,4,20,3,3,0,0,3,0,8,Mason Hall,Knockout,8,4
-Carom,1,1,5,1,1,0,0,0,0,8,Mason Hall,Knockout,9,5
-Chess,1,1,5,1,1,0,0,0,0,16,Mason Hall,Knockout,10,6
-Congkak,1,1,5,1,1,0,0,0,0,8,Mason Hall,Knockout,11,7
-CS:GO,5,6,20,5,5,0,0,0,0,8,Mason Hall,Knockout,12,8
-Dodgeball,6,10,35,6,6,0,0,0,0,8,Palmer Field,League-2 Knockout,13,9
-Dota 2,5,6,20,5,5,0,0,0,0,8,Mason Hall,Knockout,14,10
-FIFA 15 Individual,1,1,5,1,1,0,0,0,0,16,Mason Hall,Knockout,15,11
-FIFA 15 Dual,2,2,10,2,2,0,0,0,0,8,Mason Hall,Knockout,16,11
-Flag Rugby,7,15,50,7,7,0,0,0,0,6,Mitchell Field,Round Robin,17,12
-Men,5,12,50,5,5,0,0,0,0,12,Coliseum,League-4 Knockout,18,13
-Women,5,12,50,5,5,0,0,0,0,8,Coliseum,League-2 Knockout,19,13
-Netball,7,12,50,7,7,0,0,0,0,8,Coliseum,League-2 Knockout,21,14
-Pool,1,1,5,1,1,0,0,0,0,16,Michigan Union,Knockout,22,15
-Men,1,1,5,1,1,0,0,0,0,8,CCRB,Knockout,23,16
-Women,1,1,5,1,1,0,0,0,0,8,CCRB,Knockout,24,16
-Men,1,1,5,1,1,0,0,0,0,8,CCRB,Knockout,25,17
-Women,1,1,5,1,1,0,0,0,0,8,CCRB,Knockout,26,17
-Soccer,9,15,50,9,9,0,0,0,0,16,Mitchell Field,League-4 Knockout,27,18
-Men's Singles,1,1,5,1,1,0,0,0,0,16,Coliseum,League-4 Knockout,28,19
-Women's Singles,1,1,5,1,1,0,0,0,0,8,Coliseum,League-2 Knockout,29,19
-Men's Doubles,2,2,10,2,2,0,0,0,0,8,Coliseum,League-2 Knockout,30,19
-Men's Doubles,2,2,10,2,2,0,0,0,0,4,Coliseum,Round Robin,31,19
-Takraw,3,5,20,3,3,0,0,0,0,4,Mitchell Field,Round Robin,32,20
-Men's Singles,1,1,5,1,1,0,0,0,0,8,Palmer Field,League-2 Knockout,33,21
-Women's Singles,1,1,5,1,1,0,0,0,0,4,Palmer Field,Round Robin,34,21
-Mixed Doubles,2,2,10,2,2,0,0,0,0,4,Palmer Field,Round Robin,35,21
-Tug of War,15,18,50,15,15,0,0,0,0,12,Mitchell Field,Knockout,36,22
-Ultimate Frisbee Open,7,15,50,7,7,0,0,0,0,4,Mitchell Field,Round Robin,37,23
-Men,6,12,50,6,6,0,0,0,0,16,CCRB,League-4 Knockout,38,24
-Open,6,12,50,6,6,0,0,0,0,16,CCRB,League-4 Knockout,39,24
+name,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id,sport_id,spots_left
+Open,10,10,50,5,10,5,0,0,0,20,Mitchell Field,Team Race,1,1,20
+Men Singles,1,1,5,1,1,0,21,3,0,32,CCRB,Knockout,2,2,32
+Women Singles,1,1,5,1,1,0,21,3,0,8,CCRB,Knockout,3,2,8
+Men Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,4,2,16
+Women Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,5,2,16
+Mixed Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,6,2,16
+Open,5,8,40,5,5,0,0,0,20,8,CCRB,League-2 Knockout,7,3,8
+Open,3,4,20,3,3,0,0,3,0,8,Colonial Lanes,Knockout,8,4,8
+Open,1,1,5,1,1,0,0,3,0,8,Mason Hall,Round Robin,9,5,8
+Open,1,1,5,1,1,0,0,1,0,16,Mason Hall,Knockout,10,6,16
+Open,1,1,5,1,1,0,0,3,0,8,Mason Hall,Round Robin,11,7,8
+Open,5,6,30,5,5,0,5,5,5,8,Mason Hall,Knockout,12,8,8
+Open,6,10,50,6,6,0,6,3,7,8,Palmer Field,League-2 Knockout,13,9,8
+Open,5,6,30,5,5,0,0,3,0,8,Mason Hall,Knockout,14,10,8
+Individual,1,1,5,1,1,0,0,1,7,16,Mason Hall,Knockout,15,11,16
+Dual,2,2,10,2,2,0,0,1,7,16,Mason Hall,Knockout,16,11,16
+Men,7,12,60,7,7,0,0,1,15,6,Mitchell Field,Round Robin,17,12,6
+Men,5,8,40,5,5,0,0,1,15,12,Coliseum,League-4 Knockout,18,13,12
+Women,5,8,40,5,5,0,0,1,15,8,Coliseum,League-2 Knockout,19,13,8
+Women,7,10,50,7,7,0,0,1,0,8,Coliseum,League-2 Knockout,21,14,8
+Open,1,1,5,1,1,0,8,3,0,16,Michigan Union,Knockout,22,15,16
+Men,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,23,16,8
+Women,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,24,16,8
+Men,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,25,17,8
+Women,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,26,17,8
+Men,9,15,75,9,9,0,0,1,30,16,Mitchell Field,League-4 Knockout,27,18,16
+Men Singles,1,1,5,1,1,0,11,3,0,16,Coliseum,League-4 Knockout,28,19,16
+Women Singles,1,1,5,1,1,0,11,3,0,8,Coliseum,League-2 Knockout,29,19,8
+Men Doubles,2,2,10,2,2,0,11,3,0,8,Coliseum,League-2 Knockout,30,19,8
+Women Doubles,2,2,10,2,2,0,11,3,0,4,Coliseum,Round Robin,31,19,4
+Open,3,5,25,3,3,0,15,3,0,4,Mitchell Field,Round Robin,32,20,4
+Men Singles,1,1,5,1,1,0,60,8,0,8,Palmer Field,League-2 Knockout,33,21,8
+Women Singles,1,1,5,1,1,0,60,8,0,4,Palmer Field,Round Robin,34,21,4
+Mixed Doubles,2,2,10,2,2,0,60,8,0,4,Palmer Field,Round Robin,35,21,4
+Open,15,18,30,15,15,0,0,3,0,12,Mitchell Field,Knockout,36,22,12
+Open,7,12,60,7,7,0,0,1,7,4,Mitchell Field,Round Robin,37,23,4
+Men,6,10,50,6,6,0,25,3,0,16,CCRB,League-4 Knockout,38,24,16
+Open,6,10,50,6,6,0,25,3,0,16,CCRB,League-4 Knockout,39,24,16

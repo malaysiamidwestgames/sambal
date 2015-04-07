@@ -4,7 +4,7 @@
     <div class="btn-group-vertical btn-block">
       <div class="panel panel-themed" style="margin-bottom: 0px">
         <div class="panel-heading">
-          <h4>List of Rules</h4>
+          <div align="center"><h4 style="margin-bottom: 0px; margin-top: 0px">Rules</h4></div>
         </div>
       </div>
       <label ng-repeat="sport in sports" class="btn btn-themed" ng-model="$parent.selectedSport" btn-radio="sport">
@@ -14,12 +14,36 @@
     </div>
   </div>
   <div class="col-md-9">
+    <div class="alert alert-dismissible alert-info" role="alert">
+      Tips: Mouseover 'Type' column for more info.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="alert alert-dismissible alert-info" role="alert">
+      Tips: 'Spots Left' is not live. Refresh to get the latest update!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
     <div class="panel panel-themed">
       <div class="panel-heading">
-        <h4>{{ selectedSport.name }}</h4>
+        <div><h4 style="margin-bottom: 1px; margin-top: 1px">{{ selectedSport.name }}</h4></div>
       </div>
       <div class="panel-body">
-        <table class="table table-hover table-stripped">
+        <div ng-show="selectedSport.games.length">
+          <h3>Schedule</h3>
+          <table class="table table-hover table-striped">
+            <tr ng-show="selectedSport.games.length" style="border: none">
+              <th>Day and Time</th>
+              <th>Venue</th>
+            </tr>
+            <tr>
+              <td>{{selectedSport.schedule}}</td>
+              <td>{{selectedSport.venue}}</td>
+            </tr>
+          </table>
+        </div>
+        <div ng-show="selectedSport.games.length">
+          <h3>Details</h3>
+        </div>
+        <table class="table table-hover table-striped">
           <h3 align="center" ng-show="selectedSport.name==='General Rules'">
             Please read the general rules!
           </h3>
@@ -27,7 +51,7 @@
             <th>Categories</th>
             <th>Players</th>
             <th>Price</th>
-            <th>Tournament Type</th>
+            <th>Type</th>
             <th class="danger">Slots left</th>
           </tr>
           <tr ng-repeat="game in selectedSport.games">
@@ -35,7 +59,7 @@
             <td>{{game.max_players_per_team}}</td>
             <td>{{game.price_per_team}}</td>
             <td popover-append-to-body="true" popover="{{ game.meaning }}" popover-trigger="mouseenter">{{ game.tournament_type }}</td>
-            <td class="danger">{{game.max_teams}}</td>
+            <td class="danger">{{game.spots_left}}</td>
           </tr>
 
         </table>

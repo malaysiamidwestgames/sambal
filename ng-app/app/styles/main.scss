@@ -11,6 +11,7 @@ $michigan-maize: #FCD000;
 $michigan-maize-light: #FCDE4C;
 $michigan-maize-dark: #7C6700;
 $blue-background: #40658f;
+$michigan-hill-brown: #7a121c;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -107,6 +108,15 @@ body {
     color: #FFF;
     background-color: $michigan-blue;
     border-color: $michigan-lightblue;
+  }
+}
+
+.panel-themed-light {
+  border-color: $michigan-hill-brown;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $michigan-hill-brown;
+    border-color: $michigan-hill-brown;
   }
 }
 
