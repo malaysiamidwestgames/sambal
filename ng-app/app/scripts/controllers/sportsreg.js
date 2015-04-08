@@ -23,19 +23,6 @@ angular.module('midwestApp')
       name: 'Choose a sport to register for'
     };
 
-
-    /*$scope.todos = [
-      {
-        title: 'Register for sports',
-        label: 'Register now',
-        link: 'sportsreg'
-      },
-      {
-        title: 'Audition for Midwest Night',
-        label: 'More info',
-        link: 'promo/auditions'
-      }];
-*/  $http.get('/api/allgames')
     $http
       .get('/api/outpay')
       .success(function(data) {
