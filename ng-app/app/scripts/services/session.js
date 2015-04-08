@@ -24,6 +24,14 @@ angular.module('midwestApp')
       return $rootScope.currentUser.authorization_level === 'admin';
     };
 
+    var hasPaidGen = function () {
+      console.log($rootScope.currentUser);
+      if ($rootScope.currentUser === undefined) {
+        return false;
+      }
+      return $rootScope.currentUser.registration_payment_status;
+    };
+
     var revokeAccess = function(resp) {
       if (resp.status === 401 || resp.status === 403) {
         $cookieStore.remove('access_token');
@@ -86,6 +94,7 @@ angular.module('midwestApp')
 
     service.isAdmin = isAdmin;
     service.isLoggedIn = isLoggedIn;
+    service.hasPaidGen = hasPaidGen;
     service.getAccessToken = getAccessToken;
 
     init();

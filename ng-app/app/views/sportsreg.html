@@ -70,14 +70,15 @@
           <h3 class="panel-title" ng-show="selectedAction.name != 'Choose a sport to register for'">{{individual && "Individual events" || "Team events"}}</h3>
         </div>
         <div class="panel-body">
-           <b class="instructions" ng-show="selectedAction.name != 'Choose a sport to register for'">{{paid && "Your payment has been received and you are registered for this event" || registered && "Your spot for this event has already been reserved. Please proceed with payment to confirm it" || individual && selectedAction.name + " is an individual event. You can go ahead and register for this event by clicking the button" || selectedAction.name + " is a team based event. You can either request to join a team in the list below or start your own team as a captain. If you do start your own team, you will be solely responsible for paying the team fee."}}</b>
+           <b class="instructions" ng-show="selectedAction.name != 'Choose a sport to register for'">{{full && "There are no spots left to register for this event" || paid && "Your payment has been received and you are registered for this event" || registered && "Your spot for this event has already been reserved. Please proceed with payment to confirm it" || individual && selectedAction.name + " is an individual event. You can go ahead and register for this event by clicking the button" || selectedAction.name + " is a team based event. You can either request to join a team in the list below or start your own team as a captain. If you do start your own team, you will be solely responsible for paying the team fee."}}</b>
            <b class="instructions" ng-hide="selectedAction.name != 'Choose a sport to register for'"> Select a sport to find out how to register for it</b>
             <div class="row" ng-show="individual != true && registered == false && selectedAction.name != 'Choose a sport to register for'">
               <form class="form-inline">
                 <div class="form-group">
                   <label class="sr-only">Team name</label>
-                  <input type="text" class="form-control" id="usr" placeholder="Enter team name" ng-model="teamName" required>
-                  <button type="submit" class="btn btn-themed pull-right btn-md" ng-click="setTeam(teamName)">Create team</button>
+                  <input type="text" class="form-control" id="team" placeholder="Enter team name" ng-model="teamName" required>
+                  <button type="submit" class="btn btn-themed pull-right btn-md" ng-click="setTeam(teamName,teamUni)">Create team</button>
+                  <label class="teamUni"><input type="checkbox" ng-model="noTeamUni">This team is not affiliated with my university</label>
                 </div>
               </form>
             </div>
@@ -92,7 +93,7 @@
           <tr ng-repeat="team in teams">
             <td>
               <div class="teamname">{{team.name}}<br>
-                <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}</div>
+                <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}<br>Contingent: {{team.university.name}}</div>
               </div>
             </td>
           </tr>

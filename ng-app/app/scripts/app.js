@@ -90,7 +90,8 @@ angular
       .when('/sportsreg', {
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
-        requireLogin: true
+        requireLogin: true,
+        requirePaidGen: true
       })
       .when('/testing', {
         templateUrl: 'views/pdfmodal.html',
@@ -134,6 +135,10 @@ angular
       }
       else if (next.requireLogout && session.isLoggedIn()) {
         $location.path('/dashboard/');
+        event.preventDefault();
+      }
+      else if (next.requirePaidGen && !session.hasPaidGen()) {
+        $location.path('/');
         event.preventDefault();
       }
       $rootScope.bodyClass = next.bodyClass;
