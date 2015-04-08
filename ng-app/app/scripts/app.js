@@ -91,7 +91,7 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: false
+        requirePaidGen: true
       })
       .when('/testing', {
         templateUrl: 'views/pdfmodal.html',
