@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('SportsregCtrl', function ($scope, $http, $rootScope, universityResource) {
+  .controller('SportsregCtrl', function ($scope, $http, $rootScope) {
 
     var userTeamUni;
     $scope.payId = 0;
@@ -22,6 +22,7 @@ angular.module('midwestApp')
     $scope.selectedAction = {
       name: 'Choose a sport to register for'
     };
+    console.log($rootScope.currentUser);
 
 
     /*$scope.todos = [
@@ -35,7 +36,7 @@ angular.module('midwestApp')
         label: 'More info',
         link: 'promo/auditions'
       }];
-*/  $http.get('/api/allgames')
+*/
     $http
       .get('/api/outpay')
       .success(function(data) {
@@ -63,8 +64,8 @@ angular.module('midwestApp')
 
     $http.get('/api/games')
       .success(function(data){
+        console.log(data);
         $scope.games = data.games;
-        console.log($scope.games);
       });
 
     $http

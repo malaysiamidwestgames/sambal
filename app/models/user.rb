@@ -50,6 +50,13 @@ class User < ActiveRecord::Base
     return idx != nil
   end
 
+  def sports_payment_uninit
+    idx = self.teams.index do |team|
+      team.payment_id == 0
+    end
+    return idx != nil
+  end
+
   # Sends activation email.
   def send_activation_email
     UserMailer.account_activation(self).deliver_now

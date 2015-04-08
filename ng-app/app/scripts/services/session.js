@@ -25,7 +25,6 @@ angular.module('midwestApp')
     };
 
     var hasPaidGen = function () {
-      console.log($rootScope.currentUser);
       if ($rootScope.currentUser === undefined) {
         return false;
       }
