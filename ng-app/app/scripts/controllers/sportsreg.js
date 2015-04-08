@@ -24,7 +24,6 @@ angular.module('midwestApp')
     };
     console.log($rootScope.currentUser);
 
-
     /*$scope.todos = [
       {
         title: 'Register for sports',

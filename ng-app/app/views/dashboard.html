@@ -47,6 +47,7 @@
         <tr>
           <th>Sports registration</th>
           <td>{{(currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
+          <td>{{currentUser.sports_payment_unpaid && "Payment pending" || currentUser.sports_payment_status && "Paid"}}</td>
         </tr>
       </table>
     </div>

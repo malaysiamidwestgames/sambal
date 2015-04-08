@@ -23,12 +23,12 @@
         <div class="clearfix" ng-hide="currentUser.sports_payment_unpaid">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-              {{ selectedAction.name }}
+              {{ selectedAction.name }} {{ selectedAction.category }}
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
               <li role="presentation menuitem" ng-repeat="game in games">
-                <a ng-click="setAction(game)">{{ game.name }}</a>
+                <a ng-click="setAction(game)">{{ game.name }} {{ game.category }}</a>
               </li>
             </ul>
           </div>
@@ -41,8 +41,8 @@
               <th>Amount</th>
             </tr>
             <tr ng-repeat="team in teams">
-              <td>{{team.game.name}}</td>
-              <td>${{team.game.price_per_team}}</td>
+              <td>{{ team.game.name }}</td>
+              <td>${{ team.game.price_per_team }}</td>
             </tr>
           </table>
         </div>

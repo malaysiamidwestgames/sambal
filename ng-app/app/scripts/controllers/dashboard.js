@@ -30,7 +30,22 @@ angular.module('midwestApp')
           link: 'payment'
         });
       }
+      console.log(user.id);
 
       //TODO: Call API to read all games that the player is playing and display it on sports tab
+      $http.get('api/participants/get/?user_id=' + user.id)
+        .success(function(result){
+          console.log(result);
+        });
+
+      $http.post('api/participants/join', {team_id: 1, user_id:user.id})
+        .success(function(result){
+          console.log(result);
+        });
+
+      $http.post('api/participants', {team_id: 2, user_id:user.id})
+        .success(function(result){
+          console.log(result);
+        });
     });
   });
