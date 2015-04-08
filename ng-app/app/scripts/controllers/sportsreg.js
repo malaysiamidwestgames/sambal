@@ -35,10 +35,36 @@ angular.module('midwestApp')
         label: 'More info',
         link: 'promo/auditions'
       }];
-*/
-    $http.get('/api/allgames')
+*/  $http.get('/api/allgames')
+    $http
+      .get('/api/outpay')
+      .success(function(data) {
+        console.log(data);
+        if (data.length == 1 ) {
+          $scope.payId = data[0].id;
+          $scope.amount = data[0].amount;
+          $http
+            .get('api/teams?payment_id=' + $scope.payId)
+            .success(function(data) {
+              console.log(data);
+              $scope.teams = data.teams
+            })
+        }
+        if (data.length == 0) {
+          $http
+            .get('/api/paybalance')
+            .success(function(data) {
+              if(data > 0) {
+                $scope.amount = data
+              }
+            });
+        }
+      });
+
+    $http.get('/api/games')
       .success(function(data){
-        $scope.games = data.allgames;
+        $scope.games = data.games;
+        console.log($scope.games);
       });
 
     $http
@@ -87,7 +113,8 @@ angular.module('midwestApp')
             }
           }
         }
-      )
+      );
+
       if ($scope.selectedAction.max_players_per_team  == 1) {
         $scope.individual = true;
       }
@@ -110,7 +137,7 @@ angular.module('midwestApp')
             .post('api/participants', {team_id: data.team.id, user_id:$rootScope.currentUser.id})
             .success(function(data) {
               console.log(data);
-            })
+            });
           $scope.amount += $scope.selectedAction.price_per_team;
           $scope.registered = true;
       })
@@ -118,9 +145,6 @@ angular.module('midwestApp')
           console.log(error);
         });
     };
-
-
-    ;
 
     $scope.paymentInit = function (regtype) {
       $http

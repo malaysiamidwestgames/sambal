@@ -4,30 +4,30 @@
       <div class="panel-body">
         <form name="signin" ng-submit="signInUser()">
           <div class="input-error-group">
-            <input type="email" 
-                   name="email" 
-                   class="form-control" 
-                   placeholder="Email" 
+            <input type="email"
+                   name="email"
+                   class="form-control"
+                   placeholder="Email"
                    ng-model="signIn.email" required>
-            <div class="error" 
-                 ng-show="signin.email.$dirty && 
-                          signin.email.$invalid && 
+            <div class="error"
+                 ng-show="signin.email.$dirty &&
+                          signin.email.$invalid &&
                           signin.email.$touched">
               <span ng-show="signin.email.$error.required">E-mail is required</span>
               <span ng-show="signin.email.$error.email">Please enter a valid e-mail</span>
             </div>
           </div>
           <div class="input-error-group">
-            <input type="password" 
-                   name="password" 
-                   class="form-control" 
-                   placeholder="Password" 
-                   ng-model="signIn.password" 
-                   ui-validate="'$value.length>=6'" 
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Password"
+                   ng-model="signIn.password"
+                   ui-validate="'$value.length>=6'"
                    required>
-            <div class="error" 
-                 ng-show="signin.password.$invalid && 
-                          signin.password.$dirty && 
+            <div class="error"
+                 ng-show="signin.password.$invalid &&
+                          signin.password.$dirty &&
                           signin.password.$touched">
               Password length must be at least 6 characters
             </div>
@@ -35,12 +35,12 @@
           <div ng-show="signInError" class="error">{{ signInError }}</div>
           <div class="resend-activation" ng-show="accountActivation.visible">
             Click <a href="" ng-click="activateAccount()">here</a> to resend activation link to your email account
-          </div>          
+          </div>
           <div class = "forgot-password">
             <a href="/app/forgot-pass">Forgot your password?</a>
           </div>
-          <button type="submit" 
-                  class="btn btn-primary" 
+          <button type="submit"
+                  class="btn btn-primary"
                   ng-disabled="signin.$invalid">
             Sign In
           </button>
@@ -61,99 +61,101 @@
         <div class="panel-body">
         <form name="registration" ng-submit="register()">
           <div class="input-error-group">
-            <input type="email" 
-                   name="email" 
-                   class="form-control" 
-                   placeholder="Email" 
-                   ng-model="reg.email" 
+            <input type="email"
+                   name="email"
+                   class="form-control"
+                   placeholder="Email"
+                   ng-model="reg.email"
                    required>
             <div class="error"
-                 ng-show="registration.email.$dirty && 
-                          registration.email.$invalid && 
+                 ng-show="registration.email.$dirty &&
+                          registration.email.$invalid &&
                           registration.email.$touched">
               <span ng-show="registration.email.$error.required">E-mail is required</span>
               <span ng-show="registration.email.$error.email">Please enter a valid e-mail</span>
             </div>
           </div>
           <div class="input-error-group">
-            <input type="first_name" 
-                   name="first_name" 
-                   class="form-control" 
-                   placeholder="First name" 
-                   ng-model="reg.first_name" 
+            <input type="first_name"
+                   name="first_name"
+                   class="form-control"
+                   placeholder="First name"
+                   ng-model="reg.first_name"
                    required>
             <div class="error"
-                 ng-show="registration.first_name.$dirty && 
-                          registration.first_name.$invalid && 
+                 ng-show="registration.first_name.$dirty &&
+                          registration.first_name.$invalid &&
                           registration.first_name.$touched">
               <span ng-show="registration.first_name.$error.required">First name is required</span>
             </div>
           </div>
           <div class="input-error-group">
-            <input type="last_name" 
-                   name="last_name" 
-                   class="form-control" 
-                   placeholder="Last name" 
-                   ng-model="reg.last_name" 
+            <input type="last_name"
+                   name="last_name"
+                   class="form-control"
+                   placeholder="Last name"
+                   ng-model="reg.last_name"
                    required>
             <div class="error"
-                 ng-show="registration.last_name.$dirty && 
-                          registration.last_name.$invalid && 
+                 ng-show="registration.last_name.$dirty &&
+                          registration.last_name.$invalid &&
                           registration.last_name.$touched">
               <span ng-show="registration.last_name.$error.required">Last name is required</span>
             </div>
           </div>
           <div class="input-error-group">
-            <input type="password" 
-                   name="password" 
-                   class="form-control" 
-                   placeholder="Password" 
-                   ng-model="reg.password" 
-                   ui-validate="'$value.length>=6'" 
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Password"
+                   ng-model="reg.password"
+                   ui-validate="'$value.length>=6'"
                    required>
             <div class="error"
-                 ng-show="registration.password.$invalid && 
-                          registration.password.$dirty && 
+                 ng-show="registration.password.$invalid &&
+                          registration.password.$dirty &&
                           registration.password.$touched">
               Password length must be at least 6 characters
             </div>
           </div>
           <div class="input-error-group">
-            <input type="password" 
-                   name="password_confirmation" 
-                   class="form-control" 
-                   placeholder="Confirm password" 
-                   ng-model="reg.password_confirmation" 
-                   ui-validate="'$value==reg.password'" 
-                   ui-validate-watch="'reg.password'" 
+            <input type="password"
+                   name="password_confirmation"
+                   class="form-control"
+                   placeholder="Confirm password"
+                   ng-model="reg.password_confirmation"
+                   ui-validate="'$value==reg.password'"
+                   ui-validate-watch="'reg.password'"
                    required>
             <div ng-show="registration.password_confirmation.$invalid &&
-                          registration.password_confirmation.$dirty && 
-                          registration.password_confirmation.$touched" 
+                          registration.password_confirmation.$dirty &&
+                          registration.password_confirmation.$touched"
                  class="error">
               Passwords do not match
             </div>
           </div>
           <div class="input-error-group">
-            <input type="text" 
-                   class="form-control" 
-                   placeholder="School name" 
+            <input type="text"
+                   class="form-control"
+                   placeholder="School name"
                    ng-model="reg.university"
-                   typeahead="university.name for university in universities | filter:$viewValue | limitTo:8" 
-                   typeahead-min-length="2" 
+                   typeahead="university.name for university in universities | filter:$viewValue | limitTo:8"
+                   typeahead-min-length="2"
                    typeahead-editable="false"
-                   ng-readonly="noUniversityCheckbox" 
+                   ng-readonly="noUniversityCheckbox"
                    required>
             <label>
               <input type="checkbox" ng-model="noUniversityCheckbox"> I'm not associated with a university
             </label>
           </div>
-          <div class="error" 
+          <div class="error"
                ng-repeat="error in registerErrors">
             {{ error }}
           </div>
-          <button type="submit" 
-                  class="btn btn-primary" 
+
+          <p>By registering, I agree to the <a href="assets/General Rules.pdf" target="_blank">terms and conditions</a></p>
+          <button type="submit"
+                  class="btn btn-primary"
                   ng-disabled="registration.$invalid">
             Register
           </button>
