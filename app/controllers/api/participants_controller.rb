@@ -1,7 +1,7 @@
 class Api::ParticipantsController < ApplicationController
   def create
     @participant = Participant.new(participant_params)
-    @participant.activation_key = @participant.generate_activation_key()
+    @participant.activation_key = Participant.generate_activation_key
     @participant.status = "team_captain"
     if @participant.save
       render json: @participant, status: :created
@@ -12,7 +12,7 @@ class Api::ParticipantsController < ApplicationController
 
   def join_team
     @participant = Participant.new(participant_params)
-    @participant.update_attribute(:activation_key, @participant.generate_activation_key())
+    @participant.update_attribute(:activation_key, Participant.generate_activation_key)
     @participant.status = "join_request"
     if @participant.save
       render json: @participant, status: :created
@@ -23,7 +23,7 @@ class Api::ParticipantsController < ApplicationController
 
   def invite_team
     @participant = Participant.new(participant_params)
-    @participant.activation_key = @participant.generate_activation_key()
+    @participant.update_attribute(:activation_key, Participant.generate_activation_key)
     @participant.status = "invite_request"
     if @participant.save
       render json: @participant, status: :created
@@ -43,7 +43,7 @@ class Api::ParticipantsController < ApplicationController
       end
     else
       @participant.errors.add(:activation_key, "wrong activation_key!")
-      @participant.activation_key = @participant.generate_activation_key()
+      @participant.activation_key = @participant.generate_activation_key
       render json: @participant.errors, status: :unprocessable_entity
     end
   end
@@ -59,7 +59,7 @@ class Api::ParticipantsController < ApplicationController
       end
     else
       @participant.errors.add(:activation_key, "wrong activation_key!")
-      @participant.activation_key = @participant.generate_activation_key()
+      @participant.activation_key = @participant.generate_activation_key
       render json: @participant.errors, status: :unprocessable_entity
     end
   end

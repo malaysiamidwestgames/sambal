@@ -72,7 +72,7 @@ Rails.application.routes.draw do
     get 'universities/count' => 'universities#count'
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]
-    resources :teams, only: [:index, :create]
+    resources :teams, only: [:index, :create, :show]
     resources :payments, only: [:create, :show, :index]
     resources :participants, only: [:create]
     post 'participants/join' => 'participants#join_team'

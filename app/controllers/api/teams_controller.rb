@@ -12,6 +12,13 @@ class Api::TeamsController < ApplicationController
     end
   end
 
+  # GET /teams/1
+  # GET /teams/1.json
+  def show
+    @team = Team.find(params[:id])
+    render json: @team
+  end
+
   def index
     @teams = Team.all
     if tournaments_id = params[:tournaments_id]

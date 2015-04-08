@@ -48,6 +48,14 @@
           <th>Sports registration</th>
           <td>{{currentUser.sports_payment_unpaid && "Payment pending" || currentUser.sports_payment_status && "Paid"}}</td>
         </tr>
+        <tr ng-repeat="participate in participating">
+          <th>
+            {{ participate.name }}
+          </th>
+          <td>
+            {{ participate.status }}
+          </td>
+        </tr>
       </table>
     </div>
   </div>
