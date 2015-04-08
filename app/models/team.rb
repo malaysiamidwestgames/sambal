@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
   has_many :users, through: :participants
   belongs_to :game
   belongs_to :payment
+  belongs_to :university
 
   def team_captain_name
     captain = self.team_captain

@@ -456,12 +456,12 @@ button#update-info-btn {
 
   .col-md-8 {
     .panel-body {
-      height: 150px;
+      height: 175px;
     }
   }
 
   table.participants {
-    height: 300px;
+    height: 275px;
     overflow-y: auto;
   }
 
@@ -482,9 +482,16 @@ button#update-info-btn {
 
   .form-group {
     margin: 20px;
-    .form-control {
-      width: 300px;
-      margin-right: 10px;
+    #team.form-control {
+      width: 400px;
+      margin-right: 5px;
+    }
+    #uni.form-control {
+      width: 250px;
+      margin-right: 5px;
+    }
+    label.teamUni {
+      margin-top: 10px;
     }
   }
 
@@ -505,6 +512,7 @@ button#update-info-btn {
     font-size: 2em;
     .captainname {
       font-size: large;
+      margin-bottom: -100px;
     }
   }
 
