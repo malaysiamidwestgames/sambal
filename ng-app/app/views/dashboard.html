@@ -39,7 +39,7 @@
         </tr>
       </table>
     </div>
-    <div class="panel panel-themed">
+    <!--div class="panel panel-themed">
       <div class="panel-heading">
         <h3 class="panel-title">Sports</h3>
       </div>
@@ -48,7 +48,15 @@
           <th>Sports registration</th>
           <td>{{(currentUser.registration_payment_status == false && "Please register for general registration first before registering for sports") || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
         </tr>
+        <tr ng-repeat="participate in participating">
+          <th>
+            {{ participate.name }}
+          </th>
+          <td>
+            {{ participate.status }}
+          </td>
+        </tr>
       </table>
-    </div>
+    </div-->
   </div>
 </div>

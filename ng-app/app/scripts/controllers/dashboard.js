@@ -12,6 +12,11 @@ angular.module('midwestApp')
   .controller('DashboardCtrl', function ($scope,$http, session) {
     $scope.todos = [
     {
+      title: 'Register for sports',
+      label: 'Coming soon'//,
+      //link: 'sportsreg'
+    },
+    {
       title: 'Audition for Midwest Night',
       label: 'More info',
       link: 'promo/auditions'
@@ -36,19 +41,21 @@ angular.module('midwestApp')
       console.log(user.id);
 
       //TODO: Call API to read all games that the player is playing and display it on sports tab
-      $http.get('api/participants/get/?user_id=' + user.id)
+      /*$http.get('api/participants/get/?user_id=' + user.id)
         .success(function(result){
-          console.log(result);
-        });
+          $scope.participating = result.participants;
 
-      $http.post('api/participants/join', {team_id: 1, user_id:user.id})
-        .success(function(result){
-          console.log(result);
-        });
+          $scope.$watch('participating', function() {
+            $scope.participating.forEach(function(participate){
+              console.log(participate.team_id);
+              $http.get('/api/teams/' + participate.team_id)
+                .success(function(data){
+                  participate.name = data.team.name;
+                })
+            });
+          });
+        });*/
 
-      $http.post('api/participants', {team_id: 2, user_id:user.id})
-        .success(function(result){
-          console.log(result);
-        });
+
     });
   });

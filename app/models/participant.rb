@@ -4,7 +4,7 @@ class Participant < ActiveRecord::Base
   attr_accessor :activation_key
 
 
-  def Participant.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -12,9 +12,7 @@ class Participant < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-  def generate_activation_key()
-    self.activation_token  = Participant.digest(Participant.new_token)
+  def self.generate_activation_key
+    Participant.digest(Participant.new_token)
   end
-
-
 end
