@@ -39,7 +39,7 @@ angular.module('midwestApp')
           $scope.sports.push(entry);
         });
         $scope.sports.forEach(function(entry) {
-          entry.link = 'assets/' + entry.name + '.pdf';
+          entry.link = 'assets/MMG2015_' + entry.name + '.pdf';
         });
         $scope.selectedSport = $scope.sports[0];
       });
