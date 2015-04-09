@@ -55,7 +55,7 @@
             <th class="danger">Slots left</th>
           </tr>
           <tr ng-repeat="game in selectedSport.games">
-            <td>{{game.name}}</td>
+            <td>{{game.category}}</td>
             <td>{{game.max_players_per_team}}</td>
             <td>{{game.price_per_team}}</td>
             <td popover-append-to-body="true" popover="{{ game.meaning }}" popover-trigger="mouseenter">{{ game.tournament_type }}</td>
