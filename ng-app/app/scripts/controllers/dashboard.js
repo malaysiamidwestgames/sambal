@@ -12,11 +12,6 @@ angular.module('midwestApp')
   .controller('DashboardCtrl', function ($scope,$http, session) {
     $scope.todos = [
     {
-      title: 'Register for sports',
-      label: 'Register now',
-      link: 'sportsreg'
-    },
-    {
       title: 'Audition for Midwest Night',
       label: 'More info',
       link: 'promo/auditions'
@@ -28,6 +23,14 @@ angular.module('midwestApp')
           title: 'Pay for registration',
           label: 'Pay now',
           link: 'payment'
+        });
+      }
+
+      if (user.registration_payment_status) {
+        $scope.todos.unshift({
+          title: 'Register for sports',
+          label: 'Register now',
+          link: 'sportsreg'
         });
       }
       console.log(user.id);
