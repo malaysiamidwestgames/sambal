@@ -31,6 +31,15 @@ angular.module('midwestApp')
         });
       }
 
+      if (user.registration_payment_status) {
+        $scope.todos.unshift({
+          title: 'Register for sports',
+          label: 'Register now',
+          link: 'sportsreg'
+        });
+      }
+      console.log(user.id);
+
       //TODO: Call API to read all games that the player is playing and display it on sports tab
       /*$http.get('api/participants/get/?user_id=' + user.id)
         .success(function(result){
