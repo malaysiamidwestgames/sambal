@@ -1,14 +1,17 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-$primary-blue: #00274c;
-$secondary-blue: #004586;
 $michigan-darkblue: #00274c;
-$michigan-lightblue: #2D71A2; 
+$michigan-lightblue: #2D71A2;
 $michigan-blue: #00468E;
 $michigan-maize: #FCD000;
+$michigan-maize-light: #FCDE4C;
+$michigan-maize-dark: #7C6700;
+$blue-background: #40658f;
+$michigan-hill-brown: #7a121c;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -21,85 +24,29 @@ $michigan-maize: #FCD000;
 body {
   padding-top: 70px;
   padding-bottom: 20px;
-}
+  background-color: $blue-background;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  font-weight: 200;
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+  &.main-page {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url('../images/two.jpg');
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
   }
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.container {
+  max-width: 900px;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-.navbar-theamed {
-  background-color: $primary-blue;
+.navbar-themed {
+  background-color: $michigan-darkblue;
   padding-left: 0.5em;
   padding-right: 0.5em;
   .navbar-brand {
@@ -109,14 +56,218 @@ body {
     color: white;
   }
   .nav > li > a:hover, .nav > li > a:focus {
-    background-color: $secondary-blue;
+    background-color: $michigan-blue;
   }
   .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-    background-color: $secondary-blue;
+    background-color: $michigan-blue;
+  }
+  // wolverine logo
+  .navbar-header img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-left: -15px;
+  }
+  //offset default margin to accommodate wolverine logo
+  &.navbar > .container-fluid .navbar-brand {
+    margin-left: 0;
+  }
+
+  a:hover {
+    color: #F4CF3E;
+  }
+
+  li a:hover {
+    // color: rgb(255, 237, 0);
+    color: $michigan-maize-light;
+  }
+
+  .btn-themed-nav {
+    color: #FFF;
+    background-color: $michigan-darkblue;
+    border-color: $michigan-lightblue;
+
+    &:hover {
+      color: #FFF;
+      background-color: $michigan-blue;
+    }
+
+    &:disabled {
+      background-color: $michigan-blue;
+    }
   }
 }
+
 .navbar-right ~ .navbar-right {
-  margin-right: 5px;
+  margin-right: 7px;
+}
+
+.panel-themed {
+  border-color: $michigan-lightblue;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $michigan-blue;
+    border-color: $michigan-lightblue;
+  }
+}
+
+.panel-themed-light {
+  border-color: $michigan-maize-light;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $michigan-maize;
+    border-color: $michigan-maize-light;
+  }
+}
+
+.btn-themed {
+  color: #FFF;
+  background-color: $michigan-maize;
+  border-color: $michigan-maize-light;
+
+  &:hover {
+    color: #FFF;
+    background-color: $michigan-maize-light;
+  }
+
+  &:disabled {
+    background-color: $michigan-maize-light;
+  }
+}
+
+.btn-themed-inverse {
+  color: #FFF;
+  background-color: $michigan-blue;
+  border-color: $michigan-lightblue;
+
+  &:hover {
+    color: #FFF;
+    background-color: $michigan-lightblue;
+  }
+
+  &:disabled {
+    background-color: $michigan-lightblue;
+  }
+}
+
+.overlay {
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    background-color:rgba(255,255,255,0.75);
+
+    .loader-gif {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -15px;
+      margin-left: -15px;
+      background: url('../images/ajax-loader.gif') no-repeat;
+    }
+}
+
+ul.dropdown-menu {
+  cursor: pointer;
+}
+
+.app-landing {
+  margin-top: 30px;
+  max-width: 900px;
+  &.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .panel-body {
+    position: relative;
+  }
+
+  .marketing {
+    h1 {
+      color: #FFF;
+      margin-top: 0;
+      font-size: 45px;
+    }
+    p {
+      color: #FFF;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  .form-column {
+    form button {
+      float: right;
+    }
+  }
+  .input-error-group {
+    margin-bottom: 5px;
+  }
+  .error {
+    color: $brand-danger;
+  }
+  h3.panel-title {
+    font-weight: 300;
+    .prompt {
+      font-size: 20px;
+    }
+    .action {
+      color: #B7DAFF;
+    }
+  }
+  .ng-invalid.ng-touched.ng-dirty {
+    background-color: $brand-warning;
+  }
+
+  label {
+    font-weight: 200;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.dashboard {
+  word-wrap:break-word;
+
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+  }
+
+  .edit-user-info {
+   position: absolute;
+   top: 1px;
+   right: 20px;
+   font-size: 22px;
+  }
+
+  .edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+}
+
+.payment {
+  .promotion {
+    font-size: 15px;
+    h1.title {
+      font-weight: 300;
+      margin-top: 3px;
+      color: $michigan-blue;
+    }
+  }
 }
 
 
@@ -159,5 +310,239 @@ body {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-  } 
+  }
 }
+
+div.hotel-registration input {
+  margin-bottom: 5px;
+}
+
+.twitter {
+  * {
+    word-wrap: break-word;
+  }
+
+  .fullname {
+    font-weight: bold;
+    color: #292f33;
+  }
+
+  b {
+    font-weight: normal;
+    font-size: 13px;
+    color: #8899a6;
+  }
+}
+
+.angular-google-map-container {
+  height: 400px;
+}
+
+#panel {
+  position: absolute;
+  height: 300px;
+  float: right;
+  width: 390px;
+  overflow-y: auto;
+}
+
+#searchbox {
+  width: 350px;
+  margin: 10px;
+}
+
+.update-user-info {
+  .row {
+    position: relative;
+  }
+
+  .table-user-settings {
+    margin-bottom: 0;
+    td input {
+      width: 100%;
+    }
+
+    tr:last-child {
+      border-bottom: solid 1px rgb(223, 223, 223);
+    }
+
+    //offset default margin to accommodate wolverine logo
+    .navbar > .container-fluid .navbar-brand {
+      margin-left: 0;
+    }
+
+    .user-attribute {
+      width: 30%;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+
+    .user-data {
+      width: 70%;
+    }
+
+    input.form-control {
+      height: 25px;
+    }
+
+  }
+
+  .error {
+    margin-bottom: -9px;
+
+      color: red;
+
+  }
+
+
+  #edit-user-info a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+}
+
+button#update-info-btn {
+      margin: 5px 8px;
+}
+
+
+.forgot-password-form {
+  .panel-body {
+    position: relative;
+  }
+}
+
+.activation-page {
+
+  .resend-activation-posterror {
+    position: relative;
+  }
+}
+
+.university {
+  ul.dropdown-menu {
+    width: 100%;
+    max-height: 700px;
+    overflow: auto;
+  }
+  li.dropdown-list {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+  }
+  li:hover{
+    background-color: $michigan-maize-light;
+  }
+  .badge-themed {
+    background-color: $michigan-lightblue;
+  }
+}
+
+.contact-us {
+  .error {
+    color: #d9534f;
+  }
+  textarea {
+    margin-top: 5px;
+    resize: none;
+    height: 300px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+  .row {
+    margin-bottom: 5px;
+  }
+
+  .ng-invalid.ng-touched.ng-dirty {
+    background-color: $brand-warning;
+  }
+}
+
+.sportsreg {
+  word-wrap:break-word;
+
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+    height: 550px;
+  }
+
+  .col-md-8 {
+    .panel-body {
+      height: 175px;
+    }
+  }
+
+  table.participants {
+    height: 275px;
+    overflow-y: auto;
+  }
+
+  .dropdown {
+    .btn {
+      width: 300px;
+    }
+    ul.dropdown-menu {
+      width: 300px;
+      overflow-y: auto;
+      max-height: 200px;
+    }
+  }
+
+  .contact-us {
+    margin-right: 10px;
+  }
+
+  .form-group {
+    margin: 20px;
+    #team.form-control {
+      width: 400px;
+      margin-right: 5px;
+    }
+    #uni.form-control {
+      width: 250px;
+      margin-right: 5px;
+    }
+    label.teamUni {
+      margin-top: 10px;
+    }
+  }
+
+  .infostat {
+    font-size: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    width: 5em;
+    .stat {
+      font-size: large;
+      margin-bottom: 10px;
+      color: $michigan-maize-light;
+    }
+  }
+
+  .teamname {
+    font-size: 2em;
+    .captainname {
+      font-size: large;
+      margin-bottom: -100px;
+    }
+  }
+
+  .paystatus {
+    width: 550px;
+  }
+}
+

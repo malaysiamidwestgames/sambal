@@ -1,0 +1,37 @@
+<div class="panel panel-themed contact-us">
+  <div class="panel-heading"><h3 class="panel-title">Contact us</h3></div>
+  <div class="panel-body">
+    <form method="post" name="contact" action="https://midwestemail.herokuapp.com/user/dc7a6c6c-d62a-4dfd-9700-ac78da68068c">
+    	<div class="row">
+    		<div class="col-md-6">
+    			<input class="form-control" ng-model="name" type="text" name="name" placeholder="Name" required>
+    			<div class="error" ng-show="contact.name.$dirty &&
+                          						contact.name.$invalid &&
+                          						contact.name.$touched">
+                          						<span>Name is required</span></div>
+    		</div>
+    		<div class="col-md-6">
+    			<input class="form-control" ng-model="email" type="email" name="email" placeholder="Email" required>
+    			<div class="error" ng-show="contact.email.$dirty &&
+                          						contact.email.$invalid &&
+                          						contact.email.$touched">
+  						<span ng-show="contact.email.$error.required">E-mail is required</span>
+              <span ng-show="contact.email.$error.email">Please enter a valid e-mail</span>
+          </div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12">
+    			<textarea class="form-control" ng-model="message" name="message" placeholder="Message" required></textarea>
+    			<div class="error" ng-show="contact.message.$dirty &&
+                          						contact.message.$invalid &&
+                          						contact.message.$touched">
+  						<span ng-show="contact.message.$error.required">Message is required</span>
+  				</div>
+    		</div>
+    	</div>
+    	<button type="submit" class="pull-right btn btn-primary" ng-disabled="contact.$invalid">Submit</button>
+    	<div class="clearfix"></div>
+    </form>
+  </div>
+</div>

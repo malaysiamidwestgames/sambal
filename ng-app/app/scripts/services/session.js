@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('midwestApp')
-  .factory('session', function (httpWrapper, eventually, $rootScope, $cookieStore, $q, $browser) {
+  .factory('session', function (httpWrapper, eventually, $rootScope, $cookieStore, $q, $browser, $location) {
     var createSession = httpWrapper.post('/api/sessions');
     var destroySession = httpWrapper.delete('/api/sessions');
     var getCurrentUser = httpWrapper.get('/api/users/me');
@@ -17,15 +17,33 @@ angular.module('midwestApp')
       return getAccessToken() ? true : false;
     };
 
+    var isAdmin = function() {
+      if ($rootScope.currentUser === undefined) {
+        return false;
+      }
+      return $rootScope.currentUser.authorization_level === 'admin';
+    };
+
+    var hasPaidGen = function () {
+      if ($rootScope.currentUser === undefined) {
+        return false;
+      }
+      return $rootScope.currentUser.registration_payment_status;
+    };
+
+    var revokeAccess = function(resp) {
+      if (resp.status === 401 || resp.status === 403) {
+        $cookieStore.remove('access_token');
+        $location.path('/');
+      }
+    };
+
     var init = function() {
       if (isLoggedIn()) {
         getCurrentUser().then(function(user) {
-          $rootScope.currentUser = user;
-        }, function(resp) {
-          if (resp.status === 401) {
-            $cookieStore.remove('access_token');
-          }
-        });
+          $rootScope.currentUser = user.user;
+          service.fire({type: 'userAvailable', user: user.user});
+        }, revokeAccess);
       }
     };
 
@@ -38,11 +56,10 @@ angular.module('midwestApp')
     });
 
     service.login = function(email, password) {
-      console.log({email: email, password: password});
       return createSession({email: email, password: password})
         .then(function(user){
           service.fire({type: 'userLoggedIn', user:user});
-          $rootScope.currentUser = user;
+          $rootScope.currentUser = user.user;
         });
     };
 
@@ -59,7 +76,24 @@ angular.module('midwestApp')
       });
     };
 
+    service.getUser = function() {
+      return $q(function(resolve, reject) {
+        if ($rootScope.currentUser) {
+          resolve($rootScope.currentUser);
+        } else {
+          getCurrentUser().then(function(user) {
+            resolve(user.user);
+          }, function(resp) {
+            revokeAccess(resp);
+            reject({message: 'User not logged in'});
+          });
+        }
+      });
+    };
+
+    service.isAdmin = isAdmin;
     service.isLoggedIn = isLoggedIn;
+    service.hasPaidGen = hasPaidGen;
     service.getAccessToken = getAccessToken;
 
     init();

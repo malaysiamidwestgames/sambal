@@ -1,0 +1,29 @@
+
+<div class="row payment">
+  <div class="col-md-12">
+    <div class="panel panel-themed promotion">
+      <div class="panel-body">
+        <h1 class="title">Registration Payment <small>$20</small>
+          <button class="btn btn-themed pull-right btn-lg" ng-show="payId == 0" class="ng-hide" ng-click="paymentInit('General registration')">Pay now</button>
+          <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="chriseveraldo@yahoo.com">
+            <input type="hidden" name="invoice" value="{{payId}}">
+            <input type="hidden" name="notify_url" value="http://13c56538.ngrok.com/api/hook">
+            <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
+            <input type="hidden" name="return" value="http://malaysiamidwestgames.com/app/payment/done">
+            <input type="hidden" name="rm" value="1">
+            <input type="hidden" name="no_shipping" value="1">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="amount" value="{{amount}}">
+            <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(20, 'General registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay $20?</button>
+          </form>
+        </h1>
+        <div class="clearfix"></div>
+        <div>Includes unlimited access to all events! Sports, Midwest Night, Midwest Dinner, and more!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

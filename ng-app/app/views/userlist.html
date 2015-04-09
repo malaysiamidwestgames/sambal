@@ -1,14 +1,33 @@
 <div ng-controller = "UserlistCtrl">
-	There are {{users.length}} participants. They are: 
-	<input type="search" ng-model="q" placeholder="               filter" />
-	<table class="table" style="width:100%">
-		<tr>
-			<td>No.</td>
-			<td>Name</td>
-			<td>University</td>
-		<tr ng-repeat = "user in users | filter:q">
-			<td>{{user.email}}</td>
-			<td>{{user.password}}</td>
-		</tr>
-	</table>
+  <div class="container university">
+    <div class="panel panel-themed">
+      <div class="panel-heading">User List</div>
+      <div class="dropdown">
+        <button class="btn btn-themed btn-block dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Filter by University
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <li class="dropdown-list" ng-click="toggle()">All (Default)</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-list" ng-repeat = "university in universities" ng-click="toggle('=' + university.name)">{{university.name}}<span class="badge badge-themed pull-right">{{university.count}}</span></a></li>
+        </ul>
+      </div>
+      <table class="table table-hover" style="width:100%">
+        <thead>
+          <td>User ID</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Email</td>
+          <td>University</td>
+        </thead>
+        <tr ng-repeat = "user in users">
+          <td>{{user.id}}</td>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.university.name}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
 </div>

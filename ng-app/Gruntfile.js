@@ -78,7 +78,7 @@ module.exports = function (grunt) {
         port: 3000
       }],
       rules: [
-        {from: '^/<%= yeoman.appBase %>/(?!(bower_components|fonts|images|scripts|styles|views|api)/).*$', to: '/'},
+        {from: '^/<%= yeoman.appBase %>/(?!(bower_components|fonts|images|scripts|styles|views|api|assets)/).*$', to: '/'},
         {from: '^/<%= yeoman.appBase %>$', to: '/'},
         {from: '^/<%= yeoman.appBase %>/(.*)$', to: '/$1'},
         {from: '^/(?!(<%= yeoman.appBase %>|api)/).*$', to: '/404.html'}
@@ -355,7 +355,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'fonts/{,*/}*.*',
+            'assets/{,*/}*.*'
           ]
         }, {
           expand: true,

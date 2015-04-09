@@ -53,6 +53,39 @@ You should be all set! Open two terminal tabs, cd into sambal directory and run 
 
 Build
 ----------------------------
-1. Populating University Database 
 
-      rake csv_model_import[universities.csv,University]
+1. cd to sambal directory, using terminal/command prompt/cygwin:
+
+2. Install gems:
+
+         bundle install
+
+3. If you ran "db:migrate" before, reset database. Do so by:
+
+         rake db:reset
+
+4. Migrate your model to your database. Do so by:
+
+         rake db:migrate
+
+5. Populating university database: 
+
+         rake csv_model_import[universities.csv,University]
+
+6. Start rails local back-end server:
+
+         rails s
+
+7. In a browser, open (http://localhost:3000/)
+
+8. On a new terminal tab/window, cd into ng-app directory
+
+9. Install all front-end dependencies:
+
+         npm install && bower install
+
+10. Start local front-end server:
+
+         grunt serve
+
+11. In a browser, open [http://localhost:9000/app/](http://localhost:9000/app/)

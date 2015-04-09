@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   resources :mailers, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -58,12 +64,33 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, except: [:new, :edit]
+    get 'users/activations/:id' => 'users#resend_activation_email'
     resources :universities, only: [:index]
+    resources :sports, only: [:index, :show]
+    get 'games/sports/:id' => 'games#get_games_with_sport_id'
+    resources :games, only: [:index, :show]
+    get 'universities/count' => 'universities#count'
     resources :sessions, only: [:create]
+    resources :account_activations, only: [:update]
+    resources :teams, only: [:index, :create, :show]
+    resources :payments, only: [:create, :show, :index]
+    resources :participants, only: [:create]
+    post 'participants/join' => 'participants#join_team'
+    post 'participants/invite' => 'participants#invite_team'
+    post 'participants/accept' => 'participants#accept'
+    post 'participants/decline' => 'participants#decline'
+    get 'participants/get' => 'participants#get_team'
+    resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'
+    post '/payments/:id'=> 'payments#show'
+    post '/hook' => 'payments#hook'
+    get '/payupdate' => 'teams#update_payment'
+    get '/outpay' => 'payments#retrieve_payment'
+    get '/paybalance' => 'teams#retrieve_amount'
   end
 
-  get '/test' => 'test#test'
+  
+
 
 
 

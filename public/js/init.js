@@ -10,7 +10,7 @@
 
 		// Fullscreen?
 			fullScreen: true,
-			
+
 		// Section Transitions?
 			sectionTransitions: true,
 
@@ -31,7 +31,7 @@
 			'mobile-narrow': { range: '-480', grid: { collapse: true, gutters: 10 } }
 		}
 	});
-	
+
 	$(function() {
 
 		var	$window = $(window),
@@ -41,31 +41,31 @@
 			sectionTransitionState = false;
 
 		// Settings.
-		
+
 			// IE<10?
 				if (skel.vars.IEVersion < 10) {
-					
+
 					// Turn off transitions.
 						settings.sectionTransitions = false;
-						
+
 				}
-		
+
 			// Touch?
 				if (skel.vars.isTouch) {
-				
+
 					// Disable section transitions
 						settings.sectionTransitions = false;
-						
+
 					// Turn on touch mode
 						$body.addClass('touch');
-				
+
 				}
-				
+
 		// Fade in once everything's loaded.
 			$all
 				.addClass('is-loading')
 				.fadeTo(0, 0.0001);
-			
+
 			$window.load(function() {
 				window.setTimeout(function() {
 					$all
@@ -98,27 +98,13 @@
 						})
 						.on('blur', function() {
 							$(this).parent().removeClass('focus');
-						});						
+						});
 
 			}
 
 		// CSS polyfills (IE<9).
 			if (skel.vars.IEVersion < 9)
 				$(':last-child').addClass('last-child');
-
-		// Gallery.
-			$('.gallery').poptrox({
-				baseZIndex: 10001,
-				useBodyOverflow: false,
-				usePopupEasyClose: false,
-				overlayColor: '#1f2328',
-				overlayOpacity: 0.65,
-				usePopupDefaultStyling: false,
-				usePopupCaption: true,
-				popupLoaderText: '',
-				windowMargin: (skel.isActive('mobile') ? 5 : 50),
-				usePopupNav: true
-			});
 
 		// Section transitions.
 
@@ -143,7 +129,7 @@
 							on:			function(t) { t.removeClass('inactive'); },
 							off:		function(t) { t.addClass('inactive'); }
 						});
-			
+
 				// Work.
 					$('#work')
 						.scrollwatch({
@@ -155,7 +141,7 @@
 											var	rows = t.find('.row.images'),
 												length = rows.length,
 												n = 0;
-											
+
 											rows.each(function() {
 												var row = $(this);
 												window.setTimeout(function() {
@@ -167,7 +153,7 @@
 											var	rows = t.find('.row.images'),
 												length = rows.length,
 												n = 0;
-											
+
 											rows.each(function() {
 												var row = $(this);
 												window.setTimeout(function() {
@@ -191,7 +177,7 @@
 			}
 
 		// Events.
-		
+
 			// Change (skel).
 				skel.change(function() {
 
@@ -200,19 +186,19 @@
 							$body.addClass('touch');
 						else if (!skel.vars.isTouch)
 							$body.removeClass('touch');
-				
+
 					// Section transitions.
 						if (settings.sectionTransitions) {
-						
+
 							if (skel.isActive('mobile')) {
 
 								// Generic sections.
 									$('.main.style1')
 										.scrollwatchSuspend();
-									
+
 									$('.main.style2')
 										.scrollwatchSuspend();
-							
+
 								// Work.
 									$('#work')
 										.scrollwatchSuspend();
@@ -220,17 +206,17 @@
 								// Contact.
 									$('#contact')
 										.scrollwatchSuspend();
-							
+
 							}
 							else {
 
 								// Generic sections.
 									$('.main.style1')
 										.scrollwatchResume();
-									
+
 									$('.main.style2')
 										.scrollwatchResume();
-							
+
 								// Work.
 									$('#work')
 										.scrollwatchResume();
@@ -242,12 +228,12 @@
 							}
 
 						}
-					
+
 				});
 
 			// Resize.
 				var resizeTimeout, resizeScrollTimeout;
-				
+
 				$window.resize(function() {
 
 					// Disable animations/transitions.
@@ -264,7 +250,7 @@
 							if (settings.fullScreen
 							&&	!skel.isActive('mobile')) {
 								$('.fullscreen').each(function() {
-								
+
 									var $t = $(this),
 										$c = $t.children('.content'),
 										x = Math.max(100, Math.round(($window.height() - $c.outerHeight() - $header.outerHeight()) / 2) + 1);
@@ -272,15 +258,15 @@
 									$t
 										.css('padding-top', x)
 										.css('padding-bottom', x);
-								
+
 								});
 							}
 							else
 								$('.fullscreen')
 									.css('padding-top', '')
 									.css('padding-bottom', '');
-							
-							
+
+
 						// Re-enable animations/transitions.
 							window.setTimeout(function() {
 								$body.removeClass('is-loading');
@@ -290,16 +276,16 @@
 					}, 100);
 
 				});
-				
+
 		// Trigger events on load.
 			$window.load(function() {
-				
+
 				$window
 					.trigger('resize')
 					.trigger('scroll');
-			
+
 			});
 
 	});
-	
+
 })(jQuery);

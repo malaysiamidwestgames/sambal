@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'sysofwan.httpWrapper',
     'ui.bootstrap',
-    'ui.validate'
+    'ui.validate',
+    'uiGmapgoogle-maps'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -28,44 +29,95 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        bodyClass: 'main-page',
+        requireLogout: true
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        requireLogin: true
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .when('/register', {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
-      })
-      .when('/social_feeds', {
-        templateUrl: 'views/social_feeds.html',
-        controller: 'SocialFeedsCtrl'
+      .when('/activation/:token' , {
+        templateUrl: 'views/activation.html',
+        controller: 'ActivationCtrl'
       })
       .when('/userlist' , {
         templateUrl: 'views/userlist.html',
-        controller: 'UserlistCtrl'
+        controller: 'UserlistCtrl',
+        requireLogin: true,
+        requireAdmin: true
+      })
+      .when('/forgot-pass' , {
+        templateUrl: 'views/forgotpass.html',
+        controller: 'ForgotPassCtrl'
+      })
+      .when('/pass-reset/:token' , {
+        templateUrl: 'views/passreset.html',
+        controller: 'PassResetCtrl'
+      })
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl',
+        requireLogin: true
+      })
+      .when('/payment/done', {
+        templateUrl: 'views/payment_done.html',
+        requireLogin: true
+      })
+      .when('/confirm_email', {
+        templateUrl: 'views/confirm_email.html'
+      })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        requireLogin: true
+      })
+      .when('/user-settings', {
+        templateUrl: 'views/user_settings.html',
+        controller: 'UserSettingsCtrl',
+        requireLogin: true
+      })
+      .when('/promo/auditions', {
+        templateUrl: 'views/auditions.html'
+      })
+      .when('/rules', {
+        templateUrl: 'views/pdfmodal.html',
+        controller: 'PdfmodalCtrl'
+      })
+      .when('/contact-us', {
+        templateUrl: 'views/contact-us.html',
+        controller: 'ContctUsCtrl'
+      })
+      .when('/accommodation', {
+        templateUrl: 'views/accommodation.html'
+      })
+      .when('/sportsreg', {
+        templateUrl: 'views/sportsreg.html',
+        controller: 'SportsregCtrl',
+        requireLogin: true,
+        requirePaidGen: false
+      })
+      .when('/testing', {
+        templateUrl: 'views/pdfmodal.html',
+        controller: 'PdfmodalCtrl'
       })
       .otherwise({
         redirectTo: '/'
-      })
+      });
   })
 
   .constant('_', window._)
 
-  .config(function($httpProvider) {
-    $httpProvider.interceptors.push(function($browser) {
+  .config(/*@ngInject*/function($httpProvider) {
+    $httpProvider.interceptors.push( /*@ngInject*/function($browser, $cookieStore, $q) {
       return {
         request: function(config) {
           /* jshint -W106 */
           config.headers.access_token = $browser.cookies().access_token;
           /* jshint +W106 */
           return config;
+        },
+        responseError: function(response) {
+          if (response.status === 403 || response.status === 401) {
+            $cookieStore.remove('access_token');
+          }
+          return $q.reject(response);
         }
       };
     });
@@ -74,9 +126,21 @@ angular
   .run(function($rootScope, session, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next) {
       if (next.requireLogin && !session.isLoggedIn()) {
-        $location.path('/login');
+        $location.path('/');
         event.preventDefault();
       }
-
+      else if (next.requireAdmin && !session.isAdmin()) {
+        $location.path('/');
+        event.preventDefault();
+      }
+      else if (next.requireLogout && session.isLoggedIn()) {
+        $location.path('/dashboard/');
+        event.preventDefault();
+      }
+      else if (next.requirePaidGen && !session.hasPaidGen()) {
+        $location.path('/');
+        event.preventDefault();
+      }
+      $rootScope.bodyClass = next.bodyClass;
     });
   });

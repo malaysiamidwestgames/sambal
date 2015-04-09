@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  players_per_team: 1
+  players_on_court: 1
+  max_teams: 1
+  venue: MyString
+  signed_up_teams: 1
+
+two:
+  name: MyString
+  players_per_team: 1
+  players_on_court: 1
+  max_teams: 1
+  venue: MyString
+  signed_up_teams: 1

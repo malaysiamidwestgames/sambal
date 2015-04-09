@@ -1,7 +1,9 @@
 {
   "name": "midwest",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "yelp": "^0.1.1"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^0.7.3",
@@ -30,7 +32,7 @@
     "jasmine-core": "^2.1.3",
     "jshint-stylish": "^0.2.0",
     "karma": "^0.12.31",
-    "karma-jasmine": "^0.3.4",
+    "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^0.4.0",
     "time-grunt": "^0.3.1"

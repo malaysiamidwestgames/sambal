@@ -1,33 +1,44 @@
-<nav class="navbar navbar-theamed navbar-fixed-top" ng-controller="NavigationCtrl">
+<nav class="navbar navbar-themed navbar-fixed-top" ng-controller="NavigationCtrl">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/app">
+			<a href="/app">
+				<img src="images/logo.svg"
+			   		 tooltip-placement="bottom"
+			   		 tooltip="Home">
+			</a>
+			<a class="navbar-brand"
+			   href="/app">
 				Midwest Games
 			</a>
+			<button type="button" class="navbar-toggle collapsed btn-themed-nav" data-toggle="collapse" data-target="#midwest-menu-collapse">
+      			<span class="sr-only">Toggle navigation</span>
+       			<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+      		</button>
 		</div>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse" id="midwest-menu-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="">Social Feeds</a></li>
-				<li><a href="">Accommodation</a></li>
+				<li><a href="rules">Rules</a></li>
+				<li><a href="accommodation">Accommodation</a></li>
+				<li><a href="contact-us">Contact us</a></li>
+				<li><a href="userlist" ng-show="currentUser.authorization_level == 'admin'">Admin</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
-				<button class="btn btn-default navbar-btn" ng-click="logout()">
-					Logout: {{ currentUser.email }}
-				</button>
-			</ul>
-			<ul class="nav navbar-nav navbar-right" ng-hide="currentUser">
-				<a href="login">
-					<button class="btn btn-default navbar-btn">
-						Login
-					</button>
-				</a>
-			</ul>
-			<ul class="nav navbar-nav navbar-right" ng-hide="currentUser">
-				<a href="register">
-					<button class="btn btn-default navbar-btn">
-						Sign Up
-					</button>
-				</a>
+				<li ng-show="currentUser">
+					<a href="/app/user-settings"
+					   tooltip-placement="bottom"
+					   tooltip="User settings">{{currentUser.email}}</a>
+				</li>
+				<li>
+					<a href=""
+					   ng-click="logout()"
+					   tooltip-placement="bottom"
+					   tooltip="Logout">
+						<span class="glyphicon glyphicon-log-out"></span>
+					</a>
+					<div class="overlay" ng-show="waiting.logoutResponse">
+          				<span class="loader-gif"></span>
+        			</div>
+				</li>
 			</ul>
 		</div>
 	</div>
