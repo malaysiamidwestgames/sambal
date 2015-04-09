@@ -13,7 +13,8 @@ angular.module('midwestApp')
     $scope.todos = [
     {
       title: 'Register for sports',
-      label: 'Coming soon'
+      label: 'Coming soon'//,
+      //link: 'sportsreg'
     },
     {
       title: 'Audition for Midwest Night',
@@ -29,5 +30,23 @@ angular.module('midwestApp')
           link: 'payment'
         });
       }
+
+      //TODO: Call API to read all games that the player is playing and display it on sports tab
+      /*$http.get('api/participants/get/?user_id=' + user.id)
+        .success(function(result){
+          $scope.participating = result.participants;
+
+          $scope.$watch('participating', function() {
+            $scope.participating.forEach(function(participate){
+              console.log(participate.team_id);
+              $http.get('/api/teams/' + participate.team_id)
+                .success(function(data){
+                  participate.name = data.team.name;
+                })
+            });
+          });
+        });*/
+
+
     });
   });

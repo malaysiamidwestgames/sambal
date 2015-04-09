@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_access_token, :create_activation_digest
   has_many :payments
+  has_many :participants
+  has_many :teams, through: :participants
   belongs_to :university
 
   VALID_EMAIL_REGEX = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
@@ -30,6 +32,27 @@ class User < ActiveRecord::Base
   def registration_payment_status
     idx = self.payments.index do |payment|
       payment.regtype == 'General registration' && payment.status == 'Completed'
+    end
+    return idx != nil
+  end
+
+  def sports_payment_unpaid
+    idx = self.payments.index do |payment|
+      payment.regtype == 'Sports registration' && payment.status == 'Payment initiated'
+    end
+    return idx != nil
+  end
+
+  def sports_payment_status
+    idx = self.payments.index do |payment|
+      payment.regtype == 'Sports registration' && payment.status == 'Completed'
+    end
+    return idx != nil
+  end
+
+  def sports_payment_uninit
+    idx = self.teams.index do |team|
+      team.payment_id == 0
     end
     return idx != nil
   end

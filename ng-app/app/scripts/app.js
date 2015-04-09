@@ -77,8 +77,8 @@ angular
         templateUrl: 'views/auditions.html'
       })
       .when('/rules', {
-        templateUrl: 'views/info.html',
-        controller: 'InfoCtrl'
+        templateUrl: 'views/pdfmodal.html',
+        controller: 'PdfmodalCtrl'
       })
       .when('/contact-us', {
         templateUrl: 'views/contact-us.html',
@@ -86,6 +86,16 @@ angular
       })
       .when('/accommodation', {
         templateUrl: 'views/accommodation.html'
+      })
+      .when('/sportsreg', {
+        templateUrl: 'views/sportsreg.html',
+        controller: 'SportsregCtrl',
+        requireLogin: true,
+        requirePaidGen: false
+      })
+      .when('/testing', {
+        templateUrl: 'views/pdfmodal.html',
+        controller: 'PdfmodalCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -125,6 +135,10 @@ angular
       }
       else if (next.requireLogout && session.isLoggedIn()) {
         $location.path('/dashboard/');
+        event.preventDefault();
+      }
+      else if (next.requirePaidGen && !session.hasPaidGen()) {
+        $location.path('/');
         event.preventDefault();
       }
       $rootScope.bodyClass = next.bodyClass;
