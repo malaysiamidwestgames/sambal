@@ -1,6 +1,6 @@
 <div class="row eventmaps">
   <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control" class="col-md-6"></ui-gmap-google-map>
-  <div class="col-sm-6" id="control">
+  <div class="col-md-6" id="control">
     <form class="form-horizontal" role="form">
       <div class="form-group">
         <label class="col-sm-2 control-label">Start</label>
@@ -19,6 +19,44 @@
         </div>
       </div>
     </form>
-    <div id="panel"><b ng-hide="received">Directions will appear here</b></div>
+    <div class="col-md-6" id="panel"><b ng-hide="received">Directions will appear here</b></div>
   </div>
 </div>
+<div class="row venueevents" ng-show="received">
+  <div class="col-md-6 routesports">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sports in {{routePoints.start.name}}</h3>
+      </div>
+           <table class="table table-bordered">
+             <tr>
+               <th>Sport</th>
+               <th>Schedule</th>
+             </tr>
+             <tr ng-repeat="sport in startSports">
+               <td>{{ sport.name }}</td>
+               <td>{{ sport.schedule }}</td>
+             </tr>
+           </table>
+    </div>
+  </div>
+  <div class="col-md-6 routesports">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sports in {{routePoints.end.name}}</h3>
+      </div>
+        <table class="table table-bordered">
+          <tr>
+            <th>Sport</th>
+            <th>Schedule</th>
+          </tr>
+          <tr ng-repeat="sport in endSports">
+            <td>{{ sport.name }}</td>
+            <td>{{ sport.schedule }}</td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>
+
+

@@ -9,21 +9,25 @@
  */
 
 angular.module('midwestApp')
-  .controller('EventmapsCtrl', function ($scope) {
+  .controller('EventmapsCtrl', function ($scope, $http) {
     $scope.map = {
       center: { latitude: 42.2814, longitude : -83.7483},
       zoom: 12,
       control: {},
       routes: {
         start: [
-          {name: 'Central Campus Recreation Building', address: '401 Washtenaw Avenue, Ann Arbor, Michigan 48109'},
+          {name: 'CCRB', address: '401 Washtenaw Avenue, Ann Arbor, Michigan 48109'},
           {name: 'Mitchell Field', address: '1910 Fuller Road, Ann Arbor, MI 48105'},
-          {name: 'Sports Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104 '}
+          {name: 'Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104 '},
+          {name: 'Mason Hall', address: '505 South State Street, Ann Arbor, MI 48109'},
+          {name: 'Colonial Lanes', address:'950 South Industrial Highway, Ann Arbor, MI 48104'}
         ],
         end: [
-          {name: 'Central Campus Recreation Building', address: '401 Washtenaw Avenue, Ann Arbor, Michigan, 48109'},
+          {name: 'CCRB', address: '401 Washtenaw Avenue, Ann Arbor, Michigan, 48109'},
           {name: 'Mitchell Field', address: '1910 Fuller Road, Ann Arbor, MI 48105'},
-          {name: 'Sports Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104'}
+          {name: 'Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104'},
+          {name: 'Mason Hall', address: '505 South State Street, Ann Arbor, MI 48109'},
+          {name: 'Colonial Lanes', address:'950 South Industrial Highway, Ann Arbor, MI 48104'}
         ]
       }
     };
@@ -48,6 +52,23 @@ angular.module('midwestApp')
         destination: end,
         travelMode: google.maps.TravelMode.DRIVING
       };
+
+      var startVenue = routePoints.start.name;
+      var endVenue = routePoints.end.name;
+
+      $http
+        .get('/api/sports?venue=' + startVenue)
+        .success(function(data) {
+          console.log(data);
+          $scope.startSports = data.sports;
+        })
+
+      $http
+        .get('/api/sports?venue=' + endVenue)
+        .success(function(data) {
+          console.log(data);
+          $scope.endSports = data.sports;
+        })
 
       directionsService.route(request, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {

@@ -4,6 +4,9 @@ class Api::SportsController < ApplicationController
 	def index
 		# Gather all sports data
 		@sports = Sport.all
+    if venue = params[:venue]
+      @sports = Sport.where(venue: venue)
+    end
 		render json: @sports
   end
 
