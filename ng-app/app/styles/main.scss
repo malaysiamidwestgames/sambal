@@ -338,13 +338,6 @@ div.hotel-registration input {
   height: 400px;
 }
 
-#panel {
-  position: absolute;
-  height: 300px;
-  float: right;
-  width: 390px;
-  overflow-y: auto;
-}
 
 #searchbox {
   width: 350px;
@@ -548,13 +541,20 @@ button#update-info-btn {
 
 .eventmaps {
   div.form-group {
-    label.col-sm-2.control-label {
+    label.col-md-2.control-label {
       color: #ffffff;
+      font-size: 1.5em;
     }
   }
-  div#panel {
-    background-color: #ffffff;
-    width: 420px;
+
+
+  div.control {
+    height: 500px;
+  }
+
+  div#panel.panel-body {
+    height: 255px;
+    overflow-y: auto;
   }
 }
 
