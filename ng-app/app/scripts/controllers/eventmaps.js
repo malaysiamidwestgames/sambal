@@ -51,6 +51,7 @@ angular.module('midwestApp')
 
       directionsService.route(request, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
+          $scope.received = true;
           directionsDisplay.setDirections(response);
           console.log(response);
         }
