@@ -96,11 +96,12 @@ angular.module('midwestApp')
       $scope.registered = false;
       $scope.paid = false;
       $scope.full = false;
+      $scope.joinReqSent = false;
+
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
           console.log(data);
           $scope.teams = data.teams;
-          $scope.spotsLeft = $scope.selectedAction.max_teams - $scope.teams.length;
           if ($scope.teams.length == $scope.selectedAction.max_teams) {
             $scope.full = true;
           }
@@ -167,6 +168,15 @@ angular.module('midwestApp')
       $scope.amount = amount;
       $scope.regType = regType;
     };
+
+    $scope.joinReq = function(teamId) {
+      $http
+        .post('/api/participants/join', {team_id: teamId, user_id: $rootScope.currentUser.id})
+        .success(function(data) {
+          console.log(data);
+          $scope.joinReqSent = true;
+        })
+    }
 
     var noTeamHandler = function(isChecked) {
       if (isChecked) {

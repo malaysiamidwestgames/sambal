@@ -5,11 +5,11 @@
       <div class="panel-body">
         <h1 class="title">Sports Registration and Payment
           <button class="btn btn-themed pull-right btn-lg" ng-show="payId == 0" ng-disabled="amount == 0" class="ng-hide" ng-click="paymentInit('Sports registration')">Pay ${{amount}}</button>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
+          <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="midwestmalaysia@gmail.com">
+            <input type="hidden" name="business" value="everaldo@umich.edu">
             <input type="hidden" name="invoice" value="{{payId}}">
-            <input type="hidden" name="notify_url" value="http://malaysiamidwestgames.com/api/hook">
+            <input type="hidden" name="notify_url" value="http://2e78338a.ngrok.com/api/hook">
             <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
             <input type="hidden" name="return" value="http://malaysiamidwestgames.com/app/payment/done">
             <input type="hidden" name="rm" value="1">
@@ -58,7 +58,7 @@
         <div ng-hide="selectedAction.name != 'Choose a sport to register for'">Choose a sport from the list above to find out more about it</div>
         <div ng-show="selectedAction.name != 'Choose a sport to register for'" class="infostat">{{(individual && selectedAction.max_players_per_team) || (doubles && selectedAction.max_players_per_team) || selectedAction.min_players_per_team + " - " + selectedAction.max_players_per_team}}<br><div class="stat">player/s per team</div></div>
         <div ng-show="selectedAction.name != 'Choose a sport to register for'" class="infostat">${{selectedAction.price_per_team}}<div class="stat">{{ individual && "Fee per participant" || "Flat fee per team" }}</div></div>
-        <div ng-show="selectedAction.name != 'Choose a sport to register for'" class="infostat">{{spotsLeft}}<div class="stat">spots left</div></div>
+        <div ng-show="selectedAction.name != 'Choose a sport to register for'" class="infostat">{{selectedAction.spots_left}}<div class="stat">spots left</div></div>
         <div ng-show="selectedAction.name != 'Choose a sport to register for'" class="infostat">{{selectedAction.tournament_type}}<div class="stat">format</div></div>
       </div>
     </div>
@@ -93,7 +93,10 @@
           <tr ng-repeat="team in teams">
             <td>
               <div class="teamname">{{team.name}}<br>
-                <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}<br>Contingent: {{team.university.name}}</div>
+                <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}<br>
+                  Contingent: {{team.university.name}}<br>
+                  <button type="submit" class="btn btn-themed pull-left btn-md" ng-show="registered" ng-click="joinReq(team.id)">Ask to join</button>
+                </div>
               </div>
             </td>
           </tr>

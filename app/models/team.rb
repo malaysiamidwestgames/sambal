@@ -18,4 +18,12 @@ class Team < ActiveRecord::Base
     end
     return idx != nil
   end
+
+  #def team_captain_present
+  #  if self.team_captain == current_user.id
+  #    true
+  #  else
+  #    false
+  #  end
+  #end
 end
