@@ -3,7 +3,7 @@ class Api::SportsController < ApplicationController
 
 	def index
 		# Gather all sports data
-		@sports = Sport.all
+		@sports = Sport.all.order(name: :asc)
     if venue = params[:venue]
       @sports = Sport.where(venue: venue)
     end
