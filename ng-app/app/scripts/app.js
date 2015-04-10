@@ -97,6 +97,10 @@ angular
         templateUrl: 'views/pdfmodal.html',
         controller: 'PdfmodalCtrl'
       })
+      .when('/eventmaps', {
+        templateUrl: 'views/eventmaps.html',
+        controller: 'EventmapsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
