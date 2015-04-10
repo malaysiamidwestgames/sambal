@@ -87,7 +87,11 @@ angular
       .when('/accommodation', {
         templateUrl: 'views/accommodation.html'
       })
-      .when('/sportsreg', {
+      .when('/eventmaps', {
+        templateUrl: 'views/eventmaps.html',
+        controller: 'EventmapsCtrl'
+      })
+      /*.when('/sportsreg', {
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
@@ -97,10 +101,9 @@ angular
         templateUrl: 'views/pdfmodal.html',
         controller: 'PdfmodalCtrl'
       })
-      .when('/eventmaps', {
-        templateUrl: 'views/eventmaps.html',
-        controller: 'EventmapsCtrl'
-      })
+
+      })*/
+
       .otherwise({
         redirectTo: '/'
       });

@@ -1,5 +1,5 @@
 name,category,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id,sport_id,spots_left
-AMAIZE-ing Race,Open,10,10,50,5,10,5,0,0,0,20,Mitchell Field,Team Race,1,1,20
+AMAIZEing Race,Open,10,10,50,5,10,5,0,0,0,20,Mitchell Field,Team Race,1,1,20
 Badminton,Men Singles,1,1,5,1,1,0,21,3,0,32,CCRB,Knockout,2,2,32
 Badminton,Women Singles,1,1,5,1,1,0,21,3,0,8,CCRB,Knockout,3,2,8
 Badminton,Men Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,4,2,16
@@ -10,7 +10,7 @@ Bowling,Open,3,4,20,3,3,0,0,3,0,8,Colonial Lanes,Knockout,8,4,8
 Carrom,Open,1,1,5,1,1,0,0,3,0,8,Mason Hall,Round Robin,9,5,8
 Chess,Open,1,1,5,1,1,0,0,1,0,16,Mason Hall,Knockout,10,6,16
 Congkak,Open,1,1,5,1,1,0,0,3,0,8,Mason Hall,Round Robin,11,7,8
-CS:GO,Open,5,6,30,5,5,0,5,5,5,8,Mason Hall,Knockout,12,8,8
+CS GO,Open,5,6,30,5,5,0,5,5,5,8,Mason Hall,Knockout,12,8,8
 Dodgeball,Open,6,10,50,6,6,0,6,3,7,8,Palmer Field,League-2 Knockout,13,9,8
 Dota 2,Open,5,6,30,5,5,0,0,3,0,8,Mason Hall,Knockout,14,10,8
 FIFA 15,Individual,1,1,5,1,1,0,0,1,7,16,Mason Hall,Knockout,15,11,16
