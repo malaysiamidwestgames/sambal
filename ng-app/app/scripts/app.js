@@ -97,10 +97,6 @@ angular
         requireLogin: true,
         requirePaidGen: false
       })
-      .when('/testing', {
-        templateUrl: 'views/pdfmodal.html',
-        controller: 'PdfmodalCtrl'
-      })
 
       })*/
 

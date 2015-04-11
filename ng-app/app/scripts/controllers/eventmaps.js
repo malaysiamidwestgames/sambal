@@ -69,7 +69,7 @@ angular.module('midwestApp')
           .success(function(data) {
             console.log(data);
             $scope.startSports = data.sports;
-          })
+          });
 
         geocoder.geocode( { "address": routePoints.start.address}, function(results,status) {
           console.log(results);
@@ -81,6 +81,14 @@ angular.module('midwestApp')
             $scope.map.zoom = 18;
           }
         });
+
+        directionsService.route(request, function(response, status) {
+          if (status === google.maps.DirectionsStatus.OK) {
+            $scope.received = true;
+            directionsDisplay.setDirections(response);
+            console.log(response);
+          }
+        });
       }
 
       else {
@@ -90,14 +98,14 @@ angular.module('midwestApp')
           .success(function(data) {
             console.log(data);
             $scope.startSports = data.sports;
-          })
+          });
 
         $http
           .get('/api/sports?venue=' + endVenue)
           .success(function(data) {
             console.log(data);
             $scope.endSports = data.sports;
-          })
+          });
 
         directionsService.route(request, function(response, status) {
           if (status === google.maps.DirectionsStatus.OK) {
