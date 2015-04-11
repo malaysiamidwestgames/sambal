@@ -13,8 +13,8 @@ angular.module('midwestApp')
     $scope.todos = [
     {
       title: 'Register for sports',
-      label: 'Coming soon'//,
-      //link: 'sportsreg'
+      label: 'Pay now',
+      link: 'sportsreg'
     },
     {
       title: 'Audition for Midwest Night',
