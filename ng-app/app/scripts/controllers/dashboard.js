@@ -31,7 +31,7 @@ angular.module('midwestApp')
         });
       }
 
-      /*if (user.registration_payment_status) {
+      if (user.registration_payment_status) {
         $scope.todos.unshift({
           title: 'Register for sports',
           label: 'Register now',
@@ -54,7 +54,7 @@ angular.module('midwestApp')
                 })
             });
           });
-        });*/
+        });
 
 
     });
