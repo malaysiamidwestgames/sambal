@@ -37,24 +37,34 @@ angular.module('midwestApp')
 	$scope.res = {};
 
 	$scope.val = 0;
+/*
+$scope.upload = function (files) {
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        $scope.upload = $upload.upload({
+            url: 'server/upload/url',
+            method: 'POST',
+            fields: { 'user[name]': $scope.name }
+            file: file,
+            fileFormDataName: 'user[image]'
+        });
+    }
+}*/
 
-
-	/*$scope.update = function(user) {
-        $scope.main = angular.copy(user);
-      };*/
-
-    $scope.upload = function (files) {
-    	console.log('babi');
+$scope.upload = function (files) {
+		console.log('bab');
         if (files && files.length) {
-        	console.log('makan');
             for (var i = 0; i < files.length; i++) {
-                var file = files[i];
+                var ayam = files[i];
                 $upload.upload({
-                    url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                    fields: {
-                        'opportunity': $scope.res.opportunity
-                    },
-                    file: file
+            	url: 'api/resumes',
+            method: 'POST',
+            fields: { 'resume[opportunity]': $scope.res.opportunity,
+            		  'resume[month]': $scope.res.month,
+            		  'resume[year]': $scope.res.year,
+            		  'resume[major]': $scope.res.major },
+            file: ayam,
+            fileFormDataName: 'resume[image]'
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' +
@@ -66,26 +76,23 @@ angular.module('midwestApp')
             }
         }
     };
-
-
-	$scope.uploadpdf = function(file) {
-		$scope.formUpload = true;
-		if (file != null) {
-			$scope.errorMsg = null;
-			// file.upload = 
-			var file = file;
-			$upload.upload({
-				url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-				method: 'POST',
-				headers: {
-					'my-header' : 'my-header-value'
-				},
-				fields: {
-					'opportunity': $scope.res.opportunity
-						 },
-				file: file
-				// fileFormDataName: 'myFile'
-			}).progress(function (evt) {
+}]);
+/*    $scope.upload = function (files) {
+    	console.log('babi');
+        if (files && files.length) {
+        	console.log('makan');
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+             $scope.upload = $upload.upload({
+            url: '/api/resumes',
+            method: 'POST',
+            fields: { 'resume[opportunity]': $scope.res.opportunity,
+            		  'resume[month]': $scope.res.month,
+            		  'resume[year]': $scope.res.year,
+            		  'resume[major]': $scope.res.major }
+            file:file,
+            fileFormDataName: 'resume[image]'
+                }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' +
                                 evt.config.file.name);
@@ -93,48 +100,6 @@ angular.module('midwestApp')
                     console.log('file ' + config.file.name + 'uploaded. Response: ' +
                                 JSON.stringify(data));
                 });
-
-	/*		file.upload.then(function(response) {
-				$timeout(function() {
-					file.result = response.data;
-				});
-			}, function(response) {
-				if (response.status > 0)
-					$scope.errorMsg = response.status + ': ' + response.data;
-			});*/
-
-		/*	file.upload.progress(function(evt) {
-				// Math.min is to fix IE which reports 200% sometimes
-				console.log(file.name)
-				file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    console.log('progress: ' + progressPercentage + '% ' +
-                                evt.config.file.name);
-			});
-
-			file.upload.xhr(function(xhr) {
-				// xhr.upload.addEventListener('abort', function(){console.log('abort complete')}, false);
-			});*/
-		}
-	};
-    /*$scope.upload = function (files) {
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        $scope.upload = $upload.upload({
-            url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-          method: 'POST',
-           fields: { 'user[name]': $scope.name }
-            file: file,
-            // fileFormDataName: 'user[pdf]'
-            }).progress(function (evt) {
-                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    console.log('progress: ' + progressPercentage + '% ' +
-                                evt.config.file.name);
-                }).success(function (data, status, headers, config) {
-                    console.log('file ' + config.file.name + 'uploaded. Response: ' +
-                                JSON.stringify(data));
-        });
-      }
-	};*/
-}]);
-
+            }
+        }
+    };*/

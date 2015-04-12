@@ -66,6 +66,7 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     get 'users/activations/:id' => 'users#resend_activation_email'
     resources :universities, only: [:index]
+    resources :resumes, only: [:index, :create]
     resources :sports, only: [:index, :show]
     get 'games/sports/:id' => 'games#get_games_with_sport_id'
     resources :games, only: [:index, :show]
