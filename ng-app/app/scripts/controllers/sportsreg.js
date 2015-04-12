@@ -97,6 +97,7 @@ angular.module('midwestApp')
       $scope.paid = false;
       $scope.full = false;
       $scope.joinReqSent = false;
+      $scope.joinReqAcc = false;
 
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
@@ -111,6 +112,14 @@ angular.module('midwestApp')
             }
             if ($scope.teams[i].team_captain == $rootScope.currentUser.id) {
               $scope.registered = true;
+            }
+            for (var j = 0; j < $scope.teams[i].participants.length; j++) {
+              if ($scope.teams[i].participants[j].user_id == $rootScope.currentUser.id && $scope.teams[i].participants[j].status == "join_request" ) {
+                $scope.joinReqSent = true;
+              }
+              if ($scope.teams[i].participants[j].user_id == $rootScope.currentUser.id && $scope.teams[i].participants[j].status == "accepted" ) {
+                $scope.joinReqAcc = true;
+              }
             }
           }
         }

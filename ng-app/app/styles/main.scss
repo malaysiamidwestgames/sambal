@@ -473,8 +473,11 @@ button#update-info-btn {
   }
 
   .col-md-8 {
-    .panel-body {
+    .panel-body.first {
       height: 175px;
+      }
+    .panel-body.second {
+      height: 280px;
     }
   }
 
