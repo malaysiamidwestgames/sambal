@@ -11,6 +11,7 @@ $michigan-maize: #FCD000;
 $michigan-maize-light: #FCDE4C;
 $michigan-maize-dark: #7C6700;
 $blue-background: #40658f;
+$michigan-hill-brown: #7a121c;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -110,6 +111,15 @@ body {
   }
 }
 
+.panel-themed-light {
+  border-color: $michigan-maize-light;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $michigan-maize;
+    border-color: $michigan-maize-light;
+  }
+}
+
 .btn-themed {
   color: #FFF;
   background-color: $michigan-maize;
@@ -122,6 +132,21 @@ body {
 
   &:disabled {
     background-color: $michigan-maize-light;
+  }
+}
+
+.btn-themed-inverse {
+  color: #FFF;
+  background-color: $michigan-blue;
+  border-color: $michigan-lightblue;
+
+  &:hover {
+    color: #FFF;
+    background-color: $michigan-lightblue;
+  }
+
+  &:disabled {
+    background-color: $michigan-lightblue;
   }
 }
 
@@ -313,13 +338,6 @@ div.hotel-registration input {
   height: 400px;
 }
 
-#panel {
-  position: absolute;
-  height: 300px;
-  float: right;
-  width: 390px;
-  overflow-y: auto;
-}
 
 #searchbox {
   width: 350px;
@@ -435,6 +453,114 @@ button#update-info-btn {
 
   .ng-invalid.ng-touched.ng-dirty {
     background-color: $brand-warning;
+  }
+}
+
+.sportsreg {
+  word-wrap:break-word;
+
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+    height: 555px;
+  }
+
+  .col-md-8 {
+    .panel-body {
+      height: 175px;
+    }
+  }
+
+  table.participants {
+    height: 275px;
+    overflow-y: auto;
+  }
+
+  .dropdown {
+    .btn {
+      width: 300px;
+    }
+    ul.dropdown-menu {
+      width: 300px;
+      overflow-y: auto;
+      max-height: 200px;
+    }
+  }
+
+  .contact-us {
+    margin-right: 10px;
+  }
+
+  .form-group {
+    margin: 20px;
+    #team.form-control {
+      width: 400px;
+      margin-right: 5px;
+    }
+    #uni.form-control {
+      width: 250px;
+      margin-right: 5px;
+    }
+    label.teamUni {
+      margin-top: 10px;
+    }
+  }
+
+  .infostat {
+    font-size: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    width: 5em;
+    .stat {
+      font-size: large;
+      margin-bottom: 10px;
+      color: $michigan-maize-light;
+    }
+  }
+
+  .teamname {
+    font-size: 2em;
+    .captainname {
+      font-size: large;
+      margin-bottom: -100px;
+    }
+  }
+
+  .paystatus {
+    width: 550px;
+  }
+}
+
+.eventmaps {
+  div.form-group {
+    label.col-md-2.control-label {
+      color: #ffffff;
+      font-size: 1.5em;
+    }
+  }
+
+
+  div.control {
+    height: 500px;
+  }
+
+  div#panel.panel-body {
+    height: 255px;
+    overflow-y: auto;
+  }
+}
+
+.venueevents {
+  div.col-md-6.routesports {
+    margin-top: 20px;
   }
 }
 
