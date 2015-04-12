@@ -19,7 +19,8 @@ angular
     'sysofwan.httpWrapper',
     'ui.bootstrap',
     'ui.validate',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'angularFileUpload'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -86,6 +87,10 @@ angular
       })
       .when('/accommodation', {
         templateUrl: 'views/accommodation.html'
+      })
+      .when('/resumeupload', {
+        templateUrl: 'views/resumeupload.html',
+        controller: 'ResumeuploadCtrl'
       })
       .otherwise({
         redirectTo: '/'
