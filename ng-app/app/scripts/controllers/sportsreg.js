@@ -142,7 +142,6 @@ angular.module('midwestApp')
       $http
         .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
         .success(function (data) {
-          console.log(data);
           $http
             .post('api/participants', {team_id: data.team.id, user_id:$rootScope.currentUser.id})
             .success(function(data) {
@@ -185,7 +184,7 @@ angular.module('midwestApp')
           console.log(data);
           $scope.joinReqSent = true;
         })
-    }
+    };
 
     var noTeamHandler = function(isChecked) {
       if (isChecked) {

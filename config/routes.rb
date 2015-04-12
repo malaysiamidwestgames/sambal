@@ -73,13 +73,15 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]
     resources :teams, only: [:index, :create, :show]
+    post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
-    resources :participants, only: [:create]
+    resources :participants, only: [:create, :destroy]
     post 'participants/join' => 'participants#join_team'
     post 'participants/invite' => 'participants#invite_team'
+    get 'participants/get' => 'participants#get_team'
     post 'participants/accept' => 'participants#accept'
     post 'participants/decline' => 'participants#decline'
-    get 'participants/get' => 'participants#get_team'
+    post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
