@@ -37,7 +37,6 @@ class Api::TeamsController < ApplicationController
     render json: @teams
   end
 
-
   def retrieve_amount
     @teams = current_user.teams.where(payment_id: 0)
     @amount = 0
@@ -47,7 +46,10 @@ class Api::TeamsController < ApplicationController
     render json: @amount
   end
 
-
+  def find_team_with_team_captain
+    @team = Team.where(team_captain: params[:team_captain]).where(game_id: params[:game_id])
+    render json: @team
+  end
 
 
 

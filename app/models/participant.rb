@@ -13,6 +13,6 @@ class Participant < ActiveRecord::Base
   end
 
   def self.generate_activation_key
-    Participant.digest(Participant.new_token)
+    self.activation_key = Participant.digest(Participant.new_token)
   end
 end
