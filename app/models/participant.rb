@@ -1,7 +1,7 @@
 class Participant < ActiveRecord::Base
+  attr_accessor :activation_key
   belongs_to :user
   belongs_to :team
-  attr_accessor :activation_key
 
 
   def self.new_token
@@ -13,6 +13,6 @@ class Participant < ActiveRecord::Base
   end
 
   def self.generate_activation_key
-    self.activation_key = Participant.digest(Participant.new_token)
+    Participant.digest(Participant.new_token)
   end
 end
