@@ -34,8 +34,8 @@ angular.module('midwestApp')
       if (user.registration_payment_status) {
         $scope.todos.unshift({
           title: 'Register for sports',
-          label: 'Register now',
-          link: 'sportsreg'
+          label: 'Coming soon'//,
+          //link: 'sportsreg'
         });
       }
 
