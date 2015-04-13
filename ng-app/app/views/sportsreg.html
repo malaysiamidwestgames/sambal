@@ -9,11 +9,11 @@
           Sports Registration and Payment
           <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" ng-show="payId != 0" class="ng-hide pull-right">
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="vanblaze@umich.edu">
+            <input type="hidden" name="business" value="midwestmalaysia@gmail.com">
             <input type="hidden" name="invoice" value="{{payId}}">
-            <input type="hidden" name="notify_url" value="http://2d540838.ngrok.com/api/hook">
+            <input type="hidden" name="notify_url" value="http://midwestmalaysia@gmail.com/api/hook">
             <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
-            <input type="hidden" name="return" value="http://localhost:9000/app/payment/done">
+            <input type="hidden" name="return" value="http://midwestmalaysia@gmail.com/app/payment/done">
             <input type="hidden" name="rm" value="1">
             <input type="hidden" name="no_shipping" value="1">
             <input type="hidden" name="currency_code" value="USD">
