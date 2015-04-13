@@ -1,42 +1,14 @@
-<!-- 	<div class="row">
-		<div class="panel panel-themed">
-			<div class="panel-heading">
-			<h3 class="panel-title">Resume Collection</h3>
-			</div>
-		  <div class="panel-body">
-		    <div>Username</div>
-	    <input type="checkbox" ng-model="multiple">upload multiple file</br></br>
-	    watching model:
-	    <div class="btn" ng-file-select ng-model="files" ng-multiple="multiple">Select File </div>
-	    {{files}}
-	    <button ng-click="upload(files)" class="btn btn-default">test</button>
-	    on file change:
-	    <div class="btn" ng-file-select ng-file-change="upload($files)" ng-multiple="multiple">Select File</div>
-	    Drop File:
-	    <div ng-file-drop ng-file-select ng-model="files" class="drop-box" 
-	        drag-over-class="dragover" ng-multiple="false" allow-dir="true"
-	        accept="application/pdf" ng-submit="">Drop pdfs or click to upload</div>
-	    <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
-	    <ul>
-	        <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
-	    </ul>
-	</div>
-	</div>
-		  </div>
-		</div>
-	</div>
- -->
 	<div class="row">
 		<div class="panel panel-themed">
 			<div class="panel-heading">
 			<h3 class="panel-title">Resume Collection</h3>
 			</div>
 		  	<div class="panel-body">
-		  		<pre>form = {{res | json}}</pre>
+		  	<!-- 	<pre>form = {{res | json}}</pre> -->
 				<form name="myForm" ng-submit="upload(files)">
 				  <div class="form-group">
 				    <label for="Inputftintern">What type of opportunity are you looking for? </label>
-				    <p class="help-block">{{res.opportunity}}</p>
+				    <!-- <p class="help-block">{{res.opportunity}}</p> -->
 				    <!-- <p class="help-block">validationnnnnn!!!!!{{myForm}}</p> -->
       <select ng-options="opportunity.code as opportunity.text for opportunity in opportunitys" ng-model="res.opportunity" required="" class="form-control">
         <option style="display:none" value="">Select an option</option>
@@ -45,13 +17,14 @@
 					<div class="form-group">
 				    <label for="Inputgradyear">When will you graduate? </label>
 				    <p class="help-block">Please select month and year</p>
-				    <p class="help-block">{{res.month}} {{res.year}}</p>
+				    <!-- <p class="help-block">{{res.month}} {{res.year}}</p> -->
 					    <div class="row">
 	      					<div class="col-sm-6">
 	      				<select ng-model="res.month"class="form-control" required="">
 	        			<option ng-repeat="month in months">{{month}}</option>
 	      				</select>
 	      					</div>
+	      					<br class="rwd-break">
 	      					<div class="col-sm-6">
 	      				<select ng-model="res.year"class="form-control" required="">
 	        			<option ng-repeat="year in years">{{year}}</option>
@@ -70,8 +43,8 @@
 				    <p class="help-block">This form only accepts PDF</p>
 				  </div>
 				  <button ng-disabled="myForm.$invalid" ng-hide="val" type="submit" class="btn btn-default" ng-model="val" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">Submit</button>
+				  <label for="thankyou" ng-hide="!val"> Thank you for uploading your resume!</label>
 				</form>
-				{{val}}
 			</div>
 		</div>
 	</div>
