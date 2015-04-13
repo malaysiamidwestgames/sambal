@@ -22,7 +22,6 @@ angular.module('midwestApp')
     $scope.selectedAction = {
       name: 'Choose a sport to register for'
     };
-    console.log($rootScope.currentUser);
 
     /*$scope.todos = [
       {
@@ -39,7 +38,6 @@ angular.module('midwestApp')
     $http
       .get('/api/outpay')
       .success(function(data) {
-        console.log(data);
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
@@ -63,7 +61,6 @@ angular.module('midwestApp')
 
     $http.get('/api/games')
       .success(function(data){
-        console.log(data);
         $scope.games = data.games;
       });
 
@@ -154,6 +151,16 @@ angular.module('midwestApp')
           console.log(error);
         });
     };
+
+    $scope.destroyTeams = function () {
+      $http
+        .delete('/api/myteams')
+        .success(function(data) {
+          console.log(data);
+          $scope.amount = 0;
+          $scope.registered = false;
+        })
+    }
 
     $scope.paymentInit = function (regtype) {
       $http

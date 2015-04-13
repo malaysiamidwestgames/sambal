@@ -29,6 +29,11 @@ class Api::TeamsController < ApplicationController
     render json: @teams
   end
 
+  def destroy_teams
+    current_user.teams.where(payment_id: 0).destroy_all
+    render json: :status
+  end
+
   def update_payment
     @teams = current_user.teams.where(payment_id: 0)
     if payId = params[:payment_id]

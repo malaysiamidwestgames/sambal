@@ -472,6 +472,7 @@ button#update-info-btn {
     height: 555px;
   }
 
+
   .col-md-8 {
     .panel-body.first {
       height: 175px;
@@ -488,7 +489,11 @@ button#update-info-btn {
 
   .dropdown {
     .btn {
-      width: 300px;
+      width: 250px;
+      margin-right: 10px;
+      .btn-danger{
+        width: auto;
+      }
     }
     ul.dropdown-menu {
       width: 300px;
@@ -496,10 +501,20 @@ button#update-info-btn {
       max-height: 200px;
     }
   }
+  .promotion {
+    font-size: 15px;
+    h1.title {
+      font-weight: 300;
+      margin-top: 3px;
+      color: $michigan-blue;
+    }
+  }
+
 
   .contact-us {
     margin-right: 10px;
   }
+
 
   .form-group {
     margin: 20px;

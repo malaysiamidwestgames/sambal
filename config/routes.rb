@@ -89,6 +89,7 @@ Rails.application.routes.draw do
     get '/payupdate' => 'teams#update_payment'
     get '/outpay' => 'payments#retrieve_payment'
     get '/paybalance' => 'teams#retrieve_amount'
+    delete '/myteams' => 'teams#destroy_teams'
   end
 
   
