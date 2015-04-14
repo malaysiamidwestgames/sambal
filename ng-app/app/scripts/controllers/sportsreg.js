@@ -64,29 +64,6 @@ angular.module('midwestApp')
         $scope.games = data.games;
       });
 
-    $http
-      .get('/api/outpay')
-      .success(function(data) {
-        if (data.length == 1 ) {
-          $scope.payId = data[0].id;
-          $scope.amount = data[0].amount;
-          $http
-            .get('api/teams?payment_id=' + $scope.payId)
-            .success(function(data) {
-              $scope.teams = data.teams
-            })
-        }
-      });
-
-    $http
-      .get('/api/paybalance')
-      .success(function(data) {
-        if(data > 0) {
-          $scope.amount = data
-        }
-      });
-
-
 
     $scope.setAction = function(action) {
       $scope.selectedAction = action;
