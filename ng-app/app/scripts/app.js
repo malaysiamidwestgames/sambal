@@ -95,6 +95,7 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
+        requireAdmin: true,
         requirePaidGen: true
       })
       .otherwise({
