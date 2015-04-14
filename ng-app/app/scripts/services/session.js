@@ -22,7 +22,8 @@ angular.module('midwestApp')
         return false;
       }
       return getCurrentUser().then(function(user) {
-        return user.authorization_level === 'admin';
+        console.log(user.authorization_level);
+        return user.authorization_level === 1 || user.authorization_level === 'admin';
       });
     };
 

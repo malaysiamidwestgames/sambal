@@ -23,18 +23,6 @@ angular.module('midwestApp')
       name: 'Choose a sport to register for'
     };
 
-    /*$scope.todos = [
-      {
-        title: 'Register for sports',
-        label: 'Register now',
-        link: 'sportsreg'
-      },
-      {
-        title: 'Audition for Midwest Night',
-        label: 'More info',
-        link: 'promo/auditions'
-      }];
-*/
     $http
       .get('/api/outpay')
       .success(function(data) {
@@ -117,7 +105,7 @@ angular.module('midwestApp')
         .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
         .success(function (data) {
           $http
-            .post('api/participants', {team_id: data.team.id, user_id:$rootScope.currentUser.id})
+            .get('api/participants/create?team_id=' + data.team.id + "&user_id=" + $rootScope.currentUser.id)
             .success(function(data) {
               console.log(data);
             });
@@ -137,7 +125,7 @@ angular.module('midwestApp')
           $scope.amount = 0;
           $scope.registered = false;
         })
-    }
+    };
 
     $scope.paymentInit = function (regtype) {
       $http

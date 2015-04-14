@@ -28,7 +28,7 @@ angular.module('midwestApp')
           label: 'Pay now',
           link: 'payment'
         });
-      };
+      }
 
       if (user.registration_payment_status) {
         $scope.todos.unshift({
