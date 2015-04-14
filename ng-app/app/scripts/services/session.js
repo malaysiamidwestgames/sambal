@@ -21,14 +21,18 @@ angular.module('midwestApp')
       if (!isLoggedIn) {
         return false;
       }
-      return $rootScope.currentUser.authorization_level === 'admin';
+      return getCurrentUser().then(function(user) {
+        return user.authorization_level === 'admin';
+      });
     };
 
     service.hasPaidGen = function () {
       if (!isLoggedIn) {
         return false;
       }
-      return $rootScope.currentUser.registration_payment_status;
+      return getCurrentUser().then(function (user) {
+        return user.registration_payment_status;
+      });
     };
 
     var revokeAccess = function(resp) {
