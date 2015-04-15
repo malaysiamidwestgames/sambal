@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('SportsregCtrl', function ($scope, $http, $rootScope) {
+  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location) {
 
     var userTeamUni;
     $scope.payId = 0;
@@ -22,6 +22,8 @@ angular.module('midwestApp')
     $scope.selectedAction = {
       name: 'Choose a sport to register for'
     };
+
+    console.log($location.host());
 
     $http
       .get('/api/outpay')

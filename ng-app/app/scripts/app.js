@@ -91,13 +91,13 @@ angular
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
       })
-      /*.when('/sportsreg', {
+      .when('/sportsreg', {
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
         requireAdmin: true,
         requirePaidGen: true
-      })*/
+      })
       .otherwise({
         redirectTo: '/'
       });
