@@ -10,6 +10,7 @@
 angular.module('midwestApp')
   .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location) {
 
+
     var userTeamUni;
     $scope.payId = 0;
     $scope.amount = 0;
@@ -23,6 +24,7 @@ angular.module('midwestApp')
       name: 'Choose a sport to register for'
     };
 
+    $scope.host = $location.host();
     console.log($location.host());
 
     $http
