@@ -21,9 +21,8 @@ angular.module('midwestApp')
       if (!isLoggedIn) {
         return false;
       }
-      return getCurrentUser().then(function(user) {
-        console.log(user.authorization_level);
-        return user.authorization_level === 1 || user.authorization_level === 'admin';
+      return getCurrentUser().then(function(data) {
+        return data.user.authorization_level === 'admin';
       });
     };
 
@@ -31,8 +30,8 @@ angular.module('midwestApp')
       if (!isLoggedIn) {
         return false;
       }
-      return getCurrentUser().then(function (user) {
-        return user.registration_payment_status;
+      return getCurrentUser().then(function (data) {
+        return data.user.registration_payment_status;
       });
     };
 
