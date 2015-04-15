@@ -1,7 +1,7 @@
 class Api::ParticipantsController < ApplicationController
   def create
     @participant = Participant.new(participant_params)
-    @participant.activation_key = Participant.generate_activation_key
+    # @participant.activation_key = Participant.generate_activation_key
     @participant.status = "team_captain"
     if @participant.save
       render json: @participant, status: :created
