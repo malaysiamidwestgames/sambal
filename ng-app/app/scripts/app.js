@@ -92,6 +92,10 @@ angular
         requireLogin: true,
         requireAdmin: true
       })
+      .when('/admin-settings/:userId', {
+        templateUrl: 'views/admin_settings.html',
+        controller: 'AdminSettingsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

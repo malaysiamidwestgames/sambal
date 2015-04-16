@@ -8,31 +8,34 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('UserlistCtrl', function ($scope, $http) {
-    $scope.participants = undefined;
-    $scope.uniname = '';
-    $scope.toggle = function(uniname) {
-        $scope.uniname = uniname;
+	.controller('UserlistCtrl', function ($scope, $http) {
+		$scope.participants = undefined;
+		$scope.uniname = '';
+		$scope.toggle = function(uniname) {
+			$scope.uniname = uniname;
 
-        $http.get('/api/users?name' + $scope.uniname)
-        .success(function(data){
-            console.log(data);
-            $scope.users = data.users;
-            console.log(data.password);
-        });
-    };
+			$http.get('/api/users?name' + $scope.uniname)
+			.success(function(data){
+				$scope.users = data.users;
+			});
+		};
 
-        $http.get('/api/users')
-        .success(function(data){
-            console.log(data);
-            $scope.users = data.users;
-            console.log(data.password);
-        });
+		$scope.get_payment_status = function(payments) {
+			for (var i = 0; i < payments.length; i++) {
+				if (payments[i].status == "Completed") {
+					return "paid";
+				}
+			}
+			return "unpaid";
+		};
 
-        $http.get('/api/universities/count')
-        .success(function(data){
-            $scope.universities = data.universities;
-        });
+		$http.get('/api/users')
+			.success(function(data){
+				$scope.users = data.users;
+			});
 
-
-  });
+		$http.get('/api/universities/count')
+			.success(function(data){
+				$scope.universities = data.universities;
+			});
+	});

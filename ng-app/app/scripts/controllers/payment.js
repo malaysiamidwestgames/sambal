@@ -16,6 +16,7 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Processing payment', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now() })
         .success(function(data) {
+          console.log(data);
           $scope.payId = data.id;
         })
         .error(function(error) {

@@ -18,7 +18,6 @@ class Api::PaymentsController < ApplicationController
     render json: @payment
   end
 
-
   def index
     render json: current_user.payments
   end

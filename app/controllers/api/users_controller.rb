@@ -46,6 +46,7 @@ class Api::UsersController < ApplicationController
       puts @user.first_name
       puts @user.university.name
       puts @user.university.id
+      puts @user.authorization_level
 
       render json: @user
     else
@@ -72,7 +73,11 @@ class Api::UsersController < ApplicationController
   private
     
     def user_params
-      params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
+      if current_user.admin?
+        params.permit(:email, :first_name, :last_name, :password, :password_confirmation, :authorization_level, :payments)
+      else
+        params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
+      end
     end
 
     def university_params
