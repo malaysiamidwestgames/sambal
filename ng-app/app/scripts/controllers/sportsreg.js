@@ -27,24 +27,17 @@ angular.module('midwestApp')
     $scope.host = $location.host();
 
     $http
-      .get('/api/teams?payment_id=0')
-      .success(function(data) {
-        console.log(data);
-        $scope.teams = data.teams
-      });
-
-    $http
       .get('/api/outpay')
       .success(function(data) {
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
-          /*$http
+          $http
             .get('api/teams?payment_id=' + $scope.payId)
             .success(function(data) {
-              console.log(data);
+              //console.log(data);
               $scope.teams = data.teams
-            })*/
+            })
         }
         if (data.length == 0) {
           $http
@@ -80,9 +73,11 @@ angular.module('midwestApp')
           }
           for (var i = 0; i < $scope.teams.length; i++ ) {
             if ($scope.teams[i].team_payment_status == true && $scope.teams[i].team_captain == $rootScope.currentUser.id) {
+              console.log("paid is true");
               $scope.paid = true;
             }
             if ($scope.teams[i].team_captain == $rootScope.currentUser.id) {
+              console.log("registered is true");
               $scope.registered = true;
             }
             for (var j = 0; j < $scope.teams[i].participants.length; j++) {
