@@ -27,17 +27,24 @@ angular.module('midwestApp')
     $scope.host = $location.host();
 
     $http
+      .get('api/teams?payment_id=223')
+      .success(function(data) {
+        console.log(data);
+        $scope.teams = data.teams
+      });
+
+    $http
       .get('/api/outpay')
       .success(function(data) {
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
-          $http
+          /*$http
             .get('api/teams?payment_id=' + $scope.payId)
             .success(function(data) {
               console.log(data);
               $scope.teams = data.teams
-            })
+            })*/
         }
         if (data.length == 0) {
           $http
