@@ -22,6 +22,7 @@ angular.module('midwestApp')
         return false;
       }
       return getCurrentUser().then(function(data) {
+        console.log("al: " + data.user.authorization_level);
         return data.user.authorization_level === 'admin';
       });
     };
@@ -31,6 +32,7 @@ angular.module('midwestApp')
         return false;
       }
       return getCurrentUser().then(function (data) {
+        console.log("hps: " + data.user.registration_payment_status);
         return data.user.registration_payment_status;
       });
     };

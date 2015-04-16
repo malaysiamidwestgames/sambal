@@ -89,6 +89,6 @@ class Api::ParticipantsController < ApplicationController
 
   private
     def participant_params
-      params.permit(:team_id, :user_id)
+      params.permit(:user_id, :team_id)
     end
 end

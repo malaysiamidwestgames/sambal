@@ -95,8 +95,8 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: true,
-        requireAdmin: true
+        requirePaidGen: false,
+        requireAdmin: false
       })
       .otherwise({
         redirectTo: '/'
@@ -130,7 +130,7 @@ angular
         $location.path('/');
         event.preventDefault();
       }
-      else if (next.requireAdmin && !session.isAdmin()) {
+      else if (next.requireAdmin && session.isAdmin()) {
         $location.path('/');
         event.preventDefault();
       }
@@ -138,7 +138,7 @@ angular
         $location.path('/dashboard/');
         event.preventDefault();
       }
-      else if (next.requirePaidGen && !session.hasPaidGen()) {
+      else if (next.requirePaidGen && session.hasPaidGen()) {
         $location.path('/');
         event.preventDefault();
       }
