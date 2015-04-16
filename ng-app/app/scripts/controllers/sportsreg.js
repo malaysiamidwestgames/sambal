@@ -107,6 +107,7 @@ angular.module('midwestApp')
       $http
         .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
         .success(function (data) {
+          console.log(data);
           $http
             //.get('api/participants/create?team_id=' + data.team.id + "&user_id=" + $rootScope.currentUser.id)
             .post('api/participants', {user_id: $rootScope.currentUser.id, team_id: data.team.id})
