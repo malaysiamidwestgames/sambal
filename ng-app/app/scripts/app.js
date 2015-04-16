@@ -95,8 +95,8 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: false,
-        requireAdmin: false
+        requirePaidGen: true,
+        requireAdmin: true
       })
       .otherwise({
         redirectTo: '/'
@@ -131,7 +131,7 @@ angular
         event.preventDefault();
       }
       else if (next.requireAdmin && session.isAdmin()) {
-        $location.path('/');
+        $location.path('/dashboard/');
         event.preventDefault();
       }
       else if (next.requireLogout && session.isLoggedIn()) {
@@ -139,7 +139,7 @@ angular
         event.preventDefault();
       }
       else if (next.requirePaidGen && session.hasPaidGen()) {
-        $location.path('/');
+        $location.path('/dashboard/');
         event.preventDefault();
       }
       $rootScope.bodyClass = next.bodyClass;
