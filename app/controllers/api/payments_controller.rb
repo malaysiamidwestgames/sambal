@@ -32,6 +32,12 @@ class Api::PaymentsController < ApplicationController
     render nothing: true
   end
 
+  def retrieve_payment
+    @payment = current_user.payments.where(regtype: "Sports registration", status: "Payment initiated")
+    render json: @payment, root: false
+  end
+
+
   private
     def payment_params
       params.permit(:notification_params, :status, :transaction_id, :purchased_at, :regtype, :user_id, :amount, :payment_type)

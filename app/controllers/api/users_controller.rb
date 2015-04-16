@@ -85,6 +85,6 @@ class Api::UsersController < ApplicationController
     end
 
     def set_user
-      @user = params[:id] == 'me' ? current_user : User.find(params[:id])
+        @user = params[:id] == 'me' ? current_user : User.find(params[:id])
     end
 end

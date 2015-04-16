@@ -17,6 +17,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.teams.where(payment_id: 0).destroy_all
     destroy_token
     head :no_content
   end

@@ -66,14 +66,31 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     get 'users/activations/:id' => 'users#resend_activation_email'
     resources :universities, only: [:index]
+    resources :sports, only: [:index, :show]
+    get 'games/sports/:id' => 'games#get_games_with_sport_id'
+    resources :games, only: [:index, :show]
     get 'universities/count' => 'universities#count'
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]
+    resources :teams, only: [:index, :create, :show]
+    post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
+    resources :participants, only: [:create, :destroy]
+    get 'participants/create' => 'participants#create_team'
+    post 'participants/join' => 'participants#join_team'
+    post 'participants/invite' => 'participants#invite_team'
+    get 'participants/get' => 'participants#get_team'
+    post 'participants/accept' => 'participants#accept'
+    post 'participants/decline' => 'participants#decline'
+    post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
     post '/hook' => 'payments#hook'
+    get '/payupdate' => 'teams#update_payment'
+    get '/outpay' => 'payments#retrieve_payment'
+    get '/paybalance' => 'teams#retrieve_amount'
+    delete '/myteams' => 'teams#destroy_teams'
   end
 
   
