@@ -130,17 +130,26 @@ angular
         $location.path('/');
         event.preventDefault();
       }
-      else if (next.requireAdmin && session.isAdmin()) {
-        $location.path('/dashboard/');
-        event.preventDefault();
+      // TODO: bug here. Race event between asynchronous call of isAdmin and loading the page causing users to get disconnected
+      else if (next.requireAdmin) {
+        session.isAdmin().then(function(data) {
+          if (!data) {
+            $location.path('/');
+            event.preventDefault();
+          }
+        })
       }
       else if (next.requireLogout && session.isLoggedIn()) {
         $location.path('/dashboard/');
         event.preventDefault();
       }
-      else if (next.requirePaidGen && session.hasPaidGen()) {
-        $location.path('/dashboard/');
-        event.preventDefault();
+      else if (next.requirePaidGen) {
+        session.hasPaidGen().then(function(data) {
+          if (!data) {
+            $location.path('/');
+            event.preventDefault();
+          }
+        })
       }
       $rootScope.bodyClass = next.bodyClass;
     });
