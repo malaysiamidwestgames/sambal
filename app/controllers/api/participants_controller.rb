@@ -1,4 +1,13 @@
 class Api::ParticipantsController < ApplicationController
+  def create
+    @participant = Participant.new(participant_params_2)
+    if @participant.save
+      render json: @participant, status: :created
+    else
+      render json: @participant.errors, status: :unprocessable_entity
+    end
+  end
+
   def create_team
     @participant = Participant.new(participant_params.merge(status: "team_captain"))
     if @participant.save
@@ -72,6 +81,10 @@ class Api::ParticipantsController < ApplicationController
   end
 
   private
+    def participant_params_2
+      params.permit(:user_id, :team_id, :status)
+    end
+
     def participant_params
       params.permit(:user_id, :team_id)
     end

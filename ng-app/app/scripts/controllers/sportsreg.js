@@ -103,6 +103,19 @@ angular.module('midwestApp')
       }
     };
 
+    $http
+      .get('api/participants/create?team_id=' + 0 + "&user_id=" + 6)
+      .success(function(data) {
+        console.log(data);
+      });
+
+    $http
+      .post('api/participants', {team_id: 1, user_id: 6, status: 'team_captain'})
+      .success(function(data) {
+        console.log(data);
+      });
+
+
     $scope.setTeam = function(name) {
       $http
         .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
