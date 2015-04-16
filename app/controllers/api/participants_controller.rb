@@ -1,7 +1,6 @@
 class Api::ParticipantsController < ApplicationController
-  def create
+  def create_team
     @participant = Participant.new(participant_params.merge(status: "team_captain"))
-    # @participant.activation_key = Participant.generate_activation_key
     if @participant.save
       render json: @participant, status: :created
     else
@@ -22,7 +21,6 @@ class Api::ParticipantsController < ApplicationController
 
   def join_team
     @participant = Participant.new(participant_params)
-    @participant.update_attribute(:activation_key, Participant.generate_activation_key)
     @participant.status = "join_request"
     if @participant.save
       render json: @participant, status: :created
@@ -33,7 +31,6 @@ class Api::ParticipantsController < ApplicationController
 
   def invite_team
     @participant = Participant.new(participant_params)
-    @participant.update_attribute(:activation_key, Participant.generate_activation_key)
     @participant.status = "invite_request"
     if @participant.save
       render json: @participant, status: :created
@@ -44,32 +41,20 @@ class Api::ParticipantsController < ApplicationController
 
   def accept
     @participant = Participant.find(params[:id])
-    if params[:activation_key] == @participant.activation_key
-      @participant.update_attribute(:status, "accepted")
-      if @participant.save
-        render json: @participant, status: :created
-      else
-        render json: @participant.errors, status: :unprocessable_entity
-      end
+    @participant.update_attribute(:status, "accepted")
+    if @participant.save
+      render json: @participant, status: :created
     else
-      @participant.errors.add(:activation_key, "wrong activation_key!")
-      @participant.activation_key = @participant.generate_activation_key
       render json: @participant.errors, status: :unprocessable_entity
     end
   end
 
   def decline
     @participant = Participant.find(params[:id])
-    if params[:activation_key] == @participant.activation_key
-      @participant.update_attribute(:status, "declined")
-      if @participant.save
-        render json: @participant, status: :created
-      else
-        render json: @participant.errors, status: :unprocessable_entity
-      end
+    @participant.update_attribute(:status, "declined")
+    if @participant.save
+      render json: @participant, status: :created
     else
-      @participant.errors.add(:activation_key, "wrong activation_key!")
-      @participant.activation_key = @participant.generate_activation_key
       render json: @participant.errors, status: :unprocessable_entity
     end
   end

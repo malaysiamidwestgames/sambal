@@ -109,8 +109,8 @@ angular.module('midwestApp')
         .success(function (data) {
           console.log(data);
           $http
-            //.get('api/participants/create?team_id=' + data.team.id + "&user_id=" + $rootScope.currentUser.id)
-            .post('api/participants', {user_id: $rootScope.currentUser.id, team_id: data.team.id})
+            .get('api/participants/create?team_id=' + data.team.id + "&user_id=" + $rootScope.currentUser.id)
+            //.post('api/participants', {user_id: $rootScope.currentUser.id, team_id: data.team.id})
             .success(function(data) {
               console.log(data);
             });
