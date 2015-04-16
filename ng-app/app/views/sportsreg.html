@@ -88,7 +88,7 @@
             <div ng-show="individual && registered == false"><button class="btn btn-themed pull-right btn-lg" ng-click="setTeam(currentUser.first_name + ' ' + currentUser.last_name)">Register</button></div>
         </div>
       </div>
-      <div class="panel panel-themed" ng-show="selectedAction.name !== 'Choose a sport to register for' && !!!teams.length">
+      <div class="panel panel-themed" ng-hide="!!!teams.length">
         <div class="panel-heading">
           <h3 class="panel-title">{{individual && "Participants" || joinReqAcc && "Join request to team accepted" || joinReqSent && "Join request to team sent" || registered && "List of teams" || "Ask to join a team"}}</h3>
         </div>
