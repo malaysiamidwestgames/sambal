@@ -27,7 +27,7 @@ angular.module('midwestApp')
     $scope.host = $location.host();
 
     $http
-      .get('api/teams?payment_id=223')
+      .get('/api/teams?payment_id=0')
       .success(function(data) {
         console.log(data);
         $scope.teams = data.teams
