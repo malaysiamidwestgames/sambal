@@ -131,6 +131,7 @@ angular
         event.preventDefault();
       }
       // TODO: bug here. Race event between asynchronous call of isAdmin and loading the page causing users to get disconnected
+      // Affected users: non-admins who try to type in /userlist to access userlist.
       else if (next.requireAdmin) {
         session.isAdmin().then(function(data) {
           if (!data) {

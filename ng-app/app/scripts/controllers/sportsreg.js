@@ -25,7 +25,6 @@ angular.module('midwestApp')
     };
 
     $scope.host = $location.host();
-    console.log($location.host());
 
     $http
       .get('/api/outpay')
@@ -65,7 +64,7 @@ angular.module('midwestApp')
       $scope.joinReqSent = false;
       $scope.joinReqAcc = false;
 
-      $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
+      $http.get('/api/teams/' + $scope.selectedAction.id)
         .success(function(data) {
           console.log(data);
           $scope.teams = data.teams;
