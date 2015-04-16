@@ -6,6 +6,7 @@ class Api::TeamsController < ApplicationController
       game = Game.find(@team.game_id)
       result = game.spots_left - 1
       game.update(spots_left: result)
+      @team.participants.create(user_id: @team.team_captain, status: 'team_captain')
       render json: @team, status: :created
     else
       render json: @team.errors, status: :unprocessable_entity
