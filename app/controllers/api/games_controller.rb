@@ -12,7 +12,7 @@ class Api::GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    @game = Game.find(params[:id]).order(name: :asc, category: :asc)
+    @game = Game.find(params[:id]).order(name: :asc, __id__: :asc)
     render json: @game
   end
 
