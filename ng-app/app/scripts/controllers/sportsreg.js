@@ -24,6 +24,7 @@ angular.module('midwestApp')
       name: 'Choose a sport to register for'
     };
 
+
     $scope.host = $location.host();
 
     $http

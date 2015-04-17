@@ -1,0 +1,56 @@
+<div class="row teams">
+  <div class="col-md-6">
+    <div class="clearfix" ng-hide="currentUser.sports_payment_unpaid">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+          {{ team.name }}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li role="presentation menuitem" ng-repeat="team in teams">
+            <a ng-click="setTeam(team)">{{ team.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row teams">
+  <div class="col-md-6">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Team information</h3>
+      </div>
+      <div class="panel-body"></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Team members</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search and invite a participant to join your team">
+            <button class="btn btn-md btn-themed">Invite</button>
+          </div>
+        </form>
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="participant in team.participants_name">
+            <td>{{participant.first_name}} {{participant.last_name}}</td>
+            <td>{{participant.status}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

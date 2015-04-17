@@ -98,6 +98,10 @@ angular
         requirePaidGen: false,
         requireAdmin: true
       })
+      .when('/teams', {
+        templateUrl: 'views/teams.html',
+        controller: 'TeamsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
