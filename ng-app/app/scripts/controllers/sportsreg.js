@@ -40,6 +40,7 @@ angular.module('midwestApp')
             .success(function(data) {
               console.log(data);
               $scope.teams = data.teams
+              console.log($scope.teams);
             })
         }
         if (data.length == 0) {
