@@ -5,7 +5,7 @@ class Api::GamesController < ApplicationController
   # GET /games.json
 	def index
 		# Gather all games data
-		@games = Game.all.order(name: :asc, __id__: :asc)
+		@games = Game.all.order(name: :asc, id: :asc)
 		render json: @games
   end
 
