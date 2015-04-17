@@ -34,16 +34,7 @@ angular.module('midwestApp')
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
-          console.log($scope.payId);
-          $http
-            .get('api/teams?payment_id=' + $scope.payId)
-            .success(function(data) {
-              console.log(data);
-              $scope.teams = data.teams;
-              console.log($scope.teams);
-            }).error(function (error) {
-              console.log(error);
-            })
+          $scope.teams = data[0].teams;
         }
         if (data.length == 0) {
           $http
