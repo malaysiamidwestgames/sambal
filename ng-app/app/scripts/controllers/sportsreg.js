@@ -36,6 +36,7 @@ angular.module('midwestApp')
           $http
             .get('api/teams?payment_id=' + $scope.payId)
             .success(function(data) {
+              console.log($scope.teams)
               $scope.teams = data.teams
             })
         }
@@ -63,6 +64,7 @@ angular.module('midwestApp')
       $scope.full = false;
       $scope.joinReqSent = false;
       $scope.joinReqAcc = false;
+      $scope.setTeamStatus = "";
 
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
