@@ -1,17 +1,43 @@
+<div class="row payment">
+  <div class="col-md-12">
+    <div class="panel panel-themed promotion">
+      <div class="panel-body">
+        <h1 class="title"> Team management<br><small>Check your join/invite requests, chat with team members and more</small></h1>
+        <div class="clearfix" ng-hide="currentUser.sports_payment_unpaid">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              {{ team.name }}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation menuitem" ng-repeat="team in teams">
+                <a ng-click="setTeam(team)">{{ team.name }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row teams">
   <div class="col-md-6">
-    <div class="clearfix" ng-hide="currentUser.sports_payment_unpaid">
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-          {{ team.name }}
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li role="presentation menuitem" ng-repeat="team in teams">
-            <a ng-click="setTeam(team)">{{ team.name }}</a>
-          </li>
-        </ul>
+    <div class="panel panel-themed user-info-panel">
+      <div class="panel-body">
+        <div class="first-name">{{team.name}}</div>
+        <div class="infostat">{{team.team_captain_name[0].first_name}} {{team.team_captain_name[0].last_name}}<div class="stat">Team captain</div></div>
+        <div class="infostat">{{team.university.name}}<div class="stat">Contingent</div></div>
+        <div class="infostat">{{team.game.name}} {{team.game.category}}<div class="stat">Event</div></div>
+
       </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Message Board</h3>
+      </div>
+      <div class="panel-body"></div>
     </div>
   </div>
 </div>
@@ -19,21 +45,13 @@
   <div class="col-md-6">
     <div class="panel panel-themed">
       <div class="panel-heading">
-        <h3 class="panel-title">Team information</h3>
-      </div>
-      <div class="panel-body"></div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-themed">
-      <div class="panel-heading">
         <h3 class="panel-title">Team members</h3>
       </div>
       <div class="panel-body">
-        <form class="form-inline">
+        <form ng-show="captain" class="form-inline">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search and invite a participant to join your team">
-            <button class="btn btn-md btn-themed">Invite</button>
+            <input type="text" class="form-control" placeholder="Search and invite a participant to join your team" ng-model="user" typeahead="user.id as user.first_name + ' ' + user.last_name for user in users | filter:$viewValue | limitTo:8" typeahead-min-length="2" typeahead-editable="false" typeahead-on-select="onSelect($item, $model, $label)" typeahead-input-formatter="label" required>
+            <button class="btn btn-md btn-themed" ng-click="inviteReq(user)">Invite</button>
           </div>
         </form>
         <table class="table table-bordered">
@@ -44,13 +62,24 @@
           </tr>
           </thead>
           <tbody>
-          <tr ng-repeat="participant in team.participants_name">
-            <td>{{participant.first_name}} {{participant.last_name}}</td>
-            <td>{{participant.status}}</td>
+          <tr ng-repeat="participant in team.participants">
+            <td>{{participant.user.first_name}} {{participant.user.last_name}}</td>
+            <td>{{participant.status == 'team_captain' && "Team Captain" || participant.status == 'join_request' && "Requested to join" || participant.status == 'invite_request' && "Invited to join" || participant.status == 'accepted' && "Join request accepted" || participant.status == 'declined' && "Join request declined"}}<br>
+              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-themed">Accept</button>
+              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-danger">Decline</button>
+            </td>
           </tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Matches, standings and venue</h3>
+      </div>
+      <div class="panel-body"></div>
     </div>
   </div>
 </div>

@@ -12,10 +12,6 @@ class Team < ActiveRecord::Base
     return @teamleader
   end
 
-  def participants_name
-    @participants = self.users
-    return @participants
-  end
 
   def team_payment_status
     idx = self.payment do |payment|

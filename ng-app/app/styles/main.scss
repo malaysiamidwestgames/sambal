@@ -576,6 +576,38 @@ button#update-info-btn {
   }
 }
 
+.teams {
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+    height: 350px;
+  }
+
+  div.panel-body {
+    height: 310px;
+    overflow-y: auto;
+  }
+
+  .infostat {
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-bottom: 0.5em;
+    width: 8em;
+    .stat {
+      font-size: large;
+      margin-bottom: 10px;
+      color: $michigan-maize-light;
+    }
+  }
+}
+
 .venueevents {
   div.col-md-6.routesports {
     margin-top: 20px;
