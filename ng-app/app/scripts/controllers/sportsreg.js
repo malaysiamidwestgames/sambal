@@ -20,6 +20,7 @@ angular.module('midwestApp')
     $scope.games = [];
     $scope.teams = [];
     $scope.universities = [];
+    $scope.setTeamStatus = "";
     $scope.selectedAction = {
       name: 'Choose a sport to register for'
     };
@@ -105,8 +106,12 @@ angular.module('midwestApp')
       $http
         .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
         .success(function (data) {
-          $scope.amount += $scope.selectedAction.price_per_team;
-          $scope.registered = true;
+          if (data.message) {
+            $scope.setTeamStatus = data.message;
+          } else {
+            $scope.amount += $scope.selectedAction.price_per_team;
+            $scope.registered = true;
+          }
       })
         .error(function(error) {
           console.log(error);
@@ -126,6 +131,7 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
+
           $scope.payId = data.id;
           $http
             .get('/api/payupdate?payment_id=' + $scope.payId)
