@@ -30,13 +30,15 @@ angular.module('midwestApp')
     $http
       .get('/api/outpay')
       .success(function(data) {
+        console.log(data);
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
+          console.log($scope.payId);
           $http
             .get('api/teams?payment_id=' + $scope.payId)
             .success(function(data) {
-              console.log($scope.teams)
+              console.log(data);
               $scope.teams = data.teams
             })
         }
