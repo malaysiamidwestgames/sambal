@@ -34,6 +34,16 @@ angular.module('midwestApp')
         if (data.length == 1 ) {
           $scope.payId = data[0].id;
           $scope.amount = data[0].amount;
+          console.log($scope.payId);
+          $http
+            .get('api/teams?payment_id=' + $scope.payId)
+            .success(function(data) {
+              console.log(data);
+              $scope.teams = data.teams;
+              console.log($scope.teams);
+            }).error(function (error) {
+              console.log(error);
+            })
         }
         if (data.length == 0) {
           $http
@@ -45,19 +55,6 @@ angular.module('midwestApp')
             });
         }
       });
-
-    $scope.$watch('payId', function() {
-      console.log('here');
-      $http
-        .get('api/teams?payment_id=' + $scope.payId)
-        .success(function(data) {
-          console.log(data);
-          $scope.teams = data.teams;
-          console.log($scope.teams);
-        }).error(function (error) {
-          console.log(error);
-        })
-    });
 
     $http.get('/api/games')
       .success(function(data){
