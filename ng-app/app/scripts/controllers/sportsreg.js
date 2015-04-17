@@ -35,7 +35,6 @@ angular.module('midwestApp')
           $http
             .get('api/teams?payment_id=' + $scope.payId)
             .success(function(data) {
-              //console.log(data);
               $scope.teams = data.teams
             })
         }
@@ -66,18 +65,15 @@ angular.module('midwestApp')
 
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
-          console.log(data);
           $scope.teams = data.teams;
           if ($scope.teams.length == $scope.selectedAction.max_teams) {
             $scope.full = true;
           }
           for (var i = 0; i < $scope.teams.length; i++ ) {
             if ($scope.teams[i].team_payment_status == true && $scope.teams[i].team_captain == $rootScope.currentUser.id) {
-              console.log("paid is true");
               $scope.paid = true;
             }
             if ($scope.teams[i].team_captain == $rootScope.currentUser.id) {
-              console.log("registered is true");
               $scope.registered = true;
             }
             for (var j = 0; j < $scope.teams[i].participants.length; j++) {
@@ -109,7 +105,6 @@ angular.module('midwestApp')
       $http
         .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
         .success(function (data) {
-          console.log(data);
           $scope.amount += $scope.selectedAction.price_per_team;
           $scope.registered = true;
       })
@@ -122,7 +117,6 @@ angular.module('midwestApp')
       $http
         .delete('/api/myteams')
         .success(function(data) {
-          console.log(data);
           $scope.amount = 0;
           $scope.registered = false;
         })
@@ -132,12 +126,10 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
-          console.log(data);
           $scope.payId = data.id;
           $http
             .get('/api/payupdate?payment_id=' + $scope.payId)
             .success(function(data) {
-              console.log(data);
             })
         })
         .error(function(error) {
@@ -154,7 +146,6 @@ angular.module('midwestApp')
       $http
         .post('/api/participants/join', {team_id: teamId, user_id: $rootScope.currentUser.id})
         .success(function(data) {
-          console.log(data);
           $scope.joinReqSent = true;
         })
     };
