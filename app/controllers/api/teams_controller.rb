@@ -36,10 +36,12 @@ class Api::TeamsController < ApplicationController
   end
 
   def destroy_teams
-    id = current_user.teams.where(payment_id: 0).game_id
-    game = Game.find(id)
-    result = game.spots_left + 1
-    game.update(spots_left: result)
+    teams = current_user.teams.where(payment_id: 0)
+    for team in teams
+      game = Game.find(team.game_id)
+      result = game.spots_left + 1
+      game.update(spots_left: result)
+    end
     current_user.teams.where(payment_id: 0).destroy_all
     render json: :status
   end
