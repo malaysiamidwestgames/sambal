@@ -496,7 +496,7 @@ button#update-info-btn {
       }
     }
     ul.dropdown-menu {
-      width: 300px;
+      width: 250px;
       overflow-y: auto;
       max-height: 200px;
     }
@@ -577,6 +577,23 @@ button#update-info-btn {
 }
 
 .teams {
+
+  .dropdown {
+    ul.dropdown-menu {
+      width: 300px;
+      overflow-y: auto;
+      max-height: 200px;
+      margin-top: 10px;
+    }
+  }
+
+  form.form-inline {
+    margin-bottom: 10px;
+  }
+
+  input.form-control {
+    width: 320px;
+  }
   .user-info-panel {
     color: #FFF;
     .first-name {
@@ -605,6 +622,30 @@ button#update-info-btn {
       margin-bottom: 10px;
       color: $michigan-maize-light;
     }
+  }
+
+  .messages {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .message {
+    display: block;
+    font-size: 1.5em;
+  }
+
+  .poster {
+    color: $michigan-lightblue
+  }
+
+
+
+  .gravatar {
+    margin-top: 10px;
   }
 }
 

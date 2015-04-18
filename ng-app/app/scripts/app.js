@@ -19,7 +19,8 @@ angular
     'sysofwan.httpWrapper',
     'ui.bootstrap',
     'ui.validate',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ui.gravatar'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);

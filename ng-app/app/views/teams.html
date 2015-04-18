@@ -1,8 +1,9 @@
-<div class="row payment">
+<div class="row sportsreg">
   <div class="col-md-12">
     <div class="panel panel-themed promotion">
       <div class="panel-body">
-        <h1 class="title"> Team management<br><small>Check your join/invite requests, chat with team members and more</small></h1>
+        <h1 class="title"> Team management<br></h1>
+        <b>Check your join/invite requests, chat with team members and more</b>
         <div class="clearfix" ng-hide="currentUser.sports_payment_unpaid">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
@@ -25,10 +26,10 @@
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body">
         <div class="first-name">{{team.name}}</div>
+        <img class="pull-left gravatar" gravatar-src="'everaldo@umich.edu'" gravatar-size="200">
         <div class="infostat">{{team.team_captain_name[0].first_name}} {{team.team_captain_name[0].last_name}}<div class="stat">Team captain</div></div>
         <div class="infostat">{{team.university.name}}<div class="stat">Contingent</div></div>
         <div class="infostat">{{team.game.name}} {{team.game.category}}<div class="stat">Event</div></div>
-
       </div>
     </div>
   </div>
@@ -37,7 +38,20 @@
       <div class="panel-heading">
         <h3 class="panel-title">Message Board</h3>
       </div>
-      <div class="panel-body"></div>
+      <div class="panel-body">
+          <form ng-show="captain" class="form-inline">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Please write your message here" ng-model="message">
+              <button class="btn btn-md btn-themed" ng-click="postMsg(message)">Post</button>
+            </div>
+          </form>
+        <ol ng-repeat="message in messages" class="messages">
+          <li>
+            <span class="message">{{message.message}}</span>
+            <span class="poster"> Posted by {{message.user.first_name}}</span>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 </div>
@@ -65,8 +79,8 @@
           <tr ng-repeat="participant in team.participants">
             <td>{{participant.user.first_name}} {{participant.user.last_name}}</td>
             <td>{{participant.status == 'team_captain' && "Team Captain" || participant.status == 'join_request' && "Requested to join" || participant.status == 'invite_request' && "Invited to join" || participant.status == 'accepted' && "Join request accepted" || participant.status == 'declined' && "Join request declined"}}<br>
-              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-themed">Accept</button>
-              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-danger">Decline</button>
+              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-themed" ng-click="acceptReq(participant.id, participant.user.first_name)">Accept</button>
+              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-danger" ng-click="declineReq(participant.id, participant.user.first_name)">Decline</button>
             </td>
           </tr>
           </tbody>
