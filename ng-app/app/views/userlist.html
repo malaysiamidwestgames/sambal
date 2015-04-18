@@ -21,7 +21,8 @@
           <td>Last Name</td>
           <td>Email</td>
           <td>University</td>
-          <td>Payment Status</td>
+          <td>Level</td>
+          <td>Payment</td>
           <td></td>
         </thead>
         <tr ng-repeat = "user in users">
@@ -30,7 +31,8 @@
           <td>{{user.last_name}}</td>
           <td>{{user.email}}</td>
           <td>{{user.university.name}}</td>
-          <td>{{get_payment_status(user.payments)}}</td>
+          <td>{{user.authorization_level}}</td>
+          <td>{{get_payment_status(user.registration_payment_status)}}</td>
           <td><a href="admin-settings/{{user.id}}">Edit</a></td>
         </tr>
       </table>

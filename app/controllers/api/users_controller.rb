@@ -41,17 +41,15 @@ class Api::UsersController < ApplicationController
     # @user = User.find(params[:id])
 
     puts 'updating this motherfucker'
+    if params[:payments] == "delete" and current_user.admin?
+      @user.update(payments: [])
+    end
+    
     if @user.update(user_params.merge(university: university))
       puts 'updating success'
-      puts @user.first_name
-      puts @user.university.name
-      puts @user.university.id
-      puts @user.authorization_level
-
       render json: @user
     else
       puts 'updating failed'
-
       render json: @user.errors, status: :unprocessable_entity
     end
   end
@@ -74,7 +72,7 @@ class Api::UsersController < ApplicationController
     
     def user_params
       if current_user.admin?
-        params.permit(:email, :first_name, :last_name, :password, :password_confirmation, :authorization_level, :payments)
+        params.permit(:email, :first_name, :last_name, :password, :password_confirmation, :authorization_level)
       else
         params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
       end
