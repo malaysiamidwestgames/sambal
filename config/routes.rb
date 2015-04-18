@@ -73,6 +73,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
     resources :account_activations, only: [:update]
     resources :teams, only: [:index, :create, :show]
+    resources :messages, only: [:index, :create]
     post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
     resources :participants, only: [:create, :destroy]
@@ -80,8 +81,8 @@ Rails.application.routes.draw do
     post 'participants/join' => 'participants#join_team'
     post 'participants/invite' => 'participants#invite_team'
     get 'participants/get' => 'participants#get_team'
-    post 'participants/accept' => 'participants#accept'
-    post 'participants/decline' => 'participants#decline'
+    patch 'participants/accept/:id' => 'participants#accept'
+    patch 'participants/decline/:id' => 'participants#decline'
     post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
     delete '/sessions' => 'sessions#destroy'
@@ -91,6 +92,7 @@ Rails.application.routes.draw do
     get '/outpay' => 'payments#retrieve_payment'
     get '/paybalance' => 'teams#retrieve_amount'
     delete '/myteams' => 'teams#destroy_teams'
+    get '/myteams' => 'teams#get_my_teams'
   end
 
   

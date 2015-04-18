@@ -472,6 +472,10 @@ button#update-info-btn {
     height: 555px;
   }
 
+  .gravatar {
+    margin-top: -80px;
+  }
+
 
   .col-md-8 {
     .panel-body.first {
@@ -496,7 +500,7 @@ button#update-info-btn {
       }
     }
     ul.dropdown-menu {
-      width: 300px;
+      width: 250px;
       overflow-y: auto;
       max-height: 200px;
     }
@@ -504,7 +508,7 @@ button#update-info-btn {
   .promotion {
     font-size: 15px;
     h1.title {
-      font-weight: 300;
+      font-weight : 300;
       margin-top: 3px;
       color: $michigan-blue;
     }
@@ -548,7 +552,7 @@ button#update-info-btn {
     font-size: 2em;
     .captainname {
       font-size: large;
-      margin-bottom: -100px;
+      width: 500px;
     }
   }
 
@@ -573,6 +577,83 @@ button#update-info-btn {
   div#panel.panel-body {
     height: 255px;
     overflow-y: auto;
+  }
+}
+
+.teams {
+
+  .dropdown {
+    ul.dropdown-menu {
+      width: 300px;
+      overflow-y: auto;
+      max-height: 200px;
+      margin-top: 10px;
+    }
+  }
+
+  form.form-inline {
+    margin-bottom: 10px;
+  }
+
+  input.form-control {
+    width: 320px;
+  }
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+    height: 400px;
+  }
+
+  div.panel-body {
+    height: 360px;
+    overflow-y: auto;
+  }
+
+  .infostat {
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-bottom: 0.5em;
+    width: 8em;
+    .stat {
+      font-size: large;
+      margin-bottom: 10px;
+      color: $michigan-maize-light;
+    }
+  }
+
+  .messages {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .message {
+    display: block;
+    font-size: 1.5em;
+  }
+
+  .poster {
+    color: $michigan-lightblue
+  }
+
+
+
+  .gravatar {
+    margin-top: 0px;
+  }
+
+  .grvtinstruc {
+    width: 200px;
   }
 }
 

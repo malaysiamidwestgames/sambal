@@ -1,6 +1,7 @@
 class Team < ActiveRecord::Base
   has_many :participants, dependent: :destroy
   has_many :users, through: :participants
+  has_many :messages
   belongs_to :tournaments
   belongs_to :game
   belongs_to :payment
@@ -11,6 +12,7 @@ class Team < ActiveRecord::Base
     @teamleader = User.where(id: captain)
     return @teamleader
   end
+
 
   def team_payment_status
     idx = self.payment do |payment|
