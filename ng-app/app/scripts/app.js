@@ -19,7 +19,8 @@ angular
     'sysofwan.httpWrapper',
     'ui.bootstrap',
     'ui.validate',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ui.gravatar'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -104,8 +105,11 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: false,
-        requireAdmin: true
+        requirePaidGen: false
+      })
+      .when('/teams', {
+        templateUrl: 'views/teams.html',
+        controller: 'TeamsCtrl'
       })
       .otherwise({
         redirectTo: '/'

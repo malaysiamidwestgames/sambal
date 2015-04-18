@@ -42,7 +42,7 @@ class Api::ParticipantsController < ApplicationController
     @participant = Participant.new(participant_params)
     @participant.status = "invite_request"
     if @participant.save
-      render json: @participant, status: :created
+      render json: @participant, status: :created, root: false
     else
       render json: @participant.errors, status: :unprocessable_entity
     end
