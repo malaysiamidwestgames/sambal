@@ -26,7 +26,7 @@
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body" ng-hide="team.name == 'Choose a team'">
         <div class="first-name">{{team.name}}</div>
-        <a href="https://en.gravatar.com/site/login" target="_blank"><img class="pull-left gravatar" gravatar-src="'everaldo@umich.edu'" gravatar-size="200"></a>
+        <a href="https://en.gravatar.com/site/login" target="_blank"><img class="pull-left gravatar" gravatar-src="team.team_captain_name[0].email" gravatar-size="200"></a>
         <div class="pull-left grvtinstruc">Set your avatar using the captain's email by clicking on it! It's easy to create one.</div>
         <div class="infostat">{{team.team_captain_name[0].first_name}} {{team.team_captain_name[0].last_name}}<div class="stat">Team captain</div></div>
         <div class="infostat">{{team.university.name}}<div class="stat">Contingent</div></div>
