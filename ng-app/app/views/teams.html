@@ -81,7 +81,7 @@
             <td>{{participant.user.first_name}} {{participant.user.last_name}}</td>
             <td>{{participant.status == 'team_captain' && "Team Captain" || participant.status == 'join_request' && "Requested to join" || participant.status == 'invite_request' && "Invited to join" || participant.status == 'accepted' && "Join request accepted" || participant.status == 'declined' && "Join request declined"}}<br>
               <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-themed" ng-click="acceptReq(participant.id, participant.user.first_name); button=true" ng-disabled="button">Accept</button>
-              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-danger" ng-click="declineReq(participant.id, participant.user.first_name)">Decline</button>
+              <button ng-show="captain && participant.status == 'join_request'" class="btn btn-md btn-danger" ng-click="declineReq(participant.id, participant.user.first_name); button=true" ng-disabled="button">Decline</button>
             </td>
           </tr>
           </tbody>
@@ -94,7 +94,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Matches, standings and venue</h3>
       </div>
-      <div class="panel-body">{{messages}}</div>
+      <div class="panel-body"></div>
     </div>
   </div>
 </div>
