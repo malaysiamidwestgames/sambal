@@ -94,7 +94,7 @@ angular.module('midwestApp')
           .success(function(data) {
             console.log(data);
             $scope.message = '';
-            $scope.messages.push(data);
+            $scope.messages.unshift(data);
           })
       }
     };

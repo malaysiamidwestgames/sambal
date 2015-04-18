@@ -3,9 +3,9 @@ class Api::MessagesController < ApplicationController
   def create
     @message = Message.new(messages_params)
     if @message.save
-      render json: @message, status: :created
+      render json: @message, status: :created, root: false
     else
-      render json: @message.errors, status: :unprocessabel_entity
+      render json: @message.errors, status: :unprocessable_entity
     end
   end
 
