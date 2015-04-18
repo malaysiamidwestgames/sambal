@@ -604,11 +604,11 @@ button#update-info-btn {
   }
   .user-info-panel {
     background-color: $michigan-blue;
-    height: 350px;
+    height: 400px;
   }
 
   div.panel-body {
-    height: 310px;
+    height: 360px;
     overflow-y: auto;
   }
 
@@ -645,7 +645,11 @@ button#update-info-btn {
 
 
   .gravatar {
-    margin-top: 10px;
+    margin-top: 0px;
+  }
+
+  .grvtinstruc {
+    width: 200px;
   }
 }
 

@@ -15,7 +15,7 @@ angular.module('midwestApp')
       return inviteMsg[Math.floor(Math.random() * inviteMsg.length)];
     }
 
-    var acceptMsg = ["Wow, your sense of judgment must be wayyyy off", "It's good to be noble, but there's a reason why noblemen are vanishing in this age", "Well, if you must...", "Hmm, this decision is about as good as how you're playing with this person on the team", "Err on the side of caution, not on the side of losing"]
+    var acceptMsg = ["Wow, your sense of judgment must be wayyyy off", "It's good to be noble, but there's a reason why noblemen are vanishing in this age", "Well, if you must...", "Hmm, how did you become captain again?", "Err on the side of caution, not on the side of losing"]
     function getAcceptMessage() {
       return acceptMsg[Math.floor(Math.random() * inviteMsg.length)];
     }
