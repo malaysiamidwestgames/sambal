@@ -93,12 +93,11 @@
           <h3 class="panel-title">{{individual && "Participants" || joinReqAcc && "Join request to team accepted" || joinReqSent && "Join request to team sent" || registered && "List of teams" || "Ask to join a team"}}</h3>
         </div>
         <table class="table table-bordered participants" ng-hide="joinReqSent">
-          <tr ng-repeat="team in teams">
+          <tr ng-repeat="team in teams" class="teamrow">
             <td>
               <div class="teamname">{{team.name}}<br>
                 <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}<br>
                   Contingent: {{team.university.name}}<br>
-
                 </div>
                 <div class="gravatar-container">
                   <button type="submit" class="btn btn-themed pull-left btn-md" ng-hide="registered || joinReqSent || joinReqAcc" ng-click="joinReq(team.id)">Ask to join</button>
