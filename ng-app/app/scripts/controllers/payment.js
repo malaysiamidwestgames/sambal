@@ -8,7 +8,9 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('PaymentCtrl', function ($scope, $http) {
+  .controller('PaymentCtrl', function ($scope, $http, $location) {
+
+    $scope.host = $location.host();
 
     $scope.payId = 0;
 

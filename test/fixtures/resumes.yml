@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  opportunity: 1
+  month: MyString
+  year: 1
+  major: MyString
+  image_uid: MyString
+  image_name: MyString
+
+two:
+  opportunity: 1
+  month: MyString
+  year: 1
+  major: MyString
+  image_uid: MyString
+  image_name: MyString

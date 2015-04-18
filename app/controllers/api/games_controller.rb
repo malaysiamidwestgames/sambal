@@ -5,14 +5,14 @@ class Api::GamesController < ApplicationController
   # GET /games.json
 	def index
 		# Gather all games data
-		@games = Game.all
+		@games = Game.all.order(name: :asc, id: :asc)
 		render json: @games
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:id]).order(name: :asc, __id__: :asc)
     render json: @game
   end
 

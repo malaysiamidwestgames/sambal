@@ -20,7 +20,8 @@ angular
     'ui.bootstrap',
     'ui.validate',
     'uiGmapgoogle-maps',
-    'angularFileUpload'
+    'angularFileUpload',
+    'ui.gravatar'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -96,14 +97,16 @@ angular
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
       })
-      /*.when('/sportsreg', {
+      .when('/sportsreg', {
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
         requirePaidGen: false
       })
-
-      })*/
+      .when('/teams', {
+        templateUrl: 'views/teams.html',
+        controller: 'TeamsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -136,17 +139,27 @@ angular
         $location.path('/');
         event.preventDefault();
       }
-      else if (next.requireAdmin && !session.isAdmin()) {
-        $location.path('/');
-        event.preventDefault();
+      // TODO: bug here. Race event between asynchronous call of isAdmin and loading the page causing users to get disconnected
+      // Affected users: non-admins who try to type in /userlist to access userlist.
+      else if (next.requireAdmin) {
+        session.isAdmin().then(function(data) {
+          if (!data) {
+            $location.path('/');
+            event.preventDefault();
+          }
+        })
       }
       else if (next.requireLogout && session.isLoggedIn()) {
         $location.path('/dashboard/');
         event.preventDefault();
       }
-      else if (next.requirePaidGen && !session.hasPaidGen()) {
-        $location.path('/');
-        event.preventDefault();
+      else if (next.requirePaidGen) {
+        session.hasPaidGen().then(function(data) {
+          if (!data) {
+            $location.path('/');
+            event.preventDefault();
+          }
+        })
       }
       $rootScope.bodyClass = next.bodyClass;
     });

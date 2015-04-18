@@ -1,8 +1,6 @@
 class Api::ParticipantsController < ApplicationController
   def create
-    @participant = Participant.new(participant_params)
-    @participant.activation_key = Participant.generate_activation_key
-    @participant.status = "team_captain"
+    @participant = Participant.new(participant_params_2)
     if @participant.save
       render json: @participant, status: :created
     else
@@ -10,9 +8,28 @@ class Api::ParticipantsController < ApplicationController
     end
   end
 
+  def create_team
+    @participant = Participant.new(participant_params.merge(status: "team_captain"))
+    if @participant.save
+      render json: @participant, status: :created
+    else
+      render json: @participant.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @participant = Participant.find(params[:id])
+    if @participant.status == 'team_captain'
+      @participant.destroy_all
+      head :no_content
+    elsif
+    render json: { message: 'can\'t unregister, please contact an admin' },
+           status: :bad_request
+    end
+  end
+
   def join_team
     @participant = Participant.new(participant_params)
-    @participant.update_attribute(:activation_key, Participant.generate_activation_key)
     @participant.status = "join_request"
     if @participant.save
       render json: @participant, status: :created
@@ -23,10 +40,9 @@ class Api::ParticipantsController < ApplicationController
 
   def invite_team
     @participant = Participant.new(participant_params)
-    @participant.update_attribute(:activation_key, Participant.generate_activation_key)
     @participant.status = "invite_request"
     if @participant.save
-      render json: @participant, status: :created
+      render json: @participant, status: :created, root: false
     else
       render json: @participant.errors, status: :unprocessable_entity
     end
@@ -34,32 +50,20 @@ class Api::ParticipantsController < ApplicationController
 
   def accept
     @participant = Participant.find(params[:id])
-    if (params[:activation_key] == @participant.activation_key)
-      @participant.update_attribute(:status, "accepted")
-      if @participant.save
-        render json: @participant, status: :created
-      else
-        render json: @participant.errors, status: :unprocessable_entity
-      end
+    @participant.update_attribute(:status, "accepted")
+    if @participant.save
+      render json: @participant, status: :created
     else
-      @participant.errors.add(:activation_key, "wrong activation_key!")
-      @participant.activation_key = @participant.generate_activation_key
       render json: @participant.errors, status: :unprocessable_entity
     end
   end
 
   def decline
     @participant = Participant.find(params[:id])
-    if (params[:activation_key] == @participant.activation_key)
-      @participant.update_attribute(:status, "declined")
-      if @participant.save
-        render json: @participant, status: :created
-      else
-        render json: @participant.errors, status: :unprocessable_entity
-      end
+    @participant.update_attribute(:status, "declined")
+    if @participant.save
+      render json: @participant, status: :created
     else
-      @participant.errors.add(:activation_key, "wrong activation_key!")
-      @participant.activation_key = @participant.generate_activation_key
       render json: @participant.errors, status: :unprocessable_entity
     end
   end
@@ -71,8 +75,17 @@ class Api::ParticipantsController < ApplicationController
     end
   end
 
+  def check_if_user_is_participating
+    @participant = Participant.where(user_id: params[:user_id]).where(team_id: params[:team_id])
+    render json: @participant
+  end
+
   private
+    def participant_params_2
+      params.permit(:user_id, :team_id, :status)
+    end
+
     def participant_params
-      params.permit(:team_id, :user_id)
+      params.permit(:user_id, :team_id)
     end
 end
