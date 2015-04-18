@@ -1,6 +1,6 @@
 <div class="row dashboard">
   <div class="col-md-12">
-    <alert class="alert-danger">Registration Deadline is <b>April 19th, 2015. Register now!</b></alert>
+    <alert class="alert-danger">Registration and Registration Payment Deadline is <b>April 19th, 2015. Register and pay now!</b></alert>
   </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
@@ -49,7 +49,7 @@
       <table class="table table-bordered">
         <tr>
           <th>Sports registration</th>
-          <td>{{(currentUser.registration_payment_status == false && "Please register for general registration first before registering for sports") || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
+          <td>{{("Please register for general registration first before registering for sports" && currentUser.registration_payment_status == false) || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
         </tr>
         <tr ng-repeat="participate in participating">
           <th>
