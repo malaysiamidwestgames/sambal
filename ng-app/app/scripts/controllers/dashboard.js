@@ -39,11 +39,11 @@ angular.module('midwestApp')
           title: 'Manage your sports/teams',
           label: 'Team management page',
           link: 'teams'
-        })
+        });
       }
 
       //TODO: Call API to read all games that the player is playing and display it on sports tab
-     $http.get('api/participants/get?user_id=' + user.id)
+     $http.get('api/participants/get')
         .success(function(result){
           console.log(result);
           $scope.participating = result.participants;
@@ -55,23 +55,23 @@ angular.module('midwestApp')
               $http.get('/api/teams/' + participate.team_id)
                 .success(function(data){
                   participate.name = data.team.name;
-                })
+                });
             });
           });
         });
     });
 
-    $scope.accept = function (id, activation_key) {
-      $http.post('api/participants/accept', {id: id, activation_key: activation_key})
-        .success(function(data) {
-          console.log("accepted!");
-        })
+    $scope.accept = function (id) {
+      $http.patch('api/participants/accept/' + id)
+        .success(function() {
+          console.log('accepted!');
+        });
     };
 
-    $scope.decline = function (id, activation_key) {
-      $http.post('api/participants/decline', {id: id, activation_key: activation_key})
-        .success(function(data) {
-          console.log("declined!");
-        })
+    $scope.decline = function (id) {
+      $http.patch('api/participants/decline/' + id)
+        .success(function() {
+          console.log('declined!');
+        });
     };
   });

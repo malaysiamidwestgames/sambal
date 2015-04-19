@@ -39,17 +39,14 @@ class Api::UsersController < ApplicationController
   def update
     university = University.find_or_initialize_by(name: university_params)
     # @user = User.find(params[:id])
-
     puts 'updating this motherfucker'
     if params[:payments] == "delete" and current_user.admin?
       @user.update(payments: [])
     end
     
     if @user.update(user_params.merge(university: university))
-      puts 'updating success'
       render json: @user
     else
-      puts 'updating failed'
       render json: @user.errors, status: :unprocessable_entity
     end
   end

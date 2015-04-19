@@ -10,6 +10,15 @@
 angular.module('midwestApp')
   .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location) {
 
+    var joinErrorMsg = [" The captain loves you more than you know", "Feeling honored or something right now?", "Yeah, you, YOU have been chosen for this", "The captain welcomes you aboard his ship. Oh, is it sinking?", "Is this team worth your skills?" ];
+    function getJoinErrorMessage() {
+      return joinErrorMsg[Math.floor(Math.random() * joinErrorMsg.length)];
+    }
+
+    var joinMsg = ["You sure you'll get accepted bro?", "Hmm, as choices go, this could be a bad one.", " You've sold your services to this captain", "I'm sure you'll reconsider this later", "Joining the big boys has always been your dream, hasn't it? "]
+    function getJoinMessage() {
+      return joinMsg[Math.floor(Math.random() * joinMsg.length)];
+    }
 
     var userTeamUni;
     $scope.payId = 0;
@@ -151,6 +160,10 @@ angular.module('midwestApp')
         .post('/api/participants/join', {team_id: teamId, user_id: $rootScope.currentUser.id})
         .success(function(data) {
           $scope.joinReqSent = true;
+          toastr.success(getJoinMessage(), "Your join request has been seen")
+        })
+        .error(function() {
+          toastr.error(getJoinErrorMessage(), "You've already been invited to join this team")
         })
     };
 
