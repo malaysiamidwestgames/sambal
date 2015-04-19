@@ -665,9 +665,13 @@ button#update-info-btn {
   }
 }
 
-// override bootstrap 
+// override bootstrap
 
 @media (min-width: 768px) {
+  .navbar-nav {
+    margin-top: 5px;
+  }
+  
   .navbar-nav > li > .nav-item {
     padding-top: 15px;
     padding-bottom: 15px;
