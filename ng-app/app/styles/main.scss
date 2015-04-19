@@ -52,13 +52,13 @@ body {
   .navbar-brand {
     color: white;
   }
-  .navbar-nav > li >a {
+  .navbar-nav > li > .nav-item {
     color: white;
   }
-  .nav > li > a:hover, .nav > li > a:focus {
+  .nav > li > .nav-item:hover, .nav > li > .nav-item:focus {
     background-color: $michigan-blue;
   }
-  .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+  .navbar-nav>.active>.nav-item, .navbar-nav>.active>.nav-item:hover, .navbar-nav>.active>.nav-item:focus {
     background-color: $michigan-blue;
   }
   // wolverine logo
@@ -73,11 +73,11 @@ body {
     margin-left: 0;
   }
 
-  a:hover {
+  .nav-item:hover {
     color: #F4CF3E;
   }
 
-  li a:hover {
+  li .nav-item:hover {
     // color: rgb(255, 237, 0);
     color: $michigan-maize-light;
   }
@@ -665,3 +665,27 @@ button#update-info-btn {
   }
 }
 
+// override bootstrap
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin-top: 5px;
+  }
+
+  .navbar-nav > li > .nav-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.navbar-nav > li > .nav-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+
+.nav > li > .nav-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}

@@ -8,7 +8,9 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('PaymentCtrl', function ($scope, $http) {
+  .controller('PaymentCtrl', function ($scope, $http, $location) {
+
+    $scope.host = $location.host();
 
     $scope.payId = 0;
 
@@ -16,6 +18,7 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Processing payment', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now() })
         .success(function(data) {
+          console.log(data);
           $scope.payId = data.id;
         })
         .error(function(error) {

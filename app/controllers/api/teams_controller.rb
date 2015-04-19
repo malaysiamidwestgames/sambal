@@ -2,14 +2,19 @@ class Api::TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    if @team.save
-      game = Game.find(@team.game_id)
+    game = Game.find(@team.game_id)
+    if game.spots_left > 0
       result = game.spots_left - 1
       game.update(spots_left: result)
-      @team.participants.create(user_id: @team.team_captain, status: 'team_captain')
-      render json: @team, status: :created
+      if @team.save
+        @team.participants.create(user_id: @team.team_captain, status: 'team_captain')
+        render json: @team, status: :created
+      else
+        render json: @team.errors, status: :unprocessable_entity
+      end
     else
-      render json: @team.errors, status: :unprocessable_entity
+      render json: { message: 'Sorry! You cannot register ' + game.name + ' ' + game.category + ' because there are no spots left. Please try again later.' },
+             status: :ok
     end
   end
 
@@ -31,6 +36,12 @@ class Api::TeamsController < ApplicationController
   end
 
   def destroy_teams
+    teams = current_user.teams.where(payment_id: 0)
+    for team in teams
+      game = Game.find(team.game_id)
+      result = game.spots_left + 1
+      game.update(spots_left: result)
+    end
     current_user.teams.where(payment_id: 0).destroy_all
     render json: :status
   end

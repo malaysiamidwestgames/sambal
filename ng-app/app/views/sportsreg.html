@@ -27,7 +27,7 @@
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
               {{ selectedAction.name }} {{ selectedAction.category }}
               <span class="caret"></span>
-              <button class="btn btn-danger btn-md" ng-show="payId == 0" class="contact-us" ng-click="destroyTeams()">Clear registrations</button>
+              <button class="btn btn-danger btn-md" ng-show="amount > 0" class="contact-us" ng-click="destroyTeams()">Clear registrations</button>
             </button>
             <ul class="dropdown-menu" role="menu">
               <li role="presentation menuitem" ng-repeat="game in games">
@@ -88,7 +88,7 @@
             <div ng-show="individual && registered == false"><button class="btn btn-themed pull-right btn-lg" ng-click="setTeam(currentUser.first_name + ' ' + currentUser.last_name)">Register</button></div>
         </div>
       </div>
-      <div class="panel panel-themed" ng-hide='!!!teams.length'>
+      <div class="panel panel-themed" ng-hide="!!!teams.length">
         <div class="panel-heading">
           <h3 class="panel-title">{{individual && "Participants" || joinReqAcc && "Join request to team accepted" || joinReqSent && "Join request to team sent" || registered && "List of teams" || "Ask to join a team"}}</h3>
         </div>
