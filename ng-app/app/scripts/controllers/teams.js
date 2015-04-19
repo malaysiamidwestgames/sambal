@@ -25,6 +25,7 @@ angular.module('midwestApp')
       return declineMsg[Math.floor(Math.random() * inviteMsg.length)];
     }
 
+
     $scope.team = {
       name: 'Choose a team'
     };
@@ -65,10 +66,20 @@ angular.module('midwestApp')
           .success(function(data) {
             console.log(data);
             $scope.participants.push(data);
+<<<<<<< HEAD
         });
         toastr.success(getInviteMessage(),  $scope.label + ' is invited to join your team')
         $scope.label = '';
       };
+=======
+            toastr.success(getInviteMessage(),  $scope.label + ' is invited to join your team')
+          })
+          .error(function(){
+            toastr.error(getInviteMessage(),  $scope.label + ' has already sent a join request/been invited to enter your team.')
+          })
+
+      }
+>>>>>>> sports
 
       $scope.acceptReq = function(userId, userName) {
         $http
