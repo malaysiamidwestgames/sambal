@@ -43,7 +43,7 @@ angular.module('midwestApp')
       }
 
       //TODO: Call API to read all games that the player is playing and display it on sports tab
-     $http.get('api/participants/get/?user_id=' + user.id)
+     $http.get('/api/participants/get/?user_id=' + user.id)
         .success(function(result){
           $scope.participating = result.participants;
           console.log($scope.participating);
