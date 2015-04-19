@@ -476,7 +476,6 @@ button#update-info-btn {
     margin-top: -80px;
   }
 
-
   .col-md-8 {
     .panel-body.first {
       height: 175px;
@@ -489,6 +488,9 @@ button#update-info-btn {
   table.participants {
     height: 275px;
     overflow-y: auto;
+    tr.teamrow {
+      height: 175px;
+    }
   }
 
   .dropdown {
