@@ -69,7 +69,7 @@ class Api::ParticipantsController < ApplicationController
   end
 
   def get_team
-    @participant = current_user.participants
+    @participant = Participant.where(user_id: current_user.id).where.not(status: 'declined')
     render json: @participant
   end
 

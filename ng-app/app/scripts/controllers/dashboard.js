@@ -82,8 +82,21 @@ angular.module('midwestApp')
     };
 
     $http
-      .get('/api/myteams')
+      .get('/api/participants/get')
       .success(function(data) {
-        $scope.teams = data.teams;
+        console.log(data);
+        $scope.teams = data.participants;
+        $scope.$watch('teams', function() {
+          $scope.teams.forEach(function(team){
+            $http.get('/api/teams/' + team.team_id)
+              .success(function(data){
+                team.name = data.team.name;
+                team.gamename = data.team.game.name;
+                team.gamecategory = data.team.game.category;
+              });
+          });
+          console.log($scope.teams);
+        });
+
       });
   });

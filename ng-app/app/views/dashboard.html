@@ -19,15 +19,15 @@
       </div>
     </div>
     <div class="panel panel-themed user-info-panel">
-      <!--div class="panel-heading">
-        <b style="font-size: 20px">My Teams</b>
-      </div-->
       <div class="panel-body">
         <div ng-repeat="team in teams">
-          <div class="team-name">
-            {{ team.name }}
+          <div ng-show="team.status != 'declined'">
+            <div class="team-name">
+              {{ team.name }}
+            </div>
+            <div> <i>{{ team.gamename }} {{ team.gamecategory }}</i></div>
+            <br>
           </div>
-          <div> <i>{{ team.game.name }} {{ team.game.category }}</i></div>
         </div>
 
       </div>
