@@ -94,7 +94,7 @@ angular.module('midwestApp')
 
       $scope.postMsg = function(message) {
         $http
-          .post('api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})
+          .post('/api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})
           .success(function(data) {
             console.log(data);
             $scope.message = '';

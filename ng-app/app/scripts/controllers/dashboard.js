@@ -61,14 +61,14 @@ angular.module('midwestApp')
     });
 
     $scope.accept = function (id, activation_key) {
-      $http.post('api/participants/accept', {id: id, activation_key: activation_key})
+      $http.post('/api/participants/accept', {id: id, activation_key: activation_key})
         .success(function(data) {
           console.log("accepted!");
         })
     };
 
     $scope.decline = function (id, activation_key) {
-      $http.post('api/participants/decline', {id: id, activation_key: activation_key})
+      $http.post('/api/participants/decline', {id: id, activation_key: activation_key})
         .success(function(data) {
           console.log("declined!");
         })
