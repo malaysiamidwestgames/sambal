@@ -73,6 +73,11 @@ class Api::ParticipantsController < ApplicationController
     render json: @participant
   end
 
+  def get_invitations
+    @participant = Participant.where(user_id: current_user.id, status: 'invite_request')
+    render json: @participant
+  end
+
   def check_if_user_is_participating
     @participant = Participant.where(user_id: params[:user_id]).where(team_id: params[:team_id])
     render json: @participant

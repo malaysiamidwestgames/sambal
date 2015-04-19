@@ -241,6 +241,15 @@ ul.dropdown-menu {
       color: $michigan-maize-light;
     }
   }
+
+  .user-info-panel {
+    color: #FFF;
+    .team-name {
+      font-size: 25px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
   .user-info-panel {
     background-color: $michigan-blue;
   }
