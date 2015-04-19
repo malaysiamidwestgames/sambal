@@ -25,7 +25,7 @@ end
 # Production dependencies.
 group :production do
   gem 'pg'
-  gem 'unicorn'
+  gem 'unicorn-rails'
 end
 
 # To use Jbuilder templates for JSON
