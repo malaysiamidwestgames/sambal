@@ -26,7 +26,7 @@
               {{ team.name }}
             </div>
             <div> <i>{{ team.gamename }} {{ team.gamecategory }}</i></div>
-            <br>
+            <br ng-show="team.index < teams.length - 1">
           </div>
         </div>
 

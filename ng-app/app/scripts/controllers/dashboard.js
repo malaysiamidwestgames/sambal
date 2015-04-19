@@ -87,12 +87,15 @@ angular.module('midwestApp')
         console.log(data);
         $scope.teams = data.participants;
         $scope.$watch('teams', function() {
+          var count = 0;
           $scope.teams.forEach(function(team){
             $http.get('/api/teams/' + team.team_id)
               .success(function(data){
                 team.name = data.team.name;
                 team.gamename = data.team.game.name;
                 team.gamecategory = data.team.game.category;
+                team.index = count;
+                count++;
               });
           });
           console.log($scope.teams);
