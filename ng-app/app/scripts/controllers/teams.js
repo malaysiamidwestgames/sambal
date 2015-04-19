@@ -33,7 +33,7 @@ angular.module('midwestApp')
       .get('/api/users')
       .success(function(data) {
         $scope.users = data.users;
-      })
+      });
 
 
     $http
@@ -41,7 +41,7 @@ angular.module('midwestApp')
       .success(function(data) {
         console.log(data);
         $scope.teams = data.teams;
-      })
+      });
 
     $scope.setTeam = function(action) {
       $scope.team = action;
@@ -65,10 +65,10 @@ angular.module('midwestApp')
           .success(function(data) {
             console.log(data);
             $scope.participants.push(data);
-        })
+        });
         toastr.success(getInviteMessage(),  $scope.label + ' is invited to join your team')
         $scope.label = '';
-      }
+      };
 
       $scope.acceptReq = function(userId, userName) {
         $http
