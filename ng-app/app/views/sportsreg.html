@@ -95,13 +95,14 @@
         <table class="table table-bordered participants" ng-hide="joinReqSent">
           <tr ng-repeat="team in teams" class="teamrow">
             <td>
-              <div class="teamname">{{team.name}}<br>
+              <div class="teamname">
+                <a href="https://en.gravatar.com/site/login" target="_blank"><img class="pull-right gravatar" gravatar-src="team.team_captain_name[0].email" gravatar-size="100"></a>
+                {{team.name}}<br>
                 <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}<br>
                   Contingent: {{team.university.name}}<br>
                 </div>
                 <div class="gravatar-container">
                   <button type="submit" class="btn btn-themed pull-left btn-md" ng-hide=" individual || registered || joinReqSent || joinReqAcc" ng-click="joinReq(team.id)">Ask to join</button>
-                  <a href="https://en.gravatar.com/site/login" target="_blank"><img class="pull-right gravatar" gravatar-src="team.team_captain_name[0].email" gravatar-size="100"></a>
                 </div>
               </div>
             </td>
