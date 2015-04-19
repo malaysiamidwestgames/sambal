@@ -14,6 +14,7 @@ gem 'active_model_serializers', '~> 0.8.0'
 
 # Development dependecies.
 group :development do
+  gem 'factory_girl_rails'
   gem 'spring'
   gem 'sqlite3'
   gem 'mina'
@@ -24,7 +25,7 @@ end
 # Production dependencies.
 group :production do
   gem 'pg'
-  gem 'unicorn'
+  gem 'unicorn-rails'
 end
 
 # To use Jbuilder templates for JSON

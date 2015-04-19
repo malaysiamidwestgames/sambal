@@ -1,6 +1,6 @@
 <div class="row dashboard">
   <div class="col-md-12">
-    <alert class="alert-danger">Registration Deadline is <b>April 19th, 2015. Register now!</b></alert>
+    <alert class="alert-danger">Registration and Registration Payment Deadline is <b>April 19th, 2015. Register and pay now!</b></alert>
   </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
@@ -35,7 +35,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Payments</h3>
       </div>
-      <table class="table table-bordered">
+      <table class="panel-body table table-bordered">
         <tr>
           <th>General registration</th>
           <td>{{(currentUser.registration_payment_status && "Paid") || "Payment pending"}}</td>
@@ -49,7 +49,7 @@
       <table class="table table-bordered">
         <tr>
           <th>Sports registration</th>
-          <td>{{(currentUser.registration_payment_status == false && "Please register for general registration first before registering for sports") || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
+          <td>{{("Please register for general registration first before registering for sports" && currentUser.registration_payment_status == false) || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
         </tr>
         <tr ng-repeat="participate in participating">
           <th>
@@ -61,11 +61,12 @@
               <button type="submit" class="btn btn-success pull-right btn-md" ng-show="participate.status=='invite_request'" ng-click="accept(participate.id, participate.activation_key)">Accept</button>
             </div>
             <div ng-show="participate.status=='accepted'">
-              Your schedule can be found here when it's ready. Stay tuned!
+              Your schedule can be found in the Team Management Page when it's ready. Stay tuned!
             </div>
           </td>
         </tr>
       </table>
+
     </div>
   </div>
 </div>

@@ -88,6 +88,15 @@ angular
       .when('/accommodation', {
         templateUrl: 'views/accommodation.html'
       })
+      .when('/admin' , {
+        templateUrl: 'views/admin.html',
+        requireLogin: true,
+        requireAdmin: true
+      })
+      .when('/admin-settings/:userId', {
+        templateUrl: 'views/admin_settings.html',
+        controller: 'AdminSettingsCtrl'
+      })
       .when('/eventmaps', {
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
@@ -96,8 +105,7 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: false,
-        requireAdmin: true
+        requirePaidGen: false
       })
       .when('/teams', {
         templateUrl: 'views/teams.html',

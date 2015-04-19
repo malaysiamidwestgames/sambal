@@ -29,7 +29,7 @@ angular.module('midwestApp')
       if (user.registration_payment_status) {
         $scope.todos.unshift({
           title: 'Register for sports',
-          label: 'Coming soon',
+          label: 'Register now',
           link: 'sportsreg'
         });
       }
@@ -39,22 +39,25 @@ angular.module('midwestApp')
           title: 'Manage your sports/teams',
           label: 'Team management page',
           link: 'teams'
-        })
+        });
       }
 
       //TODO: Call API to read all games that the player is playing and display it on sports tab
-     $http.get('/api/participants/get/?user_id=' + user.id)
+
+
+     $http.get('/api/participants/get')
         .success(function(result){
+          console.log(result);
           $scope.participating = result.participants;
           console.log($scope.participating);
 
           $scope.$watch('participating', function() {
             $scope.participating.forEach(function(participate){
-              console.log(participate.team_id);
+              console.log(participate);
               $http.get('/api/teams/' + participate.team_id)
                 .success(function(data){
                   participate.name = data.team.name;
-                })
+                });
             });
           });
         });
@@ -62,15 +65,15 @@ angular.module('midwestApp')
 
     $scope.accept = function (id, activation_key) {
       $http.post('/api/participants/accept', {id: id, activation_key: activation_key})
-        .success(function(data) {
+        .success(function() {
           console.log("accepted!");
-        })
+        });
     };
 
     $scope.decline = function (id, activation_key) {
       $http.post('/api/participants/decline', {id: id, activation_key: activation_key})
-        .success(function(data) {
+        .success(function() {
           console.log("declined!");
-        })
+        });
     };
   });

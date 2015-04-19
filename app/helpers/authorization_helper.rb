@@ -6,7 +6,7 @@ module AuthorizationHelper
   end
 
   def correct_user
-    if not current_user?(@user)
+    if not current_user?(@user) and not current_user.admin?
       render json: { message: 'Wrong User' }, status: :forbidden
     end
   end
