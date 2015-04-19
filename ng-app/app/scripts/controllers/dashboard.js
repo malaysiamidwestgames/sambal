@@ -43,7 +43,7 @@ angular.module('midwestApp')
       }
 
       //TODO: Call API to read all games that the player is playing and display it on sports tab
-     $http.post('api/participants/get', {user_id: user.id})
+     $http.get('api/participants/get')
         .success(function(result){
           console.log(result);
           $scope.participating = result.participants;
@@ -61,15 +61,15 @@ angular.module('midwestApp')
         });
     });
 
-    $scope.accept = function (id, activation_key) {
-      $http.post('api/participants/accept', {id: id, activation_key: activation_key})
+    $scope.accept = function (id) {
+      $http.patch('api/participants/accept/' + id)
         .success(function() {
           console.log('accepted!');
         });
     };
 
-    $scope.decline = function (id, activation_key) {
-      $http.post('api/participants/decline', {id: id, activation_key: activation_key})
+    $scope.decline = function (id) {
+      $http.patch('api/participants/decline/' + id)
         .success(function() {
           console.log('declined!');
         });

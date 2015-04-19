@@ -69,11 +69,8 @@ class Api::ParticipantsController < ApplicationController
   end
 
   def get_team
-    userId = params[:user_id]
-    if !userId.nil?
-      @participants = Participant.where(user_id: userId).where('status=? OR status=?', 'invite_request', 'accepted')
-      render json: @participants
-    end
+    @participant = current_user.participants
+    render json: @participant
   end
 
   def check_if_user_is_participating
