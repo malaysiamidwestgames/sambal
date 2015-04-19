@@ -24,7 +24,7 @@ class Api::UsersController < ApplicationController
   # POST /users.json
   def create
     university = University.find_or_initialize_by(name: university_params)
-    @user = User.new(user_params.merge(university: university))
+    @user = User.new(user_params.merge(university: university, authorization_level: 0))
 
     if @user.save
       render json: @user, status: :created
@@ -40,7 +40,7 @@ class Api::UsersController < ApplicationController
     university = University.find_or_initialize_by(name: university_params)
     # @user = User.find(params[:id])
     puts 'updating this motherfucker'
-    if params[:payments] == "delete" and current_user.admin?
+    if params[:payments] == "delete" and current_user.authorization_level == 'admin'
       @user.update(payments: [])
     end
     
@@ -68,11 +68,7 @@ class Api::UsersController < ApplicationController
   private
     
     def user_params
-      if current_user.admin?
-        params.permit(:email, :first_name, :last_name, :password, :password_confirmation, :authorization_level)
-      else
-        params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
-      end
+      params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
     end
 
     def university_params
