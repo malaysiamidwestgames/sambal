@@ -84,7 +84,6 @@ angular.module('midwestApp')
     $http
       .get('/api/participants/get')
       .success(function(data) {
-        console.log(data);
         $scope.teams = data.participants;
         $scope.$watch('teams', function() {
           var count = 0;
@@ -98,7 +97,7 @@ angular.module('midwestApp')
                 count++;
               });
           });
-          console.log($scope.teams);
+          console.log($scope.teams.length);
         });
 
       });

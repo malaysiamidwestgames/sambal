@@ -18,7 +18,7 @@
         </span>
       </div>
     </div>
-    <div class="panel panel-themed user-info-panel">
+    <div class="panel panel-themed user-info-panel" ng-show="teams.length != 0">
       <div class="panel-body">
         <div ng-repeat="team in teams">
           <div ng-show="team.status != 'declined'">
@@ -26,7 +26,7 @@
               {{ team.name }}
             </div>
             <div> <i>{{ team.gamename }} {{ team.gamecategory }}</i></div>
-            <br ng-show="team.index < teams.length - 1">
+            <br ng-show="team.index != teams.length - 1">
           </div>
         </div>
 

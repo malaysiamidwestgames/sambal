@@ -26,6 +26,7 @@ angular.module('midwestApp')
     }
 
 
+    $scope.teams = [];
     $scope.team = {
       name: 'Choose a team'
     };
@@ -36,12 +37,19 @@ angular.module('midwestApp')
         $scope.users = data.users;
       });
 
-
     $http
-      .get('/api/myteams')
-      .success(function(data) {
-        console.log(data);
-        $scope.teams = data.teams;
+      .get('/api/participants/get')
+      .success(function(results) {
+        $scope.$watch('teams', function() {
+          var count = 0;
+          results.participants.forEach(function(participant){
+            console.log(count++);
+            $http.get('/api/teams/' + participant.team_id)
+              .success(function(data){
+                $scope.teams.push(data.team);
+              });
+          });
+        });
       });
 
     $scope.setTeam = function(action) {
