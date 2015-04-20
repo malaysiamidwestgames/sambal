@@ -29,6 +29,11 @@ angular.module('midwestApp')
         link: 'promo/auditions'
       },
       {
+        title: 'Manage your sports/teams',
+        label: 'Team management page',
+        link: 'teams'
+      },
+      {
         title: 'Survey for Malaysia Midwest Games 2015',
         label: 'I\'ll help!',
         target: '_blank',
@@ -52,13 +57,6 @@ angular.module('midwestApp')
         });
       }
 
-      if(user.sports_payment_status) {
-        $scope.todos.unshift({
-          title: 'Manage your sports/teams',
-          label: 'Team management page',
-          link: 'teams'
-        });
-      }
 
     $http.get('/api/participants/get_invite')
       .success(function(result){
