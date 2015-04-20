@@ -11,6 +11,16 @@ angular.module('midwestApp')
 
   .controller('DashboardCtrl', function ($scope,$http, session) {
     $scope.status = 'invite';
+
+    var acceptMsg = ['Wow, your sense of judgment must be wayyyy off', 'It\'s good to be noble, but there\'s a reason why noblemen are vanishing in this age', 'Well, if you must...', 'Hmm, how did you become captain again?', 'Err on the side of caution, not on the side of losing'];
+    function getAcceptMessage() {
+      return acceptMsg[Math.floor(Math.random() * acceptMsg.length)];
+    }
+
+    var declineMsg = ['It had to be done....', 'Can\'t say I blame you', 'Be proud of yourself. Tomorrow, you\'ll win', 'Remember this moment you saved the team, captain', 'You came, you saw the truth, you kicked him out' ];
+    function getDeclineMessage() {
+      return declineMsg[Math.floor(Math.random() * declineMsg.length)];
+    }
     $scope.todos = [
       {
         title: 'Audition for Midwest Night',
@@ -70,6 +80,7 @@ angular.module('midwestApp')
       $http.patch('/api/participants/accept/' + id)
         .success(function() {
           $scope.status = 'accept';
+          toastr.success(getAcceptMessage(), "You've accepted the invitation of this team's captain")
         });
     };
 
@@ -77,6 +88,7 @@ angular.module('midwestApp')
       $http.patch('/api/participants/decline/' + id)
         .success(function() {
           $scope.status = 'decline';
+          toastr.error(getDeclineMessage(), "You've declined the invitation from this team's captain")
           console.log('declined!');
         });
     };
