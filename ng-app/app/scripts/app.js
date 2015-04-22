@@ -93,6 +93,15 @@ angular
         templateUrl: 'views/resumeupload.html',
         controller: 'ResumeuploadCtrl'
       })
+      .when('/admin' , {
+        templateUrl: 'views/admin.html',
+        requireLogin: true,
+        requireAdmin: true
+      })
+      .when('/admin-settings/:userId', {
+        templateUrl: 'views/admin_settings.html',
+        controller: 'AdminSettingsCtrl'
+      })
       .when('/eventmaps', {
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'

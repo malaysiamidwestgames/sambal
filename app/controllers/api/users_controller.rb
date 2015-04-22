@@ -24,7 +24,7 @@ class Api::UsersController < ApplicationController
   # POST /users.json
   def create
     university = University.find_or_initialize_by(name: university_params)
-    @user = User.new(user_params.merge(university: university))
+    @user = User.new(user_params.merge(university: university, authorization_level: 0))
 
     if @user.save
       render json: @user, status: :created
@@ -39,18 +39,14 @@ class Api::UsersController < ApplicationController
   def update
     university = University.find_or_initialize_by(name: university_params)
     # @user = User.find(params[:id])
-
     puts 'updating this motherfucker'
+    if params[:payments] == "delete" and current_user.authorization_level == 'admin'
+      @user.update(payments: [])
+    end
+    
     if @user.update(user_params.merge(university: university))
-      puts 'updating success'
-      puts @user.first_name
-      puts @user.university.name
-      puts @user.university.id
-
       render json: @user
     else
-      puts 'updating failed'
-
       render json: @user.errors, status: :unprocessable_entity
     end
   end
