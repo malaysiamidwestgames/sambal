@@ -5,7 +5,11 @@ class Api::PaymentsController < ApplicationController
   before_action :admin_user, only: [:show]
 
   def create
-    @payment = current_user.payments.build(payment_params)
+    if payment_params[:user_id]
+      @payment = User.find(payment_params[:user_id]).payments.build(payment_params)
+    else
+      @payment = current_user.payments.build(payment_params)
+    end
     if @payment.save
       render json: @payment, status: :created, root: false
     else
@@ -17,7 +21,6 @@ class Api::PaymentsController < ApplicationController
     @payment = Payment.find(params[:id])
     render json: @payment
   end
-
 
   def index
     render json: current_user.payments
@@ -37,8 +40,7 @@ class Api::PaymentsController < ApplicationController
     @payment = current_user.payments.where(regtype: "Sports registration", status: "Payment initiated")
     render json: @payment, root: false
   end
-
-
+  
   private
     def payment_params
       params.permit(:notification_params, :status, :transaction_id, :purchased_at, :regtype, :user_id, :amount, :payment_type)

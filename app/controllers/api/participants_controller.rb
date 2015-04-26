@@ -42,7 +42,7 @@ class Api::ParticipantsController < ApplicationController
     @participant = Participant.new(participant_params)
     @participant.status = "invite_request"
     if @participant.save
-      render json: @participant, status: :created
+      render json: @participant, status: :created, root: false
     else
       render json: @participant.errors, status: :unprocessable_entity
     end
@@ -69,10 +69,13 @@ class Api::ParticipantsController < ApplicationController
   end
 
   def get_team
-    if userId = params[:user_id]
-      @participants = Participant.where(user_id: userId).where('status=? OR status=?', "invite_request", "accepted")
-      render json: @participants
-    end
+    @participant = Participant.where(user_id: current_user.id).where.not(status: 'declined')
+    render json: @participant
+  end
+
+  def get_invitations
+    @participant = Participant.where(user_id: current_user.id, status: 'invite_request')
+    render json: @participant
   end
 
   def check_if_user_is_participating

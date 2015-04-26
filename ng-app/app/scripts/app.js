@@ -19,7 +19,8 @@ angular
     'sysofwan.httpWrapper',
     'ui.bootstrap',
     'ui.validate',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ui.gravatar'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -87,6 +88,15 @@ angular
       .when('/accommodation', {
         templateUrl: 'views/accommodation.html'
       })
+      .when('/admin' , {
+        templateUrl: 'views/admin.html',
+        requireLogin: true,
+        requireAdmin: true
+      })
+      .when('/admin-settings/:userId', {
+        templateUrl: 'views/admin_settings.html',
+        controller: 'AdminSettingsCtrl'
+      })
       .when('/eventmaps', {
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
@@ -100,6 +110,10 @@ angular
       .when('/transportation', {
         templateUrl: 'views/transportation.html',
         controller: 'TransportationCtrl'
+      })
+      .when('/teams', {
+        templateUrl: 'views/teams.html',
+        controller: 'TeamsCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -52,13 +52,13 @@ body {
   .navbar-brand {
     color: white;
   }
-  .navbar-nav > li >a {
+  .navbar-nav > li > .nav-item {
     color: white;
   }
-  .nav > li > a:hover, .nav > li > a:focus {
+  .nav > li > .nav-item:hover, .nav > li > .nav-item:focus {
     background-color: $michigan-blue;
   }
-  .navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+  .navbar-nav>.active>.nav-item, .navbar-nav>.active>.nav-item:hover, .navbar-nav>.active>.nav-item:focus {
     background-color: $michigan-blue;
   }
   // wolverine logo
@@ -73,11 +73,11 @@ body {
     margin-left: 0;
   }
 
-  a:hover {
+  .nav-item:hover {
     color: #F4CF3E;
   }
 
-  li a:hover {
+  li .nav-item:hover {
     // color: rgb(255, 237, 0);
     color: $michigan-maize-light;
   }
@@ -237,6 +237,15 @@ ul.dropdown-menu {
     color: #FFF;
     .first-name {
       font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+
+  .user-info-panel {
+    color: #FFF;
+    .team-name {
+      font-size: 25px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
@@ -472,6 +481,9 @@ button#update-info-btn {
     height: 555px;
   }
 
+  .gravatar {
+    margin-top: 0px;
+  }
 
   .col-md-8 {
     .panel-body.first {
@@ -485,6 +497,9 @@ button#update-info-btn {
   table.participants {
     height: 275px;
     overflow-y: auto;
+    tr.teamrow {
+      height: 175px;
+    }
   }
 
   .dropdown {
@@ -496,7 +511,7 @@ button#update-info-btn {
       }
     }
     ul.dropdown-menu {
-      width: 300px;
+      width: 250px;
       overflow-y: auto;
       max-height: 200px;
     }
@@ -504,7 +519,7 @@ button#update-info-btn {
   .promotion {
     font-size: 15px;
     h1.title {
-      font-weight: 300;
+      font-weight : 300;
       margin-top: 3px;
       color: $michigan-blue;
     }
@@ -548,7 +563,7 @@ button#update-info-btn {
     font-size: 2em;
     .captainname {
       font-size: large;
-      margin-bottom: -100px;
+      width: 500px;
     }
   }
 
@@ -576,11 +591,89 @@ button#update-info-btn {
   }
 }
 
+.teams {
+
+  .dropdown {
+    ul.dropdown-menu {
+      width: 300px;
+      overflow-y: auto;
+      max-height: 200px;
+      margin-top: 10px;
+    }
+  }
+
+  form.form-inline {
+    margin-bottom: 10px;
+  }
+
+  input.form-control {
+    width: 320px;
+  }
+  .user-info-panel {
+    color: #FFF;
+    .first-name {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+  .user-info-panel {
+    background-color: $michigan-blue;
+    height: 400px;
+  }
+
+  div.panel-body {
+    height: 360px;
+    overflow-y: auto;
+  }
+
+  .infostat {
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-bottom: 0.5em;
+    width: 8em;
+    .stat {
+      font-size: large;
+      margin-bottom: 10px;
+      color: $michigan-maize-light;
+    }
+  }
+
+  .messages {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .message {
+    display: block;
+    font-size: 1.5em;
+  }
+
+  .poster {
+    color: $michigan-lightblue
+  }
+
+
+
+  .gravatar {
+    margin-top: 0px;
+  }
+
+  .grvtinstruc {
+    width: 200px;
+  }
+}
+
 .venueevents {
   div.col-md-6.routesports {
     margin-top: 20px;
   }
 }
+
 
 .transportation {
   .bs-docs-sidebar {
@@ -679,5 +772,30 @@ button#update-info-btn {
     cursor:pointer;
     opacity: 1.0;
   }
+}
 
+
+// override bootstrap
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin-top: 5px;
+  }
+
+  .navbar-nav > li > .nav-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.navbar-nav > li > .nav-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+
+.nav > li > .nav-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
 }

@@ -3,4 +3,5 @@ class TeamSerializer < ActiveModel::Serializer
   has_one :game
   has_one :university
   has_many :participants
+  has_many :messages
 end
