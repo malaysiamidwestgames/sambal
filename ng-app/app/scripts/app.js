@@ -97,6 +97,10 @@ angular
         requireLogin: true,
         requirePaidGen: false
       })
+      .when('/transportation', {
+        templateUrl: 'views/transportation.html',
+        controller: 'TransportationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
