@@ -3,7 +3,6 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name
       t.string :size
-      t.integer :quantity
 
       t.timestamps null: false
     end
