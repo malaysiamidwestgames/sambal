@@ -9,7 +9,7 @@
  */
 angular.module('midwestApp')
 
-  .controller('DashboardCtrl', function ($scope,$http, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, session) {
     $scope.status = 'invite';
 
     var acceptMsg = ['Wow, your sense of judgment must be wayyyy off', 'It\'s good to be noble, but there\'s a reason why noblemen are vanishing in this age', 'Well, if you must...', 'Hmm, how did you become captain again?', 'Err on the side of caution, not on the side of losing'];
@@ -109,6 +109,18 @@ angular.module('midwestApp')
           });
           console.log($scope.teams.length);
         });
-
       });
+
+    $scope.open = function (size) {
+      $modal.open({
+        templateUrl: 'official_shirt.html',
+        controller: 'ModalInstanceCtrl',
+        size: size,
+        resolve: {
+          selectedSport: function () {
+            return $scope.selectedSport;
+          }
+        }
+      });
+    };
   });

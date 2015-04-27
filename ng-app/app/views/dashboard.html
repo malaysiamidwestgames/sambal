@@ -35,6 +35,8 @@
   </div>
   <div class="col-md-7">
     <div class="panel panel-themed" ng-show="todos.length">
+
+      <!-- Modal script -->
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>
       </div>
@@ -43,7 +45,24 @@
           {{ todo.title }}
           <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" target="{{todo.target}}" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>
+        <li class="list-group-item">
+          Buy Your MMG 2015 Shirt now!
+          <script type="text/ng-template" id="official_shirt.html">
+            <div class="modal-header">
+              <h3 class="modal-title">Malaysia Midwest Games 2015 Official Shirt</h3>
+            </div>
+            <div class="modal-body">
+              <a href="images/MMG2015_Participants_Shirt.jpg" target="_blank"><img width="100%" height="100%" src="images/MMG2015_Participants_Shirt.jpg"></a>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" ng-click="close('success')">Close</button>
+            </div>
+          </script>
+          <button class="btn btn-primary btn-xs pull-right" ng-click="open('lg')">I want one!</button>
+        </li>
       </ul>
+
+
     </div>
     <div class="panel panel-themed">
       <div class="panel-heading">
@@ -79,7 +98,6 @@
           </td>
         </tr>
       </table>
-
     </div>
   </div>
 </div>
