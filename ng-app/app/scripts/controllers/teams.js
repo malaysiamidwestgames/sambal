@@ -46,7 +46,9 @@ angular.module('midwestApp')
             console.log(count++);
             $http.get('/api/teams/' + participant.team_id)
               .success(function(data){
-                $scope.teams.push(data.team);
+                if (data.team.team_payment_status == true) {
+                  $scope.teams.push(data.team);
+                }
               });
           });
         });

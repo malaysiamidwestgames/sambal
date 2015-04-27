@@ -56,7 +56,7 @@
         </tr>
         <tr>
           <th>Sports registration</th>
-          <td>{{("Please register for general registration first before registering for sports" && currentUser.registration_payment_status == false) || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
+          <td>{{(!currentUser.registration_payment_status && "Please register for general registration first before registering for sports") || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid") || (!currentUser.sports_payment_status && "No payment is required")}}</td>
         </tr>
       </table>
     </div>
