@@ -9,7 +9,12 @@
  */
 angular.module('midwestApp')
 
-  .controller('DashboardCtrl', function ($scope, $http, $modal, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session) {
+
+    $scope.host = $location.host();
+
+    $scope.payId = 0;
+    $scope.amount = 0;
     $scope.status = 'invite';
 
     var acceptMsg = ['Wow, your sense of judgment must be wayyyy off', 'It\'s good to be noble, but there\'s a reason why noblemen are vanishing in this age', 'Well, if you must...', 'Hmm, how did you become captain again?', 'Err on the side of caution, not on the side of losing'];
@@ -78,7 +83,7 @@ angular.module('midwestApp')
       $http.patch('/api/participants/accept/' + id)
         .success(function() {
           $scope.status = 'accept';
-          toastr.success(getAcceptMessage(), "You've accepted the invitation of this team's captain")
+          toastr.success(getAcceptMessage(), 'You\'ve accepted the invitation of this team\'s captain');
         });
     };
 
@@ -86,7 +91,7 @@ angular.module('midwestApp')
       $http.patch('/api/participants/decline/' + id)
         .success(function() {
           $scope.status = 'decline';
-          toastr.error(getDeclineMessage(), "You've declined the invitation from this team's captain")
+          toastr.error(getDeclineMessage(), 'You\'ve declined the invitation from this team\'s captain');
           console.log('declined!');
         });
     };
@@ -117,10 +122,16 @@ angular.module('midwestApp')
         controller: 'ModalInstanceCtrl',
         size: size,
         resolve: {
-          selectedSport: function () {
-            return $scope.selectedSport;
+          payId: function () {
+            return $scope.payId;
+          },
+          amount: function () {
+            return $scope.amount;
           }
         }
       });
     };
+
+
+
   });
