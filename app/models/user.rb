@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :participants
   has_many :teams, through: :participants
   has_many :messages
+  has_many :products, through: :orders
+  has_many :orders, dependent: :destroy
   belongs_to :university
 
   VALID_EMAIL_REGEX = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
