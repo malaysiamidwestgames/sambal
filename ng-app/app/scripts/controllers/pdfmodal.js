@@ -25,6 +25,9 @@ angular.module('midwestApp')
     }, {
       name: 'Team Race',
       meaning: 'Teams cooperate in the race. All members must cross the finish line to finish.'
+    }, {
+      name: 'Judging',
+      meaning: 'Teams will take turns performing. The judges will judge based on the criteria given.'
     }];
 
     $scope.games = [];
@@ -58,7 +61,7 @@ angular.module('midwestApp')
               }
             });
           });
-          console.log($scope.selectedSport);
+          //console.log($scope.selectedSport);
         });
     });
 

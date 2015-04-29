@@ -1,25 +1,26 @@
-name,schedule,venue
-AMAIZEing Race,Saturday 10am - 12noon,Mitchell Field
-Badminton,Saturday 10am - 9pm; Sunday 8am - 3pm,CCRB
-Basketball,Saturday 10am - 4pm; Sunday 8am - 11am,CCRB
-Bowling, Saturday 11am - 3pm,Colonial Lanes
-Carrom,Saturday 7pm - 11pm,Mason Hall
-Chess,Saturday 7pm - 11pm; Sunday 9am - 3pm,Mason Hall
-Congkak,Saturday 7pm - 11pm,Mason Hall
-CS GO,Saturday 7pm - 11pm; Sunday 8am - 1pm,Mason Hall
-Dodgeball,Saturday 3pm - 9pm,Palmer Field
-Dota 2,Saturday 7pm - 11pm; Sunday 8am - 1pm,Mason Hall
-FIFA 15,Saturday 7pm - 11pm,Mason Hall
-Flag Rugby,Sunday 8am - 12noon,Mitchell Field
-Futsal,Saturday 7pm - 9pm; Sunday 8am - 3pm,Coliseum
-Netball,Sunday 8am - 2pm,Mitchell Field
-Pool,Saturday 11am - 4pm,Michigan Union
-Racquetball,Saturday 12noon - 4pm,CCRB
-Squash,Saturday 3pm - 7pm,CCRB
-Soccer,Saturday 11am - 9pm,Mitchell Field
-Table Tennis,Saturday 4pm - 7pm,Coliseum
-Takraw,Saturday 5pm - 9pm,Mitchell Field
-Tennis,Saturday 11am - 5pm,Palmer Field
-Tug of War,Saturday 10am - 11am,Mitchell Field
-Ultimate Frisbee,Saturday 1pm - 8pm,Mitchell Field
-Volleyball,Saturday 4pm - 9pm; Sunday 11am - 3pm,CCRB
+id,name,created_at,updated_at,schedule,venue
+1,AMAIZEing Race,2015-04-09 09:52:54.356235,2015-04-09 09:52:54.356235,Saturday 10am - 12noon,Mitchell Field
+12,Flag Rugby,2015-04-09 09:52:54.40803,2015-04-09 09:52:54.40803,Sunday 8am - 12noon,Mitchell Field
+14,Netball,2015-04-09 09:52:54.415013,2015-04-09 09:52:54.415013,Sunday 8am - 2pm,Mitchell Field
+17,Squash,2015-04-09 09:52:54.424208,2015-04-09 09:52:54.424208,Saturday 3pm - 7pm,CCRB
+21,Tennis,2015-04-09 09:52:54.436584,2015-04-09 09:52:54.436584,Saturday 11am - 5pm,Palmer Field
+22,Tug of War,2015-04-09 09:52:54.44001,2015-04-09 09:52:54.44001,Saturday 10am - 11am,Mitchell Field
+2,Badminton,2015-04-09 09:52:54.366531,2015-04-09 09:52:54.366531,Saturday 10am - 8pm; Sunday 8am - 2pm,CCRB
+4,Bowling,2015-04-09 09:52:54.377797,2015-04-09 09:52:54.377797,Saturday 11am - 4pm,Colonial Lanes
+5,Carrom,2015-04-09 09:52:54.382519,2015-04-09 09:52:54.382519,Saturday 5pm - 10pm,Mason Hall
+6,Chess,2015-04-09 09:52:54.387239,2015-04-09 09:52:54.387239,Saturday 3pm - 11pm; Sunday 8am - 12noon,Mason Hall
+7,Congkak,2015-04-09 09:52:54.390577,2015-04-09 09:52:54.390577,Saturday 7pm - 10pm,Mason Hall
+3,Basketball,2015-04-09 09:52:54.372908,2015-04-09 09:52:54.372908,Saturday 10am - 2pm; Sunday 8am - 11am,CCRB
+8,CS GO,2015-04-09 09:52:54.394124,2015-04-09 09:52:54.394124,Saturday 2pm - 7pm; Sunday 10am - 1pm,Mason Hall
+10,Dota 2,2015-04-09 09:52:54.401133,2015-04-09 09:52:54.401133,Saturday 5pm - 10pm; Sunday 8am - 11pm,Mason Hall
+9,Dodgeball,2015-04-09 09:52:54.397644,2015-04-09 09:52:54.397644,Saturday 2pm - 8pm,Palmer Field
+11,FIFA 15,2015-04-09 09:52:54.404843,2015-04-09 09:52:54.404843,Saturday 6pm - 10pm; Sunday 8am - 10am,Mason Hall
+13,Futsal,2015-04-09 09:52:54.411624,2015-04-09 09:52:54.411624,"Saturday 11am - 8pm, Sunday 8am - 2pm",Coliseum
+15,Pool,2015-04-09 09:52:54.417846,2015-04-09 09:52:54.417846,Saturday 11am - 5pm,Michigan Union
+16,Racquetball,2015-04-09 09:52:54.421092,2015-04-09 09:52:54.421092,Saturday 11am - 3pm,CCRB
+18,Soccer,2015-04-09 09:52:54.427078,2015-04-09 09:52:54.427078,Saturday 11am - 8pm,Mitchell Field
+19,Table Tennis,2015-04-09 09:52:54.430188,2015-04-09 09:52:54.430188,Saturday 3pm - 7pm,CCRB
+20,Takraw,2015-04-09 09:52:54.433251,2015-04-09 09:52:54.433251,Saturday 4pm - 8pm,CCRB
+23,Ultimate Frisbee,2015-04-09 09:52:54.443207,2015-04-09 09:52:54.443207,Sunday 8am - 2pm,Mitchell Field
+24,Volleyball,2015-04-09 09:52:54.446878,2015-04-09 09:52:54.446878,Saturday 4pm - 8pm; Sunday 11am - 2pm,CCRB
+25,March Past,2015-04-28 22:01:41.587,2015-04-28 22:01:43.163,Saturday 2pm - 4pm,Mitchell Field

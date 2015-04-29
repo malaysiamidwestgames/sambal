@@ -1,39 +1,41 @@
-name,category,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id,sport_id,spots_left
-AMAIZEing Race,Open,10,10,50,5,10,5,0,0,0,20,Mitchell Field,Team Race,1,1,20
-Badminton,Men Singles,1,1,5,1,1,0,21,3,0,32,CCRB,Knockout,2,2,32
-Badminton,Women Singles,1,1,5,1,1,0,21,3,0,8,CCRB,Knockout,3,2,8
-Badminton,Men Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,4,2,16
-Badminton,Women Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,5,2,16
-Badminton,Mixed Doubles,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,6,2,16
-Basketball,Open,5,8,40,5,5,0,0,0,20,8,CCRB,League-2 Knockout,7,3,8
-Bowling,Open,3,4,20,3,3,0,0,3,0,8,Colonial Lanes,Knockout,8,4,8
-Carrom,Open,1,1,5,1,1,0,0,3,0,8,Mason Hall,Round Robin,9,5,8
-Chess,Open,1,1,5,1,1,0,0,1,0,16,Mason Hall,Knockout,10,6,16
-Congkak,Open,1,1,5,1,1,0,0,3,0,8,Mason Hall,Round Robin,11,7,8
-CS GO,Open,5,6,30,5,5,0,5,5,5,8,Mason Hall,Knockout,12,8,8
-Dodgeball,Open,6,10,50,6,6,0,6,3,7,8,Palmer Field,League-2 Knockout,13,9,8
-Dota 2,Open,5,6,30,5,5,0,0,3,0,8,Mason Hall,Knockout,14,10,8
-FIFA 15,Individual,1,1,5,1,1,0,0,1,7,16,Mason Hall,Knockout,15,11,16
-FIFA 15,Dual,2,2,10,2,2,0,0,1,7,16,Mason Hall,Knockout,16,11,16
-Flag Rugby,Men,7,12,60,7,7,0,0,1,15,6,Mitchell Field,Round Robin,17,12,6
-Futsal,Men,5,8,40,5,5,0,0,1,15,12,Coliseum,League-4 Knockout,18,13,12
-Futsal,Women,5,8,40,5,5,0,0,1,15,8,Coliseum,League-2 Knockout,19,13,8
-Netball,Women,7,10,50,7,7,0,0,1,0,8,Coliseum,League-2 Knockout,21,14,8
-Pool,Open,1,1,5,1,1,0,8,3,0,16,Michigan Union,Knockout,22,15,16
-Racquetball,Men,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,23,16,8
-Racquetball,Women,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,24,16,8
-Squash,Men,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,25,17,8
-Squash,Women,1,1,5,1,1,0,11,3,0,8,CCRB,Knockout,26,17,8
-Soccer,Men,9,15,75,9,9,0,0,1,30,16,Mitchell Field,League-4 Knockout,27,18,16
-Table Tennis,Men Singles,1,1,5,1,1,0,11,3,0,16,Coliseum,League-4 Knockout,28,19,16
-Table Tennis,Women Singles,1,1,5,1,1,0,11,3,0,8,Coliseum,League-2 Knockout,29,19,8
-Table Tennis,Men Doubles,2,2,10,2,2,0,11,3,0,8,Coliseum,League-2 Knockout,30,19,8
-Table Tennis,Women Doubles,2,2,10,2,2,0,11,3,0,4,Coliseum,Round Robin,31,19,4
-Takraw,Open,3,5,25,3,3,0,15,3,0,4,Mitchell Field,Round Robin,32,20,4
-Tennis,Men Singles,1,1,5,1,1,0,60,8,0,8,Palmer Field,League-2 Knockout,33,21,8
-Tennis,Women Singles,1,1,5,1,1,0,60,8,0,4,Palmer Field,Round Robin,34,21,4
-Tennis,Mixed Doubles,2,2,10,2,2,0,60,8,0,4,Palmer Field,Round Robin,35,21,4
-Tug of War,Open,15,18,30,15,15,0,0,3,0,12,Mitchell Field,Knockout,36,22,12
-Ultimate Frisbee,Open,7,12,60,7,7,0,0,1,7,4,Mitchell Field,Round Robin,37,23,4
-Volleyball,Men,6,10,50,6,6,0,25,3,0,8,CCRB,League-4 Knockout,38,24,8
-Volleyball,Open,6,10,50,6,6,0,25,3,0,8,CCRB,League-4 Knockout,39,24,8
+id,name,min_players_per_team,max_players_per_team,price_per_team,min_players_on_court,max_players_on_court,kms_to_finish,points_to_finish,sets_to_finish,minutes_per_half,max_teams,venue,tournament_type,tournaments_id,created_at,updated_at,sport_id,spots_left,category
+40,March Past,20,200,0,20,200,0,0,0,0,0,Mitchell Field,Judging,40,2015-04-28 22:00:59.27,2015-04-28 22:01:00.533,25,0,Open
+31,Takraw,3,5,25,3,3,0,15,3,0,6,CCRB,Round Robin,31,2015-04-09 09:53:20.091577,2015-04-19 04:26:48.392781,20,2,Open
+12,CS GO,5,6,30,5,5,0,5,5,5,8,Mason Hall,League-2 Knockout,12,2015-04-09 09:53:19.974765,2015-04-28 23:04:31.063845,8,3,Open
+13,Dodgeball,6,10,50,6,6,0,6,3,7,8,Palmer Field,League-2 Knockout,13,2015-04-09 09:53:19.980711,2015-04-29 02:04:23.853722,9,2,Open
+21,Pool,1,1,5,1,1,0,8,3,0,16,Michigan Union,Knockout,21,2015-04-09 09:53:20.040102,2015-04-20 01:32:15.269354,15,0,Open
+24,Squash,1,1,5,1,1,0,11,3,0,8,CCRB,League-2 Knockout,24,2015-04-09 09:53:20.055501,2015-04-27 09:26:01.236314,17,2,Men
+8,Bowling,3,4,20,3,3,0,0,3,0,8,Colonial Lanes,Knockout,8,2015-04-09 09:53:19.950024,2015-04-21 16:13:11.168562,4,0,Group
+23,Racquetball,1,1,5,1,1,0,11,3,0,8,CCRB,League-2 Knockout,23,2015-04-09 09:53:20.05037,2015-04-09 09:53:20.05037,16,8,Women
+14,Dota 2,5,6,30,5,5,0,0,3,0,10,Mason Hall,Knockout,14,2015-04-09 09:53:19.986556,2015-04-25 20:02:46.098558,10,0,Open
+4,Badminton,2,2,10,2,2,0,21,3,0,32,CCRB,Knockout,4,2015-04-09 09:53:19.920044,2015-04-26 19:00:52.152892,2,15,Men Doubles
+1,AMAIZEing Race,10,10,50,5,10,5,0,0,0,20,Mitchell Field,Team Race,1,2015-04-09 09:53:19.886666,2015-04-27 22:14:54.294426,1,8,Open
+3,Badminton,1,1,5,1,1,0,21,3,0,16,CCRB,Knockout,3,2015-04-09 09:53:19.911212,2015-04-26 15:41:06.854723,2,11,Women Singles
+30,Table Tennis,2,2,10,2,2,0,11,3,0,8,CCRB,League-2 Knockout,30,2015-04-09 09:53:20.086404,2015-04-21 21:31:51.451763,19,7,Women Doubles
+7,Basketball,5,10,50,5,5,0,0,0,15,6,CCRB,League-2 Knockout,7,2015-04-09 09:53:19.942923,2015-04-20 06:15:17.027355,3,2,Open
+33,Tennis,1,1,5,1,1,0,60,8,0,4,Palmer Field,League-2 Knockout,33,2015-04-09 09:53:20.101971,2015-04-21 21:32:09.272349,21,1,Women Singles
+17,Flag Rugby,7,12,60,7,7,0,0,1,15,6,Mitchell Field,Round Robin,17,2015-04-09 09:53:20.019562,2015-04-27 16:12:29.111806,12,1,Men
+29,Table Tennis,2,2,10,2,2,0,11,3,0,8,CCRB,League-2 Knockout,29,2015-04-09 09:53:20.081261,2015-04-26 19:21:54.188499,19,3,Men Doubles
+5,Badminton,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,5,2015-04-09 09:53:19.927629,2015-04-26 03:34:36.315338,2,12,Women Doubles
+9,Carrom,1,1,5,1,1,0,0,3,0,16,Mason Hall,Knockout,9,2015-04-09 09:53:19.956414,2015-04-26 04:44:28.392143,5,9,Open
+39,Bowling,1,1,5,1,1,0,0,0,0,8,Colonial Lanes,Knockout,39,2015-04-16 21:53:28.368,2015-04-19 00:56:17.889187,4,0,Individual
+2,Badminton,1,1,5,1,1,0,21,3,0,16,CCRB,Knockout,2,2015-04-09 09:53:19.902967,2015-04-26 06:00:10.330828,2,4,Men Singles
+28,Table Tennis,1,1,5,1,1,0,11,3,0,8,CCRB,League-4 Knockout,28,2015-04-09 09:53:20.076153,2015-04-29 00:46:53.159544,19,4,Women Singles
+37,Volleyball,6,10,50,6,6,0,25,3,0,8,CCRB,Knockout,37,2015-04-09 09:53:20.129626,2015-04-23 08:36:37.251932,24,4,Men
+34,Tennis,2,2,10,2,2,0,60,8,0,8,Palmer Field,League-2 Knockout,34,2015-04-09 09:53:20.107177,2015-04-24 22:07:40.743068,21,5,Mixed Doubles
+19,Futsal,5,8,40,5,5,0,0,1,15,8,Coliseum,League-2 Knockout,19,2015-04-09 09:53:20.029995,2015-04-22 02:30:08.749917,13,0,Women
+16,FIFA 15,2,2,10,2,2,0,0,1,7,8,Mason Hall,Knockout,16,2015-04-09 09:53:19.998437,2015-04-19 02:37:47.891033,11,0,Dual
+22,Racquetball,1,1,5,1,1,0,11,3,0,8,CCRB,League-2 Knockout,22,2015-04-09 09:53:20.045269,2015-04-22 23:57:55.594716,16,7,Men
+18,Futsal,5,8,40,5,5,0,0,1,15,16,Coliseum,League-4 Knockout,18,2015-04-09 09:53:20.024946,2015-04-20 21:14:04.107747,13,0,Men
+36,Ultimate Frisbee,7,12,60,7,7,0,0,1,7,8,Mitchell Field,League-2 Knockout,36,2015-04-09 09:53:20.124123,2015-04-28 00:45:52.940931,23,1,Open
+38,Volleyball,6,10,50,6,6,0,25,3,0,8,CCRB,Knockout,38,2015-04-09 09:53:20.134958,2015-04-19 20:54:33.187169,24,7,Open
+20,Netball,7,10,50,7,7,0,0,1,0,8,Mitchell Field,League-2 Knockout,20,2015-04-09 09:53:20.03509,2015-04-23 23:30:46.998394,14,3,Women
+10,Chess,1,1,5,1,1,0,0,1,0,16,Mason Hall,League-4 Knockout,10,2015-04-09 09:53:19.962586,2015-04-26 21:55:40.021747,6,6,Open
+25,Squash,1,1,5,1,1,0,11,3,0,8,CCRB,League-2 Knockout,25,2015-04-09 09:53:20.060667,2015-04-24 00:02:21.530539,17,7,Women
+15,FIFA 15,1,1,5,1,1,0,0,1,7,16,Mason Hall,Knockout,15,2015-04-09 09:53:19.992535,2015-04-19 21:02:44.559223,11,0,Individual
+11,Congkak,1,1,5,1,1,0,0,3,0,16,Mason Hall,League-2 Knockout,11,2015-04-09 09:53:19.968585,2015-04-29 01:23:44.665653,7,0,Open
+32,Tennis,1,1,5,1,1,0,60,8,0,12,Palmer Field,League-2 Knockout,32,2015-04-09 09:53:20.096805,2015-04-26 01:23:33.554342,21,0,Men Singles
+6,Badminton,2,2,10,2,2,0,21,3,0,16,CCRB,Knockout,6,2015-04-09 09:53:19.935526,2015-04-20 07:54:04.840695,2,14,Mixed Doubles
+26,Soccer,9,15,75,9,9,0,0,1,30,16,Mitchell Field,League-4 Knockout,26,2015-04-09 09:53:20.065881,2015-04-22 17:06:55.082757,18,4,Men
+35,Tug of War,15,18,30,8,15,0,0,3,0,12,Mitchell Field,Knockout,35,2015-04-09 09:53:20.117523,2015-04-27 02:35:15.302664,22,9,Open
+27,Table Tennis,1,1,5,1,1,0,11,3,0,16,CCRB,League-4 Knockout,27,2015-04-09 09:53:20.071044,2015-04-28 08:43:02.090824,19,5,Men Singles
