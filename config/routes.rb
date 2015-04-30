@@ -81,6 +81,7 @@ Rails.application.routes.draw do
     post 'participants/join' => 'participants#join_team'
     post 'participants/invite' => 'participants#invite_team'
     get 'participants/get' => 'participants#get_team'
+    get 'participants/get_invite' => 'participants#get_invitations'
     patch 'participants/accept/:id' => 'participants#accept'
     patch 'participants/decline/:id' => 'participants#decline'
     post 'participants/check' => 'participants#check_if_user_is_participating'

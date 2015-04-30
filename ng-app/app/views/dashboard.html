@@ -1,6 +1,6 @@
 <div class="row dashboard">
   <div class="col-md-12">
-    <alert class="alert-danger">Registration and Registration Payment Deadline is <b>April 19th, 2015. Register and pay now!</b></alert>
+    <alert class="alert-danger">Registration and Registration Payment Deadline is <b>May 3rd, 2015. Register and pay now!</b></alert>
   </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
@@ -18,18 +18,70 @@
         </span>
       </div>
     </div>
+    <div class="panel panel-themed user-info-panel" ng-show="teams.length != 0">
+      <div class="panel-body">
+        <div ng-repeat="team in teams">
+          <div ng-show="team.status != 'declined'">
+            <div class="team-name">
+              {{ team.name }}
+            </div>
+            <div> <i>{{ team.gamename }} {{ team.gamecategory }}</i></div>
+            <!--br ng-show="team.index != teams.length - 1"-->
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-md-7">
     <div class="panel panel-themed" ng-show="todos.length">
+
+      <!-- Modal script -->
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>
       </div>
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="todo in todos">
           {{ todo.title }}
-          <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
+          <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" target="{{todo.target}}" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>
+        <!--li class="list-group-item">
+          Buy Your MMG 2015 Shirt now!
+          <script type="text/ng-template" id="official_shirt.html">
+            <div class="modal-header">
+              <h1 class="modal-title">
+                <button class="btn btn-themed pull-right btn-lg" ng-show="payId === 0" ng-disabled="amount == 0" class="contact-us" ng-click="paymentInit('Sports registration')">Pay ${{amount}}</button>
+
+                Malaysia Midwest Games 2015 Official Shirt
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" ng-show="payId !== 0" class="ng-hide pull-right">
+                  <input type="hidden" name="cmd" value="_xclick">
+                  <input type="hidden" name="business" value="midwestmalaysia@gmail.com">
+                  <input type="hidden" name="invoice" value="{{payId}}">
+                  <input type="hidden" name="notify_url" value="http://{{ host }}/api/hook">
+                  <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
+                  <input type="hidden" name="return" value="http://{{ host }}/app/payment/done">
+                  <input type="hidden" name="rm" value="1">
+                  <input type="hidden" name="no_shipping" value="1">
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="hidden" name="amount" value="{{amount}}">
+                  <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
+                </form>
+                <a class="btn btn-themed pull-right btn-lg contact-us" ng-show="currentUser.sports_payment_unpaid" ng-href="contact-us" role="button">Contact us</a>
+              </h1>
+            </div>
+            <div class="modal-body">
+              <a href="images/MMG2015_Participants_Shirt.jpg" target="_blank"><img width="500px" height="500px" src="images/MMG2015_Participants_Shirt.jpg"></a>
+
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary btn-md" ng-click="close()">Close</button>
+            </div>
+          </script>
+          <button class="btn btn-primary btn-xs pull-right" ng-click="open('lg')">I want one!</button>
+        </li-->
       </ul>
+
+
     </div>
     <div class="panel panel-themed">
       <div class="panel-heading">
@@ -40,47 +92,31 @@
           <th>General registration</th>
           <td>{{(currentUser.registration_payment_status && "Paid") || "Payment pending"}}</td>
         </tr>
-      </table>
-    </div>
-    <div class="panel panel-themed">
-      <div class="panel-heading">
-        <h3 class="panel-title">Sports</h3>
-      </div>
-      <table class="table table-bordered">
         <tr>
           <th>Sports registration</th>
           <td>{{("Please register for general registration first before registering for sports" && currentUser.registration_payment_status == false) || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
         </tr>
+      </table>
+    </div>
+    <div class="panel panel-themed" ng-show="participating.length != 0">
+      <div class="panel-heading">
+        <h3 class="panel-title">Invitation</h3>
+      </div>
+      <table class="table table-bordered">
         <tr ng-repeat="participate in participating">
-          <th>
-            {{ participate.name }}
-          </th>
-          <td>
-            <div class="btn-toolbar">
-              <button type="submit" class="btn btn-danger pull-right btn-md" ng-show="participate.status=='invite_request'" ng-click="decline(participate.id, participate.activation_key)">Decline</button>
-              <button type="submit" class="btn btn-success pull-right btn-md" ng-show="participate.status=='invite_request'" ng-click="accept(participate.id, participate.activation_key)">Accept</button>
-            </div>
-            <div ng-show="participate.status=='accepted'">
-              Your schedule can be found in the Team Management Page when it's ready. Stay tuned!
-            </div>
+          <td class="col-xs-4">
+            <b>{{ participate.name }}</b>
+            <br>
+            <i>{{ participate.gamename }} {{ participate.gamecategory}}</i>
           </td>
-        </tr>
-        <tr ng-repeat="participate in participating">
-          <th>
-            {{ participate.name }}
-          </th>
-          <td>
+          <td ng-show="status == 'invite'">
             <div class="btn-toolbar">
-              <button type="submit" class="btn btn-danger pull-right btn-md" ng-show="participate.status=='invite_request'" ng-click="decline(participate.id, participate.activation_key)">Decline</button>
-              <button type="submit" class="btn btn-success pull-right btn-md" ng-show="participate.status=='invite_request'" ng-click="accept(participate.id, participate.activation_key)">Accept</button>
-            </div>
-            <div ng-show="participate.status=='accepted'">
-              Your schedule can be found here when it's ready. Stay tuned!
+              <button type="submit" class="btn btn-danger pull-right btn-md" ng-show="status == 'invite' && participate.status=='invite_request'" ng-click="decline(participate.id)">Decline</button>
+              <button type="submit" class="btn btn-success pull-right btn-md" ng-show="status == 'invite' && participate.status=='invite_request'" ng-click="accept(participate.id)">Accept</button>
             </div>
           </td>
         </tr>
       </table>
-
     </div>
   </div>
 </div>
