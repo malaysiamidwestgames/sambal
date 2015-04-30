@@ -15,4 +15,18 @@ As of now, we will communicate through meeting locally at execuitive suite. Howe
 we will start using issues to keep track of bugs and features so that it would be more
 convenient for those who are not working with us locally. 
 
+# Rules of contributing
+Although you are contributing, we will need you to follow some rules on style and coding conventions 
+so that we can have a clean code.
+
+### A new branch for each feature/bugfix
+* Please use a new branch for each feature or bug fix. We will be using GitHub's pull request to merge branches.
+* Please ensure that you have merge with master in your branch before you do a pull request. You can do so by `git merge master` in your branch.
+* In the case where you have a merge conflict with master, please contact either Eugene or Sayyid or Syahril so that we can do a code review before we decide how to merge. 
+* Please ensure each push has fixed all warnings as specified on JsHint. 
+
+### Coding style
+* We will be using JsHint for all AngularJs linting. 
+
+
 Thank you very much.
