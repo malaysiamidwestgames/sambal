@@ -29,4 +29,8 @@ so that we can have a clean code.
 * We will be using JsHint for all AngularJs linting. 
 
 
-Thank you very much.
+### Thank you very much for contributing
+Thank you very much for contributing. 
+We thank you for your time and effort. 
+In the case where we are planning to release this as a software as a service, we will talk more about each contributions and how we would form them. 
+As of now, everything is assumed to be Open Sourced but hidden from the public's view.
