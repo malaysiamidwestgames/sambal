@@ -26,7 +26,7 @@
               {{ team.name }}
             </div>
             <div> <i>{{ team.gamename }} {{ team.gamecategory }}</i></div>
-            <br ng-show="team.index != teams.length - 1">
+            <!--br ng-show="team.index != teams.length - 1"-->
           </div>
         </div>
 
@@ -35,6 +35,8 @@
   </div>
   <div class="col-md-7">
     <div class="panel panel-themed" ng-show="todos.length">
+
+      <!-- Modal script -->
       <div class="panel-heading">
         <h3 class="panel-title">What to do next?</h3>
       </div>
@@ -43,7 +45,43 @@
           {{ todo.title }}
           <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" target="{{todo.target}}" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>
+        <!--li class="list-group-item">
+          Buy Your MMG 2015 Shirt now!
+          <script type="text/ng-template" id="official_shirt.html">
+            <div class="modal-header">
+              <h1 class="modal-title">
+                <button class="btn btn-themed pull-right btn-lg" ng-show="payId === 0" ng-disabled="amount == 0" class="contact-us" ng-click="paymentInit('Sports registration')">Pay ${{amount}}</button>
+
+                Malaysia Midwest Games 2015 Official Shirt
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" ng-show="payId !== 0" class="ng-hide pull-right">
+                  <input type="hidden" name="cmd" value="_xclick">
+                  <input type="hidden" name="business" value="midwestmalaysia@gmail.com">
+                  <input type="hidden" name="invoice" value="{{payId}}">
+                  <input type="hidden" name="notify_url" value="http://{{ host }}/api/hook">
+                  <input type="hidden" name="item_name" value="{{regType}}" ng-model="regType">
+                  <input type="hidden" name="return" value="http://{{ host }}/app/payment/done">
+                  <input type="hidden" name="rm" value="1">
+                  <input type="hidden" name="no_shipping" value="1">
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="hidden" name="amount" value="{{amount}}">
+                  <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
+                </form>
+                <a class="btn btn-themed pull-right btn-lg contact-us" ng-show="currentUser.sports_payment_unpaid" ng-href="contact-us" role="button">Contact us</a>
+              </h1>
+            </div>
+            <div class="modal-body">
+              <a href="images/MMG2015_Participants_Shirt.jpg" target="_blank"><img width="500px" height="500px" src="images/MMG2015_Participants_Shirt.jpg"></a>
+
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary btn-md" ng-click="close()">Close</button>
+            </div>
+          </script>
+          <button class="btn btn-primary btn-xs pull-right" ng-click="open('lg')">I want one!</button>
+        </li-->
       </ul>
+
+
     </div>
     <div class="panel panel-themed">
       <div class="panel-heading">
@@ -79,7 +117,6 @@
           </td>
         </tr>
       </table>
-
     </div>
   </div>
 </div>
