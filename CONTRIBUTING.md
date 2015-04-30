@@ -1,6 +1,6 @@
 Hi guys,
 
-If you stumble onto this page, you are interested in helping us develop project sambal. 
+If you stumble or are actively searching for this page, you are interested in helping us develop project sambal. 
 Thank you very much for your interest, we would very much like to have you contributing to our
 project too.
 
