@@ -1,6 +1,7 @@
 <div class="col-md-12">
   <div class="container">
-    <input class="form-control" type="text" style="width:300px; float:right; margin-bottom: 10px" placeholder="Search..">
+    <input class="form-control" type="text" style="width:300px; float:right; margin-bottom: 10px" placeholder="Search.." ng-model="name_text" />
+    {{name_text}}
   </div>
   <div class="container university">
     <div class="panel panel-themed">
@@ -27,7 +28,7 @@
           <td>Payment</td>
           <td></td>
         </thead>
-        <tr ng-repeat = "user in users">
+        <tr ng-repeat = "user in users | filter:name_text">
           <td>{{user.id}}</td>
           <td>{{user.first_name}}</td>
           <td>{{user.last_name}}</td>

@@ -69,6 +69,7 @@ angular.module('midwestApp')
 
 	  		$http.put(url, userParams)
 	  			.success(function() {
+	  				console.log(userParams);
 	  				$location.path('/userlist');
 	  			});
 	  	};
