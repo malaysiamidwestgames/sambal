@@ -32,6 +32,13 @@ class User < ActiveRecord::Base
     update_attribute(:activated, true)
   end
 
+  def volunteer_status
+    idx = self.payments.index do |payment|
+      payment.regtype == 'General registration' && payment.status == 'Completed'
+    end
+    return idx != nil
+  end
+
   def registration_payment_status
     idx = self.payments.index do |payment|
       payment.regtype == 'General registration' && payment.status == 'Completed'
