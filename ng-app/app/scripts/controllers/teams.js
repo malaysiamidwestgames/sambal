@@ -32,12 +32,6 @@ angular.module('midwestApp')
     };
 
     $http
-      .get('/api/users')
-      .success(function(data) {
-        $scope.users = data.users;
-      });
-
-    $http
       .get('/api/participants/get')
       .success(function(results) {
         $scope.$watch('teams', function() {
@@ -67,19 +61,17 @@ angular.module('midwestApp')
         $scope.model = $model;
       };
 
-      $scope.inviteReq = function(user) {
-        console.log(user);
+      $scope.inviteReq = function() {
         $http
-          .post('/api/participants/invite', {team_id: $scope.team.id, user_id: user})
-          .success(function(data) {
+          .post('/api/participants/invite', {team_id: $scope.team.id, email: $scope.inviteEmail})
+          .then(function(response) {
             console.log(data);
             $scope.participants.push(data);
             toastr.success(getInviteMessage(),  $scope.label + ' is invited to join your team');
-          })
-          .error(function(){
+          }, function(error) {
+            console.log(data);
             toastr.error(getInviteMessage(),  $scope.label + ' has already sent a join request/been invited to enter your team.');
           });
-
       };
 
       $scope.acceptReq = function(userId, userName) {
