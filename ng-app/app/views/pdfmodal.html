@@ -32,6 +32,12 @@
       </div>
       <div class="panel-body">
         <div ng-show="selectedSport.games.length">
+          <div ng-controller="TournamentsCtrl">
+            <h3>Brackets</h3>
+            <div id="bracket-body" bracket=""></div>
+          </div>
+        </div>
+        <div ng-show="selectedSport.games.length">
           <h3>Schedule</h3>
           <table class="table table-hover table-striped">
             <tr ng-show="selectedSport.games.length" style="border: none">
