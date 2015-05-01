@@ -74,6 +74,7 @@ Rails.application.routes.draw do
     resources :account_activations, only: [:update]
     resources :teams, only: [:index, :create, :show]
     resources :messages, only: [:index, :create]
+    resources :volunteers, only: [:create]
     post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
     resources :participants, only: [:create, :destroy]

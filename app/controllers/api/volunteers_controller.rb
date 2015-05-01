@@ -4,9 +4,8 @@ class Api::VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(volunteer_params)
     @user = User.find(@volunteer.user_id)
-    @user.update(phone_number: user_params.phone_number)
 
-    if @volunteer.save
+    if @volunteer.save && @user.update(phone_number: user_params.phone_number)
       render json: @volunteer, status: :created
     else
       render json: @volunteer.error, status: :unprocessable_entity
