@@ -73,8 +73,6 @@ class Api::TeamsController < ApplicationController
     render json: @team
   end
 
-
-
   private
 
     def team_params

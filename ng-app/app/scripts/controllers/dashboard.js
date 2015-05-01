@@ -85,6 +85,40 @@ angular.module('midwestApp')
           $scope.status = 'accept';
           toastr.success(getAcceptMessage(), 'You\'ve accepted the invitation of this team\'s captain');
         });
+
+      $http.get('/api/participants/get')
+        .success(function(data) {
+          $scope.teams = data.participants;
+          $scope.$watch('teams', function() {
+            var count = 0;
+            $scope.teams.forEach(function(team){
+              $http.get('/api/teams/' + team.team_id)
+                .success(function(data){
+                  team.name = data.team.name;
+                  team.gamename = data.team.game.name;
+                  team.gamecategory = data.team.game.category;
+                  team.index = count;
+                  count++;
+                });
+            });
+            console.log($scope.teams.length);
+          });
+        });
+
+      $http.get('/api/participants/get_invite')
+        .success(function(result){
+          $scope.participating = result.participants;
+          $scope.$watch('participating', function() {
+            $scope.participating.forEach(function(participate){
+              $http.get('/api/teams/' + participate.team_id)
+                .success(function(data){
+                  participate.name = data.team.name;
+                  participate.gamename = data.team.game.name;
+                  participate.gamecategory = data.team.game.category;
+                });
+            });
+          });
+        });
     };
 
     $scope.decline = function (id) {
@@ -94,10 +128,24 @@ angular.module('midwestApp')
           toastr.error(getDeclineMessage(), 'You\'ve declined the invitation from this team\'s captain');
           console.log('declined!');
         });
+
+      $http.get('/api/participants/get_invite')
+        .success(function(result){
+          $scope.participating = result.participants;
+          $scope.$watch('participating', function() {
+            $scope.participating.forEach(function(participate){
+              $http.get('/api/teams/' + participate.team_id)
+                .success(function(data){
+                  participate.name = data.team.name;
+                  participate.gamename = data.team.game.name;
+                  participate.gamecategory = data.team.game.category;
+                });
+            });
+          });
+        });
     };
 
-    $http
-      .get('/api/participants/get')
+    $http.get('/api/participants/get')
       .success(function(data) {
         $scope.teams = data.participants;
         $scope.$watch('teams', function() {
