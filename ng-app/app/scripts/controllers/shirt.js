@@ -71,6 +71,17 @@ angular.module('midwestApp')
       }
     };
 
+
+    $scope.setBucket = function(size) {
+      $scope.amount += 20;
+      $scope.size = size;
+    };
+
+    $scope.setAmount = function(amount, regType) {
+      $scope.amount = amount;
+      $scope.regType = regType;
+    };
+
     $scope.order = function () {
       for (var sleeveTypeName in $scope.shirt) {
          if ($scope.shirt.hasOwnProperty(sleeveTypeName)) {
@@ -90,15 +101,6 @@ angular.module('midwestApp')
 
     };
 
-    $scope.setBucket = function(size) {
-      $scope.amount += 20;
-      $scope.size = size;
-    };
-
-    $scope.setAmount = function(amount, regType) {
-      $scope.amount = amount;
-      $scope.regType = regType;
-    };
     $scope.close = function () {
       $modalInstance.dismiss('close');
     };
