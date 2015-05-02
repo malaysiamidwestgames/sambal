@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name midwestApp.controller:ModalInstanceCtrl
+ * @name midwestApp.controller:ShirtCtrl
  * @description
- * # ModalInstanceCtrl
+ * # ShirtCtrl
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ModalInstanceCtrl', function ($scope, $http, $modalInstance, payId, amount) {
+  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, payId, amount) {
 
     $scope.payId = payId;
     $scope.amount = amount;

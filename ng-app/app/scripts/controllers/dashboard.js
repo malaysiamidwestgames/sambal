@@ -119,7 +119,7 @@ angular.module('midwestApp')
     $scope.open = function (size) {
       $modal.open({
         templateUrl: 'official_shirt.html',
-        controller: 'ModalInstanceCtrl',
+        controller: 'ShirtCtrl',
         size: size,
         resolve: {
           payId: function () {
