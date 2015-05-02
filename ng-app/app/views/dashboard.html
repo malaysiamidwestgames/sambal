@@ -45,10 +45,11 @@
           {{ todo.title }}
           <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" target="{{todo.target}}" class="btn btn-primary btn-xs pull-right">{{ todo.label }}</a>
         </li>
-        <li>
-
+        <li class="list-group-item">
+          Volunteer for your contingent now!
+          <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" target="{{todo.target}}" class="btn btn-primary btn-xs pull-right">Let's win some points!</a>
         </li>
-        <!--li class="list-group-item">
+        <li class="list-group-item">
           Buy Your MMG 2015 Shirt now!
           <script type="text/ng-template" id="official_shirt.html">
             <div class="modal-header">
@@ -67,21 +68,155 @@
                   <input type="hidden" name="no_shipping" value="1">
                   <input type="hidden" name="currency_code" value="USD">
                   <input type="hidden" name="amount" value="{{amount}}">
-                  <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Sports registration')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
+                  <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Shirt')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
                 </form>
                 <a class="btn btn-themed pull-right btn-lg contact-us" ng-show="currentUser.sports_payment_unpaid" ng-href="contact-us" role="button">Contact us</a>
               </h1>
             </div>
-            <div class="modal-body">
-              <a href="images/MMG2015_Participants_Shirt.jpg" target="_blank"><img width="500px" height="500px" src="images/MMG2015_Participants_Shirt.jpg"></a>
+            <div class="modal-body row">
+              <div class="col-md-7" style="max-width: 500px">
+                <a href="images/MMG2015_Participants_Shirt.jpg" target="_blank"><img class="img-responsive" src="images/MMG2015_Participants_Shirt.jpg"></a>
+              </div>
+              <div class="col-md-5">
 
+                <!-- Shirt sleeves and sizes-->
+                <form name="Shirt" ng-submit="submitShirtSale()">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h3>**Ordering starts May 3rd, 2015**</h3>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6"><h3>Short sleeves</h3></div>
+                    <div class="col-xs-6"><h3>Long sleeves</h3></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6"><h4>One for $15</h4></div>
+                    <div class="col-xs-6"><h4>One for $20</h4></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6"><h4>Two for $25</h4></div>
+                    <div class="col-xs-6"><h4>Two for $35</h4></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3"><h4>S</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Short-s"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Short.s">
+                    </div>
+                    <div class="col-xs-3"><h4>S</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Long-s"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Long.s">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3"><h4>M</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Short-m"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Short.m">
+                    </div>
+                    <div class="col-xs-3"><h4>M</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Long-m"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Long.m">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3"><h4>L</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Short-l"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Short.l">
+                    </div>
+                    <div class="col-xs-3"><h4>L</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Long-l"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Long.l">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3"><h4>XL</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Short-xl"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Short.xl">
+                    </div>
+                    <div class="col-xs-3"><h4>XL</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Long-xl"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Long.xl">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3"><h4>XXL</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Short-xxl"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Short.xxl">
+                    </div>
+                    <div class="col-xs-3"><h4>XXL</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Long-xxl"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Long.xxl">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-3"><h4>XXXL</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Short-xxxl"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Short.xxxl">
+                    </div>
+                    <div class="col-xs-3"><h4>XXXL</h4></div>
+                    <div class="col-xs-3">
+                      <input type="number"
+                             name="shirt-Long-xxxl"
+                             class="form-control"
+                             placeholder="0"
+                             ng-model="shirt.Long.xxxl">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="true">Confirm Order</button>
+                  <div class="clearfix"></div>
+                </form>
+              </div>
             </div>
             <div class="modal-footer">
               <button class="btn btn-primary btn-md" ng-click="close()">Close</button>
             </div>
           </script>
           <button class="btn btn-primary btn-xs pull-right" ng-click="open('lg')">I want one!</button>
-        </li-->
+        </li>
       </ul>
 
 

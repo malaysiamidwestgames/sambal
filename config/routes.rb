@@ -87,6 +87,13 @@ Rails.application.routes.draw do
     patch 'participants/decline/:id' => 'participants#decline'
     post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
+
+    # routes for Order
+    get 'orders/create' => 'orders#create'
+
+    # routes for Product
+    resources :products, only: [:index]
+
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
     post '/hook' => 'payments#hook'

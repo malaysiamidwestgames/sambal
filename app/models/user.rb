@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :teams, through: :participants
   has_many :messages
   has_many :products, through: :orders
-  has_many :orders, dependent: :destroy
+  has_many :orders
   belongs_to :university
   belongs_to :volunteer
 
