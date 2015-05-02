@@ -330,6 +330,22 @@ div.hotel-registration input {
   margin-bottom: 5px;
 }
 
+.product-price > h4 {
+  margin-top: 0px;
+}
+
+.notice > h3 {
+  margin-bottom: 0px;
+}
+
+.v-divider{
+  position:absolute;
+  left:50%;
+  top:20%;
+  bottom:20%;
+  border-left:1px solid #d3d3d3;
+}
+
 .twitter {
   * {
     word-wrap: break-word;
