@@ -16,25 +16,6 @@ angular.module('midwestApp')
     $scope.payId = 0;
     $scope.amount = 0;
     $scope.status = 'invite';
-    $scope.shirt = {
-      Short: {
-        s: 0,
-        m: 0,
-        l: 0,
-        xl: 0,
-        xxl: 0,
-        xxxl: 0
-      },
-      Long: {
-        s: 0,
-        m: 0,
-        l: 0,
-        xl: 0,
-        xxl: 0,
-        xxxl: 0
-      }
-    };
-    $scope.products = {};
 
     var acceptMsg = ['Wow, your sense of judgment must be wayyyy off', 'It\'s good to be noble, but there\'s a reason why noblemen are vanishing in this age', 'Well, if you must...', 'Hmm, how did you become captain again?', 'Err on the side of caution, not on the side of losing'];
     function getAcceptMessage() {
@@ -131,48 +112,14 @@ angular.module('midwestApp')
                 count++;
               });
           });
-          console.log($scope.teams.length);
+          //console.log($scope.teams.length);
         });
       });
 
-    $http
-      .get('/api/products')
-      .success(function(data) {
-        $scope.products = data.products;
-        console.log($scope.products);
-      });
-
-    var findProductId = function(sleeve, size) {
-        for (var product in $scope.products) {
-          if ($scope.products.hasOwnProperty(product)) {
-            if (product.name === ('MMG2015 Official Shirt ' + sleeve + ' Sleeve') &&
-              product.size === size) {
-              return product.id;
-            }
-          }
-        }
-    };
-
-    $scope.submitShirtSale = function() {
-      console.log('here');
-      for (var sleeveType in $scope.shirt) {
-        console.log(sleeveType);
-        if ($scope.shirt.hasOwnProperty(sleeveType)) {
-          for (var quantity in sleeveType) {
-            if (sleeveType.hasOwnProperty(quantity)) {
-              console.log(quantity);
-              if (quantity !== 0) {
-                findProductId(sleeveType.name, quantity.name);
-              }
-            }
-          }
-        }
-      }
-    };
 
     $scope.open = function (size) {
       $modal.open({
-        templateUrl: 'official_shirt.html',
+        templateUrl: 'views/m_shirt.html',
         controller: 'ShirtCtrl',
         size: size,
         resolve: {
