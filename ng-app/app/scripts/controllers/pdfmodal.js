@@ -15,16 +15,16 @@ angular.module('midwestApp')
       meaning: 'A vs B. Whoever loses will be eliminated.'
     }, {
       name: 'League-2 Knockout',
-      meaning: 'Split into 2 groups then knockout. Top two teams in group will proceed to knockout.'
+      meaning: 'Teams are split into 2 groups. Top two teams will be determined by round robin within each group. Top two teams of each group will advance to knockout rounds.'
     }, {
       name: 'League-4 Knockout',
-      meaning: 'Split into 4 groups then knockout. Top team in group will proceed to knockout.'
+      meaning: 'Teams are split into 4 groups. Top two teams will be determined by round robin within each group. Top two teams of each group will advance to knockout rounds.'
     }, {
       name: 'Round Robin',
       meaning: 'Everybody plays everybody! Winning gets 3 points, drawing gets 1 point, losing gets 0 points.'
     }, {
       name: 'Team Race',
-      meaning: 'Teams cooperate in the race. All members must cross the finish line to finish.'
+      meaning: 'Teams cooperate in a race. All members must cross the finish line to finish.'
     }, {
       name: 'Judging',
       meaning: 'Teams will take turns performing. The judges will judge based on the criteria given.'
