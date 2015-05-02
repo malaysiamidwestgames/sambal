@@ -114,7 +114,8 @@ angular
       })
       .when('/teams', {
         templateUrl: 'views/teams.html',
-        controller: 'TeamsCtrl'
+        controller: 'TeamsCtrl',
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'

@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location) {
+  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location, participantsResource) {
 
     var joinErrorMsg = [' The captain loves you more than you know', 'Feeling honored or something right now?', 'Yeah, you, YOU have been chosen for this', 'The captain welcomes you aboard his ship. Oh, is it sinking?', 'Is this team worth your skills?' ];
     function getJoinErrorMessage() {
@@ -156,14 +156,16 @@ angular.module('midwestApp')
     };
 
     $scope.joinReq = function(teamId) {
-      $http
-        .post('/api/participants/join', {team_id: teamId, user_id: $rootScope.currentUser.id})
-        .success(function() {
+      participantsResource.joinReq({team_id: teamId})
+        .then(function() {
           $scope.joinReqSent = true;
-          toastr.success(getJoinMessage(), 'Your join request has been seen');
-        })
-        .error(function() {
-          toastr.error(getJoinErrorMessage(), 'You\'ve already been invited to join this team');
+          toastr.success(getJoinMessage(), 'Your join request has been sent');
+        }, function(err) {
+          if (err.status === 422) {
+            toastr.error(getJoinErrorMessage(), 'You\'ve already been invited to join this team');
+          } else {
+            toastr.error('Oops, we have a problem', 'Try again later or contact us');
+          }
         });
     };
 
