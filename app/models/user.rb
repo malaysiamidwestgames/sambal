@@ -34,10 +34,12 @@ class User < ActiveRecord::Base
   end
 
   def volunteer_status
-    idx = self.payments.index do |payment|
-      payment.regtype == 'General registration' && payment.status == 'Completed'
+    if self.volunteer
+      idx = self.volunteer.id
+      return idx != nil
+    else
+      return false
     end
-    return idx != nil
   end
 
   def registration_payment_status

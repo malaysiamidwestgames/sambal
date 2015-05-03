@@ -93,7 +93,7 @@
               What is your phone number?
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" ng-model="phoneno">
+              <input type="text" class="form-control" ng-model="phoneno" required>
             </div>
           </div>
           <div>
@@ -104,18 +104,18 @@
             <div class="col-md-3">
               <br>
               <div class="btn-group" data-toggle="shirt-size">
-                <input type="radio" name="shirt-size" value="S"> S <br>
-                <input type="radio" name="shirt-size" value="M"> M <br>
-                <input type="radio" name="shirt-size" value="L"> L <br>
-                <input type="radio" name="shirt-size" value="XL"> XL <br>
-                <input type="radio" name="shirt-size" value="XXL"> XXL <br>
-                <input type="radio" name="shirt-size" value="XXL"> XXXL <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="S"> S <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="M"> M <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="L"> L <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="XL"> XL <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="XXL"> XXL <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="XXXL"> XXXL <br>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <br>
-            <button type="submit" class="btn btn-success btn-lg pull-right disabled">Sign Me Up!</button>
+            <button type="submit" class="btn btn-success btn-lg pull-right">Sign Me Up!</button>
             <div class="clearfix"></div>
           </div>
         </div>
@@ -124,5 +124,5 @@
 
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary btn-md" ng-click="close()">Close</button>
+  <button class="btn btn-primary btn-md" ng-click="cancel()">Close</button>
 </div>

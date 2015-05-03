@@ -5,8 +5,12 @@ class Api::VolunteersController < ApplicationController
     @volunteer = Volunteer.new(volunteer_params)
     @user = User.find(@volunteer.user_id)
 
-    if @volunteer.save && @user.update(phone_number: user_params.phone_number)
-      render json: @volunteer, status: :created
+    if @volunteer.save
+      if @user.update(phone_number: user_params[:phone_number], volunteer_id: @volunteer.id)
+        render json: @volunteer, status: :created
+      else
+        render json: @volunteer.error, status: :unprocessable_entity
+      end
     else
       render json: @volunteer.error, status: :unprocessable_entity
     end
@@ -19,6 +23,6 @@ class Api::VolunteersController < ApplicationController
   end
 
   def user_params
-    params.require(:phone_number)
+    params.permit(:phone_number)
   end
 end

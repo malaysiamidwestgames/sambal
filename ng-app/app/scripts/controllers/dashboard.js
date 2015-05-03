@@ -9,13 +9,14 @@
  */
 angular.module('midwestApp')
 
-  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, $window, $location, session) {
 
     $scope.host = $location.host();
 
     $scope.payId = 0;
     $scope.amount = 0;
     $scope.status = 'invite';
+    $scope.isVolunteer = false;
 
     var acceptMsg = ['Wow, your sense of judgment must be wayyyy off', 'It\'s good to be noble, but there\'s a reason why noblemen are vanishing in this age', 'Well, if you must...', 'Hmm, how did you become captain again?', 'Err on the side of caution, not on the side of losing'];
     function getAcceptMessage() {
@@ -47,6 +48,7 @@ angular.module('midwestApp')
       }];
 
     session.getUser().then(function(user) {
+      console.log(user);
       if (!user.registration_payment_status) {
         $scope.todos.unshift({
           title: 'Pay for registration',
@@ -61,6 +63,11 @@ angular.module('midwestApp')
           label: 'Register now',
           link: 'sportsreg'
         });
+      }
+
+      if (user.volunteer_status) {
+        $scope.isVolunteer = true;
+        console.log($scope.isVolunteer);
       }
 
 
@@ -118,14 +125,18 @@ angular.module('midwestApp')
       });
 
     $scope.open_volunteer = function (size) {
-      $modal.open({
+      var modalInstance = $modal.open({
         templateUrl: 'views/m_volunteer.html',
         controller: 'VolunteerCtrl',
-        size: size,
-        resolve: {
+        size: size
 
-        }
+
       });
+
+      modalInstance.result.then(function(result) {
+        $scope.isVolunteer = true;
+      });
+
     };
 
     $scope.open_shirt = function (size) {
@@ -142,8 +153,6 @@ angular.module('midwestApp')
           }
         }
       });
+
     };
-
-
-
   });
