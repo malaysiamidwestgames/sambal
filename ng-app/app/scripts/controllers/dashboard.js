@@ -137,7 +137,7 @@ angular.module('midwestApp')
 
       });
 
-      modalInstance.result.then(function(result) {
+      modalInstance.result.then(function() {
         $scope.isVolunteer = true;
       });
 
