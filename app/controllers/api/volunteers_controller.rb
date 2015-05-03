@@ -15,7 +15,7 @@ class Api::VolunteersController < ApplicationController
   private
 
   def volunteer_params
-    params.permit(:user_id, :preference, :shirt_size, :sleeve_size)
+    params.permit(:user_id, :shirt_size)
   end
 
   def user_params

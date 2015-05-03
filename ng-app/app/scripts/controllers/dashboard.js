@@ -27,7 +27,8 @@ angular.module('midwestApp')
       return declineMsg[Math.floor(Math.random() * declineMsg.length)];
     }
     $scope.todos = [
-      /*{
+      /* Audition deadline is over!
+      {
         title: 'Audition for Midwest Night',
         label: 'More info',
         target: '_self',
