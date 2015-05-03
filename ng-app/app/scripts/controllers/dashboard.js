@@ -27,12 +27,12 @@ angular.module('midwestApp')
       return declineMsg[Math.floor(Math.random() * declineMsg.length)];
     }
     $scope.todos = [
-      {
+      /*{
         title: 'Audition for Midwest Night',
         label: 'More info',
         target: '_self',
         link: 'promo/auditions'
-      },
+      },*/
       {
         title: 'Manage your sports/teams',
         label: 'Team management page',
