@@ -8,12 +8,13 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('VolunteerCtrl', function ($scope, $http, $route, $modalInstance, session) {
+  .controller('VolunteerCtrl', function ($scope, $http, $modalInstance, session, isVolunteer) {
     $scope.phoneno = '';
     $scope.shirtSize = '';
     $scope.myId = 0;
     $scope.start = true;
     $scope.bottom = false;
+    $scope.isVolunteer = isVolunteer;
 
     session.getUser().then(function(user) {
       $scope.myId = user.id;

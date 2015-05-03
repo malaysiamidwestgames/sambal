@@ -128,8 +128,12 @@ angular.module('midwestApp')
       var modalInstance = $modal.open({
         templateUrl: 'views/m_volunteer.html',
         controller: 'VolunteerCtrl',
-        size: size
-
+        size: size,
+        resolve: {
+          isVolunteer: function () {
+            return $scope.isVolunteer;
+          }
+        }
 
       });
 
