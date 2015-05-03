@@ -18,7 +18,7 @@ angular.module('midwestApp')
     };
     $scope.waiting = {
       registerResponse: false,
-      loginResponse: false,
+      loginResponse: false
     };
 
     // populate email field if user came from account activation redirect
