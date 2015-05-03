@@ -116,8 +116,18 @@ angular.module('midwestApp')
         });
       });
 
+    $scope.open_volunteer = function (size) {
+      $modal.open({
+        templateUrl: 'views/m_volunteer.html',
+        controller: 'VolunteerCtrl',
+        size: size,
+        resolve: {
 
-    $scope.open = function (size) {
+        }
+      });
+    };
+
+    $scope.open_shirt = function (size) {
       $modal.open({
         templateUrl: 'views/m_shirt.html',
         controller: 'ShirtCtrl',

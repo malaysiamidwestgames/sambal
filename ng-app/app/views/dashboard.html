@@ -47,11 +47,11 @@
         </li>
         <li class="list-group-item">
           Volunteer for your contingent now!
-          <a href="{{ todo.link }}" ng-disabled="!todo.link" role="button" target="{{todo.target}}" class="btn btn-primary btn-xs pull-right">Let's win some points!</a>
+          <button class="btn btn-primary btn-xs pull-right" ng-click="open_volunteer('lg')" ng-disabled="false">Let's win some points!</button>
         </li>
         <li class="list-group-item">
           Buy Your MMG 2015 Shirt now!
-          <button class="btn btn-primary btn-xs pull-right" ng-click="open('lg')">I want one!</button>
+          <button class="btn btn-primary btn-xs pull-right" ng-click="open_shirt('lg')">I want one!</button>
         </li>
       </ul>
 
