@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   has_many :teams, through: :participants
   has_many :messages
   has_many :products, through: :orders
-  has_many :orders, dependent: :destroy
+  has_many :orders
   belongs_to :university
+  belongs_to :volunteer
 
   VALID_EMAIL_REGEX = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
 
@@ -30,6 +31,15 @@ class User < ActiveRecord::Base
   # Activates an account.
   def activate
     update_attribute(:activated, true)
+  end
+
+  def volunteer_status
+    if self.volunteer
+      idx = self.volunteer.id
+      return idx != nil
+    else
+      return false
+    end
   end
 
   def registration_payment_status

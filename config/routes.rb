@@ -74,6 +74,7 @@ Rails.application.routes.draw do
     resources :account_activations, only: [:update]
     resources :teams, only: [:index, :create, :show]
     resources :messages, only: [:index, :create]
+    resources :volunteers, only: [:create]
     post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
     resources :participants, only: [:create, :destroy]
@@ -86,6 +87,13 @@ Rails.application.routes.draw do
     patch 'participants/decline/:id' => 'participants#decline'
     post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
+
+    # routes for Order
+    get 'orders/create' => 'orders#create'
+
+    # routes for Product
+    resources :products, only: [:index]
+
     delete '/sessions' => 'sessions#destroy'
     post '/payments/:id'=> 'payments#show'
     post '/hook' => 'payments#hook'
