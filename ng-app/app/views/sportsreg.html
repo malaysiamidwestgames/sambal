@@ -96,9 +96,9 @@
           <tr ng-repeat="team in teams" class="teamrow">
             <td>
               <div class="teamname">
-                <a href="https://en.gravatar.com/site/login" target="_blank"><img class="pull-right gravatar" gravatar-src="team.team_captain_name[0].email" gravatar-size="100"></a>
+                <a href="https://en.gravatar.com/site/login" target="_blank"><img class="pull-right gravatar" gravatar-src="team.gravatar_hex" gravatar-size="100"></a>
                 {{team.name}}<br>
-                <div class="captainname" ng-hide="individual">Captain: {{team.team_captain_name[0].first_name + " " + team.team_captain_name[0].last_name}}<br>
+                <div class="captainname" ng-hide="individual">Captain: {{team.captain.first_name + " " + team.captain.last_name}}<br>
                   Contingent: {{team.university.name}}<br>
                 </div>
                 <div class="gravatar-container">

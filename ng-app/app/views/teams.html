@@ -9,7 +9,7 @@
     <div>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
-          {{ team.name }}
+          {{ team.name || 'Choose a team'}}
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div class="row teams">
+<div class="row teams" ng-show="team">
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body" ng-hide="team.name == 'Choose a team'">
@@ -53,7 +53,9 @@
         <li class="list-group-item" ng-repeat="participant in team.participants">
           {{participant.user.first_name}} {{participant.user.last_name}}
           <span ng-show="participant.status == 'team_captain'">Captain</span>
-          <span ng-show="participant.status == 'join_request'">Requested <a href="">Accept</a>/<a href="">Reject</a></span>
+          <span ng-show="participant.status == 'join_request'">
+            Requested <a ng-show="captain" href="" ng-click="acceptReq(participant)">Accept</a>/
+            <a href="" ng-show="captain" ng-click="declineReq(participant)">Reject</a></span>
           <span ng-show="participant.status == 'invite_request'">Invited</span>
           <span ng-show="participant.status == 'accepted'">Member</span>
           <span ng-show="participant.status == 'declined'">Declined</span>

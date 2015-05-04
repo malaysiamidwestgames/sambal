@@ -13,8 +13,8 @@ angular.module('midwestApp')
     // Public API here
     return {
       invite: httpWrapper.post('/api/participants/invite'),
-      acceptReq: httpWrapper.patch('/api/participants/accept/:userId'),
-      declineReq: httpWrapper.patch('/api/participants/decline/:userId'),
+      acceptReq: httpWrapper.patch('/api/participants/accept/:id'),
+      declineReq: httpWrapper.patch('/api/participants/decline/:id'),
       joinReq: httpWrapper.post('/api/participants/join')
     };
   });
