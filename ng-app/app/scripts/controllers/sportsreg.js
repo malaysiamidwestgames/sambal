@@ -73,6 +73,7 @@ angular.module('midwestApp')
 
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
+          console.log(data.teams);
           $scope.teams = data.teams;
           if ($scope.teams.length === $scope.selectedAction.max_teams) {
             $scope.full = true;
@@ -177,7 +178,7 @@ angular.module('midwestApp')
 
     $scope.$watch('noTeamUni', noTeamHandler);
 
-    $rootScope.$watch('currentUser', function(newVal, oldVal) {
+    $rootScope.$watch('currentUser', function(newVal) {
       if (newVal !== undefined) {
         userTeamUni = $rootScope.currentUser.university.id;
         $scope.teamUni = userTeamUni;

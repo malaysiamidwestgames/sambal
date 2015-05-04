@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-  has_one :order
+  has_many :orders
 end
