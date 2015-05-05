@@ -40,13 +40,12 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: $scope.regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
-          console.log('paid, now making order!');
+          $scope.payId = data.id;
+
           $scope.orders.forEach(function(order) {
             $http
               .get('/api/orders/create?product_id=' + order.id + '&quantity=' + order.quantity)
               .success(function() {
-                console.log('success');
-                toastr.success('You have got your shirt!', 'You made a wise choice!');
               });
           });
         })
