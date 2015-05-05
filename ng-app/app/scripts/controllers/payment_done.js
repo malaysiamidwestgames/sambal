@@ -12,6 +12,8 @@ angular.module('midwestApp')
 
     $scope.host = $location.host();
 
+
+
     $scope.payId = 0;
 
     $scope.paymentInit = function (regtype) {

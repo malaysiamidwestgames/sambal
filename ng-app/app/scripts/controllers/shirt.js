@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, payId, amount, session) {
+  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, $location, payId, amount, session) {
 
     $scope.payId = payId;
     $scope.amount = amount;
@@ -31,6 +31,8 @@ angular.module('midwestApp')
     $scope.orders = [];
     $scope.products = [];
     $scope.myId = 0;
+
+    $scope.host = $location.host();
 
     session.getUser().then(function(user) {
       $scope.myId = user.id;
