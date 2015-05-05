@@ -12,6 +12,7 @@ angular.module('midwestApp')
 
     $scope.payId = payId;
     $scope.amount = amount;
+    $scope.regtype = 'Shirt';
     $scope.size = '';
     $scope.shirt = {
       Short: {
@@ -39,37 +40,19 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: $scope.regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
-
-          $scope.payId = data.id;
-          $http
-            .get('/api/payupdate?payment_id=' + $scope.payId)
-            .success(function() {
-              console.log('paid, now making order!');
-              $scope.makeOrder().then(function() {
-                toastr.options.timeOut = 0;
-                toastr.options.extendedTimeOut = 0;
-                toastr.success('Your order is successful!','You made a wise choice');
-                $scope.close();
+          console.log('paid, now making order!');
+          $scope.orders.forEach(function(order) {
+            $http
+              .get('/api/orders/create?product_id=' + order.id + '&quantity=' + order.quantity)
+              .success(function() {
+                console.log('success');
+                toastr.success('You have got your shirt!', 'You made a wise choice!');
               });
-            }).error(function() {
-              toastr.options.timeOut = 0;
-              toastr.options.extendedTimeOut = 0;
-              toastr.error('Your order is not successfull!', 'Please try again later');
-            });
+          });
         })
         .error(function(error) {
           console.log(error);
         });
-    };
-
-    $scope.makeOrder = function() {
-      $scope.orders.forEach(function(order) {
-        $http
-          .get('/api/orders/create?product_id=' + order.id + '&quantity=' + order.quantity)
-          .success(function() {
-            console.log('success');
-          });
-      });
     };
 
     $http
@@ -117,7 +100,6 @@ angular.module('midwestApp')
                   short += quantity;
                 }
                 $scope.orders.push({id: id, quantity: quantity});
-                /**/
               }
             }
           }
