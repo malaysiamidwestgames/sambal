@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h1 class="modal-title">
-    <button class="btn btn-themed pull-right btn-lg" ng-show="payId === 0" ng-disabled="amount == 0" class="contact-us" ng-click="paymentInit('Shirt')">Pay ${{amount}}</button>
+    <button class="btn btn-themed pull-right btn-lg" ng-show="payId === 0" ng-disabled="amount == 0" class="contact-us" ng-click="paymentInit()">Pay ${{amount}}</button>
 
     Malaysia Midwest Games 2015 Official Shirt
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" ng-show="payId !== 0" class="ng-hide pull-right">
@@ -133,52 +133,8 @@
                    ng-model="shirt.Long.XL">
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-3"><h4>XXL</h4></div>
-          <div class="col-xs-3">
-            <input type="number"
-                   name="shirt-Short-xxl"
-                   class="form-control"
-                   min="0"
-                   step="1"
-                   placeholder="0"
-                   ng-model="shirt.Short.XXL">
-          </div>
-          <div class="col-xs-3"><h4>XXL</h4></div>
-          <div class="col-xs-3">
-            <input type="number"
-                   name="shirt-Long-xxl"
-                   class="form-control"
-                   min="0"
-                   step="1"
-                   placeholder="0"
-                   ng-model="shirt.Long.XXL">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3"><h4>XXXL</h4></div>
-          <div class="col-xs-3">
-            <input type="number"
-                   name="shirt-Short-xxxl"
-                   class="form-control"
-                   min="0"
-                   step="1"
-                   placeholder="0"
-                   ng-model="shirt.Short.XXXL">
-          </div>
-          <div class="col-xs-3"><h4>XXXL</h4></div>
-          <div class="col-xs-3">
-            <input type="number"
-                   name="shirt-Long-xxxl"
-                   class="form-control"
-                   min="0"
-                   step="1"
-                   placeholder="0"
-                   ng-model="shirt.Long.XXXL">
-          </div>
-        </div>
       </div>
-      <button type="submit" class="btn btn-success btn-lg pull-right disabled">Confirm Order</button>
+      <button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="currentUser.authorization_level !== 'admin'">Confirm Order</button>
       <div class="clearfix"></div>
     </form>
   </div>

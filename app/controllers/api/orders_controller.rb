@@ -1,6 +1,7 @@
 class Api::OrdersController < ApplicationController
   def create
     @order = Order.new(orders_param)
+    @order.user_id = current_user.__id__
 
     if @order.save
       render json: @order, status: :created
@@ -12,6 +13,6 @@ class Api::OrdersController < ApplicationController
   private
 
   def orders_param
-    params.permit(:user_id, :product_id, :quantity)
+    params.permit(:product_id, :quantity)
   end
 end
