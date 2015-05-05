@@ -46,10 +46,14 @@ angular.module('midwestApp')
             .success(function() {
               console.log('paid, now making order!');
               $scope.makeOrder().then(function() {
+                toastr.options.timeOut = 0;
+                toastr.options.extendedTimeOut = 0;
                 toastr.success('Your order is successful!','You made a wise choice');
                 $scope.close();
               });
             }).error(function() {
+              toastr.options.timeOut = 0;
+              toastr.options.extendedTimeOut = 0;
               toastr.error('Your order is not successfull!', 'Please try again later');
             });
         })
