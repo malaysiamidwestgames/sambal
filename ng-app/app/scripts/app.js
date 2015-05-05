@@ -115,6 +115,10 @@ angular
         templateUrl: 'views/teams.html',
         controller: 'TeamsCtrl'
       })
+      .when('/immigration', {
+        templateUrl: 'views/immigration.html',
+        controller: 'ImmigrationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
