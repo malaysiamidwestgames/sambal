@@ -1,7 +1,7 @@
 class Api::OrdersController < ApplicationController
   def create
     @order = Order.new(orders_param)
-    @order.user_id = current_user.__id__
+    @order.user_id = current_user.id
 
     if @order.save
       render json: @order, status: :created
