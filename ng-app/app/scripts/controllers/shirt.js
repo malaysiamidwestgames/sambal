@@ -45,7 +45,12 @@ angular.module('midwestApp')
             .get('/api/payupdate?payment_id=' + $scope.payId)
             .success(function() {
               console.log('paid, now making order!');
-              $scope.makeOrder();
+              $scope.makeOrder().then(function() {
+                toastr.success('Your order is successful!','You made a wise choice');
+                $scope.close();
+              });
+            }).error(function() {
+              toastr.error('Your order is not successfull!', 'Please try again later');
             });
         })
         .error(function(error) {
@@ -59,11 +64,6 @@ angular.module('midwestApp')
           .get('/api/orders/create?product_id=' + order.id + '&quantity=' + order.quantity)
           .success(function() {
             console.log('success');
-            toastr.success('Your order is successful!','You made a wise choice');
-            $scope.close();
-          })
-          .error(function() {
-            toastr.error('Your order is not successfull!', 'Please try again later');
           });
       });
     };
