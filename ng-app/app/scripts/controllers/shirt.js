@@ -8,10 +8,11 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, payId, amount, session) {
+  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, $location, session) {
 
-    $scope.payId = payId;
-    $scope.amount = amount;
+    $scope.payId = 0;
+    $scope.amount = 0;
+    $scope.regType = 'Shirt';
     $scope.size = '';
     $scope.shirt = {
       Short: {
@@ -31,6 +32,8 @@ angular.module('midwestApp')
     $scope.products = [];
     $scope.myId = 0;
 
+    $scope.host = $location.host();
+
     session.getUser().then(function(user) {
       $scope.myId = user.id;
     });
@@ -39,33 +42,18 @@ angular.module('midwestApp')
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: $scope.regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
-
           $scope.payId = data.id;
-          $http
-            .get('/api/payupdate?payment_id=' + $scope.payId)
-            .success(function() {
-              console.log('paid, now making order!');
-              $scope.makeOrder().then(function() {
-                toastr.success('Your order is successful!','You made a wise choice');
-                $scope.close();
+
+          $scope.orders.forEach(function(order) {
+            $http
+              .get('/api/orders/create?product_id=' + order.id + '&quantity=' + order.quantity)
+              .success(function() {
               });
-            }).error(function() {
-              toastr.error('Your order is not successfull!', 'Please try again later');
-            });
+          });
         })
         .error(function(error) {
           console.log(error);
         });
-    };
-
-    $scope.makeOrder = function() {
-      $scope.orders.forEach(function(order) {
-        $http
-          .get('/api/orders/create?product_id=' + order.id + '&quantity=' + order.quantity)
-          .success(function() {
-            console.log('success');
-          });
-      });
     };
 
     $http
@@ -82,12 +70,6 @@ angular.module('midwestApp')
           return $scope.products[i].id;
         }
       }
-    };
-
-
-    $scope.setBucket = function(size) {
-      $scope.amount += 20;
-      $scope.size = size;
     };
 
     $scope.setAmount = function(amount, regType) {
@@ -113,7 +95,6 @@ angular.module('midwestApp')
                   short += quantity;
                 }
                 $scope.orders.push({id: id, quantity: quantity});
-                /**/
               }
             }
           }

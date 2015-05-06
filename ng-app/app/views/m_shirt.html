@@ -16,7 +16,7 @@
       <input type="hidden" name="amount" value="{{amount}}">
       <button class="btn btn-success pull-right btn-lg" ng-click="setAmount(amount, 'Shirt')" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">Pay ${{amount}}?</button>
     </form>
-    <a class="btn btn-themed pull-right btn-lg contact-us" ng-show="currentUser.sports_payment_unpaid" ng-href="contact-us" role="button">Contact us</a>
+    <!--a class="btn btn-themed pull-right btn-lg contact-us" ng-show="currentUser.sports_payment_unpaid" ng-href="contact-us" role="button">Contact us</a-->
   </h1>
 </div>
 <div class="modal-body row">
@@ -134,7 +134,7 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="currentUser.authorization_level !== 'admin'">Confirm Order</button>
+      <button type="submit" class="btn btn-success btn-lg pull-right">Confirm Order</button>
       <div class="clearfix"></div>
     </form>
   </div>
