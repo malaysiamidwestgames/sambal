@@ -8,11 +8,11 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, $location, payId, amount, session) {
+  .controller('ShirtCtrl', function ($scope, $http, $modalInstance, $location, session) {
 
-    $scope.payId = payId;
-    $scope.amount = amount;
-    $scope.regtype = 'Shirt';
+    $scope.payId = 0;
+    $scope.amount = 0;
+    $scope.regType = 'Shirt';
     $scope.size = '';
     $scope.shirt = {
       Short: {
@@ -70,12 +70,6 @@ angular.module('midwestApp')
           return $scope.products[i].id;
         }
       }
-    };
-
-
-    $scope.setBucket = function(size) {
-      $scope.amount += 20;
-      $scope.size = size;
     };
 
     $scope.setAmount = function(amount, regType) {
