@@ -120,6 +120,10 @@ angular
         templateUrl: 'views/teams.html',
         controller: 'TeamsCtrl'
       })
+      .when('/resumes', {
+        templateUrl: 'views/resumes.html',
+        controller: 'ResumesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
