@@ -1,11 +1,11 @@
 <nav class="navbar navbar-themed navbar-fixed-top" ng-controller="NavigationCtrl">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-header" tooltip-placement="bottom" tooltip="Home">
 			<a href="/app">
-				<img src="images/logo.svg" tooltip-placement="bottom" tooltip="Home">
+				<img src="images/logo.svg">
 			</a>
 			<a class="navbar-brand" href="/app">
-				Midwest Games
+				Malaysia Midwest Games
 			</a>
 			<button type="button" class="navbar-toggle collapsed btn-themed-nav" data-toggle="collapse" data-target="#midwest-menu-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -30,7 +30,7 @@
 				<li><a href="eventmaps" class="nav-item">Maps & Directions</a> </li>
 				<li><a href="contact-us" class="nav-item">Contact us</a></li>
 				<li>
-					<div ng-show="currentUser.authorization_level == 'admin'" class="dropdown nav-item" style="cursor:pointer">
+					<div ng-show="currentUser.authorization_level === 'admin'" class="dropdown nav-item" style="cursor:pointer">
 						<div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 							Admin
 							<span class="caret"></span>

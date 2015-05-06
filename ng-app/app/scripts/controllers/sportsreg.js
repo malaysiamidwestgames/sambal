@@ -73,6 +73,7 @@ angular.module('midwestApp')
 
       $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
         .success(function(data) {
+          console.log(data.teams);
           $scope.teams = data.teams;
           if ($scope.teams.length === $scope.selectedAction.max_teams) {
             $scope.full = true;
@@ -135,6 +136,7 @@ angular.module('midwestApp')
     };
 
     $scope.paymentInit = function (regtype) {
+      //TODO: Search whether there are existing payment initiated first!
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
@@ -177,7 +179,7 @@ angular.module('midwestApp')
 
     $scope.$watch('noTeamUni', noTeamHandler);
 
-    $rootScope.$watch('currentUser', function(newVal, oldVal) {
+    $rootScope.$watch('currentUser', function(newVal) {
       if (newVal !== undefined) {
         userTeamUni = $rootScope.currentUser.university.id;
         $scope.teamUni = userTeamUni;

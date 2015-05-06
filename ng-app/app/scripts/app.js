@@ -110,7 +110,7 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: false
+        requirePaidGen: true
       })
       .when('/transportation', {
         templateUrl: 'views/transportation.html',

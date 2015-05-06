@@ -1,0 +1,134 @@
+<div class="modal-header">
+  <h1 class="modal-title">
+    Become a volunteer!
+  </h1>
+</div>
+<div class="modal-body row">
+    <div ng-show="start">
+      <div class="col-md-12">
+        <div at-bottom updateBottom="update" class="volunteer-start" style="overflow-y: scroll; height: 300px">
+          <h4>Terms and conditions of Being an Volunteer</h4>
+          By agreeing to be a volunteer for Malaysia Midwest Games 2015 (MMG 2015), you are subjected to the following rules.
+          <ol>
+            <li>
+              Being volunteer will provide you the following perks:
+              <ol type="a">
+                <li>Food will be provided according to your respective shift's time (lunch or dinner)</li>
+                <li>Earning points for your contingent</li>
+                <li>Your personal Volunteer name tag</li>
+                <li>Working for more than 5 hours will get you a free MMG 2015 Official Volunteer T-Shirt</li>
+              </ol>
+            </li>
+            <li><b><u>Volunteer Liability Release Form</u></b>
+              <p>
+                In consideration of my desire to serve as a volunteer in Malaysia Midwest Games to be conducted by
+                Malaysian Student Association of University of Michigan hereby assume all responsibility for any and
+                all risk of property damage or bodily injury that I may sustain while participating in any voluntary
+                effort, including the use of equipment and facilities of University of Michigan - Ann Arbor.
+              </p>
+              <p>
+                I currently have no known mental or physical condition that would impair my capability for full
+                participation as intended or expected of me.
+              </p>
+              <p>
+                Further, I have carefully read all the points above and understand the contents thereof and sign this
+                release as my own, free act.
+              </p>
+            </li>
+            <li>You will have to pay for General Registration to be a Volunteer for MMG 2015.</li>
+            <li>Volunteers will gain one point per shift, with a maximum of four points per volunteer.</li>
+            <li>The maximum number of points awarded to a contingent for volunteering is 50.</li>
+            <li>Volunteers must work for at least one shift.</li>
+            <li>Volunteers can play sports and participate in any other MMG 2015 events, provided that they show up
+            at their shift at the requested time. We will try our best to accommodate with schedules. However, in the
+            unfortunate case of not being able to schedule, we expect volunteers to forgo their games or pick a replacement
+            shift.</li>
+            <li>Volunteers are responsible for their own time and belongings.</li>
+            <li>Volunteers are responsible to uphold the integrity and quality that are expected in MMG 2015</li>
+            <li>Volunteers are allowed to Midwest Dinner and Midwest Night, provided that they don't choose a shift that
+            clashes with those events. We will provide the same dinner for those who worked at Midwest Dinner</li>
+            <li>Failure to provide correct and current information will always revoke your volunteer status.</li>
+            <li>
+              List of current available jobs:
+              <ol type="a">
+                <li>Time Keeper</li>
+                <li>Score Keeper</li>
+                <li>Linesman</li>
+                <li>Logistics and Set Up</li>
+                <li>Check-in and Registration (must be here on Friday)</li>
+                <li>Recreational activities facilitator</li>
+                <li>Referees (must have licensed or our approval</li>
+                <li>Game Caster</li>
+                <li>Midwest Dinner Prep</li>
+                <li>Midwest Dinner Server</li>
+                <li>Midwest Dinner Runner</li>
+                <li>Midwest Dinner Usher</li>
+                <li>Midwest Dinner Clean Up</li>
+                <li>Midwest Night Usher</li>
+                <li>Midwest Night Backstage Helper</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+        <br>
+        <div class="col-md-12">
+          <button class="btn btn-success btn-lg pull-right" ng-show="!isVolunteer" ng-click="goToNext()">Let's win my contingent some points</button>
+          <button class="btn btn-success btn-lg pull-right" ng-show="isVolunteer" ng-click="cancel()">You are a Volunteer! You make your contingent proud!</button>
+          <div ng-show="!isVolunteer">
+            By click the 'Let's win my contingent some points' button, you agree on all our terms and conditions and express your understanding and agree to
+            enter the release of liability willingly and voluntarily.
+          </div>
+          <div ng-show="isVolunteer">
+            You have agreed on all our terms and conditions and have expressed your understanding and agreed to
+            enter the release of liability willingly and voluntarily.
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div ng-show="!start">
+      <form ng-submit="signUp()">
+        <div class="col-md-12">
+          <div class="col-md-6 pull-right">
+            <a href="images/MMG2015_Volunteers_Shirt.jpg" target="_blank"><img class="img-responsive" src="images/MMG2015_Volunteers_Shirt.jpg"></a>
+          </div>
+          <h4>Please fill in additional details about you.</h4>
+          <br>
+          <div>
+            <div class="col-md-3">
+              What is your phone number?
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ng-model="phoneno" required>
+            </div>
+          </div>
+          <div>
+            <div class="col-md-3">
+              <br>
+              Please choose your shirt size
+            </div>
+            <div class="col-md-3">
+              <br>
+              <div class="btn-group" data-toggle="shirt-size">
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="S"> S <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="M"> M <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="L"> L <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="XL"> XL <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="XXL"> XXL <br>
+                <input type="radio" name="shirt-size" ng-model="shirtSize" ng-required="!shirtSize" value="XXXL"> XXXL <br>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <br>
+            <button type="submit" class="btn btn-success btn-lg pull-right">Sign Me Up!</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-md" ng-click="cancel()">Close</button>
+</div>
