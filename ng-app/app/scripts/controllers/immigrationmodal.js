@@ -8,8 +8,9 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ImmigrationmodelCtrl', function ($scope, $modalInstance) {
+  .controller('ImmigrationmodelCtrl', function ($scope, $modalInstance, selectedService) {
 
+  	$scope.selectedService = selectedService;
 
     $scope.close = function () {
       $modalInstance.dismiss('close');
