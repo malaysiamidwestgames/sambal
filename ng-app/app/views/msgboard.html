@@ -1,0 +1,23 @@
+<div class="container post">
+  <div class="col-md-12">
+    <div class="panel panel-themed">
+      <div class="panel-heading">
+        <h3 class="panel-title">Message Board</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Please write your message here" ng-model="message">
+            <button class="btn btn-md btn-themed" ng-click="postMsg(message)">Post</button>
+          </div>
+        </form>
+        <ul ng-repeat="post in posts" class="posts">
+          <li>
+            <span class="post">{{post.message}}</span>
+            <span class="author"> Posted by {{post.user.first_name}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -102,6 +102,14 @@ Rails.application.routes.draw do
     get '/paybalance' => 'teams#retrieve_amount'
     delete '/myteams' => 'teams#destroy_teams'
     get '/myteams' => 'teams#get_my_teams'
+
+    # routes for Post
+    resources :posts, only: [:create, :index, :show, :destroy]
+
+    # routes for Like
+    resources :likes, only: [:create, :index, :destroy]
+    get '/likes/get_count' => 'likes#get_count'
+    
   end
 
   

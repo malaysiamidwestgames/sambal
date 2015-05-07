@@ -115,6 +115,10 @@ angular
         templateUrl: 'views/teams.html',
         controller: 'TeamsCtrl'
       })
+      .when('/msgboard', {
+        templateUrl: 'views/msgboard.html',
+        controller: 'PostsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
