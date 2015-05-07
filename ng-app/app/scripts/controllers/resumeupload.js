@@ -57,7 +57,7 @@ $scope.upload = function (files) {
             for (var i = 0; i < files.length; i++) {
                 var ayam = files[i];
                 $upload.upload({
-            	url: 'api/resumes',
+            	url: '/api/resumes',
             method: 'POST',
             fields: { 'resume[opportunity]': $scope.res.opportunity,
             		  'resume[month]': $scope.res.month,

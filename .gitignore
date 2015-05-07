@@ -25,6 +25,7 @@ dist
 .tmp
 .sass-cache
 bower_components
+/ng-app/app/assets/resume/*
 
 # Misc
 .idea/

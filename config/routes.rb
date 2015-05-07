@@ -89,6 +89,7 @@ Rails.application.routes.draw do
     post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
 
+    
     # routes for Order
     get 'orders/create' => 'orders#create'
 

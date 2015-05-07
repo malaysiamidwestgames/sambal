@@ -11,7 +11,7 @@
           		<td>Opportunities</td>
         	</thead>
         	<tr ng-repeat = "resume in resumes">
-	          <td><a href="{{resume.image_uid}}">{{resume.image_name}}</a></td>
+	          <td><a target="_blank" href="assets/resume/development/{{resume.image_uid}}">{{resume.image_name}}</a></td>
 	          <td>{{resume.major | lowercase | limitTo:25 }}</td>
 	          <td>{{resume.month}}  {{resume.year }}</td>
 	          <td>{{resume.opportunity}}</td>
