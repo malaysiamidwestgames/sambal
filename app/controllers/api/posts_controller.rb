@@ -19,4 +19,5 @@ class Api::PostsController < ApplicationController
     def posts_params
       params.permit(:user_id, :message)
     end
+    
 end

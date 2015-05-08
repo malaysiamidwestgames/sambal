@@ -26,4 +26,12 @@ angular.module('midwestApp')
           $scope.posts.unshift(data);
         });
     };
+
+    $scope.postComment = function(message, post_id) {
+      $http
+        .post('/api/comments', {user_id: $rootScope.currentUser.id, post_id: post_id, message: message})
+        .success(function(data) {
+          console.log(data);
+        });
+    };
   });

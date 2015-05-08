@@ -106,6 +106,9 @@ Rails.application.routes.draw do
     # routes for Post
     resources :posts, only: [:create, :index, :show, :destroy]
 
+    # routes for Comment
+    resources :comments, only: [:create, :index]
+
     # routes for Like
     resources :likes, only: [:create, :index, :destroy]
     get '/likes/get_count' => 'likes#get_count'

@@ -14,7 +14,22 @@
         <ul ng-repeat="post in posts" class="posts">
           <li>
             <span class="post">{{post.message}}</span>
-            <span class="author"> Posted by {{post.user.first_name}}</span>
+            <span class="author">Posted by {{post.user.first_name}}</span>
+            <span>{{post.comments.length}} comments</span>
+            <form class="form-inline">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Please write your comment here" ng-model="comment">
+                <button class="btn btn-md btn-themed" ng-click="postComment(comment, {{post.id}})">Post</button>
+              </div>
+            </form>
+            <div class="container comment">
+              <ul ng-repeat="comment in post.comments" class="comments">
+                <li>
+                  <span class="comment">{{comment.message}}</span>
+                  <span class="author">Posted by {{comment.user.first_name}}</span>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

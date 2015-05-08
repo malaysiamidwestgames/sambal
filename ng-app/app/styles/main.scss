@@ -836,7 +836,7 @@ button#update-info-btn {
 .post {
   .post {
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .posts {
@@ -850,6 +850,26 @@ button#update-info-btn {
   }
 
   .author {
-    color: $michigan-lightblue
+    color: $michigan-lightblue;
+  }
+}
+
+.comment {
+  .comment {
+    display: block;
+  }
+
+  .comments {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0px;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .author {
+    color: $michigan-lightblue;
+    font-size: 0.8em;
   }
 }
