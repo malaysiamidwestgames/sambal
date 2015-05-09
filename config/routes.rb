@@ -79,6 +79,8 @@ Rails.application.routes.draw do
     resources :games, only: [:index, :show]
 
     resources :teams, only: [:index, :create, :show]
+    delete '/teams/user/:id' => 'teams#cancel_unpaid_teams'
+
     resources :messages, only: [:index, :create]
     post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
@@ -98,8 +100,6 @@ Rails.application.routes.draw do
     get '/payupdate' => 'teams#update_payment'
     get '/outpay' => 'payments#retrieve_payment'
     get '/paybalance' => 'teams#retrieve_amount'
-    delete '/myteams' => 'teams#destroy_teams'
-    get '/myteams' => 'teams#get_my_teams'
   end
 
 

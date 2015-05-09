@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('TeamsCtrl', function ($scope, $http, $rootScope, participantsResource, usersResource) {
+  .controller('TeamsCtrl', function ($scope, $http, $rootScope, participantsResource, usersResource, toastr) {
 
     var inviteMsg = ['You\'ve made good choices all your life, why stop now?', 'You do want to win, do you?', 'You are one risk-loving captain, that\'s for sure.', 'There are better candidates out there though', 'You\'re just throwing your team fee away, are you?'];
     function getInviteMessage() {

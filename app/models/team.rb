@@ -16,6 +16,6 @@ class Team < ActiveRecord::Base
 
 
   def team_payment_status
-    self.payment.regtype == 'Sports registration' && self.payment.status == 'Completed'
+    self.payment && self.payment.regtype == 'Sports registration' && self.payment.status == 'Completed'
   end
 end

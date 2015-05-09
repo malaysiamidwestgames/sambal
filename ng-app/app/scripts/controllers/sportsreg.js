@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location, participantsResource) {
+  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location, participantsResource, teamsResource, toastr, _) {
 
     var joinErrorMsg = [' The captain loves you more than you know', 'Feeling honored or something right now?', 'Yeah, you, YOU have been chosen for this', 'The captain welcomes you aboard his ship. Oh, is it sinking?', 'Is this team worth your skills?' ];
     function getJoinErrorMessage() {
@@ -71,56 +71,53 @@ angular.module('midwestApp')
       $scope.joinReqAcc = false;
       $scope.setTeamStatus = '';
 
-      $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
-        .success(function(data) {
+      teamsResource.getTeams({tournaments_id: $scope.selectedAction.id})
+        .then(function(data) {
           $scope.teams = data.teams;
           if ($scope.teams.length === $scope.selectedAction.max_teams) {
             $scope.full = true;
           }
-          for (var i = 0; i < $scope.teams.length; i++ ) {
-            if (teams[i].is_captain && $scope.teams[i].team_payment_status === true) {
+          _.each($scope.teams, function(team) {
+            if (team.is_captain && $scope.team.team_payment_status === true) {
               $scope.paid = true;
             }
-            if (teams[i].is_captain) {
+            if (team.is_captain) {
               $scope.registered = true;
             }
-            if (teams[i].request_pending) {
+            if (team.request_pending) {
               $scope.joinReqSent = true;
             }
-            if (teams[i].is_member) {
+            if (team.is_member) {
               $scope.joinReqAcc = true;
             }
-          }
-        }
-      );
+          });
+        });
 
-      if ($scope.selectedAction.max_players_per_team  === 1) {
-        $scope.individual = true;
-      }
-      else if ($scope.selectedAction.max_players_per_team - $scope.selectedAction.min_players_per_team === 0) {
-        $scope.individual = false;
-        $scope.doubles = true;
-      }
-      else {
-        $scope.individual = false;
-        $scope.doubles = false;
-      }
+        if ($scope.selectedAction.max_players_per_team  === 1) {
+          $scope.individual = true;
+        }
+        else if ($scope.selectedAction.max_players_per_team - $scope.selectedAction.min_players_per_team === 0) {
+          $scope.individual = false;
+          $scope.doubles = true;
+        }
+        else {
+          $scope.individual = false;
+          $scope.doubles = false;
+        }
     };
 
     $scope.setTeam = function(name) {
-      $http
-        .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
-        .success(function (data) {
+      teamsResource.createTeam({name: name, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni})
+        .then (function (data) {
           if (data.message) {
             $scope.setTeamStatus = data.message;
           } else {
             $scope.amount += $scope.selectedAction.price_per_team;
             $scope.registered = true;
           }
-      })
-        .error(function(error) {
-          console.log(error);
-        });
+      }, function() {
+        toastr.error('Oops, we have a problem', 'Try again later or contact us');
+      });
     };
 
     $scope.destroyTeams = function () {
@@ -177,7 +174,7 @@ angular.module('midwestApp')
 
     $scope.$watch('noTeamUni', noTeamHandler);
 
-    $rootScope.$watch('currentUser', function(newVal, oldVal) {
+    $rootScope.$watch('currentUser', function(newVal) {
       if (newVal !== undefined) {
         userTeamUni = $rootScope.currentUser.university.id;
         $scope.teamUni = userTeamUni;

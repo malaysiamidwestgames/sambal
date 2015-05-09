@@ -9,7 +9,7 @@
  */
 angular.module('midwestApp')
 
-  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session, toastr) {
 
     $scope.host = $location.host();
 
