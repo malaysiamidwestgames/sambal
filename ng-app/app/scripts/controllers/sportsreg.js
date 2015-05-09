@@ -129,6 +129,7 @@ angular.module('midwestApp')
     };
 
     $scope.paymentInit = function (regtype) {
+      //TODO: Search whether there are existing payment initiated first!
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {

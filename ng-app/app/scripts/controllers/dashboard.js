@@ -12,8 +12,6 @@ angular.module('midwestApp')
 
     $scope.host = $location.host();
 
-    $scope.payId = 0;
-    $scope.amount = 0;
     $scope.status = 'invite';
     $scope.isVolunteer = false;
 
@@ -194,15 +192,7 @@ angular.module('midwestApp')
       $modal.open({
         templateUrl: 'views/m_shirt.html',
         controller: 'ShirtCtrl',
-        size: size,
-        resolve: {
-          payId: function () {
-            return $scope.payId;
-          },
-          amount: function () {
-            return $scope.amount;
-          }
-        }
+        size: size
       });
 
     };

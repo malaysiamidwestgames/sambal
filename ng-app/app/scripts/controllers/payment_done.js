@@ -2,15 +2,17 @@
 
 /**
  * @ngdoc function
- * @name midwestApp.controller:PaymentCtrl
+ * @name midwestApp.controller:PaymentDoneCtrl
  * @description
- * # PaymentCtrl
+ * # PaymentDoneCtrl
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('PaymentCtrl', function ($scope, $http, $location) {
+  .controller('PaymentDoneCtrl', function ($scope, $http, $location) {
 
     $scope.host = $location.host();
+
+
 
     $scope.payId = 0;
 
@@ -31,3 +33,10 @@ angular.module('midwestApp')
       $scope.regType = regType;
     };
   });
+
+
+
+
+
+
+//m980WaJBosQtSClaTzGPoxZ2SkeM510Hf74qzT6tGnvA3R2YCtPmqfqOtOG
