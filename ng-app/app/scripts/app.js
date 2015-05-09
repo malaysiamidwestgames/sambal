@@ -109,11 +109,13 @@ angular
       })
       .when('/transportation', {
         templateUrl: 'views/transportation.html',
-        controller: 'TransportationCtrl'
+        controller: 'TransportationCtrl',
+        requireLogin: true
       })
       .when('/teams', {
         templateUrl: 'views/teams.html',
-        controller: 'TeamsCtrl'
+        controller: 'TeamsCtrl',
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'
@@ -155,7 +157,7 @@ angular
             $location.path('/');
             event.preventDefault();
           }
-        })
+        });
       }
       else if (next.requireLogout && session.isLoggedIn()) {
         $location.path('/dashboard/');
@@ -167,8 +169,16 @@ angular
             $location.path('/');
             event.preventDefault();
           }
-        })
+        });
       }
       $rootScope.bodyClass = next.bodyClass;
     });
-  });
+  })
+
+  .constant('_', window._)
+
+  .constant('google', window.google)
+
+  .constant('$', window.$)
+
+  .constant('toastr', window.toastr);

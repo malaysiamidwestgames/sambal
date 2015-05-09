@@ -31,6 +31,6 @@ angular.module('midwestApp')
       });
 
     $scope.get_payment_status = function(status) {
-      return status ? "Paid" : "Unpaid";
+      return status ? 'Paid' : 'Unpaid';
     };
   });

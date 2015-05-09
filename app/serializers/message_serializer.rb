@@ -1,4 +1,4 @@
-class MessageSerializer < ActiveModel::Serializer
+class MessageSerializer < BaseSerializer
   attributes :id, :message, :created_at
   has_one :user
 end

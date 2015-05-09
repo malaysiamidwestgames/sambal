@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('TeamsCtrl', function ($scope, $http, $rootScope) {
+  .controller('TeamsCtrl', function ($scope, $http, $rootScope, participantsResource, usersResource, toastr) {
 
     var inviteMsg = ['You\'ve made good choices all your life, why stop now?', 'You do want to win, do you?', 'You are one risk-loving captain, that\'s for sure.', 'There are better candidates out there though', 'You\'re just throwing your team fee away, are you?'];
     function getInviteMessage() {
@@ -27,30 +27,10 @@ angular.module('midwestApp')
 
 
     $scope.teams = [];
-    $scope.team = {
-      name: 'Choose a team'
-    };
 
-    $http
-      .get('/api/users')
-      .success(function(data) {
-        $scope.users = data.users;
-      });
-
-    $http
-      .get('/api/participants/get')
-      .success(function(results) {
-        $scope.$watch('teams', function() {
-          var count = 0;
-          results.participants.forEach(function(participant){
-            console.log(count++);
-            $http.get('/api/teams/' + participant.team_id)
-              .success(function(data){
-                $scope.teams.push(data.team);
-              });
-          });
-        });
-      });
+    usersResource.getUserTeams().then(function(teams) {
+      $scope.teams = teams.teams;
+    });
 
     $scope.setTeam = function(action) {
       $scope.team = action;
@@ -60,54 +40,53 @@ angular.module('midwestApp')
       if ($scope.team.team_captain === $rootScope.currentUser.id) {
         $scope.captain = true;
       }
+    };
 
-      $scope.onSelect = function($item, $model, $label) {
-        $scope.label = $label;
-        $scope.item = $item;
-        $scope.model = $model;
-      };
+    $scope.onSelect = function($item, $model, $label) {
+      $scope.label = $label;
+      $scope.item = $item;
+      $scope.model = $model;
+    };
 
-      $scope.inviteReq = function(user) {
-        console.log(user);
-        $http
-          .post('/api/participants/invite', {team_id: $scope.team.id, user_id: user})
-          .success(function(data) {
-            console.log(data);
-            $scope.participants.push(data);
-            toastr.success(getInviteMessage(),  $scope.label + ' is invited to join your team');
-          })
-          .error(function(){
-            toastr.error(getInviteMessage(),  $scope.label + ' has already sent a join request/been invited to enter your team.');
-          });
+    $scope.inviteReq = function() {
+      participantsResource.invite({team_id: $scope.team.id, email: $scope.inviteEmail})
+        .then(function(data) {
+          $scope.participants.push(data);
+          toastr.success(getInviteMessage(),  data.user.first_name + ' ' + data.user.last_name + '  is invited to join your team');
+        }, function(errResponse) {
+          if (errResponse.status === 404) {
+            toastr.error('Oops, email:' + $scope.inviteEmail + ' is not found');
+          } else if (errResponse.status === 422) {
+            toastr.error(getInviteMessage(),  $scope.inviteEmail + ' has already sent a join request/been invited to enter your team.');
+          } else {
+            toastr.error('Oops, we seem to have some troubles. Try again later or email us');
+          }
+        });
+    };
 
-      };
+    $scope.acceptReq = function(participant) {
+      participantsResource.acceptReq({id: participant.id})
+        .then(function() {
+          participant.status = 'accepted';
+          toastr.success(getAcceptMessage(),  participant.user.first_name + ' has been accepted to join your team');
+        });
+    };
 
-      $scope.acceptReq = function(userId, userName) {
-        $http
-          .patch('/api/participants/accept/' + userId)
-          .success(function(data) {
-            console.log(data);
-            toastr.success(getAcceptMessage(),  userName + ' has been accepted to join your team');
-          });
-      };
+    $scope.declineReq = function(participant) {
+      participantsResource.declineReq({id: participant.id})
+        .then(function() {
+          participant.status = 'declined';
+          toastr.success(getDeclineMessage(),  participant.user.first_name + 's request to join your team has been declined');
+        });
+    };
 
-      $scope.declineReq = function(userId, userName) {
-        $http
-          .patch('/api/participants/decline/' + userId)
-          .success(function(data) {
-            console.log(data);
-            toastr.success(getDeclineMessage(),  userName + 's request to join your team has been declined');
-          });
-      };
-
-      $scope.postMsg = function(message) {
-        $http
-          .post('/api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})
-          .success(function(data) {
-            console.log(data);
-            $scope.message = '';
-            $scope.messages.unshift(data);
-          });
-      };
+    $scope.postMsg = function(message) {
+      $http
+        .post('/api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})
+        .success(function(data) {
+          console.log(data);
+          $scope.message = '';
+          $scope.messages.unshift(data);
+        });
     };
   });

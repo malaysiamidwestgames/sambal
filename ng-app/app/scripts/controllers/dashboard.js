@@ -8,8 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-
-  .controller('DashboardCtrl', function ($scope, $http, $modal, $window, $location, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session, toastr) {
 
     $scope.host = $location.host();
 
