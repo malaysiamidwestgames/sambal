@@ -78,7 +78,7 @@ angular.module('midwestApp')
             $scope.full = true;
           }
           _.each($scope.teams, function(team) {
-            if (team.is_captain && $scope.team.team_payment_status === true) {
+            if (team.is_captain && team.team_payment_status) {
               $scope.paid = true;
             }
             if (team.is_captain) {
@@ -121,9 +121,8 @@ angular.module('midwestApp')
     };
 
     $scope.destroyTeams = function () {
-      $http
-        .delete('/api/myteams')
-        .success(function() {
+      teamsResource.cancelAllUnpaidTeams()
+        .then(function() {
           $scope.amount = 0;
           $scope.registered = false;
         });

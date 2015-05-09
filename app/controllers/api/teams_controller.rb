@@ -40,9 +40,6 @@ class Api::TeamsController < ApplicationController
 
 
   def cancel_unpaid_teams
-    if (params[:id] != 'me' || params[:id] != current_user.id) && !current_user.admin?
-      render json: { message: 'Admin only' }, status: :forbidden
-    end
     user = params[:id] == 'me' ? current_user : User.find(params[:id])
     teams = user.teams.where(payment_id: 0)
     for team in teams
