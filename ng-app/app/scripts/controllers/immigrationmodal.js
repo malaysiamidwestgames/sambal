@@ -9,6 +9,7 @@
  */
 angular.module('midwestApp')
   .controller('ImmigrationmodelCtrl', function ($scope, $modalInstance, selectedService) {
+  	console.log(selectedService);
 
   	$scope.selectedService = selectedService;
 

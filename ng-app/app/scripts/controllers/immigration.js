@@ -57,21 +57,18 @@ angular.module('midwestApp')
 
     ];
 
-    $scope.select = false;
-    $scope.selectedService = {};
-
     $scope.update = function() {
     	$scope.select = true;
     };
 
-    $scope.open_immigration = function (size) {
+    $scope.open_immigration = function (serv) {
     	$modal.open({
         templateUrl: 'm_immigration.html',
         controller: 'ImmigrationmodelCtrl',
-        size: size,
+        size: 'lg',
         resolve: {
         	selectedService: function() {
-        		return $scope.selectedService;
+        		return serv;
         	}
         }
 
