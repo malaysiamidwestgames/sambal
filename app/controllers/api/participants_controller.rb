@@ -29,7 +29,7 @@ class Api::ParticipantsController < ApplicationController
   end
 
   def join_team
-    @participant = Participant.new(participant_params)
+    @participant = Participant.new(user_id: current_user.id, team_id: params['team_id'])
     @participant.status = "join_request"
     if @participant.save
       render json: @participant, status: :created
@@ -39,7 +39,8 @@ class Api::ParticipantsController < ApplicationController
   end
 
   def invite_team
-    @participant = Participant.new(participant_params)
+    invited_user = User.find_by! email: params['email']
+    @participant = Participant.new(user_id: invited_user.id, team_id: params['team_id'])
     @participant.status = "invite_request"
     if @participant.save
       render json: @participant, status: :created, root: false
@@ -89,6 +90,6 @@ class Api::ParticipantsController < ApplicationController
     end
 
     def participant_params
-      params.permit(:user_id, :team_id)
+      params.permit(:team_id, :user_id)
     end
 end

@@ -2,10 +2,11 @@ class Team < ActiveRecord::Base
   has_many :participants, dependent: :destroy
   has_many :users, through: :participants
   has_many :messages
-  belongs_to :tournaments
+  belongs_to :tournament
   belongs_to :game
   belongs_to :payment
   belongs_to :university
+  belongs_to :captain, class_name: User, foreign_key: 'team_captain'
 
   def team_captain_name
     captain = self.team_captain
@@ -15,17 +16,6 @@ class Team < ActiveRecord::Base
 
 
   def team_payment_status
-    idx = self.payment do |payment|
-      payment.regtype == 'Sports registration' && payment.status == 'Completed'
-    end
-    return idx != nil
+    self.payment != nil && self.payment.regtype == 'Sports registration' && self.payment.status == 'Completed'
   end
-
-  #def team_captain_present
-  #  if self.team_captain == current_user.id
-  #    true
-  #  else
-  #    false
-  #  end
-  #end
 end

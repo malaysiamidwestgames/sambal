@@ -639,24 +639,17 @@ button#update-info-btn {
     margin-bottom: 10px;
   }
 
-  input.form-control {
-    width: 320px;
-  }
   .user-info-panel {
     color: #FFF;
+    background-color: $michigan-blue;
     .first-name {
       font-size: 34px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
   }
-  .user-info-panel {
-    background-color: $michigan-blue;
-    height: 400px;
-  }
 
   div.panel-body {
-    height: 360px;
     overflow-y: auto;
   }
 
@@ -698,6 +691,26 @@ button#update-info-btn {
 
   .grvtinstruc {
     width: 200px;
+  }
+
+  .team-details {
+    float: left;
+    margin-left: 5px;
+  }
+
+  .team-members-list {
+    span {
+      color: #A3A3A3;
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+
+  .message-panel {
+    h5 {
+      margin-top: 1px;
+      margin-bottom: 2px;
+    }
   }
 }
 
