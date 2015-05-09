@@ -1,5 +1,5 @@
 class Api::PaymentsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :show, :index]
+  before_action :signed_in_user, only: [:create, :show, :index, :retrieve_payment]
   before_action :admin_user, only: [:show]
 
   def create
