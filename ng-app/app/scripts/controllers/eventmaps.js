@@ -9,7 +9,7 @@
  */
 
 angular.module('midwestApp')
-  .controller('EventmapsCtrl', function ($scope, $http) {
+  .controller('EventmapsCtrl', function ($scope, $http, google) {
     $scope.map = {
       center: { latitude: 42.2814, longitude : -83.7483},
       zoom: 12,
@@ -62,7 +62,7 @@ angular.module('midwestApp')
       var startVenue = routePoints.start.name;
       var endVenue = routePoints.end.name;
 
-      if (startVenue == endVenue){
+      if (startVenue === endVenue){
         $scope.same = true;
         $http
           .get('/api/sports?venue=' + startVenue)
@@ -71,9 +71,9 @@ angular.module('midwestApp')
             $scope.startSports = data.sports;
           });
 
-        geocoder.geocode( { "address": routePoints.start.address}, function(results,status) {
+        geocoder.geocode( {address: routePoints.start.address}, function(results,status) {
           console.log(results);
-          if (status == google.maps.GeocoderStatus.OK && results.length > 0 )  {
+          if (status === google.maps.GeocoderStatus.OK && results.length > 0 )  {
             $scope.map.control.refresh({latitude: 42.2814, longitude: -83.7483});
             $scope.map.control.getGMap().setCenter(results[0].geometry.location);
             $scope.map.marker.latitude = results[0].geometry.location.lat();

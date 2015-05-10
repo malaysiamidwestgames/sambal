@@ -1,6 +1,4 @@
 class Api::PaymentsController < ApplicationController
-  #respond_to :json
-  #protect_from_forgery except: :hook
   before_action :signed_in_user, only: [:create, :show, :index, :retrieve_payment]
   before_action :admin_user, only: [:show]
 
@@ -40,7 +38,7 @@ class Api::PaymentsController < ApplicationController
     @payment = current_user.payments.where(regtype: "Sports registration", status: "Payment initiated")
     render json: @payment, root: false
   end
-  
+
   private
     def payment_params
       params.permit(:notification_params, :status, :transaction_id, :purchased_at, :regtype, :user_id, :amount, :payment_type)

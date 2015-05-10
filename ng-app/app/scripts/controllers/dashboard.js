@@ -8,8 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-
-  .controller('DashboardCtrl', function ($scope, $http, $modal, $window, $location, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session, toastr) {
 
     $scope.host = $location.host();
 
@@ -26,13 +25,6 @@ angular.module('midwestApp')
       return declineMsg[Math.floor(Math.random() * declineMsg.length)];
     }
     $scope.todos = [
-      /* Audition deadline is over!
-      {
-        title: 'Audition for Midwest Night',
-        label: 'More info',
-        target: '_self',
-        link: 'promo/auditions'
-      },*/
       {
         title: 'Manage your sports/teams',
         label: 'Team management page',
@@ -166,7 +158,6 @@ angular.module('midwestApp')
                 count++;
               });
           });
-          //console.log($scope.teams.length);
         });
       });
 
