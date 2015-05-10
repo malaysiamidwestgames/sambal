@@ -9,9 +9,5 @@
  */
 angular.module('midwestApp')
   .controller('PointsCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.explanation = 'If contingent has at least one team that is participating in a game, they will get 5 points.';
   });
