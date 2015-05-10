@@ -28,12 +28,19 @@ class Api::PaymentsController < ApplicationController
     params.permit!
     status = params[:payment_status]
     if status =="Completed"
+      # Send IPN call here to verify.
+      # After confirmation proceed.
       @payment = Payment.find(params[:invoice])
-      @payment.update_attributes(notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now, regtype: params[:item_name], amount: params[:mc_gross])
+      @payment.update_attributes(notification_params: params, status: status, transaction_id: params[:txn_id],
+                                 purchased_at: Time.now, regtype: params[:item_name], amount: params[:mc_gross])
+
+      # Update orders here
+      # TODO: Figure a way out to pass item and its quantity through the payment. Maybe an object?
     end
     render nothing: true
   end
 
+  # TODO: Generalize this.
   def retrieve_payment
     @payment = current_user.payments.where(regtype: "Sports registration", status: "Payment initiated")
     render json: @payment, root: false
