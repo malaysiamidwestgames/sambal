@@ -117,6 +117,14 @@ angular
         controller: 'TeamsCtrl',
         requireLogin: true
       })
+      .when('/immigration', {
+        templateUrl: 'views/immigration.html',
+        controller: 'ImmigrationCtrl'
+      })
+      .when('/points', {
+        templateUrl: 'views/points.html',
+        controller: 'PointsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
