@@ -1,4 +1,7 @@
 class Api::ParticipantsController < ApplicationController
+  before_action :signed_in_user
+
+
   def create
     @participant = Participant.new(participant_params_2)
     if @participant.save
@@ -8,23 +11,14 @@ class Api::ParticipantsController < ApplicationController
     end
   end
 
-  def create_team
-    @participant = Participant.new(participant_params.merge(status: "team_captain"))
-    if @participant.save
-      render json: @participant, status: :created
-    else
-      render json: @participant.errors, status: :unprocessable_entity
-    end
-  end
-
   def destroy
     @participant = Participant.find(params[:id])
-    if @participant.status == 'team_captain'
+    if @participant.user_id == current_user.id && @participant.status == 'team_captain'
       @participant.destroy_all
       head :no_content
-    elsif
-    render json: { message: 'can\'t unregister, please contact an admin' },
-           status: :bad_request
+    else
+      render json: { message: 'can\'t unregister, please contact an admin' },
+             status: :bad_request
     end
   end
 
@@ -40,6 +34,7 @@ class Api::ParticipantsController < ApplicationController
 
   def invite_team
     invited_user = User.find_by! email: params['email']
+    team = Team.find(params['team_id'])
     @participant = Participant.new(user_id: invited_user.id, team_id: params['team_id'])
     @participant.status = "invite_request"
     if @participant.save

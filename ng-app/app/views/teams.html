@@ -22,16 +22,16 @@
   </div>
 </div>
 
-<div class="row teams" ng-show="team">
+<div class="row teams" ng-show="team && team.is_member">
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body" ng-hide="team.name == 'Choose a team'">
         <div class="first-name">{{team.name}}</div>
-        <img gravatar-src-once="team.team_captain_name[0].email" class="gravatar pull-left">
+        <img gravatar-src-once="team.captain.email" class="gravatar pull-left">
         <div class="team-details">
           <div><span class="glyphicon glyphicon-flag"></span> {{team.game.name}} {{team.game.category}}</div>
           <div><span class="glyphicon glyphicon-education"></span> {{team.university.name}}</div>
-          <div><span class="glyphicon glyphicon-user"></span> {{team.team_captain_name[0].first_name}} {{team.team_captain_name[0].last_name}}</div>
+          <div><span class="glyphicon glyphicon-user"></span> {{team.captain.first_name}} {{team.captain.last_name}}</div>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -41,8 +41,8 @@
       <div class="panel-heading">
         <h3 class="panel-title">Team members</h3>
       </div>
-      <div class="panel-body">
-        <div class="input-group" ng-show="captain">
+      <div class="panel-body" ng-show="team.is_captain">
+        <div class="input-group">
           <input type="text" class="form-control" placeholder="Enter invitee email" ng-model="inviteEmail">
           <span class="input-group-btn">
             <button class="btn btn-themed" type="button" ng-click="inviteReq()">Invite</button>
@@ -54,8 +54,8 @@
           {{participant.user.first_name}} {{participant.user.last_name}}
           <span ng-show="participant.status == 'team_captain'">Captain</span>
           <span ng-show="participant.status == 'join_request'">
-            Requested <a ng-show="captain" href="" ng-click="acceptReq(participant)">Accept</a>/
-            <a href="" ng-show="captain" ng-click="declineReq(participant)">Reject</a></span>
+            Requested <a ng-show="team.is_captain" href="" ng-click="acceptReq(participant)">Accept</a>/
+            <a href="" ng-show="team.is_captain" ng-click="declineReq(participant)">Reject</a></span>
           <span ng-show="participant.status == 'invite_request'">Invited</span>
           <span ng-show="participant.status == 'accepted'">Member</span>
           <span ng-show="participant.status == 'declined'">Declined</span>
@@ -77,11 +77,31 @@
         </div>
       </div>
       <div class="list-group">
-        <div ng-repeat="message in messages" class="list-group-item">
+        <div ng-repeat="message in team.messages" class="list-group-item">
           <h5>{{message.user.first_name}} {{message.user.last_name}}</h5>
           <div>{{message.message}}</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="row teams" ng-show="team && team.request_pending">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      Your join request has been sent and waiting for approval.
+    </div>
+  </div>
+</div>
+
+<div class="row teams" ng-show="team && team.invite_pending">
+  <div class="col-md-12">
+    <div class="panel panel-themed">
+      <div class="panel-body invite-confirmation">
+       <h5 class="pull-left">You are invited to join this team.</h5>
+       <button class="btn btn-danger pull-right" ng-click="declineInvite()">Decline</button>
+       <button class="btn btn-success pull-right" ng-click="acceptInvite()">Accept</button>
+       <div class="clearfix"></div>
     </div>
   </div>
 </div>

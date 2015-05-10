@@ -8,7 +8,8 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('TeamsCtrl', function ($scope, $http, $rootScope, participantsResource, usersResource, toastr) {
+  .controller('TeamsCtrl', function ($scope, $http, $rootScope,
+    participantsResource, usersResource, toastr, _, teamsResource) {
 
     var inviteMsg = ['You\'ve made good choices all your life, why stop now?', 'You do want to win, do you?', 'You are one risk-loving captain, that\'s for sure.', 'There are better candidates out there though', 'You\'re just throwing your team fee away, are you?'];
     function getInviteMessage() {
@@ -32,26 +33,14 @@ angular.module('midwestApp')
       $scope.teams = teams.teams;
     });
 
-    $scope.setTeam = function(action) {
-      $scope.team = action;
-      $scope.captain = false;
-      $scope.participants = action.participants;
-      $scope.messages = action.messages;
-      if ($scope.team.team_captain === $rootScope.currentUser.id) {
-        $scope.captain = true;
-      }
-    };
-
-    $scope.onSelect = function($item, $model, $label) {
-      $scope.label = $label;
-      $scope.item = $item;
-      $scope.model = $model;
+    $scope.setTeam = function(team) {
+      $scope.team = team;
     };
 
     $scope.inviteReq = function() {
       participantsResource.invite({team_id: $scope.team.id, email: $scope.inviteEmail})
         .then(function(data) {
-          $scope.participants.push(data);
+          $scope.team.participants.push(data);
           toastr.success(getInviteMessage(),  data.user.first_name + ' ' + data.user.last_name + '  is invited to join your team');
         }, function(errResponse) {
           if (errResponse.status === 404) {
@@ -84,9 +73,31 @@ angular.module('midwestApp')
       $http
         .post('/api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})
         .success(function(data) {
-          console.log(data);
           $scope.message = '';
           $scope.messages.unshift(data);
+        });
+    };
+
+    $scope.declineInvite = function() {
+      participantsResource.declineReq({id: $scope.team.participant_id})
+        .then(function() {
+          $scope.teams = $scope.teams.filter(function(team) {
+            return team.id != $scope.team.id;
+          });
+          $scope.team = null;
+        });
+    };
+
+    $scope.acceptInvite = function() {
+      participantsResource.acceptReq({id: $scope.team.participant_id})
+        .then(function() {
+          teamsResource.getTeam({id: $scope.team.id}).then(function(team) {
+            $scope.team = team.team;
+            var idx = _.findIndex($scope.teams, function(team) {
+              return team.id == $scope.team.id;
+            });
+            $scope.teams[idx] = team.team;
+          });
         });
     };
   });
