@@ -5,8 +5,11 @@ class Api::TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
+    total_teams = Team.where(:game_id => @team.game_id).count
     game = Game.find(@team.game_id)
-    if game.spots_left > 0
+    spots = game.max_teams - total_teams
+    puts spots
+    if spots > 0 && game.registration_open == true
       result = game.spots_left - 1
       game.update(spots_left: result)
       if @team.save
