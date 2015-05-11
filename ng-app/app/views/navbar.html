@@ -14,32 +14,42 @@
 		</div>
 		<div class="collapse navbar-collapse" id="midwest-menu-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="rules" class="nav-item">Schedule & Rules</a></li>
-		        <li>
-		          <div class="dropdown nav-item" style="cursor:pointer">
-		            <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
-		              Travelling Info
-		              <span class="caret"></span>
-		            </div>
-		            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		              <li role="presentation"><a role="menuitem" tabindex="-1" href="accommodation">Accommodation</a></li>
-		              <li role="presentation"><a role="menuitem" tabindex="-1" href="transportation">Transportation</a></li>
-		            </ul>
-		          </div>
-		        </li>
-				<li><a href="eventmaps" class="nav-item">Maps & Directions</a> </li>
+        <li>
+          <div class="dropdown nav-item" style="cursor:pointer">
+            <div class="dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="true">
+              Sports Info
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="rules">Schedule and Rules</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="points">Point System</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown nav-item" style="cursor:pointer">
+            <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+              Travelling Info
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="eventmaps">Maps and Directions</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="accommodation">Accommodation</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="transportation">Transportation</a></li>
+            </ul>
+          </div>
+        </li>
 				<li>
-		          <div class="dropdown nav-item" style="cursor:pointer">
-		            <div class="dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
-		              More Information
-		              <span class="caret"></span>
-		            </div>
-		            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		              <li role="presentation"><a role="menuitem" tabindex="-1" href="immigration">Immigration</a></li>
-		              <li role="presentation"><a role="menuitem" tabindex="-1" href="points">Point System</a></li>
-		            </ul>
-		          </div>
-		        </li>
+          <div class="dropdown nav-item" style="cursor:pointer">
+            <div class="dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
+              More Information
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="immigration">Immigration Services</a></li>
+            </ul>
+          </div>
+        </li>
 				<li><a href="contact-us" class="nav-item">Contact us</a></li>
 				<li>
 					<div ng-show="currentUser.authorization_level === 'admin'" class="dropdown nav-item" style="cursor:pointer">
