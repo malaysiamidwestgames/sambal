@@ -101,6 +101,10 @@ angular
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
       })
+      .when('/livedraw', {
+        templateUrl: 'views/livedraw.html',
+        controller: 'LivedrawCtrl'
+      })
       .when('/sportsreg', {
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',

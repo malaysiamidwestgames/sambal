@@ -1,0 +1,68 @@
+<div class="points">
+  <div class="panel panel-themed">
+    <div class="panel-heading">
+      <div class="panel-title">MMG 2015 Brackets Live Draw</div>
+    </div>
+
+    <div class="panel-body">
+      <div class="details">
+        <p>
+          This year we will be doing live draws for each games that will be played.
+          The purpose of the live draw is so that each team can have a fair chance of
+          drawing themselves and gain first hand knowledge about each bracket.
+        </p>
+        <h4 ng-click="more = !more" ng-show="!more"><span class="glyphicon glyphicon-plus"></span> Tell me more!</h4>
+        <h4 ng-click="more = !more" ng-show="more"><span class="glyphicon glyphicon-minus"></span> Tell me less!</h4>
+        <p style="border: lightgrey 1px solid" ng-show="more">
+          We will be doing our live draw using <a href="http://www.twitch.tv" target="_blank">Twitch</a> and facebook chat.
+          <b>Each team can send a representative to join our facebook chat by tagging yourself on our
+            <a href="https://www.facebook.com/midwestmalaysia">Facebook page</a>
+          </b>
+        </p>
+      </div>
+      <h3>Live Draw Schedule</h3>
+      <tabset>
+        <tab heading="Original Schedule">
+          <a href="images/MMG2015_Live_Draw_Schedule.png" target="_blank"><img src="images/MMG2015_Live_Draw_Schedule.png" width="100%"></a>
+        </tab>
+        <tab heading="Sort by Games">
+          <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+              <th>Games</th>
+              <th>Live Draw Time</th>
+              <th>Things to bring</th>
+              <th>More information</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="game in games">
+              <td>{{ game.name }} {{ game.category }}</td>
+              <td>To be announced</td>
+              <td>To be announced</td>
+              <td>
+                <!--button class="btn btn-danger">Things to bring</button>
+                <button class="btn btn-primary">Logistics</button-->
+                <button class="btn btn-primary" ng-click="open(game)">Rules</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </tab>
+      </tabset>
+
+    </div>
+  </div>
+  <script type="text/ng-template" id="rules.html">
+    <div class="modal-header">
+      <h3 class="modal-title">{{ selectedSport.name }}</h3>
+    </div>
+    <div class="modal-body">
+      <iframe ng-src="{{ selectedSport.link }}" width="100%" height="400px"></iframe>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="close()">Close</button>
+    </div>
+  </script>
+</div>
