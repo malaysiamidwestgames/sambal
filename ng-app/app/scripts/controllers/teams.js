@@ -82,7 +82,7 @@ angular.module('midwestApp')
       participantsResource.declineReq({id: $scope.team.participant_id})
         .then(function() {
           $scope.teams = $scope.teams.filter(function(team) {
-            return team.id != $scope.team.id;
+            return team.id !== $scope.team.id;
           });
           $scope.team = null;
         });
@@ -94,7 +94,7 @@ angular.module('midwestApp')
           teamsResource.getTeam({id: $scope.team.id}).then(function(team) {
             $scope.team = team.team;
             var idx = _.findIndex($scope.teams, function(team) {
-              return team.id == $scope.team.id;
+              return team.id === $scope.team.id;
             });
             $scope.teams[idx] = team.team;
           });
