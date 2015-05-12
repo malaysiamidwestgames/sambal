@@ -67,7 +67,7 @@
     </div>
   </div>
   <div class="col-md-8">
-      <div class="panel panel-themed">
+      <div class="panel panel-themed" ng-show="selectedAction.registration_open">
         <div class="panel-heading">
           <h3 class="panel-title" ng-hide="selectedAction.name != 'Choose a sport to register for'">Instructions</h3>
           <h3 class="panel-title" ng-show="selectedAction.name != 'Choose a sport to register for'">{{individual && "Individual events" || "Team events"}}</h3>

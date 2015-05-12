@@ -10,7 +10,6 @@
 angular.module('midwestApp')
   .controller('RulesCtrl', function ($scope, $modalInstance, selectedSport) {
 
-
     $scope.selectedSport = selectedSport;
 
     $scope.close = function () {
