@@ -107,6 +107,10 @@ Rails.application.routes.draw do
     get '/payupdate' => 'teams#update_payment'
     get '/outpay' => 'payments#retrieve_payment'
     get '/paybalance' => 'teams#retrieve_amount'
+
+    # routes for Checkins
+    resources :checkin_event, only: [:create, :index, :show, :destroy]
+    resources :checkin, only: [:create, :destroy]
   end
 
 

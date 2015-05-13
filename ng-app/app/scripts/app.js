@@ -20,7 +20,8 @@ angular
     'ui.bootstrap',
     'ui.validate',
     'uiGmapgoogle-maps',
-    'ui.gravatar'
+    'ui.gravatar',
+    'ui.bootstrap.datetimepicker'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -129,6 +130,20 @@ angular
         templateUrl: 'views/points.html',
         controller: 'PointsCtrl'
       })
+      .when('/admin/checkin-events', {
+        templateUrl: 'views/checkinevent.html',
+        controller: 'CheckinEventCtrl',
+        requireAdmin: true
+      })
+      .when('/admin/checkin-events/:id', {
+        templateUrl: 'views/checkineventinfo.html',
+        controller: 'CheckinEventInfoCtrl'
+      })
+      .when('/admin/checkin/express/user/:userId', {
+        templateUrl: 'views/expresscheckin.html',
+        controller: 'ExpresscheckinCtrl',
+        requireAdmin: true
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -137,7 +152,7 @@ angular
   .constant('_', window._)
 
   .config(/*@ngInject*/function($httpProvider) {
-    $httpProvider.interceptors.push( /*@ngInject*/function($browser, $cookieStore, $q) {
+    $httpProvider.interceptors.push( /*@ngInject*/function($browser, $cookieStore, $q, $location) {
       return {
         request: function(config) {
           /* jshint -W106 */
@@ -148,6 +163,7 @@ angular
         responseError: function(response) {
           if (response.status === 403 || response.status === 401) {
             $cookieStore.remove('access_token');
+            $location.path('/');
           }
           return $q.reject(response);
         }

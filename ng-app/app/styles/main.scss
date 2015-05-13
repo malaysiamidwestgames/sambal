@@ -13,6 +13,11 @@ $michigan-maize-dark: #7C6700;
 $blue-background: #40658f;
 $michigan-hill-brown: #7a121c;
 
+$error-red: #92140C;
+$error-brown: #772014;
+$error-orange: #E2401A;
+$error-light-brown: #BE7C4D;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -109,6 +114,15 @@ body {
     background-color: $michigan-blue;
     border-color: $michigan-lightblue;
   }
+  &.info-panel {
+    color: #FFF;
+    background-color: $michigan-blue;
+    .main-info {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
 }
 
 .panel-themed-light {
@@ -117,6 +131,23 @@ body {
     color: #FFF;
     background-color: $michigan-maize;
     border-color: $michigan-maize-light;
+  }
+}
+
+.panel-themed-error {
+  border-color: $error-orange;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $error-red;
+  }
+  &.info-panel {
+    color: #FFF;
+    background-color: $error-red;
+    .main-info {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
   }
 }
 
@@ -252,30 +283,23 @@ ul.dropdown-menu {
 
   .user-info-panel {
     color: #FFF;
+    background-color: $michigan-blue;
     .first-name {
       font-size: 34px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
-  }
-
-  .user-info-panel {
-    color: #FFF;
     .team-name {
       font-size: 25px;
-      font-weight: 300;
       color: $michigan-maize-light;
     }
   }
-  .user-info-panel {
-    background-color: $michigan-blue;
-  }
 
   .edit-user-info {
-   position: absolute;
-   top: 1px;
-   right: 20px;
-   font-size: 22px;
+     position: absolute;
+     top: 1px;
+     right: 20px;
+     font-size: 22px;
   }
 
   .edit-user-info a {
@@ -871,5 +895,27 @@ button#update-info-btn {
       font-size: 150%;
     }
   }
-
 }
+
+.check-in-info {
+  div.input-group {
+    margin-bottom: 10px;
+  }
+  td.delete {
+    text-align: right;
+    a {
+      color: $brand-danger;
+    }
+  }
+}
+
+.express-checkin {
+  font-size: 18px;
+  .panel .panel-body {
+    text-align: center;
+  }
+  .panel-body.checkin-success .main-info {
+    font-size: 26px;
+  }
+}
+

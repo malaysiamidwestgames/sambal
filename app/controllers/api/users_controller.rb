@@ -38,8 +38,6 @@ class Api::UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     university = University.find_or_initialize_by(name: university_params)
-    # @user = User.find(params[:id])
-    puts 'updating this motherfucker'
     if params[:payments] == "delete" and current_user.authorization_level == 'admin'
       @user.update(payments: [])
     end

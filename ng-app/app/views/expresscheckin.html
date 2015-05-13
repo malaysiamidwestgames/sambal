@@ -1,0 +1,28 @@
+<div class="row express-checkin">
+	<div class="col-md-12">
+		<div class="panel panel-themed info-panel" ng-show="!error">
+			<div class="panel-body" ng-show="!checkin && !error">
+				<div class="main-info">Checking in...</div>
+				<div>Please wait</div>
+			</div>
+			<div class="panel-body checkin-success" ng-show="checkin">
+				<div>Successfully checked-in</div>
+				<div class="main-info">{{checkin.user.first_name}} {{checkin.user.last_name}}</div>
+				<div>to</div>
+				<div class="main-info">{{checkin.checkin_event.name}}</div>
+				<div>
+					From {{checkin.checkin_event.start_time | date:'h:mm a'}}
+					to {{checkin.checkin_event.end_time | date:'h:mm a'}}
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-themed-error info-panel" ng-show="error">
+			<div class="panel-body">
+				<div class="main-info">Check-in Error</div>
+				<div>Reason:</div>
+				<div class="main-info">{{error}}</div>
+			</div>
+		</div>
+	</div>
+</div>

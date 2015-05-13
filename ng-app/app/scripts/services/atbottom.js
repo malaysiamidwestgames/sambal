@@ -12,7 +12,7 @@ angular.module('midwestApp')
           console.log($scope);
           var elm = element[0];
           var check = function() {
-             $scope.updateBottom(!((elm.offsetHeight + elm.scrollTop) < elm.scrollHeight));
+             $scope.updateBottom((elm.offsetHeight + elm.scrollTop) >= elm.scrollHeight);
           };
           var appliedCheck = function() {
             $scope.$apply(check);
