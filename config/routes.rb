@@ -104,7 +104,8 @@ Rails.application.routes.draw do
     get '/myteams' => 'teams#get_my_teams'
 
     # routes for Post
-    resources :posts, only: [:create, :index, :show, :destroy]
+    resources :posts, only: [:create, :index]
+    get '/posts/userlike' => 'posts#userlike'
 
     # routes for Comment
     resources :comments, only: [:create, :index]

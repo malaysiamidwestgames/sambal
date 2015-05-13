@@ -852,6 +852,18 @@ button#update-info-btn {
   .author {
     color: $michigan-lightblue;
   }
+
+  .like {
+    color: $michigan-blue;
+  }
+
+  .unlike {
+    color: $michigan-maize;
+  }
+
+  .cmt {
+    color: $michigan-blue;
+  }
 }
 
 .comment {
@@ -863,7 +875,7 @@ button#update-info-btn {
     list-style: none;
     margin: 10px 0 0 0;
     li {
-      padding: 10px 0px;
+      //padding: 10px 0px;
       border-top: 1px solid #e8e8e8;
     }
   }

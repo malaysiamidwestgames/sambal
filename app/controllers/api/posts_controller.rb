@@ -14,6 +14,21 @@ class Api::PostsController < ApplicationController
     render json: @posts
   end
 
+  def userlike
+    if userid = params[:user_id]
+      @posts = Post.all
+      list = []
+      @posts.each do |post|
+        if post.likes.where("user_id = " + userid) === []
+          list << false
+        else
+          list << true
+        end
+      end
+      render json: list
+    end
+  end
+
   private
 
     def posts_params

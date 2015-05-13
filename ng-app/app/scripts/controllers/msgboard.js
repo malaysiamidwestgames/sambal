@@ -10,6 +10,9 @@
 angular.module('midwestApp')
   .controller('PostsCtrl', function ($scope, $http, $rootScope) {
 
+    var userid = $rootScope.currentUser.id;
+    console.log(userid);
+
     $http
       .get('/api/posts')
       .success(function(data) {
@@ -17,9 +20,16 @@ angular.module('midwestApp')
         console.log($scope.posts);
       });
 
+    $http
+      .get('/api/posts/userlike?user_id=' + userid)
+      .success(function(data) {
+        $scope.likes = data.posts;
+        console.log($scope.likes);
+      });
+
     $scope.postMsg = function(message) {
       $http
-        .post('/api/posts', {user_id: $rootScope.currentUser.id, message: message})
+        .post('/api/posts', {user_id: userid, message: message})
         .success(function(data) {
           console.log(data);
           $scope.post = '';
@@ -29,9 +39,21 @@ angular.module('midwestApp')
 
     $scope.postComment = function(message, post_id) {
       $http
-        .post('/api/comments', {user_id: $rootScope.currentUser.id, post_id: post_id, message: message})
+        .post('/api/comments', {user_id: userid, post_id: post_id, message: message})
         .success(function(data) {
           console.log(data);
         });
     };
+
+    $scope.postLike = function(post_id) {
+      $http
+        .post('/api/likes', {user_id: userid, post_id: post_id})
+        .success(function(data) {
+          console.log(data);
+        });
+
+      $scope.likes[post_id-1] = true;
+    };
+
+    
   });
