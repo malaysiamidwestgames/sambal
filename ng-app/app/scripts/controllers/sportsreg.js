@@ -63,6 +63,7 @@ angular.module('midwestApp')
 
 
     $scope.setAction = function(action) {
+      console.log(action);
       $scope.selectedAction = action;
       $scope.registered = false;
       $scope.paid = false;

@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ImmigrationCtrl', function ($scope, $modal) {
+  .controller('ConsularCtrl', function ($scope, $modal) {
     $scope.serviceList = [
     	{
     		link: 'assets/r_citizen.pdf',
@@ -61,10 +61,10 @@ angular.module('midwestApp')
     	$scope.select = true;
     };
 
-    $scope.open_immigration = function (serv) {
+    $scope.open_consular = function (serv) {
     	$modal.open({
-        templateUrl: 'm_immigration.html',
-        controller: 'ImmigrationmodelCtrl',
+        templateUrl: 'views/m_consular.html',
+        controller: 'ConsularModalCtrl',
         size: 'lg',
         resolve: {
         	selectedService: function() {

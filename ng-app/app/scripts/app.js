@@ -109,7 +109,7 @@ angular
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
-        requirePaidGen: true
+        requirePaidGen: false
       })
       .when('/transportation', {
         templateUrl: 'views/transportation.html',
@@ -121,9 +121,9 @@ angular
         controller: 'TeamsCtrl',
         requireLogin: true
       })
-      .when('/immigration', {
-        templateUrl: 'views/immigration.html',
-        controller: 'ImmigrationCtrl'
+      .when('/consular', {
+        templateUrl: 'views/consular.html',
+        controller: 'ConsularCtrl'
       })
       .when('/points', {
         templateUrl: 'views/points.html',

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name midwestApp.controller:RulesCtrl
+ * @name midwestApp.controller:ConsularModalCtrl
  * @description
- * # RulesCtrl
+ * # ConsularModalCtrl
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('ImmigrationmodelCtrl', function ($scope, $modalInstance, selectedService) {
+  .controller('ConsularModalCtrl', function ($scope, $modalInstance, selectedService) {
   	console.log(selectedService);
 
   	$scope.selectedService = selectedService;
