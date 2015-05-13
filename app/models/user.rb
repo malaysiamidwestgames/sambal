@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_access_token, :create_activation_digest
   has_many :payments
-  has_many :participants
+  has_many :participants, -> {where 'status != \'declined\''}
   has_many :teams, through: :participants
   has_many :messages
   has_many :products, through: :orders

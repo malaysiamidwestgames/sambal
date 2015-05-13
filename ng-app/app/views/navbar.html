@@ -1,11 +1,11 @@
 <nav class="navbar navbar-themed navbar-fixed-top" ng-controller="NavigationCtrl">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-header" tooltip-placement="bottom" tooltip="Home">
 			<a href="/app">
-				<img src="images/logo.svg" tooltip-placement="bottom" tooltip="Home">
+				<img src="images/logo.svg">
 			</a>
 			<a class="navbar-brand" href="/app">
-				Midwest Games
+				Malaysia Midwest Games
 			</a>
 			<button type="button" class="navbar-toggle collapsed btn-themed-nav" data-toggle="collapse" data-target="#midwest-menu-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -14,7 +14,18 @@
 		</div>
 		<div class="collapse navbar-collapse" id="midwest-menu-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="rules" class="nav-item">Schedule & Rules</a></li>
+        <li>
+          <div class="dropdown nav-item" style="cursor:pointer">
+            <div class="dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="true">
+              Sports Info
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="rules">Schedule and Rules</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="points">Point System</a></li>
+            </ul>
+          </div>
+        </li>
         <li>
           <div class="dropdown nav-item" style="cursor:pointer">
             <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
@@ -22,24 +33,36 @@
               <span class="caret"></span>
             </div>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="eventmaps">Maps and Directions</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="accommodation">Accommodation</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="transportation">Transportation</a></li>
             </ul>
           </div>
         </li>
-				<li><a href="eventmaps" class="nav-item">Maps & Directions</a> </li>
+				<li>
+          <div class="dropdown nav-item" style="cursor:pointer">
+            <div class="dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
+              More Information
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="consular">Consular Services</a></li>
+            </ul>
+          </div>
+        </li>
 				<li><a href="contact-us" class="nav-item">Contact us</a></li>
 				<li>
-					<div ng-show="currentUser.authorization_level == 'admin'" class="dropdown nav-item" style="cursor:pointer">
+					<div ng-show="currentUser.authorization_level === 'admin'" class="dropdown nav-item" style="cursor:pointer">
 						<div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 							Admin
 							<span class="caret"></span>
 						</div>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="/app/userlist">Users</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="userlist">Users</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Volunteers</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="/app/sportslist">Sports</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Teams</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="admin/checkin-events">Check In</a></li>
 						</ul>
 					</div>
 				</li>

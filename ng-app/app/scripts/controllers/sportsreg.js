@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location) {
+  .controller('SportsregCtrl', function ($scope, $http, $rootScope, $location, participantsResource, teamsResource, toastr, _) {
 
     var joinErrorMsg = [' The captain loves you more than you know', 'Feeling honored or something right now?', 'Yeah, you, YOU have been chosen for this', 'The captain welcomes you aboard his ship. Oh, is it sinking?', 'Is this team worth your skills?' ];
     function getJoinErrorMessage() {
@@ -63,6 +63,7 @@ angular.module('midwestApp')
 
 
     $scope.setAction = function(action) {
+      console.log(action);
       $scope.selectedAction = action;
       $scope.registered = false;
       $scope.paid = false;
@@ -71,71 +72,65 @@ angular.module('midwestApp')
       $scope.joinReqAcc = false;
       $scope.setTeamStatus = '';
 
-      $http.get('/api/teams?tournaments_id=' + $scope.selectedAction.id)
-        .success(function(data) {
-          console.log(data.teams);
+      teamsResource.getTeams({tournaments_id: $scope.selectedAction.id})
+        .then(function(data) {
           $scope.teams = data.teams;
           if ($scope.teams.length === $scope.selectedAction.max_teams) {
             $scope.full = true;
           }
-          for (var i = 0; i < $scope.teams.length; i++ ) {
-            if ($scope.teams[i].team_payment_status === true && $scope.teams[i].team_captain === $rootScope.currentUser.id) {
+          _.each($scope.teams, function(team) {
+            if (team.is_captain && team.team_payment_status) {
               $scope.paid = true;
             }
-            if ($scope.teams[i].team_captain === $rootScope.currentUser.id) {
+            if (team.is_captain) {
               $scope.registered = true;
             }
-            for (var j = 0; j < $scope.teams[i].participants.length; j++) {
-              if ($scope.teams[i].participants[j].user_id === $rootScope.currentUser.id && $scope.teams[i].participants[j].status === 'join_request') {
-                $scope.joinReqSent = true;
-              }
-              if ($scope.teams[i].participants[j].user_id === $rootScope.currentUser.id && $scope.teams[i].participants[j].status === 'accepted') {
-                $scope.joinReqAcc = true;
-              }
+            if (team.request_pending) {
+              $scope.joinReqSent = true;
             }
-          }
-        }
-      );
+            if (team.is_member) {
+              $scope.joinReqAcc = true;
+            }
+          });
+        });
 
-      if ($scope.selectedAction.max_players_per_team  === 1) {
-        $scope.individual = true;
-      }
-      else if ($scope.selectedAction.max_players_per_team - $scope.selectedAction.min_players_per_team === 0) {
-        $scope.individual = false;
-        $scope.doubles = true;
-      }
-      else {
-        $scope.individual = false;
-        $scope.doubles = false;
-      }
+        if ($scope.selectedAction.max_players_per_team  === 1) {
+          $scope.individual = true;
+        }
+        else if ($scope.selectedAction.max_players_per_team - $scope.selectedAction.min_players_per_team === 0) {
+          $scope.individual = false;
+          $scope.doubles = true;
+        }
+        else {
+          $scope.individual = false;
+          $scope.doubles = false;
+        }
     };
 
     $scope.setTeam = function(name) {
-      $http
-        .post('/api/teams', {name: name, team_captain: $rootScope.currentUser.id, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni })
-        .success(function (data) {
+      teamsResource.createTeam({name: name, tournaments_id: $scope.selectedAction.id, game_id: $scope.selectedAction.id, payment_id: $scope.payId, university_id: $scope.teamUni})
+        .then (function (data) {
           if (data.message) {
             $scope.setTeamStatus = data.message;
           } else {
             $scope.amount += $scope.selectedAction.price_per_team;
             $scope.registered = true;
           }
-      })
-        .error(function(error) {
-          console.log(error);
-        });
+      }, function() {
+        toastr.error('Oops, we have a problem', 'Try again later or contact us');
+      });
     };
 
     $scope.destroyTeams = function () {
-      $http
-        .delete('/api/myteams')
-        .success(function() {
+      teamsResource.cancelAllUnpaidTeams()
+        .then(function() {
           $scope.amount = 0;
           $scope.registered = false;
         });
     };
 
     $scope.paymentInit = function (regtype) {
+      //TODO: Search whether there are existing payment initiated first!
       $http
         .post('/api/payments', {status: 'Payment initiated', notification_params: 'nil', regtype: regtype, transaction_id: '0000', purchased_at: Date.now(), amount: $scope.amount })
         .success(function(data) {
@@ -157,14 +152,16 @@ angular.module('midwestApp')
     };
 
     $scope.joinReq = function(teamId) {
-      $http
-        .post('/api/participants/join', {team_id: teamId, user_id: $rootScope.currentUser.id})
-        .success(function() {
+      participantsResource.joinReq({team_id: teamId})
+        .then(function() {
           $scope.joinReqSent = true;
-          toastr.success(getJoinMessage(), 'Your join request has been seen');
-        })
-        .error(function() {
-          toastr.error(getJoinErrorMessage(), 'You\'ve already been invited to join this team');
+          toastr.success(getJoinMessage(), 'Your join request has been sent');
+        }, function(err) {
+          if (err.status === 422) {
+            toastr.error(getJoinErrorMessage(), 'You\'ve already been invited to join this team');
+          } else {
+            toastr.error('Oops, we have a problem', 'Try again later or contact us');
+          }
         });
     };
 

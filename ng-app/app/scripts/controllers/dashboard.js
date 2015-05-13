@@ -8,13 +8,10 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-
-  .controller('DashboardCtrl', function ($scope, $http, $modal, $window, $location, session) {
+  .controller('DashboardCtrl', function ($scope, $http, $modal, $location, session, toastr) {
 
     $scope.host = $location.host();
 
-    $scope.payId = 0;
-    $scope.amount = 0;
     $scope.status = 'invite';
     $scope.isVolunteer = false;
 
@@ -28,13 +25,6 @@ angular.module('midwestApp')
       return declineMsg[Math.floor(Math.random() * declineMsg.length)];
     }
     $scope.todos = [
-      /* Audition deadline is over!
-      {
-        title: 'Audition for Midwest Night',
-        label: 'More info',
-        target: '_self',
-        link: 'promo/auditions'
-      },*/
       {
         title: 'Manage your sports/teams',
         label: 'Team management page',
@@ -168,7 +158,6 @@ angular.module('midwestApp')
                 count++;
               });
           });
-          //console.log($scope.teams.length);
         });
       });
 
@@ -195,15 +184,7 @@ angular.module('midwestApp')
       $modal.open({
         templateUrl: 'views/m_shirt.html',
         controller: 'ShirtCtrl',
-        size: size,
-        resolve: {
-          payId: function () {
-            return $scope.payId;
-          },
-          amount: function () {
-            return $scope.amount;
-          }
-        }
+        size: size
       });
 
     };

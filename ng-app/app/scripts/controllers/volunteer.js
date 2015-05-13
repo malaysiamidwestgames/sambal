@@ -8,7 +8,7 @@
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('VolunteerCtrl', function ($scope, $http, $modalInstance, session, isVolunteer) {
+  .controller('VolunteerCtrl', function ($scope, $http, $modalInstance, session, isVolunteer, toastr) {
     $scope.phoneno = '';
     $scope.shirtSize = '';
     $scope.myId = 0;

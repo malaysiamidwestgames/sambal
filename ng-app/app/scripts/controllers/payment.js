@@ -30,5 +30,4 @@ angular.module('midwestApp')
       $scope.amount = amount;
       $scope.regType = regType;
     };
-
   });
