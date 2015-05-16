@@ -9,6 +9,7 @@
  */
 angular.module('midwestApp')
   .controller('LivedrawCtrl', function ($scope, $modal, $http) {
+    var offset = -5.0;
     var options = {
       weekday: 'short',
       month: 'short',
