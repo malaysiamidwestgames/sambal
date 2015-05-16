@@ -126,6 +126,14 @@ angular
         templateUrl: 'views/consular.html',
         controller: 'ConsularCtrl'
       })
+      .when('/schedule', {
+        templateUrl: 'views/schedule.html',
+        controller: 'ScheduleCtrl'
+      })
+      .when('/livescore', {
+        templateUrl: 'views/livescore.html',
+        controller: 'LivescoreCtrl'
+      })
       .when('/points', {
         templateUrl: 'views/points.html',
         controller: 'PointsCtrl'
