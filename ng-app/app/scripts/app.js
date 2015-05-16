@@ -144,6 +144,10 @@ angular
         controller: 'ExpresscheckinCtrl',
         requireAdmin: true
       })
+      .when('/credits', {
+        templateUrl: 'views/credits.html',
+        controller: 'CreditsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
