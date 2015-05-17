@@ -146,6 +146,8 @@ angular.module('midwestApp')
         .post('/api/comments', {user_id: $rootScope.currentUser.id, post_id: post_id, message: message})
         .success(function(data) {
           console.log(data);
+          $scope.post.comment = '';
+          $scope.post.comments.push(data);
         });
     };
 
