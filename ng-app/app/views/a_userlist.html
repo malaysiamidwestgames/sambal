@@ -19,23 +19,51 @@
       </div>
       <table class="table table-hover" style="width:100%">
         <thead>
-          <td>User ID</td>
-          <td>First Name</td>
-          <td>Last Name</td>
-          <td>Email</td>
-          <td>University</td>
-          <td>Level</td>
-          <td>Payment</td>
-          <td></td>
+          <th class="admin-header">
+            <a href="#" ng-click="orderByField='id'; reverseSort = !reverseSort">
+            User ID <span ng-show="orderByField == 'id'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='first_name'; reverseSort = !reverseSort">
+            First Name <span ng-show="orderByField == 'first_name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='last_name'; reverseSort = !reverseSort">
+              Last Name <span ng-show="orderByField == 'last_name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='email'; reverseSort = !reverseSort">
+              Email <span ng-show="orderByField == 'email'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='university.name'; reverseSort = !reverseSort">
+              University <span ng-show="orderByField == 'university.name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='authorization_level'; reverseSort = !reverseSort">
+              Access Level <span ng-show="orderByField == 'authorization_level'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='registration_payment_status'; reverseSort = !reverseSort">
+              Payment <span ng-show="orderByField == 'registration_payment_status'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th></th>
         </thead>
-        <tr ng-repeat = "user in users | filter:name_text">
+        <tr ng-repeat = "user in users | filter:name_text | orderBy:orderByField:reverseSort">
           <td>{{user.id}}</td>
           <td>{{user.first_name}}</td>
           <td>{{user.last_name}}</td>
           <td>{{user.email}}</td>
           <td>{{user.university.name}}</td>
           <td>{{user.authorization_level}}</td>
-          <td>{{get_payment_status(user.registration_payment_status)}}</td>
+          <td>{{user.registration_payment_status}}</td>
           <td><a href="admin-settings/{{user.id}}">Edit</a></td>
         </tr>
       </table>
