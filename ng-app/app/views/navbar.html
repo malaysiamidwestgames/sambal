@@ -45,6 +45,11 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" ng-show="currentUser">
+				<li>
+					<a href="/app/msgboard" tooltip-placement="bottom" tooltip="Message Board" class="nav-item">
+						<span class="glyphicon glyphicon-envelope"></span>
+					</a>
+				</li>
 				<li ng-show="currentUser">
 					<a href="/app/user-settings" tooltip-placement="bottom" tooltip="User settings"class="nav-item">
 						{{currentUser.email}}

@@ -13,8 +13,15 @@ class Api::LikesController < ApplicationController
     @likes = Like.all
     if userid = params[:user_id]
       @likes = Like.where(user_id: userid)
+    elsif postid = params[:post_id]
+      @likes = Like.where(post_id: postid)
     end
     render json: @likes
+  end
+
+  def destroy
+    @like = Like.where(likes_params)
+    @like.destroy_all
   end
 
   private

@@ -117,7 +117,18 @@ angular
       })
       .when('/msgboard', {
         templateUrl: 'views/msgboard.html',
-        controller: 'PostsCtrl'
+        controller: 'MsgsCtrl',
+        requireLogin: true
+      })
+      .when('/msgboard/post/:id', {
+        templateUrl: 'views/post.html',
+        controller: 'PostsCtrl',
+        requireLogin: true
+      })
+      .when('/msgboard/edit/:mode/:id', {
+        templateUrl: 'views/editpost.html',
+        controller: 'EditPostsCtrl',
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'

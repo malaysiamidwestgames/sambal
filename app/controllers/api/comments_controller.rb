@@ -17,10 +17,34 @@ class Api::CommentsController < ApplicationController
     render json: @comments
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+    render json: @comment
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+
+    if @comment.update_attributes(update_params)
+      render json: @comment, status: :updated, root: false
+    else
+      render json: @comment.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+  end
+
   private
 
     def comments_params
       params.permit(:user_id, :post_id, :message)
+    end
+
+    def update_params
+      params.permit(:message)
     end
 
 end

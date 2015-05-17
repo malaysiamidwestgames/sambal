@@ -104,15 +104,16 @@ Rails.application.routes.draw do
     get '/myteams' => 'teams#get_my_teams'
 
     # routes for Post
-    resources :posts, only: [:create, :index]
-    get '/posts/userlike' => 'posts#userlike'
+    resources :posts, except: [:new, :edit]
+    get '/userlike' => 'posts#userlike'
+    get '/likedpost' => 'posts#likedpost'
 
     # routes for Comment
-    resources :comments, only: [:create, :index]
+    resources :comments, except: [:new, :edit]
 
     # routes for Like
-    resources :likes, only: [:create, :index, :destroy]
-    get '/likes/get_count' => 'likes#get_count'
+    resources :likes, only: [:create, :index]
+    delete '/likes' => 'likes#destroy'
     
   end
 

@@ -837,11 +837,12 @@ button#update-info-btn {
   .post {
     display: block;
     font-size: 1.2em;
+    cursor: pointer;
   }
 
   .posts {
-    
     list-style: none;
+    padding-left: 0;
     margin: 10px 0 0 0;
     li {
       padding: 10px 0px;
@@ -855,18 +856,29 @@ button#update-info-btn {
 
   .like {
     color: $michigan-blue;
+    cursor: pointer;
   }
 
   .unlike {
     color: $michigan-maize;
+    cursor: pointer;
   }
 
   .cmt {
     color: $michigan-blue;
+    cursor: pointer;
   }
-}
 
-.comment {
+  .nocmt {
+    color: $michigan-maize;
+    cursor: pointer;
+  }
+
+  .edit {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
   .comment {
     display: block;
   }
@@ -875,7 +887,7 @@ button#update-info-btn {
     list-style: none;
     margin: 10px 0 0 0;
     li {
-      //padding: 10px 0px;
+      padding: 10px 0px;
       border-top: 1px solid #e8e8e8;
     }
   }
@@ -884,4 +896,9 @@ button#update-info-btn {
     color: $michigan-lightblue;
     font-size: 0.8em;
   }
+
+  textarea {
+    border: 2px solid #cccccc;
+  }
+  
 }
