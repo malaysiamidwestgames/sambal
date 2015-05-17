@@ -33,16 +33,10 @@ class UserMailer < ApplicationMailer
 
   end
 
-  def custom_mailer(user)
-
-    @user = user
-
-    mail(to: @user.email,
-         subject: 'Password Reset',
-         content_type: 'text/html',
+  def custom_template_mailer(user, subject, template_name)
+    mail(to: user.email,
+         subject: subject,
          template_path: 'user_mailer',
-         template_name: 'password_reset.html.erb')
-
+         template_name: template_name)
   end
-
 end
