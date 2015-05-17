@@ -114,7 +114,7 @@
                 </tr>
             </table>
             <button class="btn btn-primary pull-right"
-                    id="update-info-btn"
+                    id="update-info-btn2"
                     ng-disabled="passwordreset.$invalid"
                     type="submit">
                 Save
@@ -124,6 +124,22 @@
         <div class="overlay" ng-hide="isReady">
             <span class="loader-gif"></span>
         </div>
+    </div>
+
+    <div class="panel panel-themed">
+        <div class="panel-heading">
+          <h3 class="panel-title">Payments</h3>
+        </div>
+        <table class="panel-body table table-bordered">
+          <tr>
+            <th>General registration</th>
+            <td>{{(currentUser.registration_payment_status && "Paid") || "Payment pending"}}</td>
+          </tr>
+          <tr>
+            <th>Sports registration</th>
+            <td>{{("Please register for general registration first before registering for sports" && currentUser.registration_payment_status == false) || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
+          </tr>
+        </table>
     </div>
 
 </div>
