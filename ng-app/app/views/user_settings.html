@@ -1,8 +1,22 @@
-<div class="col-md-offset-2 col-md-8 update-user-info">
+<div class="col-md-4 sportsreg">
+    <div class="panel panel-themed">
+      <div class="btn-group-vertical btn-block">
+        <label type="button" class="btn btn-themed" ng-click="select('account')">
+          <span class="glyphicon glyphicon-user"></span>
+          Account Settings
+        </label>
+        <label type="button" class="btn btn-themed" ng-click="select('payment')">
+          <span class="glyphicon glyphicon-usd"></span>
+          Payment Status
+        </label>
+      </div>
+    </div>
+</div>
+<div class="col-md-8 update-user-info">
     <div ng-show="isError" class="alert alert-danger">
         <p>Aw snap! An error occurred.</p>
     </div>
-    <div class="panel panel-themed row">
+    <div class="panel panel-themed row" ng-show="selected==='account'">
         <div class="panel-heading">
             <h3 class="panel-title">User Info</h3>
         </div>
@@ -73,7 +87,7 @@
         </div>
     </div>
 
-    <div class="panel panel-themed row">
+    <div class="panel panel-themed row" ng-show="selected==='account'">
         <div class="panel-heading">
             <h3 class="panel-title">Reset Password</h3>
         </div>
@@ -126,7 +140,7 @@
         </div>
     </div>
 
-    <div class="panel panel-themed">
+    <div class="panel panel-themed row" ng-show="selected==='payment'">
         <div class="panel-heading">
           <h3 class="panel-title">Payments</h3>
         </div>

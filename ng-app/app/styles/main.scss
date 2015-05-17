@@ -152,12 +152,12 @@ body {
 }
 
 .btn-themed {
-  color: #FFF;
+  color: #000;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
 
   &:hover {
-    color: #FFF;
+    color: #000;
     background-color: $michigan-maize-light;
   }
 
@@ -461,7 +461,7 @@ div.hotel-registration input {
   }
 }
 
-button#update-info-btn {
+button#update-info-btn, button#update-info-btn2 {
       margin: 5px 8px;
 }
 
@@ -539,7 +539,7 @@ button#update-info-btn {
   }
   .user-info-panel {
     background-color: $michigan-blue;
-    height: 555px;
+    height: auto;
   }
 
   .gravatar {
