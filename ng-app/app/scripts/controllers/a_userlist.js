@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name midwestApp.controller:UserlistCtrl
+ * @name midwestApp.controller:AdminUserlistCtrl
  * @description
- * # UserlistCtrl
+ * # AdminUserlistCtrl
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('UserlistCtrl', function ($scope, $http) {
+  .controller('AdminUserlistCtrl', function ($scope, $http) {
     $scope.participants = undefined;
     $scope.uniname = '';
     $scope.toggle = function(uniname) {

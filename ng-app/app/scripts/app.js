@@ -40,8 +40,8 @@ angular
         controller: 'ActivationCtrl'
       })
       .when('/userlist' , {
-        templateUrl: 'views/userlist.html',
-        controller: 'UserlistCtrl',
+        templateUrl: 'views/a_userlist.html',
+        controller: 'AdminUserlistCtrl',
         requireLogin: true,
         requireAdmin: true
       })
