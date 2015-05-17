@@ -1,0 +1,51 @@
+<div class="check-in-info">
+	<div class="panel panel-themed">
+		<div class="panel-heading">
+			<h3 class="panel-title">Events for Check-in</h3>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Event name</th>
+					<th>Start time</th>
+					<th>End time</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tr ng-repeat="event in events">
+				<td><a href="admin/checkin-events/{{event.id}}">{{event.name}}</a></td>
+				<td>{{event.start_time | date:'short'}}</td>
+				<td>{{event.end_time | date:'short'}}</td>
+				<td class="delete"><a href="" ng-click="deleteEvent($index)"><span class="glyphicon glyphicon-remove"></span></a></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="form-control" ng-model="newEvent.name"></td>
+				<td>
+					<div class="btn-group">
+						<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropdown1" aria-expanded="false">
+							{{newEvent.start_time | date:'short'}} <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<datetimepicker data-ng-model="newEvent.start_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }"/>
+						</ul>
+					</div>
+				</td>
+				<td>
+					<div class="btn-group">
+						<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropdown1" aria-expanded="false">
+							{{newEvent.end_time | date:'short'}} <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<datetimepicker data-ng-model="newEvent.end_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }"/>
+						</ul>
+					</div>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+		<div class="panel-footer">
+			<button class="btn btn-primary pull-right" ng-click="createEvent()">Create Event</button>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

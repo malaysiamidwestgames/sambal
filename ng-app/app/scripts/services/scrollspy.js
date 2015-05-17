@@ -21,9 +21,9 @@ angular.module('midwestApp')
 });
 
 angular.module('midwestApp')
-  .directive('preventDefault', function() {
+  .directive('preventDefault', function($) {
   return function(scope, element) {
-    jQuery(element).click(function(event) {
+    $(element).click(function(event) {
       event.preventDefault();
     });
   };
@@ -36,7 +36,9 @@ angular.module('midwestApp')
     compile : function(){
 
       function scrollInto(elementId) {
-        if(!elementId) $window.scrollTo(0, 0);
+        if(!elementId) {
+          $window.scrollTo(0, 0);
+        }
         //check if an element can be found with id attribute
         var el = document.getElementById(elementId);
         if(el) {
@@ -45,7 +47,7 @@ angular.module('midwestApp')
       }
 
       return function(scope, element, attr) {
-        element.bind('click', function(event){
+        element.bind('click', function(){
           scrollInto(attr.scrollTo);
         });
       };

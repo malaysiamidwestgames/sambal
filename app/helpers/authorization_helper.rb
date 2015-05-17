@@ -12,7 +12,7 @@ module AuthorizationHelper
   end
 
   def admin_user
-    if not current_user.admin?
+    if !authenticated? || !current_user.admin?
       render json: { message: 'Admin only' }, status: :forbidden
     end
   end
