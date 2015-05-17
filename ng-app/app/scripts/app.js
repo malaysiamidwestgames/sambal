@@ -156,6 +156,10 @@ angular
         templateUrl: 'views/credits.html',
         controller: 'CreditsCtrl'
       })
+      .when('/checkin', {
+        templateUrl: 'views/checkin.html',
+        controller: 'CheckinCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
