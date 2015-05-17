@@ -8,10 +8,8 @@ class Api::TeamsController < ApplicationController
     total_teams = Team.where(:game_id => @team.game_id).count
     game = Game.find(@team.game_id)
     spots = game.max_teams - total_teams
-    puts spots
     if spots > 0 && game.registration_open == true
-      result = game.spots_left - 1
-      game.update(spots_left: result)
+      game.update(spots_left: spots)
       if @team.save
         @team.participants.create(user_id: @team.team_captain, status: 'team_captain')
         render json: @team, status: :created
@@ -47,8 +45,9 @@ class Api::TeamsController < ApplicationController
     teams = user.teams.where(payment_id: 0)
     for team in teams
       game = Game.find(team.game_id)
-      result = game.spots_left + 1
-      game.update(spots_left: result)
+      total_teams = Team.where(:game_id => team.game_id).count
+      spots = game.max_teams - total_teams
+      game.update(spots_left: spots)
     end
     teams.destroy_all
     render json: :status

@@ -152,12 +152,12 @@ body {
 }
 
 .btn-themed {
-  color: #FFF;
+  color: #000;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
 
   &:hover {
-    color: #FFF;
+    color: #000;
     background-color: $michigan-maize-light;
   }
 
@@ -461,7 +461,7 @@ div.hotel-registration input {
   }
 }
 
-button#update-info-btn {
+button#update-info-btn, button#update-info-btn2 {
       margin: 5px 8px;
 }
 
@@ -539,7 +539,7 @@ button#update-info-btn {
   }
   .user-info-panel {
     background-color: $michigan-blue;
-    height: 555px;
+    height: auto;
   }
 
   .gravatar {
@@ -608,14 +608,14 @@ button#update-info-btn {
   }
 
   .infostat {
-    font-size: 3em;
+    font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5em;
-    width: 5em;
+    width: 7em;
     .stat {
       font-size: large;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       color: $michigan-maize-light;
     }
   }
@@ -888,11 +888,11 @@ button#update-info-btn {
 
 .points {
   .panel-themed {
-    font-size: 125%;
+    font-size: 115%;
 
     .panel-title {
-      font-weight: 900;
-      font-size: 150%;
+      font-weight: 700;
+      font-size: 130%;
     }
   }
 }
@@ -919,3 +919,41 @@ button#update-info-btn {
   }
 }
 
+.credits {
+  .appreciation-message {
+    font-size: 120%;
+  }
+
+  .panel-title {
+    text-align: center;
+    font-size: 125%;
+    font-weight: 800;
+  }
+
+  .sponsor-table tr td{
+    font-weight: 600;
+    font-size: 110%;
+    vertical-align: middle;
+  }
+
+  .table tbody tr td {
+    border: 0;
+  }
+
+  .sponsor-table .img-responsive {
+    max-height: 100px;
+  }
+
+  .list-group-item {
+    border: 0;
+
+    > span {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    ul span {
+      font-style: italic;
+    }
+  }
+}

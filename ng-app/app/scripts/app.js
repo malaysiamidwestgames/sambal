@@ -126,6 +126,14 @@ angular
         templateUrl: 'views/consular.html',
         controller: 'ConsularCtrl'
       })
+      .when('/schedule', {
+        templateUrl: 'views/schedule.html',
+        controller: 'ScheduleCtrl'
+      })
+      .when('/livescore', {
+        templateUrl: 'views/livescore.html',
+        controller: 'LivescoreCtrl'
+      })
       .when('/points', {
         templateUrl: 'views/points.html',
         controller: 'PointsCtrl'
@@ -143,6 +151,14 @@ angular
         templateUrl: 'views/expresscheckin.html',
         controller: 'ExpresscheckinCtrl',
         requireAdmin: true
+      })
+      .when('/credits', {
+        templateUrl: 'views/credits.html',
+        controller: 'CreditsCtrl'
+      })
+      .when('/checkin', {
+        templateUrl: 'views/checkin.html',
+        controller: 'CheckinCtrl'
       })
       .otherwise({
         redirectTo: '/'
