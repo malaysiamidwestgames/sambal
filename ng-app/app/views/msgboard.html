@@ -12,7 +12,7 @@
       </div>
       <ul ng-repeat="post in posts" class="posts">
         <li>
-          <span class="post" ng-click="view(post.id)">{{post.message}}</span>
+          <span class="post"ng-click="view(post.id)" tooltip-placement="bottom" tooltip="Click to display message">{{post.message}}</span>
           <span class="author">Posted by {{post.user.first_name}} </span>
           <span>{{post.comments.length}} </span>
           <span class="glyphicon glyphicon-comment cmt" ng-show="post.comments.length > 0" ng-click="view(post.id)"></span>
