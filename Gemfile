@@ -25,6 +25,7 @@ end
 
 # Production dependencies.
 group :production do
+  gem 'pg'
   gem 'unicorn-rails'
 end
 
