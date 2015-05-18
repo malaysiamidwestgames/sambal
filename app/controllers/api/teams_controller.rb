@@ -1,11 +1,15 @@
 class Api::TeamsController < ApplicationController
+  before_action :signed_in_user, only: [:create, :cancel_unpaid_teams, :update_payment, :retrieve_amount]
+  before_action :correct_user_id, only: [:cancel_unpaid_teams]
+  before_action :correct_captain, only: [:create]
 
   def create
     @team = Team.new(team_params)
+    total_teams = Team.where(:game_id => @team.game_id).count
     game = Game.find(@team.game_id)
-    if game.spots_left > 0
-      result = game.spots_left - 1
-      game.update(spots_left: result)
+    spots = game.max_teams - total_teams
+    if spots > 0 && game.registration_open == true
+      game.update(spots_left: spots)
       if @team.save
         @team.participants.create(user_id: @team.team_captain, status: 'team_captain')
         render json: @team, status: :created
@@ -35,20 +39,18 @@ class Api::TeamsController < ApplicationController
     render json: @teams
   end
 
-  def destroy_teams
-    teams = current_user.teams.where(payment_id: 0)
+
+  def cancel_unpaid_teams
+    user = params[:id] == 'me' ? current_user : User.find(params[:id])
+    teams = user.teams.where(payment_id: 0)
     for team in teams
       game = Game.find(team.game_id)
-      result = game.spots_left + 1
-      game.update(spots_left: result)
+      total_teams = Team.where(:game_id => team.game_id).count
+      spots = game.max_teams - total_teams
+      game.update(spots_left: spots)
     end
-    current_user.teams.where(payment_id: 0).destroy_all
+    teams.destroy_all
     render json: :status
-  end
-
-  def get_my_teams
-    @teams = current_user.teams
-    render json: @teams
   end
 
   def update_payment
@@ -75,7 +77,25 @@ class Api::TeamsController < ApplicationController
 
   private
 
+    def correct_user(key)
+      if !current_user.admin? && params[key] != 'me' && params[key] != current_user.id
+        render json: { message: 'Admin only' }, status: :forbidden
+      end
+    end
+
+    def correct_user_id
+      correct_user :id
+    end
+
+    def correct_captain
+      correct_user :team_captain
+    end
+
     def team_params
-      params.permit(:name, :team_captain, :tournaments_id, :university_id, :ranking, :participants_id, :game_id, :payment_id)
+      permit = params.permit(:name, :team_captain, :tournaments_id, :university_id, :ranking, :participants_id, :game_id, :payment_id)
+      if permit[:team_captain] == 'me'
+        permit[:team_captain] = current_user.id
+      end
+      return permit
     end
 end

@@ -1,7 +1,4 @@
 <div class="row dashboard">
-  <div class="col-md-12">
-    <alert class="alert-danger">Registration and Registration Payment Deadline is <b>May 3rd, 2015. Register and pay now!</b></alert>
-  </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body">
@@ -54,21 +51,6 @@
 
 
     </div>
-    <div class="panel panel-themed">
-      <div class="panel-heading">
-        <h3 class="panel-title">Payments</h3>
-      </div>
-      <table class="panel-body table table-bordered">
-        <tr>
-          <th>General registration</th>
-          <td>{{(currentUser.registration_payment_status && "Paid") || "Payment pending"}}</td>
-        </tr>
-        <tr>
-          <th>Sports registration</th>
-          <td>{{("Please register for general registration first before registering for sports" && currentUser.registration_payment_status == false) || (currentUser.sports_payment_uninit && "Payment pending") || (currentUser.sports_payment_unpaid && "Payment pending") || (currentUser.sports_payment_status && "Paid")}}</td>
-        </tr>
-      </table>
-    </div>
     <div class="panel panel-themed" ng-show="participating.length != 0">
       <div class="panel-heading">
         <h3 class="panel-title">Invitation</h3>
@@ -80,7 +62,7 @@
             <br>
             <i>{{ participate.gamename }} {{ participate.gamecategory}}</i>
           </td>
-          <td ng-show="status == 'invite'">
+          <td ng-show="status === 'invite'">
             <div class="btn-toolbar">
               <button type="submit" class="btn btn-danger pull-right btn-md" ng-show="status == 'invite' && participate.status=='invite_request'" ng-click="decline(participate.id)">Decline</button>
               <button type="submit" class="btn btn-success pull-right btn-md" ng-show="status == 'invite' && participate.status=='invite_request'" ng-click="accept(participate.id)">Accept</button>

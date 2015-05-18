@@ -13,6 +13,11 @@ $michigan-maize-dark: #7C6700;
 $blue-background: #40658f;
 $michigan-hill-brown: #7a121c;
 
+$error-red: #92140C;
+$error-brown: #772014;
+$error-orange: #E2401A;
+$error-light-brown: #BE7C4D;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -109,6 +114,15 @@ body {
     background-color: $michigan-blue;
     border-color: $michigan-lightblue;
   }
+  &.info-panel {
+    color: #FFF;
+    background-color: $michigan-blue;
+    .main-info {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
 }
 
 .panel-themed-light {
@@ -120,13 +134,30 @@ body {
   }
 }
 
+.panel-themed-error {
+  border-color: $error-orange;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $error-red;
+  }
+  &.info-panel {
+    color: #FFF;
+    background-color: $error-red;
+    .main-info {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+}
+
 .btn-themed {
-  color: #FFF;
+  color: #000;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
 
   &:hover {
-    color: #FFF;
+    color: #000;
     background-color: $michigan-maize-light;
   }
 
@@ -247,35 +278,33 @@ ul.dropdown-menu {
   }
 }
 
+.admin-header a {
+  display: block;
+  width: 100%;
+}
+
 .dashboard {
   word-wrap:break-word;
 
   .user-info-panel {
     color: #FFF;
+    background-color: $michigan-blue;
     .first-name {
       font-size: 34px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
-  }
-
-  .user-info-panel {
-    color: #FFF;
     .team-name {
       font-size: 25px;
-      font-weight: 300;
       color: $michigan-maize-light;
     }
   }
-  .user-info-panel {
-    background-color: $michigan-blue;
-  }
 
   .edit-user-info {
-   position: absolute;
-   top: 1px;
-   right: 20px;
-   font-size: 22px;
+     position: absolute;
+     top: 1px;
+     right: 20px;
+     font-size: 22px;
   }
 
   .edit-user-info a {
@@ -437,7 +466,7 @@ div.hotel-registration input {
   }
 }
 
-button#update-info-btn {
+button#update-info-btn, button#update-info-btn2 {
       margin: 5px 8px;
 }
 
@@ -498,6 +527,10 @@ button#update-info-btn {
   }
 }
 
+.text-linking {
+  border-bottom: 1px grey dotted;
+}
+
 .sportsreg {
   word-wrap:break-word;
 
@@ -511,7 +544,7 @@ button#update-info-btn {
   }
   .user-info-panel {
     background-color: $michigan-blue;
-    height: 555px;
+    height: auto;
   }
 
   .gravatar {
@@ -580,14 +613,14 @@ button#update-info-btn {
   }
 
   .infostat {
-    font-size: 3em;
+    font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5em;
-    width: 5em;
+    width: 7em;
     .stat {
       font-size: large;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       color: $michigan-maize-light;
     }
   }
@@ -639,24 +672,17 @@ button#update-info-btn {
     margin-bottom: 10px;
   }
 
-  input.form-control {
-    width: 320px;
-  }
   .user-info-panel {
     color: #FFF;
+    background-color: $michigan-blue;
     .first-name {
       font-size: 34px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
   }
-  .user-info-panel {
-    background-color: $michigan-blue;
-    height: 400px;
-  }
 
   div.panel-body {
-    height: 360px;
     overflow-y: auto;
   }
 
@@ -698,6 +724,30 @@ button#update-info-btn {
 
   .grvtinstruc {
     width: 200px;
+  }
+
+  .team-details {
+    float: left;
+    margin-left: 5px;
+  }
+
+  .team-members-list {
+    span {
+      color: #A3A3A3;
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+
+  .message-panel {
+    h5 {
+      margin-top: 1px;
+      margin-bottom: 2px;
+    }
+  }
+
+  .invite-confirmation button {
+    margin-left: 5px;
   }
 }
 
@@ -900,5 +950,84 @@ button#update-info-btn {
   textarea {
     border: 2px solid #cccccc;
   }
-  
+
+}
+
+.immigration {
+  .table-title {
+    font-weight: 700;
+  }
+
+}
+
+.points {
+  .panel-themed {
+    font-size: 115%;
+
+    .panel-title {
+      font-weight: 700;
+      font-size: 130%;
+    }
+  }
+}
+
+.check-in-info {
+  div.input-group {
+    margin-bottom: 10px;
+  }
+  td.delete {
+    text-align: right;
+    a {
+      color: $brand-danger;
+    }
+  }
+}
+
+.express-checkin {
+  font-size: 18px;
+  .panel .panel-body {
+    text-align: center;
+  }
+  .panel-body.checkin-success .main-info {
+    font-size: 26px;
+  }
+}
+
+.credits {
+  .appreciation-message {
+    font-size: 120%;
+  }
+
+  .panel-title {
+    text-align: center;
+    font-size: 125%;
+    font-weight: 800;
+  }
+
+  .sponsor-table tr td{
+    font-weight: 600;
+    font-size: 110%;
+    vertical-align: middle;
+  }
+
+  .table tbody tr td {
+    border: 0;
+  }
+
+  .sponsor-table .img-responsive {
+    max-height: 100px;
+  }
+
+  .list-group-item {
+    border: 0;
+
+    > span {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    ul span {
+      font-style: italic;
+    }
+  }
 }

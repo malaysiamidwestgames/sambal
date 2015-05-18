@@ -20,11 +20,11 @@ group :development do
   gem 'mina'
   gem 'mina-sidekiq', :require => false
   gem 'mina-unicorn', :require => false
+  gem 'pg', :require => false
 end
 
 # Production dependencies.
 group :production do
-  gem 'pg'
   gem 'unicorn-rails'
 end
 

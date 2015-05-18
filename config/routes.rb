@@ -65,20 +65,27 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, except: [:new, :edit]
     get 'users/activations/:id' => 'users#resend_activation_email'
+    get 'users/:id/teams' => 'users#user_teams'
+    get 'users/:id/payments' => 'users#user_payments'
+
+    resources :sessions, only: [:create]
+    resources :account_activations, only: [:update]
+
     resources :universities, only: [:index]
+    get 'universities/count' => 'universities#count'
+
     resources :sports, only: [:index, :show]
     get 'games/sports/:id' => 'games#get_games_with_sport_id'
     resources :games, only: [:index, :show]
-    get 'universities/count' => 'universities#count'
-    resources :sessions, only: [:create]
-    resources :account_activations, only: [:update]
+
     resources :teams, only: [:index, :create, :show]
+    delete '/teams/user/:id' => 'teams#cancel_unpaid_teams'
+
     resources :messages, only: [:index, :create]
     resources :volunteers, only: [:create]
     post 'teams/find_with_captain' => 'teams#find_team_with_team_captain'
     resources :payments, only: [:create, :show, :index]
     resources :participants, only: [:create, :destroy]
-    get 'participants/create' => 'participants#create_team'
     post 'participants/join' => 'participants#join_team'
     post 'participants/invite' => 'participants#invite_team'
     get 'participants/get' => 'participants#get_team'
@@ -114,10 +121,13 @@ Rails.application.routes.draw do
     # routes for Like
     resources :likes, only: [:create, :index]
     delete '/likes' => 'likes#destroy'
-    
+
+    # routes for Checkins
+    resources :checkin_event, only: [:create, :index, :show, :destroy]
+    resources :checkin, only: [:create, :destroy]
   end
 
-  
+
 
 
 

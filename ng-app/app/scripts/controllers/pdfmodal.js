@@ -61,7 +61,6 @@ angular.module('midwestApp')
               }
             });
           });
-          //console.log($scope.selectedSport);
         });
     });
 
