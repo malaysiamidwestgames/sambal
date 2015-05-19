@@ -33,4 +33,10 @@ class UserMailer < ApplicationMailer
 
   end
 
+  def custom_template_mailer(user, subject, template_name)
+    mail(to: user.email,
+         subject: subject,
+         template_path: 'user_mailer',
+         template_name: template_name)
+  end
 end

@@ -2,15 +2,17 @@
 
 /**
  * @ngdoc function
- * @name midwestApp.controller:UserlistCtrl
+ * @name midwestApp.controller:AdminUserlistCtrl
  * @description
- * # UserlistCtrl
+ * # AdminUserlistCtrl
  * Controller of the midwestApp
  */
 angular.module('midwestApp')
-  .controller('UserlistCtrl', function ($scope, $http) {
+  .controller('AdminUserlistCtrl', function ($scope, $http) {
     $scope.participants = undefined;
     $scope.uniname = '';
+    $scope.orderByField = '';
+    $scope.reverseSort = false;
     $scope.toggle = function(uniname) {
       $scope.uniname = uniname;
 
@@ -23,14 +25,17 @@ angular.module('midwestApp')
     $http.get('/api/users')
       .success(function(data) {
         $scope.users = data.users;
+        $scope.users.forEach(function(user) {
+          if (user.registration_payment_status) {
+            user.registration_payment_status = 'Paid';
+          } else {
+            user.registration_payment_status = 'Unpaid';
+          }
+        });
       });
 
     $http.get('/api/universities/count')
       .success(function(data) {
         $scope.universities = data.universities;
       });
-
-    $scope.get_payment_status = function(status) {
-      return status ? 'Paid' : 'Unpaid';
-    };
   });

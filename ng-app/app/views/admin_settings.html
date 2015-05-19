@@ -1,0 +1,40 @@
+<div class="col-md-offset-2 col-md-8 update-user-info">	
+	<div class="panel panel-themed row">
+	  <div class="panel-heading">
+	  	<h3 class="panel-title">{{ fullname }}'s settings</h3>
+	  </div>
+	  <form name="passwordreset" ng-submit="update()">
+	    <table class="table table-hover table-user-settings">
+	    	<tr>
+	        <td class="user-attribute">
+	        	Authorization Level
+	        </td>
+	        <td class="user-data">
+	        	<select class="form-control" ng-model="selectedAuthorizationLevel"
+	        					ng-options="option for option in authorizationLevels">
+	        	</select>
+	        </td>
+	      </tr>
+	      <tr>
+	        <td class="user-attribute">
+	        	Payment Status
+	        </td>
+	        <td class="user-data">
+	        	<select class="form-control" ng-model="selectedPaymentStatus"
+	        					ng-options="option for option in paymentStatuses">
+	        	</select>
+	        </td>
+	      </tr>
+	    </table>
+	    <button class="btn btn-primary pull-right"
+	            id="update-info-btn"
+	            type="submit">
+	      Save
+	    </button>
+	  </form>
+
+	  <div class="overlay" ng-hide="isReady">
+	  	<span class="loader-gif"></span>
+	  </div>
+	</div>
+</div>

@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :messages
   has_many :products, through: :orders
   has_many :orders
+  has_many :posts
+  has_many :comments
+  has_many :likes
   belongs_to :university
   belongs_to :volunteer
 

@@ -158,11 +158,12 @@ body {
 
 .btn-themed {
   color: $michigan-darkblue;
+  color: #000;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
 
   &:hover {
-    color: #FFF;
+    color: #000;
     background-color: $michigan-maize-light;
   }
 
@@ -281,6 +282,11 @@ ul.dropdown-menu {
       cursor: pointer;
     }
   }
+}
+
+.admin-header a {
+  display: block;
+  width: 100%;
 }
 
 .dashboard {
@@ -466,7 +472,7 @@ div.hotel-registration input {
   }
 }
 
-button#update-info-btn {
+button#update-info-btn, button#update-info-btn2 {
       margin: 5px 8px;
 }
 
@@ -544,7 +550,7 @@ button#update-info-btn {
   }
   .user-info-panel {
     background-color: $michigan-blue;
-    height: 555px;
+    height: auto;
   }
 
   .gravatar {
@@ -613,14 +619,14 @@ button#update-info-btn {
   }
 
   .infostat {
-    font-size: 3em;
+    font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5em;
-    width: 5em;
+    width: 7em;
     .stat {
       font-size: large;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       color: $michigan-maize-light;
     }
   }
@@ -883,6 +889,75 @@ button#update-info-btn {
   padding: 10px 15px;
 }
 
+.post {
+  .post {
+    display: block;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+
+  .posts {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0px;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .author {
+    color: $michigan-lightblue;
+  }
+
+  .like {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
+  .unlike {
+    color: $michigan-maize;
+    cursor: pointer;
+  }
+
+  .cmt {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
+  .nocmt {
+    color: $michigan-maize;
+    cursor: pointer;
+  }
+
+  .edit {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
+  .comment {
+    display: block;
+  }
+
+  .comments {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0px;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .author {
+    color: $michigan-lightblue;
+    font-size: 0.8em;
+  }
+
+  textarea {
+    border: 2px solid #cccccc;
+  }
+
+}
 
 .immigration {
   .table-title {
@@ -938,7 +1013,6 @@ button#update-info-btn {
 .credits {
   .appreciation-message {
     font-size: 120%;
-    font-family: "Times New Roman", Times, serif;
   }
 
   .panel-title {

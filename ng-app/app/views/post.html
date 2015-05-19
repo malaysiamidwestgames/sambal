@@ -1,0 +1,31 @@
+<div class="container post">
+  <div class="panel panel-themed">
+    <div class="panel-heading">
+      <h3 class="panel-title">Post<a href="/app/msgboard"><span class="pull-right glyphicon glyphicon-remove"></span></a></h3>
+    </div>
+    <div class="panel-body">
+      <span class="post">{{post.message}}</span>
+      <span class="author">Posted by {{post.user.first_name}}</span>
+      <span>{{post.comments.length}} </span>
+      <span class="glyphicon glyphicon-comment cmt" ng-show="post.comments.length > 0"></span>
+      <span class="glyphicon glyphicon-comment nocmt" ng-hide="post.comments.length > 0"></span>
+      <span>{{post.likes.length}} </span>
+      <span class="glyphicon glyphicon-thumbs-up like" ng-show="like === true" ng-click="removeLike(post.id)"></span>
+      <span class="glyphicon glyphicon-thumbs-up unlike" ng-hide="like === true" ng-click="postLike(post.id)"></span>
+      <span class="glyphicon glyphicon-pencil edit" ng-show="owner(post.user.id)" ng-click="edit(post.id, 'posts')"></span>
+      <ul class="comments">
+        <li ng-repeat="comment in post.comments">
+          <span class="comment">{{comment.message}}</span>
+          <span class="author">Posted by {{comment.user.first_name}}</span>
+          <span class="glyphicon glyphicon-pencil edit" ng-show="owner(comment.user.id)" ng-click="edit(comment.id, 'comments')"></span>
+        </li>
+      </ul> 
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Write your comment here" ng-model="comment">
+        <span class="input-group-btn">
+          <button class="btn btn-themed" type="button" ng-click="postComment(comment, post.id)">Submit</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

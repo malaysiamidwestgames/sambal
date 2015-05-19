@@ -40,8 +40,8 @@ angular
         controller: 'ActivationCtrl'
       })
       .when('/userlist' , {
-        templateUrl: 'views/userlist.html',
-        controller: 'UserlistCtrl',
+        templateUrl: 'views/a_userlist.html',
+        controller: 'AdminUserlistCtrl',
         requireLogin: true,
         requireAdmin: true
       })
@@ -154,6 +154,25 @@ angular
       .when('/credits', {
         templateUrl: 'views/credits.html',
         controller: 'CreditsCtrl'
+      })
+      .when('/checkin', {
+        templateUrl: 'views/checkin.html',
+        controller: 'CheckinCtrl'
+      })
+      .when('/msgboard', {
+        templateUrl: 'views/msgboard.html',
+        controller: 'MsgsCtrl',
+        requireLogin: true
+      })
+      .when('/msgboard/post/:id', {
+        templateUrl: 'views/post.html',
+        controller: 'PostsCtrl',
+        requireLogin: true
+      })
+      .when('/msgboard/edit/:mode/:id', {
+        templateUrl: 'views/editpost.html',
+        controller: 'EditPostsCtrl',
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'

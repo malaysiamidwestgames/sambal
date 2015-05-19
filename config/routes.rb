@@ -107,16 +107,23 @@ Rails.application.routes.draw do
     get '/payupdate' => 'teams#update_payment'
     get '/outpay' => 'payments#retrieve_payment'
     get '/paybalance' => 'teams#retrieve_amount'
+    delete '/myteams' => 'teams#destroy_teams'
+    get '/myteams' => 'teams#get_my_teams'
+
+    # routes for Post
+    resources :posts, except: [:new, :edit]
+    get '/userlike' => 'posts#userlike'
+    get '/likedpost' => 'posts#likedpost'
+
+    # routes for Comment
+    resources :comments, except: [:new, :edit]
+
+    # routes for Like
+    resources :likes, only: [:create, :index]
+    delete '/likes' => 'likes#destroy'
 
     # routes for Checkins
     resources :checkin_event, only: [:create, :index, :show, :destroy]
     resources :checkin, only: [:create, :destroy]
   end
-
-
-
-
-
-
-
 end

@@ -59,6 +59,13 @@ angular.module('midwestApp')
     $http.get('/api/games')
       .success(function(data){
         $scope.games = data.games;
+        $scope.games.forEach(function(game) {
+          if (game.registration_open) {
+            game.registration_open = 'Open';
+          } else {
+            game.registration_open = 'Closed';
+          }
+        });
       });
 
 
