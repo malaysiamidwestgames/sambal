@@ -25,15 +25,11 @@ class Api::UsersController < ApplicationController
   def create
     university = University.find_or_initialize_by(name: university_params)
     user_params.merge(university: university)
-    if current_user.authorization_level == 'admin'
-      user_params.merge(authorization_level: params[:authorization_level])
-    else
-      user_params.merge(authorization_level: 0)
-    end
+    user_params.merge(authorization_level: 0)
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created
+      render json: {:message => "success"}.to_json, status: :created
       @user.send_activation_email
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -78,11 +74,7 @@ class Api::UsersController < ApplicationController
   private
 
     def user_params
-      if current_user.authorization_level == 'admin'
-        params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
-      else
-        params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
-      end
+      params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
     end
 
     def university_params

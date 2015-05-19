@@ -26,7 +26,7 @@ module SessionsHelper
 
   def current_user
     access_token = User.digest(request.headers[:HTTP_ACCESS_TOKEN])
-    @current_user ||= User.find_by(access_token: access_token)
+    @current_user = User.find_by(access_token: access_token)
   end
 
   def current_user?(user)
