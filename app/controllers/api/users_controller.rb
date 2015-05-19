@@ -24,7 +24,13 @@ class Api::UsersController < ApplicationController
   # POST /users.json
   def create
     university = University.find_or_initialize_by(name: university_params)
-    @user = User.new(user_params.merge(university: university, authorization_level: 0))
+    user_params.merge(university: university)
+    if (current_user.authorization_level == 'admin')
+      user_params.merge(authorization_level: params[:authorization_level])
+    else
+      user_params.merge(authorization_level: 0)
+    end
+    @user = User.new(user_params)
 
     if @user.save
       render json: @user, status: :created
@@ -73,7 +79,7 @@ class Api::UsersController < ApplicationController
 
     def user_params
       if current_user.authorization_level == 'admin'
-        params.permit(:email, :first_name, :last_name, :password, :password_confirmation, :authorization_level)
+        params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
       else
         params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
       end
