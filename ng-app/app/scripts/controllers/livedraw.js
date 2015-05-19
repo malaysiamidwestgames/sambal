@@ -27,7 +27,7 @@ angular.module('midwestApp')
         $scope.games.forEach(function(game) {
           game.link = 'assets/MMG2015_' + game.name + '.pdf';
           if (game.live_draw_session) {
-            var session = moment(game.live_draw_session).tz('America/New_York').format('ddd MMM D YYYY, h:mm a z');
+            var session = moment(game.live_draw_session).format('ddd MMM D YYYY, h:mm a z');
             console.log(session);
             game.live_draw_session = session.toLocaleString('en-us', options);
           } else {
