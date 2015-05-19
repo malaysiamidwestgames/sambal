@@ -108,11 +108,13 @@ body {
 }
 
 .panel-themed {
-  border-color: $michigan-lightblue;
+  border-color: $michigan-darkblue;
+  opacity: 0.95;
+
   > .panel-heading {
     color: #FFF;
-    background-color: $michigan-blue;
-    border-color: $michigan-lightblue;
+    background-color: $michigan-darkblue;
+    border-color: $michigan-darkblue;
   }
   &.info-panel {
     color: #FFF;
@@ -123,10 +125,13 @@ body {
       color: $michigan-maize-light;
     }
   }
+
 }
 
 .panel-themed-light {
   border-color: $michigan-maize-light;
+  opacity: 0.95;
+
   > .panel-heading {
     color: #FFF;
     background-color: $michigan-maize;
@@ -152,7 +157,7 @@ body {
 }
 
 .btn-themed {
-  color: #FFF;
+  color: $michigan-darkblue;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
 
@@ -756,7 +761,7 @@ button#update-info-btn {
 .transportation {
   .bs-docs-sidebar {
     background-color: $michigan-blue;
-    border: 1px solid #FFF;
+    opacity: 0.95;
     border-radius: 3%;
   }
 
@@ -894,6 +899,17 @@ button#update-info-btn {
       font-weight: 700;
       font-size: 130%;
     }
+  }
+
+  .box-circle {
+    background-color: $michigan-darkblue;
+    color: #FFF;
+    border-radius: 50%;
+    padding: 1%;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    display: inline-block;
   }
 }
 

@@ -115,7 +115,6 @@ angular
       .when('/transportation', {
         templateUrl: 'views/transportation.html',
         controller: 'TransportationCtrl',
-        requireLogin: true
       })
       .when('/teams', {
         templateUrl: 'views/teams.html',
