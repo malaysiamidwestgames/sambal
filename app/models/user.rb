@@ -73,8 +73,8 @@ class User < ActiveRecord::Base
     return idx != nil
   end
 
-  def admin?(user)
-    user.authorization_level == 'admin'
+  def admin?
+    current_user.authorization_level == 'admin'
   end
 
   # Sends activation email.
