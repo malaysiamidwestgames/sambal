@@ -25,7 +25,11 @@ class Api::UsersController < ApplicationController
   def create
     university = University.find_or_initialize_by(name: university_params)
     user_params.merge(university: university)
-    user_params.merge(authorization_level: 0)
+    if current_user.authorization_level == 'admin'
+      user_params.merge(authorization_level: params[:authorization_level])
+    else
+      user_params.merge(authorization_level: 0)
+    end
     @user = User.new(user_params)
 
     if @user.save
@@ -72,7 +76,6 @@ class Api::UsersController < ApplicationController
   end
 
   private
-
     def user_params
       params.permit(:email, :first_name, :last_name, :password, :password_confirmation)
     end

@@ -9,6 +9,6 @@ class UserSerializer < BaseSerializer
   private
 
   def correct_user
-    current_user == object # || current_user.admin?
+    current_user == object || current_user.admin?
   end
 end
