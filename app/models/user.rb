@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    current_user.authorization_level == 'admin'
+    self.authorization_level == 'admin'
   end
 
   # Sends activation email.
