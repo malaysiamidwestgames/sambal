@@ -114,13 +114,15 @@ angular
       })
       .when('/transportation', {
         templateUrl: 'views/transportation.html',
-        controller: 'TransportationCtrl',
-        requireLogin: true
+        controller: 'TransportationCtrl'
       })
       .when('/teams', {
         templateUrl: 'views/teams.html',
         controller: 'TeamsCtrl',
         requireLogin: true
+      })
+      .when('/luckykitchen', {
+        templateUrl: 'views/luckykitchen.html'
       })
       .when('/consular', {
         templateUrl: 'views/consular.html',
