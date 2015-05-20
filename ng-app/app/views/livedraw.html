@@ -23,8 +23,7 @@
       <h3>Live Draw Schedule</h3>
       <tabset>
         <tab heading="Original Schedule">
-          <!--h4>Updated as of May 16, 2015</h4>
-          <a href="images/MMG2015_Live_Draw_Schedule.png" target="_blank"><img src="images/MMG2015_Live_Draw_Schedule.png" width="100%"></a-->
+          <h4>Games that are not listed for livedraw are either round robins or most pinfall, which will not require draws</h4>
           <h3>Monday 7.30pm</h3>
           <ul>
             <li>Dodgeball</li>
@@ -36,9 +35,31 @@
             <li>Flag Rugby</li>
           </ul>
           <h3>Tuesday 7.30pm</h3>
-          <p>To be announced</p>
-          <h3>Wednesday 7pm</h3>
-          <p>To be announced</p>
+          <ul>
+            <li>Dota 2</li>
+            <li>Table Tennis Men Doubles</li>
+            <li>Table Tennis Men Singles</li>
+            <li>Table Tennis Women Singles</li>
+            <li>Badminton Men Singles</li>
+            <li>Badminton Men Doubles</li>
+            <li>Badminton Mixed Doubles</li>
+            <li>Badminton Women Doubles</li>
+            <li>Badminton Women Singles</li>
+            <li>Ultimate Frisbee</li>
+          </ul>
+          <h3>Wednesday 7.30pm</h3>
+          <ul>
+            <li>Takraw</li>
+            <li>Tug Of War</li>
+            <li>Tennis Mixed Doubles</li>
+            <li>Tennis Men Singles</li>
+            <li>Chess</li>
+            <li>Carrom</li>
+            <li>Congkak</li>
+            <li>Pool</li>
+            <li>Special Announcement</li>
+            <li>Soccer</li>
+          </ul>
         </tab>
         <tab heading="Sort by Games">
           <table class="table table-striped table-bordered">
@@ -54,8 +75,7 @@
             <tbody>
             <tr ng-repeat="game in games">
               <td>{{ game.name }} {{ game.category }}</td>
-              <!--td>{{ game.live_draw_session }}</td-->
-              <td>To be announced</td>
+              <td>{{ game.live_draw_session }} EST</td>
               <td>
                 <!--button class="btn btn-danger">Things to bring</button>
                 <button class="btn btn-primary">Logistics</button-->
