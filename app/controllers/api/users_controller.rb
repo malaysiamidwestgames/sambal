@@ -24,12 +24,11 @@ class Api::UsersController < ApplicationController
   # POST /users.json
   def create
     university = University.find_or_initialize_by(name: university_params)
-    user_params.merge(university: university)
-    if current_user.authorization_level == 'admin'
-      user_params.merge(authorization_level: params[:authorization_level])
-    else
-      user_params.merge(authorization_level: 0)
+    al = 0
+    if current_user && current_user.admin?
+      al = params[:authorization_level]
     end
+    user_params.merge(university: university, authorization_level: al)
     @user = User.new(user_params)
 
     if @user.save
