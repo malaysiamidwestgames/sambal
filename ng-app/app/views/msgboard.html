@@ -1,0 +1,28 @@
+<div class="container post">
+  <div class="panel panel-themed">
+    <div class="panel-heading">
+      <h3 class="panel-title">Message Board</h3>
+    </div>
+    <div class="panel-body">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Write your message here" ng-model="message">
+        <span class="input-group-btn">
+          <button class="btn btn-themed" type="button" ng-click="postMsg(message)">Submit</button>
+        </span>
+      </div>
+      <ul ng-repeat="post in posts" class="posts">
+        <li>
+          <span class="post"ng-click="view(post.id)" tooltip-placement="bottom" tooltip="Click to display message">{{post.message}}</span>
+          <span class="author">Posted by {{post.user.first_name}} </span>
+          <span>{{post.comments.length}} </span>
+          <span class="glyphicon glyphicon-comment cmt" ng-show="post.comments.length > 0" ng-click="view(post.id)"></span>
+          <span class="glyphicon glyphicon-comment nocmt" ng-hide="post.comments.length > 0" ng-click="view(post.id)"></span>
+          <span>{{post.likes.length}} </span>
+          <span class="glyphicon glyphicon-thumbs-up like" ng-show="likes[post.id]" ng-click="removeLike(post.id)"></span>
+          <span class="glyphicon glyphicon-thumbs-up unlike" ng-hide="likes[post.id]" ng-click="postLike(post.id)"></span>
+          <span class="glyphicon glyphicon-pencil edit" ng-show="owner(post.user.id)" ng-click="edit(post.id, 'posts')"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

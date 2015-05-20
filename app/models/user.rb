@@ -4,10 +4,16 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_access_token, :create_activation_digest
   has_many :payments
-  has_many :participants
+  has_many :participants, -> {where 'status != \'declined\''}
   has_many :teams, through: :participants
   has_many :messages
+  has_many :products, through: :orders
+  has_many :orders
+  has_many :posts
+  has_many :comments
+  has_many :likes
   belongs_to :university
+  belongs_to :volunteer
 
   VALID_EMAIL_REGEX = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
 
@@ -28,6 +34,15 @@ class User < ActiveRecord::Base
   # Activates an account.
   def activate
     update_attribute(:activated, true)
+  end
+
+  def volunteer_status
+    if self.volunteer
+      idx = self.volunteer.id
+      return idx != nil
+    else
+      return false
+    end
   end
 
   def registration_payment_status
@@ -56,6 +71,10 @@ class User < ActiveRecord::Base
       team.payment_id == 0
     end
     return idx != nil
+  end
+
+  def admin?
+    self.authorization_level == 'admin'
   end
 
   # Sends activation email.

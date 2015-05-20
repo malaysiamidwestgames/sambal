@@ -13,6 +13,11 @@ $michigan-maize-dark: #7C6700;
 $blue-background: #40658f;
 $michigan-hill-brown: #7a121c;
 
+$error-red: #92140C;
+$error-brown: #772014;
+$error-orange: #E2401A;
+$error-light-brown: #BE7C4D;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -109,6 +114,15 @@ body {
     background-color: $michigan-blue;
     border-color: $michigan-lightblue;
   }
+  &.info-panel {
+    color: #FFF;
+    background-color: $michigan-blue;
+    .main-info {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
 }
 
 .panel-themed-light {
@@ -120,13 +134,30 @@ body {
   }
 }
 
+.panel-themed-error {
+  border-color: $error-orange;
+  > .panel-heading {
+    color: #FFF;
+    background-color: $error-red;
+  }
+  &.info-panel {
+    color: #FFF;
+    background-color: $error-red;
+    .main-info {
+      font-size: 34px;
+      font-weight: 300;
+      color: $michigan-maize-light;
+    }
+  }
+}
+
 .btn-themed {
-  color: #FFF;
+  color: #000;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
 
   &:hover {
-    color: #FFF;
+    color: #000;
     background-color: $michigan-maize-light;
   }
 
@@ -173,6 +204,23 @@ body {
 ul.dropdown-menu {
   cursor: pointer;
 }
+
+// No we don't want carousel arrows
+.right.carousel-control, .left.carousel-control {
+  display: none;
+}
+
+.volunteer-start {
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  padding: 5px;
+  border: 1px solid lightgrey;
+}
+
+/*.dropdown:hover > .dropdown-menu {
+  display: block;
+}*/
 
 .app-landing {
   margin-top: 30px;
@@ -230,35 +278,33 @@ ul.dropdown-menu {
   }
 }
 
+.admin-header a {
+  display: block;
+  width: 100%;
+}
+
 .dashboard {
   word-wrap:break-word;
 
   .user-info-panel {
     color: #FFF;
+    background-color: $michigan-blue;
     .first-name {
       font-size: 34px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
-  }
-
-  .user-info-panel {
-    color: #FFF;
     .team-name {
       font-size: 25px;
-      font-weight: 300;
       color: $michigan-maize-light;
     }
   }
-  .user-info-panel {
-    background-color: $michigan-blue;
-  }
 
   .edit-user-info {
-   position: absolute;
-   top: 1px;
-   right: 20px;
-   font-size: 22px;
+     position: absolute;
+     top: 1px;
+     right: 20px;
+     font-size: 22px;
   }
 
   .edit-user-info a {
@@ -324,6 +370,22 @@ ul.dropdown-menu {
 
 div.hotel-registration input {
   margin-bottom: 5px;
+}
+
+.product-price > h4 {
+  margin-top: 0px;
+}
+
+.notice > h3 {
+  margin-bottom: 0px;
+}
+
+.v-divider{
+  position:absolute;
+  left:50%;
+  top:20%;
+  bottom:20%;
+  border-left:1px solid #d3d3d3;
 }
 
 .twitter {
@@ -404,7 +466,7 @@ div.hotel-registration input {
   }
 }
 
-button#update-info-btn {
+button#update-info-btn, button#update-info-btn2 {
       margin: 5px 8px;
 }
 
@@ -465,6 +527,10 @@ button#update-info-btn {
   }
 }
 
+.text-linking {
+  border-bottom: 1px grey dotted;
+}
+
 .sportsreg {
   word-wrap:break-word;
 
@@ -478,7 +544,7 @@ button#update-info-btn {
   }
   .user-info-panel {
     background-color: $michigan-blue;
-    height: 555px;
+    height: auto;
   }
 
   .gravatar {
@@ -547,14 +613,14 @@ button#update-info-btn {
   }
 
   .infostat {
-    font-size: 3em;
+    font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5em;
-    width: 5em;
+    width: 7em;
     .stat {
       font-size: large;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       color: $michigan-maize-light;
     }
   }
@@ -606,24 +672,17 @@ button#update-info-btn {
     margin-bottom: 10px;
   }
 
-  input.form-control {
-    width: 320px;
-  }
   .user-info-panel {
     color: #FFF;
+    background-color: $michigan-blue;
     .first-name {
       font-size: 34px;
       font-weight: 300;
       color: $michigan-maize-light;
     }
   }
-  .user-info-panel {
-    background-color: $michigan-blue;
-    height: 400px;
-  }
 
   div.panel-body {
-    height: 360px;
     overflow-y: auto;
   }
 
@@ -666,6 +725,30 @@ button#update-info-btn {
   .grvtinstruc {
     width: 200px;
   }
+
+  .team-details {
+    float: left;
+    margin-left: 5px;
+  }
+
+  .team-members-list {
+    span {
+      color: #A3A3A3;
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+
+  .message-panel {
+    h5 {
+      margin-top: 1px;
+      margin-bottom: 2px;
+    }
+  }
+
+  .invite-confirmation button {
+    margin-left: 5px;
+  }
 }
 
 .venueevents {
@@ -673,6 +756,107 @@ button#update-info-btn {
     margin-top: 20px;
   }
 }
+
+
+.transportation {
+  .bs-docs-sidebar {
+    background-color: $michigan-blue;
+    border: 1px solid #FFF;
+    border-radius: 3%;
+  }
+
+ .bs-docs-sidebar.affix {
+    position: fixed;
+    top: 100px;
+  }
+
+
+  .bs-docs-sidebar .nav>li>a{
+    display:block;
+    padding:4px 20px;
+    font-size:13px;
+    font-weight:500;
+    color: #FFF;
+    border-radius: 3%;
+  }
+
+  .bs-docs-sidebar .nav>li>a:focus,.bs-docs-sidebar .nav>li>a:hover{
+    padding-left:19px;
+    color: $michigan-hill-brown;
+    text-decoration:none;
+    background-color: $michigan-maize-light;
+    border-radius: 3%;
+  }
+
+  .bs-docs-sidebar .nav>.active:focus>a,.bs-docs-sidebar .nav>.active:hover>a,.bs-docs-sidebar .nav>.active>a{
+    padding-left:18px;
+    font-weight:700;
+    color: $michigan-lightblue;
+    background-color: $michigan-maize;
+    border-radius: 3%;
+  }
+
+  .bs-docs-sidebar .nav .nav>li>a{
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:40px;
+    font-size:12px;
+    font-weight:400;
+    border-radius: 3%;
+  }
+
+  .bs-docs-sidebar .nav .nav>li>a:focus,.bs-docs-sidebar .nav .nav>li>a:hover{
+    padding-left:39px;
+    border-radius: 3%;
+  }
+
+  .bs-docs-sidebar .nav .nav>.active:focus>a,.bs-docs-sidebar .nav .nav>.active:hover>a,.bs-docs-sidebar .nav .nav>.active>a{
+    padding-left:38px;
+    font-weight:500;
+    border-radius: 3%;
+  }
+
+  .scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #777777;
+    color: #eeeeee;
+    width: 50px;
+    height: 48px;
+    line-height: 48px;
+    right: 30px;
+    bottom: 30px;
+    padding-top: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+    a {
+      color: #FFF;
+    }
+  }
+
+  .scroll-top-wrapper:hover {
+    background-color: #888888;
+  }
+
+  .scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+    opacity: 1.0;
+  }
+}
+
 
 // override bootstrap
 
@@ -697,4 +881,153 @@ button#update-info-btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+}
+
+.post {
+  .post {
+    display: block;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+
+  .posts {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0px;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .author {
+    color: $michigan-lightblue;
+  }
+
+  .like {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
+  .unlike {
+    color: $michigan-maize;
+    cursor: pointer;
+  }
+
+  .cmt {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
+  .nocmt {
+    color: $michigan-maize;
+    cursor: pointer;
+  }
+
+  .edit {
+    color: $michigan-blue;
+    cursor: pointer;
+  }
+
+  .comment {
+    display: block;
+  }
+
+  .comments {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+      padding: 10px 0px;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .author {
+    color: $michigan-lightblue;
+    font-size: 0.8em;
+  }
+
+  textarea {
+    border: 2px solid #cccccc;
+  }
+
+}
+
+.immigration {
+  .table-title {
+    font-weight: 700;
+  }
+
+}
+
+.points {
+  .panel-themed {
+    font-size: 115%;
+
+    .panel-title {
+      font-weight: 700;
+      font-size: 130%;
+    }
+  }
+}
+
+.check-in-info {
+  div.input-group {
+    margin-bottom: 10px;
+  }
+  td.delete {
+    text-align: right;
+    a {
+      color: $brand-danger;
+    }
+  }
+}
+
+.express-checkin {
+  font-size: 18px;
+  .panel .panel-body {
+    text-align: center;
+  }
+  .panel-body.checkin-success .main-info {
+    font-size: 26px;
+  }
+}
+
+.credits {
+  .appreciation-message {
+    font-size: 120%;
+  }
+
+  .panel-title {
+    text-align: center;
+    font-size: 125%;
+    font-weight: 800;
+  }
+
+  .sponsor-table tr td{
+    font-weight: 600;
+    font-size: 110%;
+    vertical-align: middle;
+  }
+
+  .table tbody tr td {
+    border: 0;
+  }
+
+  .sponsor-table .img-responsive {
+    max-height: 100px;
+  }
+
+  .list-group-item {
+    border: 0;
+
+    > span {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    ul span {
+      font-style: italic;
+    }
+  }
 }

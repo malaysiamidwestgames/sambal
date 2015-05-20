@@ -1,0 +1,43 @@
+<div class="row check-in-info">
+	<div class="col-md-4">
+		<div class="panel panel-themed info-panel">
+			<div class="panel-body">
+				<div class="main-info">{{ cEvent.name }}</div>
+				<div>
+					<div><span class="glyphicon glyphicon-calendar"></span> {{cEvent.start_time | date:'EEE, MMM dd h:mm a'}}</div>
+					<div><span class="glyphicon glyphicon-time"></span> {{cEvent.end_time | date:'EEE, MMM dd h:mm a'}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="input-group">
+			<input type="number" class="form-control" ng-model="uid" placeholder="Enter user id to check-in" ng-keyup="$event.keyCode == 13 && checkinUser()">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" ng-click="checkinUser()">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				</button>
+			</span>
+		</div>
+		<div class="panel panel-themed">
+			<div class="panel-heading">
+				<h3 class="panel-title">Checked-in users</h3>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tr ng-repeat="checkin in cEvent.checkins">
+					<td>{{checkin.user.first_name}} {{checkin.user.last_name}}</td>
+					<td>{{checkin.user.email}}</td>
+					<td class="delete"><a href="" ng-click="deleteCheckin($index)"><span class="glyphicon glyphicon-remove"></span></a></td>
+					</tr>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

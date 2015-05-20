@@ -1,0 +1,1783 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'grunt-cli' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 silly cache add args [ 'grunt-cli', null ]
+5 verbose cache add spec grunt-cli
+6 silly cache add parsed spec { raw: 'grunt-cli',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'grunt-cli',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed grunt-cli@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'grunt-cli', range: '*', hasData: false }
+11 silly mapToRegistry name grunt-cli
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
+15 verbose addNameRange registry:https://registry.npmjs.org/grunt-cli not in flight; fetching
+16 verbose request uri https://registry.npmjs.org/grunt-cli
+17 verbose request no auth needed
+18 info attempt registry request try #1 at 9:35:21 PM
+19 verbose request id c7c5dc88359f788b
+20 verbose etag "ESOLH8ZL8KEZNRX2NLRNH19R4"
+21 http request GET https://registry.npmjs.org/grunt-cli
+22 http 200 https://registry.npmjs.org/grunt-cli
+23 silly get cb [ 200,
+23 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"NE9OX4U5Y4ZVW6TE453ICP8Y"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     'content-length': '20797',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     date: 'Tue, 05 May 2015 01:35:17 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-dfw1831-DFW',
+23 silly get     'x-cache': 'HIT',
+23 silly get     'x-cache-hits': '1',
+23 silly get     'x-timer': 'S1430789717.644185,VS0,VE47',
+23 silly get     vary: 'Accept' } ]
+24 verbose get saving grunt-cli to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\grunt-cli\.cache.json
+25 silly addNameRange number 2 { name: 'grunt-cli', range: '*', hasData: true }
+26 silly addNameRange versions [ 'grunt-cli',
+26 silly addNameRange   [ '0.1.0',
+26 silly addNameRange     '0.1.1',
+26 silly addNameRange     '0.1.2',
+26 silly addNameRange     '0.1.3',
+26 silly addNameRange     '0.1.4',
+26 silly addNameRange     '0.1.5',
+26 silly addNameRange     '0.1.6',
+26 silly addNameRange     '0.1.7',
+26 silly addNameRange     '0.1.8',
+26 silly addNameRange     '0.1.9',
+26 silly addNameRange     '0.1.10',
+26 silly addNameRange     '0.1.11',
+26 silly addNameRange     '0.1.12',
+26 silly addNameRange     '0.1.13' ] ]
+27 verbose addNamed grunt-cli@0.1.13
+28 silly addNamed semver.valid 0.1.13
+29 silly addNamed semver.validRange 0.1.13
+30 silly cache afterAdd grunt-cli@0.1.13
+31 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\grunt-cli\0.1.13\package\package.json not in flight; writing
+32 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\grunt-cli\0.1.13\package\package.json written
+33 silly install resolved [ { name: 'grunt-cli',
+33 silly install resolved     description: 'The grunt command line interface.',
+33 silly install resolved     version: '0.1.13',
+33 silly install resolved     author: { name: 'Grunt Team' },
+33 silly install resolved     homepage: 'http://gruntjs.com/',
+33 silly install resolved     repository: { type: 'git', url: 'git://github.com/gruntjs/grunt-cli.git' },
+33 silly install resolved     bugs: { url: 'http://github.com/gruntjs/grunt-cli/issues' },
+33 silly install resolved     licenses: [ [Object] ],
+33 silly install resolved     bin: { grunt: 'bin/grunt' },
+33 silly install resolved     engines: { node: '>= 0.8.0' },
+33 silly install resolved     scripts: { test: 'node bin/grunt test' },
+33 silly install resolved     preferGlobal: true,
+33 silly install resolved     dependencies: { nopt: '~1.0.10', 'findup-sync': '~0.1.0', resolve: '~0.3.1' },
+33 silly install resolved     devDependencies: { grunt: '~0.4.0', 'grunt-contrib-jshint': '~0.2.0' },
+33 silly install resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+33 silly install resolved     _id: 'grunt-cli@0.1.13',
+33 silly install resolved     dist:
+33 silly install resolved      { shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
+33 silly install resolved        tarball: 'http://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz' },
+33 silly install resolved     _from: 'grunt-cli@*',
+33 silly install resolved     _npmVersion: '1.3.24',
+33 silly install resolved     _npmUser: { name: 'tkellen', email: 'tyler@sleekcode.net' },
+33 silly install resolved     maintainers: [ [Object] ],
+33 silly install resolved     directories: {},
+33 silly install resolved     _shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
+33 silly install resolved     _resolved: 'https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz',
+33 silly install resolved     readme: 'ERROR: No README data found!' } ]
+34 info install grunt-cli@0.1.13 into C:\Users\JHow\AppData\Roaming\npm
+35 info installOne grunt-cli@0.1.13
+36 verbose installOne of grunt-cli to C:\Users\JHow\AppData\Roaming\npm not in flight; installing
+37 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\grunt-cli-ccaf5ca30522846b.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+38 silly install write writing grunt-cli 0.1.13 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+39 silly cache addNamed cb grunt-cli@0.1.13
+40 verbose unbuild node_modules\grunt-cli
+41 info preuninstall grunt-cli@0.1.13
+42 info uninstall grunt-cli@0.1.13
+43 verbose unbuild rmStuff grunt-cli@0.1.13 from C:\Users\JHow\AppData\Roaming\npm\node_modules
+44 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\grunt.cmd is being gently removed
+45 silly gentlyRm verifying C:\Users\JHow\AppData\Roaming\npm is an npm working directory
+46 silly gentlyRm containing path C:\Users\JHow\AppData\Roaming\npm is under npm's control, in C:\Users\JHow\AppData\Roaming\npm
+47 silly gentlyRm deletion target C:\Users\JHow\AppData\Roaming\npm\grunt.cmd is under C:\Users\JHow\AppData\Roaming\npm
+48 verbose gentlyRm vacuuming from C:\Users\JHow\AppData\Roaming\npm\grunt.cmd up to C:\Users\JHow\AppData\Roaming\npm
+49 silly vacuum-fs removing C:\Users\JHow\AppData\Roaming\npm\grunt.cmd
+50 silly vacuum-fs finished vacuuming up to C:\Users\JHow\AppData\Roaming\npm
+51 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\grunt is being gently removed
+52 silly gentlyRm verifying C:\Users\JHow\AppData\Roaming\npm is an npm working directory
+53 silly gentlyRm containing path C:\Users\JHow\AppData\Roaming\npm is under npm's control, in C:\Users\JHow\AppData\Roaming\npm
+54 silly gentlyRm deletion target C:\Users\JHow\AppData\Roaming\npm\grunt is under C:\Users\JHow\AppData\Roaming\npm
+55 verbose gentlyRm vacuuming from C:\Users\JHow\AppData\Roaming\npm\grunt up to C:\Users\JHow\AppData\Roaming\npm
+56 silly vacuum-fs removing C:\Users\JHow\AppData\Roaming\npm\grunt
+57 silly vacuum-fs finished vacuuming up to C:\Users\JHow\AppData\Roaming\npm
+58 info postuninstall grunt-cli@0.1.13
+59 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli is being purged from base C:\Users\JHow\AppData\Roaming\npm
+60 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+61 silly vacuum-fs purging C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+62 silly vacuum-fs quitting because other entries in C:\Users\JHow\AppData\Roaming\npm\node_modules
+63 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\grunt-cli\0.1.13\package.tgz
+64 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+65 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli is being purged
+66 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+67 silly gunzTarPerm modes [ '777', '666' ]
+68 silly gunzTarPerm extractEntry package.json
+69 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+70 silly gunzTarPerm extractEntry .npmignore
+71 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+72 silly gunzTarPerm extractEntry README.md
+73 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+74 silly gunzTarPerm extractEntry Gruntfile.js
+75 silly gunzTarPerm modified mode [ 'Gruntfile.js', 420, 438 ]
+76 silly gunzTarPerm extractEntry .travis.yml
+77 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+78 silly gunzTarPerm extractEntry AUTHORS
+79 silly gunzTarPerm modified mode [ 'AUTHORS', 420, 438 ]
+80 silly gunzTarPerm extractEntry LICENSE-MIT
+81 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 420, 438 ]
+82 silly gunzTarPerm extractEntry bin/grunt
+83 silly gunzTarPerm modified mode [ 'bin/grunt', 493, 511 ]
+84 silly gunzTarPerm extractEntry completion/bash
+85 silly gunzTarPerm modified mode [ 'completion/bash', 493, 511 ]
+86 silly gunzTarPerm extractEntry completion/zsh
+87 silly gunzTarPerm modified mode [ 'completion/zsh', 493, 511 ]
+88 silly gunzTarPerm extractEntry lib/cli.js
+89 silly gunzTarPerm modified mode [ 'lib/cli.js', 420, 438 ]
+90 silly gunzTarPerm extractEntry lib/completion.js
+91 silly gunzTarPerm modified mode [ 'lib/completion.js', 420, 438 ]
+92 silly gunzTarPerm extractEntry lib/info.js
+93 silly gunzTarPerm modified mode [ 'lib/info.js', 420, 438 ]
+94 info preinstall grunt-cli@0.1.13
+95 silly prepareForInstallMany adding nopt@~1.0.10 from grunt-cli dependencies
+96 silly prepareForInstallMany adding findup-sync@~0.1.0 from grunt-cli dependencies
+97 silly prepareForInstallMany adding resolve@~0.3.1 from grunt-cli dependencies
+98 silly cache add args [ 'nopt@~1.0.10', null ]
+99 verbose cache add spec nopt@~1.0.10
+100 silly cache add args [ 'findup-sync@~0.1.0', null ]
+101 verbose cache add spec findup-sync@~0.1.0
+102 silly cache add parsed spec { raw: 'nopt@~1.0.10',
+102 silly cache add   scope: null,
+102 silly cache add   name: 'nopt',
+102 silly cache add   rawSpec: '~1.0.10',
+102 silly cache add   spec: '>=1.0.10 <1.1.0',
+102 silly cache add   type: 'range' }
+103 verbose addNamed nopt@>=1.0.10 <1.1.0
+104 silly addNamed semver.valid null
+105 silly addNamed semver.validRange >=1.0.10 <1.1.0
+106 silly addNameRange { name: 'nopt', range: '>=1.0.10 <1.1.0', hasData: false }
+107 silly mapToRegistry name nopt
+108 silly mapToRegistry using default registry
+109 silly mapToRegistry registry https://registry.npmjs.org/
+110 silly mapToRegistry uri https://registry.npmjs.org/nopt
+111 verbose addNameRange registry:https://registry.npmjs.org/nopt not in flight; fetching
+112 silly cache add parsed spec { raw: 'findup-sync@~0.1.0',
+112 silly cache add   scope: null,
+112 silly cache add   name: 'findup-sync',
+112 silly cache add   rawSpec: '~0.1.0',
+112 silly cache add   spec: '>=0.1.0 <0.2.0',
+112 silly cache add   type: 'range' }
+113 verbose addNamed findup-sync@>=0.1.0 <0.2.0
+114 silly addNamed semver.valid null
+115 silly addNamed semver.validRange >=0.1.0 <0.2.0
+116 silly addNameRange { name: 'findup-sync', range: '>=0.1.0 <0.2.0', hasData: false }
+117 silly mapToRegistry name findup-sync
+118 silly mapToRegistry using default registry
+119 silly mapToRegistry registry https://registry.npmjs.org/
+120 silly mapToRegistry uri https://registry.npmjs.org/findup-sync
+121 verbose addNameRange registry:https://registry.npmjs.org/findup-sync not in flight; fetching
+122 silly cache add args [ 'resolve@~0.3.1', null ]
+123 verbose cache add spec resolve@~0.3.1
+124 silly cache add parsed spec { raw: 'resolve@~0.3.1',
+124 silly cache add   scope: null,
+124 silly cache add   name: 'resolve',
+124 silly cache add   rawSpec: '~0.3.1',
+124 silly cache add   spec: '>=0.3.1 <0.4.0',
+124 silly cache add   type: 'range' }
+125 verbose addNamed resolve@>=0.3.1 <0.4.0
+126 silly addNamed semver.valid null
+127 silly addNamed semver.validRange >=0.3.1 <0.4.0
+128 silly addNameRange { name: 'resolve', range: '>=0.3.1 <0.4.0', hasData: false }
+129 silly mapToRegistry name resolve
+130 silly mapToRegistry using default registry
+131 silly mapToRegistry registry https://registry.npmjs.org/
+132 silly mapToRegistry uri https://registry.npmjs.org/resolve
+133 verbose addNameRange registry:https://registry.npmjs.org/resolve not in flight; fetching
+134 verbose request uri https://registry.npmjs.org/resolve
+135 verbose request no auth needed
+136 info attempt registry request try #1 at 9:35:23 PM
+137 verbose etag "BGPGHHY69TMGRK3Y5TSKIMIFD"
+138 http request GET https://registry.npmjs.org/resolve
+139 verbose request uri https://registry.npmjs.org/findup-sync
+140 verbose request no auth needed
+141 info attempt registry request try #1 at 9:35:23 PM
+142 verbose etag "CT2PJF8E88RPQNWEIB1UFL8EJ"
+143 http request GET https://registry.npmjs.org/findup-sync
+144 verbose request uri https://registry.npmjs.org/nopt
+145 verbose request no auth needed
+146 info attempt registry request try #1 at 9:35:23 PM
+147 verbose etag "33E51D7L2VL4IWEQQYT6B6P9H"
+148 http request GET https://registry.npmjs.org/nopt
+149 http 304 https://registry.npmjs.org/resolve
+150 silly get cb [ 304,
+150 silly get   { date: 'Tue, 05 May 2015 01:35:19 GMT',
+150 silly get     via: '1.1 varnish',
+150 silly get     'cache-control': 'max-age=60',
+150 silly get     etag: '"BGPGHHY69TMGRK3Y5TSKIMIFD"',
+150 silly get     age: '11',
+150 silly get     connection: 'keep-alive',
+150 silly get     'x-served-by': 'cache-dfw1827-DFW',
+150 silly get     'x-cache': 'HIT',
+150 silly get     'x-cache-hits': '1',
+150 silly get     'x-timer': 'S1430789719.244088,VS0,VE0',
+150 silly get     vary: 'Accept' } ]
+151 verbose etag https://registry.npmjs.org/resolve from cache
+152 verbose get saving resolve to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\resolve\.cache.json
+153 silly addNameRange number 2 { name: 'resolve', range: '>=0.3.1 <0.4.0', hasData: true }
+154 silly addNameRange versions [ 'resolve',
+154 silly addNameRange   [ '0.0.0',
+154 silly addNameRange     '0.0.1',
+154 silly addNameRange     '0.0.2',
+154 silly addNameRange     '0.0.3',
+154 silly addNameRange     '0.0.4',
+154 silly addNameRange     '0.1.0',
+154 silly addNameRange     '0.1.2',
+154 silly addNameRange     '0.1.3',
+154 silly addNameRange     '0.2.0',
+154 silly addNameRange     '0.2.1',
+154 silly addNameRange     '0.2.2',
+154 silly addNameRange     '0.2.3',
+154 silly addNameRange     '0.2.4',
+154 silly addNameRange     '0.2.5',
+154 silly addNameRange     '0.2.6',
+154 silly addNameRange     '0.2.7',
+154 silly addNameRange     '0.2.8',
+154 silly addNameRange     '0.3.0',
+154 silly addNameRange     '0.3.1',
+154 silly addNameRange     '0.4.0',
+154 silly addNameRange     '0.4.1',
+154 silly addNameRange     '0.4.2',
+154 silly addNameRange     '0.4.3',
+154 silly addNameRange     '0.5.0',
+154 silly addNameRange     '0.5.1',
+154 silly addNameRange     '0.6.0',
+154 silly addNameRange     '0.6.1',
+154 silly addNameRange     '0.6.2',
+154 silly addNameRange     '0.6.3',
+154 silly addNameRange     '0.7.0',
+154 silly addNameRange     '0.7.1',
+154 silly addNameRange     '0.7.2',
+154 silly addNameRange     '0.7.3',
+154 silly addNameRange     '0.7.4',
+154 silly addNameRange     '1.0.0',
+154 silly addNameRange     '1.1.0',
+154 silly addNameRange     '1.1.2',
+154 silly addNameRange     '1.1.3',
+154 silly addNameRange     '1.1.4',
+154 silly addNameRange     '1.1.5',
+154 silly addNameRange     '1.1.6' ] ]
+155 verbose addNamed resolve@0.3.1
+156 silly addNamed semver.valid 0.3.1
+157 silly addNamed semver.validRange 0.3.1
+158 http 304 https://registry.npmjs.org/findup-sync
+159 silly get cb [ 304,
+159 silly get   { date: 'Tue, 05 May 2015 01:35:19 GMT',
+159 silly get     via: '1.1 varnish',
+159 silly get     'last-modified': 'Tue, 05 May 2015 01:35:19 GMT',
+159 silly get     'cache-control': 'max-age=60',
+159 silly get     etag: '"CT2PJF8E88RPQNWEIB1UFL8EJ"',
+159 silly get     age: '38',
+159 silly get     connection: 'keep-alive',
+159 silly get     'x-served-by': 'cache-dfw1834-DFW',
+159 silly get     'x-cache': 'HIT',
+159 silly get     'x-cache-hits': '1',
+159 silly get     'x-timer': 'S1430789719.301997,VS0,VE0',
+159 silly get     vary: 'Accept' } ]
+160 verbose etag https://registry.npmjs.org/findup-sync from cache
+161 verbose get saving findup-sync to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\findup-sync\.cache.json
+162 http 304 https://registry.npmjs.org/nopt
+163 silly get cb [ 304,
+163 silly get   { date: 'Tue, 05 May 2015 01:35:19 GMT',
+163 silly get     via: '1.1 varnish',
+163 silly get     'last-modified': 'Tue, 05 May 2015 01:35:19 GMT',
+163 silly get     'cache-control': 'max-age=60',
+163 silly get     etag: '"33E51D7L2VL4IWEQQYT6B6P9H"',
+163 silly get     age: '28',
+163 silly get     connection: 'keep-alive',
+163 silly get     'x-served-by': 'cache-dfw1831-DFW',
+163 silly get     'x-cache': 'HIT',
+163 silly get     'x-cache-hits': '1',
+163 silly get     'x-timer': 'S1430789719.310525,VS0,VE0',
+163 silly get     vary: 'Accept' } ]
+164 verbose etag https://registry.npmjs.org/nopt from cache
+165 verbose get saving nopt to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\nopt\.cache.json
+166 silly cache afterAdd resolve@0.3.1
+167 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\resolve\0.3.1\package\package.json not in flight; writing
+168 silly addNameRange number 2 { name: 'findup-sync', range: '>=0.1.0 <0.2.0', hasData: true }
+169 silly addNameRange versions [ 'findup-sync',
+169 silly addNameRange   [ '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1' ] ]
+170 verbose addNamed findup-sync@0.1.3
+171 silly addNamed semver.valid 0.1.3
+172 silly addNamed semver.validRange 0.1.3
+173 silly addNameRange number 2 { name: 'nopt', range: '>=1.0.10 <1.1.0', hasData: true }
+174 silly addNameRange versions [ 'nopt',
+174 silly addNameRange   [ '1.0.0',
+174 silly addNameRange     '1.0.1',
+174 silly addNameRange     '1.0.2',
+174 silly addNameRange     '1.0.3',
+174 silly addNameRange     '1.0.4',
+174 silly addNameRange     '1.0.5',
+174 silly addNameRange     '1.0.6',
+174 silly addNameRange     '1.0.7',
+174 silly addNameRange     '1.0.8',
+174 silly addNameRange     '1.0.9',
+174 silly addNameRange     '1.0.10',
+174 silly addNameRange     '2.0.0',
+174 silly addNameRange     '2.1.0',
+174 silly addNameRange     '2.1.1',
+174 silly addNameRange     '2.1.2',
+174 silly addNameRange     '2.2.0',
+174 silly addNameRange     '2.2.1',
+174 silly addNameRange     '3.0.0',
+174 silly addNameRange     '3.0.1' ] ]
+175 verbose addNamed nopt@1.0.10
+176 silly addNamed semver.valid 1.0.10
+177 silly addNamed semver.validRange 1.0.10
+178 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\resolve\0.3.1\package\package.json written
+179 silly cache afterAdd findup-sync@0.1.3
+180 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\findup-sync\0.1.3\package\package.json not in flight; writing
+181 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\findup-sync\0.1.3\package\package.json written
+182 silly cache afterAdd nopt@1.0.10
+183 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\nopt\1.0.10\package\package.json not in flight; writing
+184 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\nopt\1.0.10\package\package.json written
+185 silly install resolved [ { name: 'resolve',
+185 silly install resolved     description: 'resolve like require.resolve() on behalf of files asynchronously and synchronously',
+185 silly install resolved     version: '0.3.1',
+185 silly install resolved     repository:
+185 silly install resolved      { type: 'git',
+185 silly install resolved        url: 'git://github.com/substack/node-resolve.git' },
+185 silly install resolved     main: 'index.js',
+185 silly install resolved     keywords: [ 'resolve', 'require', 'node', 'module' ],
+185 silly install resolved     scripts: { test: 'tap test/*.js' },
+185 silly install resolved     devDependencies: { tap: '~0.4.0' },
+185 silly install resolved     license: 'MIT',
+185 silly install resolved     author:
+185 silly install resolved      { name: 'James Halliday',
+185 silly install resolved        email: 'mail@substack.net',
+185 silly install resolved        url: 'http://substack.net' },
+185 silly install resolved     _id: 'resolve@0.3.1',
+185 silly install resolved     dist:
+185 silly install resolved      { shasum: '34c63447c664c70598d1c9b126fc43b2a24310a4',
+185 silly install resolved        tarball: 'http://registry.npmjs.org/resolve/-/resolve-0.3.1.tgz' },
+185 silly install resolved     _from: 'resolve@>=0.3.1 <0.4.0',
+185 silly install resolved     _npmVersion: '1.2.2',
+185 silly install resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+185 silly install resolved     maintainers: [ [Object] ],
+185 silly install resolved     directories: {},
+185 silly install resolved     _shasum: '34c63447c664c70598d1c9b126fc43b2a24310a4',
+185 silly install resolved     _resolved: 'https://registry.npmjs.org/resolve/-/resolve-0.3.1.tgz',
+185 silly install resolved     bugs: { url: 'https://github.com/substack/node-resolve/issues' },
+185 silly install resolved     readme: 'ERROR: No README data found!',
+185 silly install resolved     homepage: 'https://github.com/substack/node-resolve' },
+185 silly install resolved   { name: 'findup-sync',
+185 silly install resolved     description: 'Find the first file matching a given pattern in the current directory or the nearest ancestor directory.',
+185 silly install resolved     version: '0.1.3',
+185 silly install resolved     homepage: 'https://github.com/cowboy/node-findup-sync',
+185 silly install resolved     author: { name: '"Cowboy" Ben Alman', url: 'http://benalman.com/' },
+185 silly install resolved     repository:
+185 silly install resolved      { type: 'git',
+185 silly install resolved        url: 'git://github.com/cowboy/node-findup-sync.git' },
+185 silly install resolved     bugs: { url: 'https://github.com/cowboy/node-findup-sync/issues' },
+185 silly install resolved     licenses: [ [Object] ],
+185 silly install resolved     main: 'lib/findup-sync',
+185 silly install resolved     engines: { node: '>= 0.6.0' },
+185 silly install resolved     scripts: { test: 'grunt nodeunit' },
+185 silly install resolved     dependencies: { glob: '~3.2.9', lodash: '~2.4.1' },
+185 silly install resolved     devDependencies:
+185 silly install resolved      { grunt: '~0.4.4',
+185 silly install resolved        'grunt-contrib-jshint': '~0.9.2',
+185 silly install resolved        'grunt-contrib-nodeunit': '~0.3.3' },
+185 silly install resolved     keywords: [ 'find', 'glob', 'file' ],
+185 silly install resolved     _id: 'findup-sync@0.1.3',
+185 silly install resolved     dist:
+185 silly install resolved      { shasum: '7f3e7a97b82392c653bf06589bd85190e93c3683',
+185 silly install resolved        tarball: 'http://registry.npmjs.org/findup-sync/-/findup-sync-0.1.3.tgz' },
+185 silly install resolved     _from: 'findup-sync@>=0.1.0 <0.2.0',
+185 silly install resolved     _npmVersion: '1.4.4',
+185 silly install resolved     _npmUser: { name: 'cowboy', email: 'cowboy@rj3.net' },
+185 silly install resolved     maintainers: [ [Object] ],
+185 silly install resolved     directories: {},
+185 silly install resolved     _shasum: '7f3e7a97b82392c653bf06589bd85190e93c3683',
+185 silly install resolved     _resolved: 'https://registry.npmjs.org/findup-sync/-/findup-sync-0.1.3.tgz',
+185 silly install resolved     readme: 'ERROR: No README data found!' },
+185 silly install resolved   { name: 'nopt',
+185 silly install resolved     version: '1.0.10',
+185 silly install resolved     description: 'Option parsing for Node, supporting types, shorthands, etc. Used by npm.',
+185 silly install resolved     author:
+185 silly install resolved      { name: 'Isaac Z. Schlueter',
+185 silly install resolved        email: 'i@izs.me',
+185 silly install resolved        url: 'http://blog.izs.me/' },
+185 silly install resolved     main: 'lib/nopt.js',
+185 silly install resolved     scripts: { test: 'node lib/nopt.js' },
+185 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/nopt.git' },
+185 silly install resolved     bin: { nopt: './bin/nopt.js' },
+185 silly install resolved     license:
+185 silly install resolved      { type: 'MIT',
+185 silly install resolved        url: 'https://github.com/isaacs/nopt/raw/master/LICENSE' },
+185 silly install resolved     dependencies: { abbrev: '1' },
+185 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+185 silly install resolved     _id: 'nopt@1.0.10',
+185 silly install resolved     devDependencies: {},
+185 silly install resolved     engines: { node: '*' },
+185 silly install resolved     _engineSupported: true,
+185 silly install resolved     _npmVersion: '1.0.93',
+185 silly install resolved     _nodeVersion: 'v0.5.9-pre',
+185 silly install resolved     _defaultsLoaded: true,
+185 silly install resolved     dist:
+185 silly install resolved      { shasum: '6ddd21bd2a31417b92727dd585f8a6f37608ebee',
+185 silly install resolved        tarball: 'http://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz' },
+185 silly install resolved     maintainers: [ [Object] ],
+185 silly install resolved     directories: {},
+185 silly install resolved     _shasum: '6ddd21bd2a31417b92727dd585f8a6f37608ebee',
+185 silly install resolved     _resolved: 'https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz',
+185 silly install resolved     _from: 'nopt@>=1.0.10 <1.1.0',
+185 silly install resolved     bugs: { url: 'https://github.com/isaacs/nopt/issues' },
+185 silly install resolved     readme: 'ERROR: No README data found!',
+185 silly install resolved     homepage: 'https://github.com/isaacs/nopt' } ]
+186 info install resolve@0.3.1 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+187 info install findup-sync@0.1.3 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+188 info install nopt@1.0.10 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+189 info installOne resolve@0.3.1
+190 verbose installOne of resolve to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli not in flight; installing
+191 info installOne findup-sync@0.1.3
+192 verbose installOne of findup-sync to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli not in flight; installing
+193 info installOne nopt@1.0.10
+194 verbose installOne of nopt to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli not in flight; installing
+195 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\findup-sync-309985ee42b1c310.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+196 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\resolve-df9d6b0a9ba33640.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+197 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\nopt-cc9d83539cd2393f.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+198 silly install write writing findup-sync 0.1.3 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+199 silly cache addNamed cb findup-sync@0.1.3
+200 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync
+201 silly install write writing resolve 0.3.1 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+202 silly cache addNamed cb resolve@0.3.1
+203 verbose unbuild node_modules\grunt-cli\node_modules\resolve
+204 silly install write writing nopt 1.0.10 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+205 silly cache addNamed cb nopt@1.0.10
+206 verbose unbuild node_modules\grunt-cli\node_modules\nopt
+207 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync is being purged from base C:\Users\JHow\AppData\Roaming\npm
+208 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+209 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve is being purged from base C:\Users\JHow\AppData\Roaming\npm
+210 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+211 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt is being purged from base C:\Users\JHow\AppData\Roaming\npm
+212 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+213 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\findup-sync\0.1.3\package.tgz
+214 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+215 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync is being purged
+216 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+217 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\resolve\0.3.1\package.tgz
+218 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+219 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve is being purged
+220 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+221 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\nopt\1.0.10\package.tgz
+222 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+223 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt is being purged
+224 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+225 silly gunzTarPerm modes [ '777', '666' ]
+226 silly gunzTarPerm modes [ '777', '666' ]
+227 silly gunzTarPerm modes [ '777', '666' ]
+228 silly gunzTarPerm extractEntry package.json
+229 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+230 silly gunzTarPerm extractEntry .npmignore
+231 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+232 silly gunzTarPerm extractEntry README.md
+233 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+234 silly gunzTarPerm extractEntry package.json
+235 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+236 silly gunzTarPerm extractEntry LICENSE
+237 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+238 silly gunzTarPerm extractEntry index.js
+239 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+240 silly gunzTarPerm extractEntry Gruntfile.js
+241 silly gunzTarPerm modified mode [ 'Gruntfile.js', 420, 438 ]
+242 silly gunzTarPerm extractEntry .jshintrc
+243 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+244 silly gunzTarPerm extractEntry .gitignore
+245 silly gunzTarPerm modified mode [ '.gitignore', 420, 438 ]
+246 silly gunzTarPerm extractEntry .travis.yml
+247 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+248 silly gunzTarPerm extractEntry LICENSE-MIT
+249 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 420, 438 ]
+250 silly gunzTarPerm extractEntry example/async.js
+251 silly gunzTarPerm modified mode [ 'example/async.js', 420, 438 ]
+252 silly gunzTarPerm extractEntry example/sync.js
+253 silly gunzTarPerm modified mode [ 'example/sync.js', 420, 438 ]
+254 silly gunzTarPerm extractEntry LICENSE
+255 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+256 silly gunzTarPerm extractEntry package.json
+257 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+258 silly gunzTarPerm extractEntry README.md
+259 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+260 silly gunzTarPerm extractEntry bin/nopt.js
+261 silly gunzTarPerm modified mode [ 'bin/nopt.js', 493, 511 ]
+262 silly gunzTarPerm extractEntry readme.markdown
+263 silly gunzTarPerm modified mode [ 'readme.markdown', 420, 438 ]
+264 silly gunzTarPerm extractEntry test/resolver.js
+265 silly gunzTarPerm modified mode [ 'test/resolver.js', 420, 438 ]
+266 silly gunzTarPerm extractEntry lib/findup-sync.js
+267 silly gunzTarPerm modified mode [ 'lib/findup-sync.js', 420, 438 ]
+268 silly gunzTarPerm extractEntry test/findup-sync_test.js
+269 silly gunzTarPerm modified mode [ 'test/findup-sync_test.js', 420, 438 ]
+270 silly gunzTarPerm extractEntry examples/my-program.js
+271 silly gunzTarPerm modified mode [ 'examples/my-program.js', 493, 511 ]
+272 silly gunzTarPerm extractEntry lib/nopt.js
+273 silly gunzTarPerm modified mode [ 'lib/nopt.js', 420, 438 ]
+274 silly gunzTarPerm extractEntry test/fixtures/a/b/bar.txt
+275 silly gunzTarPerm modified mode [ 'test/fixtures/a/b/bar.txt', 420, 438 ]
+276 silly gunzTarPerm extractEntry test/fixtures/a/foo.txt
+277 silly gunzTarPerm modified mode [ 'test/fixtures/a/foo.txt', 420, 438 ]
+278 silly gunzTarPerm extractEntry test/fixtures/a.txt
+279 silly gunzTarPerm modified mode [ 'test/fixtures/a.txt', 420, 438 ]
+280 silly gunzTarPerm extractEntry test/fixtures/aaa.txt
+281 silly gunzTarPerm modified mode [ 'test/fixtures/aaa.txt', 420, 438 ]
+282 silly gunzTarPerm extractEntry test/core.js
+283 silly gunzTarPerm modified mode [ 'test/core.js', 420, 438 ]
+284 silly gunzTarPerm extractEntry test/filter_sync.js
+285 silly gunzTarPerm modified mode [ 'test/filter_sync.js', 420, 438 ]
+286 silly gunzTarPerm extractEntry test/resolver_sync.js
+287 silly gunzTarPerm modified mode [ 'test/resolver_sync.js', 420, 438 ]
+288 silly gunzTarPerm extractEntry test/filter.js
+289 silly gunzTarPerm modified mode [ 'test/filter.js', 420, 438 ]
+290 silly gunzTarPerm extractEntry test/mock.js
+291 silly gunzTarPerm modified mode [ 'test/mock.js', 420, 438 ]
+292 silly gunzTarPerm extractEntry test/mock_sync.js
+293 silly gunzTarPerm modified mode [ 'test/mock_sync.js', 420, 438 ]
+294 silly gunzTarPerm extractEntry test/resolver/mug.js
+295 silly gunzTarPerm modified mode [ 'test/resolver/mug.js', 420, 438 ]
+296 silly gunzTarPerm extractEntry test/resolver/foo.js
+297 silly gunzTarPerm modified mode [ 'test/resolver/foo.js', 420, 438 ]
+298 silly gunzTarPerm extractEntry test/resolver/mug.coffee
+299 silly gunzTarPerm modified mode [ 'test/resolver/mug.coffee', 420, 438 ]
+300 silly gunzTarPerm extractEntry test/resolver/cup.coffee
+301 silly gunzTarPerm modified mode [ 'test/resolver/cup.coffee', 420, 438 ]
+302 silly gunzTarPerm extractEntry test/resolver/other_path/root.js
+303 silly gunzTarPerm modified mode [ 'test/resolver/other_path/root.js', 420, 438 ]
+304 silly gunzTarPerm extractEntry test/resolver/other_path/lib/other-lib.js
+305 silly gunzTarPerm modified mode [ 'test/resolver/other_path/lib/other-lib.js', 420, 438 ]
+306 silly gunzTarPerm extractEntry test/resolver/bar/node_modules/foo/index.js
+307 silly gunzTarPerm modified mode [ 'test/resolver/bar/node_modules/foo/index.js', 420, 438 ]
+308 silly gunzTarPerm extractEntry test/resolver/baz/package.json
+309 silly gunzTarPerm modified mode [ 'test/resolver/baz/package.json', 420, 438 ]
+310 silly gunzTarPerm extractEntry test/resolver/baz/quux.js
+311 silly gunzTarPerm modified mode [ 'test/resolver/baz/quux.js', 420, 438 ]
+312 silly gunzTarPerm extractEntry test/resolver/baz/doom.js
+313 silly gunzTarPerm modified mode [ 'test/resolver/baz/doom.js', 420, 438 ]
+314 silly gunzTarPerm extractEntry test/resolver/biz/node_modules/tiv/index.js
+315 silly gunzTarPerm modified mode [ 'test/resolver/biz/node_modules/tiv/index.js', 420, 438 ]
+316 silly gunzTarPerm extractEntry test/resolver/biz/node_modules/grux/index.js
+317 silly gunzTarPerm modified mode [ 'test/resolver/biz/node_modules/grux/index.js', 420, 438 ]
+318 silly gunzTarPerm extractEntry .travis.yml
+319 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+320 silly gunzTarPerm extractEntry lib/core.js
+321 silly gunzTarPerm modified mode [ 'lib/core.js', 420, 438 ]
+322 silly gunzTarPerm extractEntry lib/async.js
+323 silly gunzTarPerm modified mode [ 'lib/async.js', 420, 438 ]
+324 silly gunzTarPerm extractEntry lib/sync.js
+325 silly gunzTarPerm modified mode [ 'lib/sync.js', 420, 438 ]
+326 silly gunzTarPerm extractEntry lib/core.json
+327 silly gunzTarPerm modified mode [ 'lib/core.json', 420, 438 ]
+328 info preinstall nopt@1.0.10
+329 silly prepareForInstallMany adding abbrev@1 from nopt dependencies
+330 silly cache add args [ 'abbrev@1', null ]
+331 verbose cache add spec abbrev@1
+332 silly cache add parsed spec { raw: 'abbrev@1',
+332 silly cache add   scope: null,
+332 silly cache add   name: 'abbrev',
+332 silly cache add   rawSpec: '1',
+332 silly cache add   spec: '>=1.0.0 <2.0.0',
+332 silly cache add   type: 'range' }
+333 verbose addNamed abbrev@>=1.0.0 <2.0.0
+334 silly addNamed semver.valid null
+335 silly addNamed semver.validRange >=1.0.0 <2.0.0
+336 silly addNameRange { name: 'abbrev', range: '>=1.0.0 <2.0.0', hasData: false }
+337 silly mapToRegistry name abbrev
+338 silly mapToRegistry using default registry
+339 silly mapToRegistry registry https://registry.npmjs.org/
+340 silly mapToRegistry uri https://registry.npmjs.org/abbrev
+341 verbose addNameRange registry:https://registry.npmjs.org/abbrev not in flight; fetching
+342 info preinstall findup-sync@0.1.3
+343 silly prepareForInstallMany adding glob@~3.2.9 from findup-sync dependencies
+344 silly prepareForInstallMany adding lodash@~2.4.1 from findup-sync dependencies
+345 silly cache add args [ 'glob@~3.2.9', null ]
+346 verbose cache add spec glob@~3.2.9
+347 silly cache add args [ 'lodash@~2.4.1', null ]
+348 verbose cache add spec lodash@~2.4.1
+349 silly cache add parsed spec { raw: 'glob@~3.2.9',
+349 silly cache add   scope: null,
+349 silly cache add   name: 'glob',
+349 silly cache add   rawSpec: '~3.2.9',
+349 silly cache add   spec: '>=3.2.9 <3.3.0',
+349 silly cache add   type: 'range' }
+350 verbose addNamed glob@>=3.2.9 <3.3.0
+351 silly addNamed semver.valid null
+352 silly addNamed semver.validRange >=3.2.9 <3.3.0
+353 silly addNameRange { name: 'glob', range: '>=3.2.9 <3.3.0', hasData: false }
+354 silly mapToRegistry name glob
+355 silly mapToRegistry using default registry
+356 silly mapToRegistry registry https://registry.npmjs.org/
+357 silly mapToRegistry uri https://registry.npmjs.org/glob
+358 verbose addNameRange registry:https://registry.npmjs.org/glob not in flight; fetching
+359 silly cache add parsed spec { raw: 'lodash@~2.4.1',
+359 silly cache add   scope: null,
+359 silly cache add   name: 'lodash',
+359 silly cache add   rawSpec: '~2.4.1',
+359 silly cache add   spec: '>=2.4.1 <2.5.0',
+359 silly cache add   type: 'range' }
+360 verbose addNamed lodash@>=2.4.1 <2.5.0
+361 silly addNamed semver.valid null
+362 silly addNamed semver.validRange >=2.4.1 <2.5.0
+363 silly addNameRange { name: 'lodash', range: '>=2.4.1 <2.5.0', hasData: false }
+364 silly mapToRegistry name lodash
+365 silly mapToRegistry using default registry
+366 silly mapToRegistry registry https://registry.npmjs.org/
+367 silly mapToRegistry uri https://registry.npmjs.org/lodash
+368 verbose addNameRange registry:https://registry.npmjs.org/lodash not in flight; fetching
+369 verbose request uri https://registry.npmjs.org/abbrev
+370 verbose request no auth needed
+371 info attempt registry request try #1 at 9:35:23 PM
+372 verbose etag "AIK2XDX1GJIIYUUY93UDLGJV0"
+373 http request GET https://registry.npmjs.org/abbrev
+374 verbose request uri https://registry.npmjs.org/lodash
+375 verbose request no auth needed
+376 info attempt registry request try #1 at 9:35:23 PM
+377 verbose etag "ASYRR044UXWJYRT0XXMUCNJVM"
+378 http request GET https://registry.npmjs.org/lodash
+379 verbose request uri https://registry.npmjs.org/glob
+380 verbose request no auth needed
+381 info attempt registry request try #1 at 9:35:23 PM
+382 verbose etag "9XIJS97FWQU7LHJIU5ZDX0NOW"
+383 http request GET https://registry.npmjs.org/glob
+384 http 304 https://registry.npmjs.org/abbrev
+385 silly get cb [ 304,
+385 silly get   { date: 'Tue, 05 May 2015 01:35:19 GMT',
+385 silly get     via: '1.1 varnish',
+385 silly get     'last-modified': 'Tue, 05 May 2015 01:34:58 GMT',
+385 silly get     'cache-control': 'max-age=60',
+385 silly get     etag: '"AIK2XDX1GJIIYUUY93UDLGJV0"',
+385 silly get     age: '49',
+385 silly get     connection: 'keep-alive',
+385 silly get     'x-served-by': 'cache-dfw1825-DFW',
+385 silly get     'x-cache': 'HIT',
+385 silly get     'x-cache-hits': '2',
+385 silly get     'x-timer': 'S1430789719.907699,VS0,VE0',
+385 silly get     vary: 'Accept' } ]
+386 verbose etag https://registry.npmjs.org/abbrev from cache
+387 verbose get saving abbrev to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\abbrev\.cache.json
+388 silly addNameRange number 2 { name: 'abbrev', range: '>=1.0.0 <2.0.0', hasData: true }
+389 silly addNameRange versions [ 'abbrev', [ '1.0.3', '1.0.4', '1.0.5' ] ]
+390 verbose addNamed abbrev@1.0.5
+391 silly addNamed semver.valid 1.0.5
+392 silly addNamed semver.validRange 1.0.5
+393 http 304 https://registry.npmjs.org/lodash
+394 silly get cb [ 304,
+394 silly get   { date: 'Tue, 05 May 2015 01:35:19 GMT',
+394 silly get     via: '1.1 varnish',
+394 silly get     'last-modified': 'Tue, 05 May 2015 01:33:06 GMT',
+394 silly get     'cache-control': 'max-age=60',
+394 silly get     etag: '"ASYRR044UXWJYRT0XXMUCNJVM"',
+394 silly get     age: '4',
+394 silly get     connection: 'keep-alive',
+394 silly get     'x-served-by': 'cache-dfw1821-DFW',
+394 silly get     'x-cache': 'HIT',
+394 silly get     'x-cache-hits': '26',
+394 silly get     'x-timer': 'S1430789719.942558,VS0,VE0',
+394 silly get     vary: 'Accept' } ]
+395 verbose etag https://registry.npmjs.org/lodash from cache
+396 verbose get saving lodash to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\lodash\.cache.json
+397 silly addNameRange number 2 { name: 'lodash', range: '>=2.4.1 <2.5.0', hasData: true }
+398 silly addNameRange versions [ 'lodash',
+398 silly addNameRange   [ '0.1.0',
+398 silly addNameRange     '0.2.0',
+398 silly addNameRange     '0.2.1',
+398 silly addNameRange     '0.2.2',
+398 silly addNameRange     '0.3.0',
+398 silly addNameRange     '0.3.1',
+398 silly addNameRange     '0.3.2',
+398 silly addNameRange     '0.4.0',
+398 silly addNameRange     '0.4.1',
+398 silly addNameRange     '0.4.2',
+398 silly addNameRange     '0.5.0-rc.1',
+398 silly addNameRange     '0.5.0',
+398 silly addNameRange     '0.5.1',
+398 silly addNameRange     '0.5.2',
+398 silly addNameRange     '0.6.0',
+398 silly addNameRange     '0.6.1',
+398 silly addNameRange     '0.7.0',
+398 silly addNameRange     '0.8.0',
+398 silly addNameRange     '0.8.1',
+398 silly addNameRange     '0.8.2',
+398 silly addNameRange     '0.9.0',
+398 silly addNameRange     '0.9.1',
+398 silly addNameRange     '0.9.2',
+398 silly addNameRange     '0.10.0',
+398 silly addNameRange     '1.0.0-rc.1',
+398 silly addNameRange     '1.0.0-rc.2',
+398 silly addNameRange     '1.0.0-rc.3',
+398 silly addNameRange     '1.0.0',
+398 silly addNameRange     '1.0.1',
+398 silly addNameRange     '1.1.0',
+398 silly addNameRange     '1.1.1',
+398 silly addNameRange     '1.2.0',
+398 silly addNameRange     '1.2.1',
+398 silly addNameRange     '1.3.0',
+398 silly addNameRange     '1.3.1',
+398 silly addNameRange     '2.0.0',
+398 silly addNameRange     '2.1.0',
+398 silly addNameRange     '2.2.0',
+398 silly addNameRange     '2.2.1',
+398 silly addNameRange     '2.3.0',
+398 silly addNameRange     '2.4.0',
+398 silly addNameRange     '2.4.1',
+398 silly addNameRange     '3.0.0',
+398 silly addNameRange     '3.0.1',
+398 silly addNameRange     '3.1.0',
+398 silly addNameRange     '3.2.0',
+398 silly addNameRange     '3.3.0',
+398 silly addNameRange     '3.3.1',
+398 silly addNameRange     '3.4.0',
+398 silly addNameRange     '3.5.0',
+398 silly addNameRange     '3.6.0',
+398 silly addNameRange     '1.0.2',
+398 silly addNameRange     '3.7.0',
+398 silly addNameRange     '2.4.2',
+398 silly addNameRange     '3.8.0' ] ]
+399 verbose addNamed lodash@2.4.2
+400 silly addNamed semver.valid 2.4.2
+401 silly addNamed semver.validRange 2.4.2
+402 info preinstall resolve@0.3.1
+403 silly cache afterAdd abbrev@1.0.5
+404 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\abbrev\1.0.5\package\package.json not in flight; writing
+405 silly install resolved []
+406 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+407 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+408 verbose linkStuff [ true,
+408 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+408 verbose linkStuff   false,
+408 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules' ]
+409 info linkStuff resolve@0.3.1
+410 verbose linkBins resolve@0.3.1
+411 verbose linkMans resolve@0.3.1
+412 verbose rebuildBundles resolve@0.3.1
+413 info install resolve@0.3.1
+414 info postinstall resolve@0.3.1
+415 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\resolve-df9d6b0a9ba33640.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\resolve
+416 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\abbrev\1.0.5\package\package.json written
+417 silly install resolved [ { name: 'abbrev',
+417 silly install resolved     version: '1.0.5',
+417 silly install resolved     description: 'Like ruby\'s abbrev module, but in js',
+417 silly install resolved     author: { name: 'Isaac Z. Schlueter', email: 'i@izs.me' },
+417 silly install resolved     main: 'abbrev.js',
+417 silly install resolved     scripts: { test: 'node test.js' },
+417 silly install resolved     repository: { type: 'git', url: 'http://github.com/isaacs/abbrev-js' },
+417 silly install resolved     license:
+417 silly install resolved      { type: 'MIT',
+417 silly install resolved        url: 'https://github.com/isaacs/abbrev-js/raw/master/LICENSE' },
+417 silly install resolved     bugs: { url: 'https://github.com/isaacs/abbrev-js/issues' },
+417 silly install resolved     homepage: 'https://github.com/isaacs/abbrev-js',
+417 silly install resolved     _id: 'abbrev@1.0.5',
+417 silly install resolved     _shasum: '5d8257bd9ebe435e698b2fa431afde4fe7b10b03',
+417 silly install resolved     _from: 'abbrev@>=1.0.0 <2.0.0',
+417 silly install resolved     _npmVersion: '1.4.7',
+417 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+417 silly install resolved     maintainers: [ [Object] ],
+417 silly install resolved     dist:
+417 silly install resolved      { shasum: '5d8257bd9ebe435e698b2fa431afde4fe7b10b03',
+417 silly install resolved        tarball: 'http://registry.npmjs.org/abbrev/-/abbrev-1.0.5.tgz' },
+417 silly install resolved     directories: {},
+417 silly install resolved     _resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.0.5.tgz',
+417 silly install resolved     readme: 'ERROR: No README data found!' } ]
+418 info install abbrev@1.0.5 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+419 info installOne abbrev@1.0.5
+420 verbose installOne of abbrev to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt not in flight; installing
+421 http 304 https://registry.npmjs.org/glob
+422 silly get cb [ 304,
+422 silly get   { date: 'Tue, 05 May 2015 01:35:19 GMT',
+422 silly get     via: '1.1 varnish',
+422 silly get     'last-modified': 'Tue, 05 May 2015 01:35:19 GMT',
+422 silly get     'cache-control': 'max-age=60',
+422 silly get     etag: '"9XIJS97FWQU7LHJIU5ZDX0NOW"',
+422 silly get     age: '2',
+422 silly get     connection: 'keep-alive',
+422 silly get     'x-served-by': 'cache-dfw1822-DFW',
+422 silly get     'x-cache': 'HIT',
+422 silly get     'x-cache-hits': '1',
+422 silly get     'x-timer': 'S1430789719.982967,VS0,VE0',
+422 silly get     vary: 'Accept' } ]
+423 verbose etag https://registry.npmjs.org/glob from cache
+424 verbose get saving glob to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\glob\.cache.json
+425 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\abbrev-fdaa03946583904b.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+426 silly install write writing abbrev 1.0.5 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+427 silly cache addNamed cb abbrev@1.0.5
+428 verbose unbuild node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+429 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev is being purged from base C:\Users\JHow\AppData\Roaming\npm
+430 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+431 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\abbrev\1.0.5\package.tgz
+432 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+433 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev is being purged
+434 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+435 silly gunzTarPerm modes [ '777', '666' ]
+436 silly addNameRange number 2 { name: 'glob', range: '>=3.2.9 <3.3.0', hasData: true }
+437 silly addNameRange versions [ 'glob',
+437 silly addNameRange   [ '1.1.0',
+437 silly addNameRange     '2.0.9',
+437 silly addNameRange     '2.0.8',
+437 silly addNameRange     '2.0.7',
+437 silly addNameRange     '2.1.0',
+437 silly addNameRange     '3.0.0',
+437 silly addNameRange     '3.0.1',
+437 silly addNameRange     '3.1.0',
+437 silly addNameRange     '3.1.1',
+437 silly addNameRange     '3.1.2',
+437 silly addNameRange     '3.1.3',
+437 silly addNameRange     '3.1.4',
+437 silly addNameRange     '3.1.5',
+437 silly addNameRange     '3.1.6',
+437 silly addNameRange     '3.1.7',
+437 silly addNameRange     '3.1.9',
+437 silly addNameRange     '3.1.10',
+437 silly addNameRange     '3.1.11',
+437 silly addNameRange     '3.1.12',
+437 silly addNameRange     '3.1.13',
+437 silly addNameRange     '3.1.14',
+437 silly addNameRange     '3.1.15',
+437 silly addNameRange     '3.1.16',
+437 silly addNameRange     '3.1.17',
+437 silly addNameRange     '3.1.18',
+437 silly addNameRange     '3.1.19',
+437 silly addNameRange     '3.1.20',
+437 silly addNameRange     '3.1.21',
+437 silly addNameRange     '3.2.0',
+437 silly addNameRange     '3.2.1',
+437 silly addNameRange     '3.2.3',
+437 silly addNameRange     '3.2.4',
+437 silly addNameRange     '3.2.5',
+437 silly addNameRange     '3.2.6',
+437 silly addNameRange     '3.2.7',
+437 silly addNameRange     '3.2.8',
+437 silly addNameRange     '3.2.9',
+437 silly addNameRange     '3.2.10',
+437 silly addNameRange     '3.2.11',
+437 silly addNameRange     '4.0.0',
+437 silly addNameRange     '4.0.1',
+437 silly addNameRange     '4.0.2',
+437 silly addNameRange     '4.0.3',
+437 silly addNameRange     '4.0.4',
+437 silly addNameRange     '4.0.5',
+437 silly addNameRange     '4.0.6',
+437 silly addNameRange     '4.1.2-beta',
+437 silly addNameRange     '4.1.2',
+437 silly addNameRange     '4.1.3',
+437 silly addNameRange     '4.1.4',
+437 silly addNameRange     '4.1.5',
+437 silly addNameRange     '4.1.6',
+437 silly addNameRange     '4.2.0',
+437 silly addNameRange     '4.2.1',
+437 silly addNameRange     '4.2.2',
+437 silly addNameRange     '4.3.0',
+437 silly addNameRange     '4.3.1',
+437 silly addNameRange     '4.3.2',
+437 silly addNameRange     '4.3.3',
+437 silly addNameRange     '4.3.4',
+437 silly addNameRange     '4.3.5',
+437 silly addNameRange     '4.4.0',
+437 silly addNameRange     '4.4.2',
+437 silly addNameRange     '4.5.0',
+437 silly addNameRange     '5.0.0',
+437 silly addNameRange     '4.5.1',
+437 silly addNameRange     '5.0.1',
+437 silly addNameRange     '4.5.2',
+437 silly addNameRange     '5.0.2',
+437 silly addNameRange     '4.5.3',
+437 silly addNameRange     '5.0.3',
+437 silly addNameRange     '5.0.4',
+437 silly addNameRange     '5.0.5' ] ]
+438 verbose addNamed glob@3.2.11
+439 silly addNamed semver.valid 3.2.11
+440 silly addNamed semver.validRange 3.2.11
+441 silly cache afterAdd lodash@2.4.2
+442 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\lodash\2.4.2\package\package.json not in flight; writing
+443 silly gunzTarPerm extractEntry package.json
+444 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+445 silly gunzTarPerm extractEntry README.md
+446 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+447 silly gunzTarPerm extractEntry LICENSE
+448 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+449 silly gunzTarPerm extractEntry abbrev.js
+450 silly gunzTarPerm modified mode [ 'abbrev.js', 420, 438 ]
+451 silly gunzTarPerm extractEntry test.js
+452 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+453 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\lodash\2.4.2\package\package.json written
+454 silly gunzTarPerm extractEntry CONTRIBUTING.md
+455 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 420, 438 ]
+456 silly cache afterAdd glob@3.2.11
+457 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\glob\3.2.11\package\package.json not in flight; writing
+458 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\glob\3.2.11\package\package.json written
+459 silly install resolved [ { name: 'lodash',
+459 silly install resolved     version: '2.4.2',
+459 silly install resolved     description: 'A utility library delivering consistency, customization, performance, & extras.',
+459 silly install resolved     homepage: 'http://lodash.com/',
+459 silly install resolved     license: 'MIT',
+459 silly install resolved     main: 'dist/lodash.js',
+459 silly install resolved     keywords:
+459 silly install resolved      [ 'amd',
+459 silly install resolved        'browser',
+459 silly install resolved        'client',
+459 silly install resolved        'customize',
+459 silly install resolved        'functional',
+459 silly install resolved        'server',
+459 silly install resolved        'util' ],
+459 silly install resolved     author:
+459 silly install resolved      { name: 'John-David Dalton',
+459 silly install resolved        email: 'john.david.dalton@gmail.com',
+459 silly install resolved        url: 'http://allyoucanleet.com/' },
+459 silly install resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+459 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+459 silly install resolved     repository: { type: 'git', url: 'https://github.com/lodash/lodash.git' },
+459 silly install resolved     engines: [ 'node', 'rhino' ],
+459 silly install resolved     files:
+459 silly install resolved      [ 'LICENSE.txt',
+459 silly install resolved        'lodash.js',
+459 silly install resolved        'dist/lodash.js',
+459 silly install resolved        'dist/lodash.min.js',
+459 silly install resolved        'dist/lodash.compat.js',
+459 silly install resolved        'dist/lodash.compat.min.js',
+459 silly install resolved        'dist/lodash.underscore.js',
+459 silly install resolved        'dist/lodash.underscore.min.js' ],
+459 silly install resolved     jam: { main: 'dist/lodash.compat.js', include: [Object] },
+459 silly install resolved     volo: { type: 'directory', ignore: [Object] },
+459 silly install resolved     _id: 'lodash@2.4.2',
+459 silly install resolved     scripts: {},
+459 silly install resolved     _shasum: 'fadd834b9683073da179b3eae6d9c0d15053f73e',
+459 silly install resolved     _from: 'lodash@>=2.4.1 <2.5.0',
+459 silly install resolved     _npmVersion: '2.7.5',
+459 silly install resolved     _nodeVersion: '0.12.2',
+459 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+459 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+459 silly install resolved     dist:
+459 silly install resolved      { shasum: 'fadd834b9683073da179b3eae6d9c0d15053f73e',
+459 silly install resolved        tarball: 'http://registry.npmjs.org/lodash/-/lodash-2.4.2.tgz' },
+459 silly install resolved     directories: {},
+459 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash/-/lodash-2.4.2.tgz',
+459 silly install resolved     readme: 'ERROR: No README data found!' },
+459 silly install resolved   { author:
+459 silly install resolved      { name: 'Isaac Z. Schlueter',
+459 silly install resolved        email: 'i@izs.me',
+459 silly install resolved        url: 'http://blog.izs.me/' },
+459 silly install resolved     name: 'glob',
+459 silly install resolved     description: 'a little globber',
+459 silly install resolved     version: '3.2.11',
+459 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/node-glob.git' },
+459 silly install resolved     main: 'glob.js',
+459 silly install resolved     engines: { node: '*' },
+459 silly install resolved     dependencies: { inherits: '2', minimatch: '0.3' },
+459 silly install resolved     devDependencies: { tap: '~0.4.0', mkdirp: '0', rimraf: '1' },
+459 silly install resolved     scripts:
+459 silly install resolved      { test: 'tap test/*.js',
+459 silly install resolved        'test-regen': 'TEST_REGEN=1 node test/00-setup.js' },
+459 silly install resolved     license: 'BSD',
+459 silly install resolved     gitHead: '73f57e99510582b2024b762305970ebcf9b70aa2',
+459 silly install resolved     bugs: { url: 'https://github.com/isaacs/node-glob/issues' },
+459 silly install resolved     homepage: 'https://github.com/isaacs/node-glob',
+459 silly install resolved     _id: 'glob@3.2.11',
+459 silly install resolved     _shasum: '4a973f635b9190f715d10987d5c00fd2815ebe3d',
+459 silly install resolved     _from: 'glob@>=3.2.9 <3.3.0',
+459 silly install resolved     _npmVersion: '1.4.10',
+459 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+459 silly install resolved     maintainers: [ [Object] ],
+459 silly install resolved     dist:
+459 silly install resolved      { shasum: '4a973f635b9190f715d10987d5c00fd2815ebe3d',
+459 silly install resolved        tarball: 'http://registry.npmjs.org/glob/-/glob-3.2.11.tgz' },
+459 silly install resolved     directories: {},
+459 silly install resolved     _resolved: 'https://registry.npmjs.org/glob/-/glob-3.2.11.tgz',
+459 silly install resolved     readme: 'ERROR: No README data found!' } ]
+460 info install lodash@2.4.2 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+461 info install glob@3.2.11 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+462 info installOne lodash@2.4.2
+463 verbose installOne of lodash to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync not in flight; installing
+464 info installOne glob@3.2.11
+465 verbose installOne of glob to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync not in flight; installing
+466 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\lodash-7503a7befa9e467e.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+467 silly install write writing lodash 2.4.2 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+468 silly cache addNamed cb lodash@2.4.2
+469 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+470 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\glob-89bba96b687e8701.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+471 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash is being purged from base C:\Users\JHow\AppData\Roaming\npm
+472 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+473 silly install write writing glob 3.2.11 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+474 silly cache addNamed cb glob@3.2.11
+475 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+476 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\lodash\2.4.2\package.tgz
+477 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+478 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash is being purged
+479 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+480 silly gunzTarPerm modes [ '777', '666' ]
+481 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob is being purged from base C:\Users\JHow\AppData\Roaming\npm
+482 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+483 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\glob\3.2.11\package.tgz
+484 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+485 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob is being purged
+486 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+487 silly gunzTarPerm modes [ '777', '666' ]
+488 silly gunzTarPerm extractEntry package.json
+489 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+490 silly gunzTarPerm extractEntry .npmignore
+491 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+492 silly gunzTarPerm extractEntry README.md
+493 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+494 silly gunzTarPerm extractEntry LICENSE
+495 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+496 silly gunzTarPerm extractEntry glob.js
+497 silly gunzTarPerm modified mode [ 'glob.js', 420, 438 ]
+498 info preinstall abbrev@1.0.5
+499 silly install resolved []
+500 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+501 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+502 verbose linkStuff [ true,
+502 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+502 verbose linkStuff   false,
+502 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\nopt\\node_modules' ]
+503 info linkStuff abbrev@1.0.5
+504 verbose linkBins abbrev@1.0.5
+505 verbose linkMans abbrev@1.0.5
+506 verbose rebuildBundles abbrev@1.0.5
+507 info install abbrev@1.0.5
+508 info postinstall abbrev@1.0.5
+509 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\abbrev-fdaa03946583904b.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt\node_modules\abbrev
+510 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+511 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+512 verbose linkStuff [ true,
+512 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+512 verbose linkStuff   false,
+512 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules' ]
+513 info linkStuff nopt@1.0.10
+514 verbose linkBins nopt@1.0.10
+515 verbose link bins [ { nopt: './bin/nopt.js' },
+515 verbose link bins   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\.bin',
+515 verbose link bins   false ]
+516 verbose linkMans nopt@1.0.10
+517 verbose rebuildBundles nopt@1.0.10
+518 verbose rebuildBundles [ 'abbrev' ]
+519 info install nopt@1.0.10
+520 silly gunzTarPerm extractEntry .travis.yml
+521 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+522 info postinstall nopt@1.0.10
+523 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\nopt-cc9d83539cd2393f.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\nopt
+524 silly gunzTarPerm extractEntry examples/g.js
+525 silly gunzTarPerm modified mode [ 'examples/g.js', 420, 438 ]
+526 silly gunzTarPerm extractEntry examples/usr-local.js
+527 silly gunzTarPerm modified mode [ 'examples/usr-local.js', 420, 438 ]
+528 silly gunzTarPerm extractEntry test/00-setup.js
+529 silly gunzTarPerm modified mode [ 'test/00-setup.js', 420, 438 ]
+530 silly gunzTarPerm extractEntry test/cwd-test.js
+531 silly gunzTarPerm modified mode [ 'test/cwd-test.js', 420, 438 ]
+532 silly gunzTarPerm extractEntry test/globstar-match.js
+533 silly gunzTarPerm modified mode [ 'test/globstar-match.js', 420, 438 ]
+534 silly gunzTarPerm extractEntry test/mark.js
+535 silly gunzTarPerm modified mode [ 'test/mark.js', 420, 438 ]
+536 silly gunzTarPerm extractEntry package.json
+537 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+538 silly gunzTarPerm extractEntry README.md
+539 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+540 silly gunzTarPerm extractEntry lodash.js
+541 silly gunzTarPerm modified mode [ 'lodash.js', 420, 438 ]
+542 silly gunzTarPerm extractEntry LICENSE.txt
+543 silly gunzTarPerm modified mode [ 'LICENSE.txt', 420, 438 ]
+544 silly gunzTarPerm extractEntry test/stat.js
+545 silly gunzTarPerm modified mode [ 'test/stat.js', 420, 438 ]
+546 silly gunzTarPerm extractEntry test/bash-comparison.js
+547 silly gunzTarPerm modified mode [ 'test/bash-comparison.js', 420, 438 ]
+548 silly gunzTarPerm extractEntry test/pause-resume.js
+549 silly gunzTarPerm modified mode [ 'test/pause-resume.js', 420, 438 ]
+550 silly gunzTarPerm extractEntry test/readme-issue.js
+551 silly gunzTarPerm modified mode [ 'test/readme-issue.js', 420, 438 ]
+552 silly gunzTarPerm extractEntry dist/lodash.compat.js
+553 silly gunzTarPerm modified mode [ 'dist/lodash.compat.js', 420, 438 ]
+554 silly gunzTarPerm extractEntry dist/lodash.compat.min.js
+555 silly gunzTarPerm modified mode [ 'dist/lodash.compat.min.js', 420, 438 ]
+556 silly gunzTarPerm extractEntry test/root-nomount.js
+557 silly gunzTarPerm modified mode [ 'test/root-nomount.js', 420, 438 ]
+558 silly gunzTarPerm extractEntry test/root.js
+559 silly gunzTarPerm modified mode [ 'test/root.js', 420, 438 ]
+560 silly gunzTarPerm extractEntry dist/lodash.js
+561 silly gunzTarPerm modified mode [ 'dist/lodash.js', 420, 438 ]
+562 silly gunzTarPerm extractEntry test/new-glob-optional-options.js
+563 silly gunzTarPerm modified mode [ 'test/new-glob-optional-options.js', 420, 438 ]
+564 silly gunzTarPerm extractEntry test/zz-cleanup.js
+565 silly gunzTarPerm modified mode [ 'test/zz-cleanup.js', 420, 438 ]
+566 silly gunzTarPerm extractEntry dist/lodash.min.js
+567 silly gunzTarPerm modified mode [ 'dist/lodash.min.js', 420, 438 ]
+568 silly gunzTarPerm extractEntry dist/lodash.underscore.js
+569 silly gunzTarPerm modified mode [ 'dist/lodash.underscore.js', 420, 438 ]
+570 silly gunzTarPerm extractEntry dist/lodash.underscore.min.js
+571 silly gunzTarPerm modified mode [ 'dist/lodash.underscore.min.js', 420, 438 ]
+572 silly gunzTarPerm extractEntry test/nocase-nomagic.js
+573 silly gunzTarPerm modified mode [ 'test/nocase-nomagic.js', 420, 438 ]
+574 silly gunzTarPerm extractEntry test/bash-results.json
+575 silly gunzTarPerm modified mode [ 'test/bash-results.json', 420, 438 ]
+576 info preinstall glob@3.2.11
+577 silly prepareForInstallMany adding inherits@2 from glob dependencies
+578 silly prepareForInstallMany adding minimatch@0.3 from glob dependencies
+579 silly cache add args [ 'inherits@2', null ]
+580 verbose cache add spec inherits@2
+581 silly cache add args [ 'minimatch@0.3', null ]
+582 verbose cache add spec minimatch@0.3
+583 silly cache add parsed spec { raw: 'inherits@2',
+583 silly cache add   scope: null,
+583 silly cache add   name: 'inherits',
+583 silly cache add   rawSpec: '2',
+583 silly cache add   spec: '>=2.0.0 <3.0.0',
+583 silly cache add   type: 'range' }
+584 verbose addNamed inherits@>=2.0.0 <3.0.0
+585 silly addNamed semver.valid null
+586 silly addNamed semver.validRange >=2.0.0 <3.0.0
+587 silly addNameRange { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: false }
+588 silly mapToRegistry name inherits
+589 silly mapToRegistry using default registry
+590 silly mapToRegistry registry https://registry.npmjs.org/
+591 silly mapToRegistry uri https://registry.npmjs.org/inherits
+592 verbose addNameRange registry:https://registry.npmjs.org/inherits not in flight; fetching
+593 silly cache add parsed spec { raw: 'minimatch@0.3',
+593 silly cache add   scope: null,
+593 silly cache add   name: 'minimatch',
+593 silly cache add   rawSpec: '0.3',
+593 silly cache add   spec: '>=0.3.0 <0.4.0',
+593 silly cache add   type: 'range' }
+594 verbose addNamed minimatch@>=0.3.0 <0.4.0
+595 silly addNamed semver.valid null
+596 silly addNamed semver.validRange >=0.3.0 <0.4.0
+597 silly addNameRange { name: 'minimatch', range: '>=0.3.0 <0.4.0', hasData: false }
+598 silly mapToRegistry name minimatch
+599 silly mapToRegistry using default registry
+600 silly mapToRegistry registry https://registry.npmjs.org/
+601 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+602 verbose addNameRange registry:https://registry.npmjs.org/minimatch not in flight; fetching
+603 verbose request uri https://registry.npmjs.org/inherits
+604 verbose request no auth needed
+605 info attempt registry request try #1 at 9:35:24 PM
+606 verbose etag "23748IIFBI9UHIXA5WTETU9N1"
+607 http request GET https://registry.npmjs.org/inherits
+608 verbose request uri https://registry.npmjs.org/minimatch
+609 verbose request no auth needed
+610 info attempt registry request try #1 at 9:35:24 PM
+611 verbose etag "91XDIWZ9TQ411189TUINSRVDV"
+612 http request GET https://registry.npmjs.org/minimatch
+613 info preinstall lodash@2.4.2
+614 silly install resolved []
+615 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+616 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+617 verbose linkStuff [ true,
+617 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+617 verbose linkStuff   false,
+617 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\findup-sync\\node_modules' ]
+618 info linkStuff lodash@2.4.2
+619 verbose linkBins lodash@2.4.2
+620 verbose linkMans lodash@2.4.2
+621 verbose rebuildBundles lodash@2.4.2
+622 info install lodash@2.4.2
+623 info postinstall lodash@2.4.2
+624 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\lodash-7503a7befa9e467e.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\lodash
+625 http 304 https://registry.npmjs.org/inherits
+626 silly get cb [ 304,
+626 silly get   { date: 'Tue, 05 May 2015 01:35:20 GMT',
+626 silly get     via: '1.1 varnish',
+626 silly get     'cache-control': 'max-age=60',
+626 silly get     etag: '"23748IIFBI9UHIXA5WTETU9N1"',
+626 silly get     age: '50',
+626 silly get     connection: 'keep-alive',
+626 silly get     'x-served-by': 'cache-dfw1829-DFW',
+626 silly get     'x-cache': 'HIT',
+626 silly get     'x-cache-hits': '2',
+626 silly get     'x-timer': 'S1430789720.809192,VS0,VE0',
+626 silly get     vary: 'Accept' } ]
+627 verbose etag https://registry.npmjs.org/inherits from cache
+628 verbose get saving inherits to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\inherits\.cache.json
+629 http 304 https://registry.npmjs.org/minimatch
+630 silly get cb [ 304,
+630 silly get   { date: 'Tue, 05 May 2015 01:35:20 GMT',
+630 silly get     via: '1.1 varnish',
+630 silly get     'last-modified': 'Tue, 05 May 2015 01:08:12 GMT',
+630 silly get     'cache-control': 'max-age=60',
+630 silly get     etag: '"91XDIWZ9TQ411189TUINSRVDV"',
+630 silly get     age: '15',
+630 silly get     connection: 'keep-alive',
+630 silly get     'x-served-by': 'cache-dfw1830-DFW',
+630 silly get     'x-cache': 'HIT',
+630 silly get     'x-cache-hits': '366',
+630 silly get     'x-timer': 'S1430789720.816904,VS0,VE0',
+630 silly get     vary: 'Accept' } ]
+631 verbose etag https://registry.npmjs.org/minimatch from cache
+632 verbose get saving minimatch to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\minimatch\.cache.json
+633 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: true }
+634 silly addNameRange versions [ 'inherits', [ '1.0.0', '2.0.0', '2.0.1' ] ]
+635 verbose addNamed inherits@2.0.1
+636 silly addNamed semver.valid 2.0.1
+637 silly addNamed semver.validRange 2.0.1
+638 silly addNameRange number 2 { name: 'minimatch', range: '>=0.3.0 <0.4.0', hasData: true }
+639 silly addNameRange versions [ 'minimatch',
+639 silly addNameRange   [ '0.0.1',
+639 silly addNameRange     '0.0.2',
+639 silly addNameRange     '0.0.4',
+639 silly addNameRange     '0.0.5',
+639 silly addNameRange     '0.1.1',
+639 silly addNameRange     '0.1.2',
+639 silly addNameRange     '0.1.3',
+639 silly addNameRange     '0.1.4',
+639 silly addNameRange     '0.1.5',
+639 silly addNameRange     '0.2.0',
+639 silly addNameRange     '0.2.2',
+639 silly addNameRange     '0.2.3',
+639 silly addNameRange     '0.2.4',
+639 silly addNameRange     '0.2.5',
+639 silly addNameRange     '0.2.6',
+639 silly addNameRange     '0.2.7',
+639 silly addNameRange     '0.2.8',
+639 silly addNameRange     '0.2.9',
+639 silly addNameRange     '0.2.10',
+639 silly addNameRange     '0.2.11',
+639 silly addNameRange     '0.2.12',
+639 silly addNameRange     '0.2.13',
+639 silly addNameRange     '0.2.14',
+639 silly addNameRange     '0.3.0',
+639 silly addNameRange     '0.4.0',
+639 silly addNameRange     '1.0.0',
+639 silly addNameRange     '2.0.0',
+639 silly addNameRange     '2.0.1',
+639 silly addNameRange     '2.0.2',
+639 silly addNameRange     '2.0.3',
+639 silly addNameRange     '2.0.4',
+639 silly addNameRange     '2.0.5',
+639 silly addNameRange     '2.0.6',
+639 silly addNameRange     '2.0.7' ] ]
+640 verbose addNamed minimatch@0.3.0
+641 silly addNamed semver.valid 0.3.0
+642 silly addNamed semver.validRange 0.3.0
+643 silly cache afterAdd inherits@2.0.1
+644 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\inherits\2.0.1\package\package.json not in flight; writing
+645 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\inherits\2.0.1\package\package.json written
+646 silly cache afterAdd minimatch@0.3.0
+647 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\minimatch\0.3.0\package\package.json not in flight; writing
+648 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\minimatch\0.3.0\package\package.json written
+649 silly install resolved [ { name: 'inherits',
+649 silly install resolved     description: 'Browser-friendly inheritance fully compatible with standard node.js inherits()',
+649 silly install resolved     version: '2.0.1',
+649 silly install resolved     keywords:
+649 silly install resolved      [ 'inheritance',
+649 silly install resolved        'class',
+649 silly install resolved        'klass',
+649 silly install resolved        'oop',
+649 silly install resolved        'object-oriented',
+649 silly install resolved        'inherits',
+649 silly install resolved        'browser',
+649 silly install resolved        'browserify' ],
+649 silly install resolved     main: './inherits.js',
+649 silly install resolved     browser: './inherits_browser.js',
+649 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/inherits' },
+649 silly install resolved     license: 'ISC',
+649 silly install resolved     scripts: { test: 'node test' },
+649 silly install resolved     bugs: { url: 'https://github.com/isaacs/inherits/issues' },
+649 silly install resolved     _id: 'inherits@2.0.1',
+649 silly install resolved     dist:
+649 silly install resolved      { shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+649 silly install resolved        tarball: 'http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz' },
+649 silly install resolved     _from: 'inherits@>=2.0.0 <3.0.0',
+649 silly install resolved     _npmVersion: '1.3.8',
+649 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+649 silly install resolved     maintainers: [ [Object] ],
+649 silly install resolved     directories: {},
+649 silly install resolved     _shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+649 silly install resolved     _resolved: 'https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz',
+649 silly install resolved     readme: 'ERROR: No README data found!',
+649 silly install resolved     homepage: 'https://github.com/isaacs/inherits' },
+649 silly install resolved   { author:
+649 silly install resolved      { name: 'Isaac Z. Schlueter',
+649 silly install resolved        email: 'i@izs.me',
+649 silly install resolved        url: 'http://blog.izs.me' },
+649 silly install resolved     name: 'minimatch',
+649 silly install resolved     description: 'a glob matcher in javascript',
+649 silly install resolved     version: '0.3.0',
+649 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/minimatch.git' },
+649 silly install resolved     main: 'minimatch.js',
+649 silly install resolved     scripts: { test: 'tap test/*.js' },
+649 silly install resolved     engines: { node: '*' },
+649 silly install resolved     dependencies: { 'lru-cache': '2', sigmund: '~1.0.0' },
+649 silly install resolved     devDependencies: { tap: '' },
+649 silly install resolved     license:
+649 silly install resolved      { type: 'MIT',
+649 silly install resolved        url: 'http://github.com/isaacs/minimatch/raw/master/LICENSE' },
+649 silly install resolved     bugs: { url: 'https://github.com/isaacs/minimatch/issues' },
+649 silly install resolved     homepage: 'https://github.com/isaacs/minimatch',
+649 silly install resolved     _id: 'minimatch@0.3.0',
+649 silly install resolved     _shasum: '275d8edaac4f1bb3326472089e7949c8394699dd',
+649 silly install resolved     _from: 'minimatch@>=0.3.0 <0.4.0',
+649 silly install resolved     _npmVersion: '1.4.10',
+649 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+649 silly install resolved     maintainers: [ [Object] ],
+649 silly install resolved     dist:
+649 silly install resolved      { shasum: '275d8edaac4f1bb3326472089e7949c8394699dd',
+649 silly install resolved        tarball: 'http://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz' },
+649 silly install resolved     directories: {},
+649 silly install resolved     _resolved: 'https://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz',
+649 silly install resolved     readme: 'ERROR: No README data found!' } ]
+650 info install inherits@2.0.1 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+651 info install minimatch@0.3.0 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+652 info installOne inherits@2.0.1
+653 verbose installOne of inherits to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob not in flight; installing
+654 info installOne minimatch@0.3.0
+655 verbose installOne of minimatch to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob not in flight; installing
+656 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\minimatch-6620cff3066f7c32.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+657 silly install write writing minimatch 0.3.0 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+658 silly cache addNamed cb minimatch@0.3.0
+659 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+660 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\inherits-616d738ecc04cbf4.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+661 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch is being purged from base C:\Users\JHow\AppData\Roaming\npm
+662 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+663 silly install write writing inherits 2.0.1 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+664 silly cache addNamed cb inherits@2.0.1
+665 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+666 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\minimatch\0.3.0\package.tgz
+667 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+668 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch is being purged
+669 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+670 silly gunzTarPerm modes [ '777', '666' ]
+671 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits is being purged from base C:\Users\JHow\AppData\Roaming\npm
+672 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+673 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\inherits\2.0.1\package.tgz
+674 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+675 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits is being purged
+676 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+677 silly gunzTarPerm modes [ '777', '666' ]
+678 silly gunzTarPerm extractEntry package.json
+679 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+680 silly gunzTarPerm extractEntry package.json
+681 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+682 silly gunzTarPerm extractEntry README.md
+683 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+684 silly gunzTarPerm extractEntry LICENSE
+685 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+686 silly gunzTarPerm extractEntry .npmignore
+687 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+688 silly gunzTarPerm extractEntry README.md
+689 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+690 silly gunzTarPerm extractEntry inherits.js
+691 silly gunzTarPerm modified mode [ 'inherits.js', 420, 438 ]
+692 silly gunzTarPerm extractEntry inherits_browser.js
+693 silly gunzTarPerm modified mode [ 'inherits_browser.js', 420, 438 ]
+694 silly gunzTarPerm extractEntry LICENSE
+695 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+696 silly gunzTarPerm extractEntry minimatch.js
+697 silly gunzTarPerm modified mode [ 'minimatch.js', 420, 438 ]
+698 silly gunzTarPerm extractEntry test.js
+699 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+700 silly gunzTarPerm extractEntry test/basic.js
+701 silly gunzTarPerm modified mode [ 'test/basic.js', 420, 438 ]
+702 silly gunzTarPerm extractEntry test/brace-expand.js
+703 silly gunzTarPerm modified mode [ 'test/brace-expand.js', 420, 438 ]
+704 silly gunzTarPerm extractEntry test/caching.js
+705 silly gunzTarPerm modified mode [ 'test/caching.js', 420, 438 ]
+706 silly gunzTarPerm extractEntry test/defaults.js
+707 silly gunzTarPerm modified mode [ 'test/defaults.js', 420, 438 ]
+708 silly gunzTarPerm extractEntry test/extglob-ending-with-state-char.js
+709 silly gunzTarPerm modified mode [ 'test/extglob-ending-with-state-char.js', 420, 438 ]
+710 info preinstall inherits@2.0.1
+711 silly install resolved []
+712 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+713 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+714 verbose linkStuff [ true,
+714 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+714 verbose linkStuff   false,
+714 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\findup-sync\\node_modules\\glob\\node_modules' ]
+715 info linkStuff inherits@2.0.1
+716 verbose linkBins inherits@2.0.1
+717 verbose linkMans inherits@2.0.1
+718 verbose rebuildBundles inherits@2.0.1
+719 info install inherits@2.0.1
+720 info postinstall inherits@2.0.1
+721 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\inherits-616d738ecc04cbf4.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\inherits
+722 info preinstall minimatch@0.3.0
+723 silly prepareForInstallMany adding lru-cache@2 from minimatch dependencies
+724 silly prepareForInstallMany adding sigmund@~1.0.0 from minimatch dependencies
+725 silly cache add args [ 'lru-cache@2', null ]
+726 verbose cache add spec lru-cache@2
+727 silly cache add args [ 'sigmund@~1.0.0', null ]
+728 verbose cache add spec sigmund@~1.0.0
+729 silly cache add parsed spec { raw: 'lru-cache@2',
+729 silly cache add   scope: null,
+729 silly cache add   name: 'lru-cache',
+729 silly cache add   rawSpec: '2',
+729 silly cache add   spec: '>=2.0.0 <3.0.0',
+729 silly cache add   type: 'range' }
+730 verbose addNamed lru-cache@>=2.0.0 <3.0.0
+731 silly addNamed semver.valid null
+732 silly addNamed semver.validRange >=2.0.0 <3.0.0
+733 silly addNameRange { name: 'lru-cache', range: '>=2.0.0 <3.0.0', hasData: false }
+734 silly mapToRegistry name lru-cache
+735 silly mapToRegistry using default registry
+736 silly mapToRegistry registry https://registry.npmjs.org/
+737 silly mapToRegistry uri https://registry.npmjs.org/lru-cache
+738 verbose addNameRange registry:https://registry.npmjs.org/lru-cache not in flight; fetching
+739 silly cache add parsed spec { raw: 'sigmund@~1.0.0',
+739 silly cache add   scope: null,
+739 silly cache add   name: 'sigmund',
+739 silly cache add   rawSpec: '~1.0.0',
+739 silly cache add   spec: '>=1.0.0 <1.1.0',
+739 silly cache add   type: 'range' }
+740 verbose addNamed sigmund@>=1.0.0 <1.1.0
+741 silly addNamed semver.valid null
+742 silly addNamed semver.validRange >=1.0.0 <1.1.0
+743 silly addNameRange { name: 'sigmund', range: '>=1.0.0 <1.1.0', hasData: false }
+744 silly mapToRegistry name sigmund
+745 silly mapToRegistry using default registry
+746 silly mapToRegistry registry https://registry.npmjs.org/
+747 silly mapToRegistry uri https://registry.npmjs.org/sigmund
+748 verbose addNameRange registry:https://registry.npmjs.org/sigmund not in flight; fetching
+749 verbose request uri https://registry.npmjs.org/lru-cache
+750 verbose request no auth needed
+751 info attempt registry request try #1 at 9:35:25 PM
+752 verbose etag "197CKYFF5NUP293URJIZDAL6C"
+753 http request GET https://registry.npmjs.org/lru-cache
+754 verbose request uri https://registry.npmjs.org/sigmund
+755 verbose request no auth needed
+756 info attempt registry request try #1 at 9:35:25 PM
+757 verbose etag "31NK166XOLFBN32SCC6I419DH"
+758 http request GET https://registry.npmjs.org/sigmund
+759 http 304 https://registry.npmjs.org/lru-cache
+760 silly get cb [ 304,
+760 silly get   { date: 'Tue, 05 May 2015 01:35:21 GMT',
+760 silly get     via: '1.1 varnish',
+760 silly get     'last-modified': 'Tue, 05 May 2015 01:35:21 GMT',
+760 silly get     'cache-control': 'max-age=60',
+760 silly get     etag: '"197CKYFF5NUP293URJIZDAL6C"',
+760 silly get     age: '10',
+760 silly get     connection: 'keep-alive',
+760 silly get     'x-served-by': 'cache-dfw1825-DFW',
+760 silly get     'x-cache': 'HIT',
+760 silly get     'x-cache-hits': '1',
+760 silly get     'x-timer': 'S1430789721.485446,VS0,VE0',
+760 silly get     vary: 'Accept' } ]
+761 verbose etag https://registry.npmjs.org/lru-cache from cache
+762 verbose get saving lru-cache to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\lru-cache\.cache.json
+763 silly addNameRange number 2 { name: 'lru-cache', range: '>=2.0.0 <3.0.0', hasData: true }
+764 silly addNameRange versions [ 'lru-cache',
+764 silly addNameRange   [ '1.0.1',
+764 silly addNameRange     '1.0.2',
+764 silly addNameRange     '1.0.3',
+764 silly addNameRange     '1.0.4',
+764 silly addNameRange     '1.0.5',
+764 silly addNameRange     '1.0.6',
+764 silly addNameRange     '1.1.0',
+764 silly addNameRange     '1.1.1',
+764 silly addNameRange     '2.0.0',
+764 silly addNameRange     '2.0.1',
+764 silly addNameRange     '2.0.2',
+764 silly addNameRange     '2.0.3',
+764 silly addNameRange     '2.0.4',
+764 silly addNameRange     '2.1.0',
+764 silly addNameRange     '2.2.0',
+764 silly addNameRange     '2.2.1',
+764 silly addNameRange     '2.2.2',
+764 silly addNameRange     '2.2.4',
+764 silly addNameRange     '2.3.0',
+764 silly addNameRange     '2.3.1',
+764 silly addNameRange     '2.5.0',
+764 silly addNameRange     '2.5.1',
+764 silly addNameRange     '2.5.2',
+764 silly addNameRange     '2.6.0',
+764 silly addNameRange     '2.6.1',
+764 silly addNameRange     '2.6.2' ] ]
+765 verbose addNamed lru-cache@2.6.2
+766 silly addNamed semver.valid 2.6.2
+767 silly addNamed semver.validRange 2.6.2
+768 http 304 https://registry.npmjs.org/sigmund
+769 silly get cb [ 304,
+769 silly get   { date: 'Tue, 05 May 2015 01:35:21 GMT',
+769 silly get     via: '1.1 varnish',
+769 silly get     'last-modified': 'Tue, 05 May 2015 01:35:21 GMT',
+769 silly get     'cache-control': 'max-age=60',
+769 silly get     etag: '"31NK166XOLFBN32SCC6I419DH"',
+769 silly get     age: '0',
+769 silly get     connection: 'keep-alive',
+769 silly get     'x-served-by': 'cache-dfw1824-DFW',
+769 silly get     'x-cache': 'HIT',
+769 silly get     'x-cache-hits': '1',
+769 silly get     'x-timer': 'S1430789721.492641,VS0,VE63',
+769 silly get     vary: 'Accept' } ]
+770 verbose etag https://registry.npmjs.org/sigmund from cache
+771 verbose get saving sigmund to C:\Users\JHow\AppData\Roaming\npm-cache\registry.npmjs.org\sigmund\.cache.json
+772 silly addNameRange number 2 { name: 'sigmund', range: '>=1.0.0 <1.1.0', hasData: true }
+773 silly addNameRange versions [ 'sigmund', [ '1.0.0' ] ]
+774 verbose addNamed sigmund@1.0.0
+775 silly addNamed semver.valid 1.0.0
+776 silly addNamed semver.validRange 1.0.0
+777 silly cache afterAdd sigmund@1.0.0
+778 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\sigmund\1.0.0\package\package.json not in flight; writing
+779 silly cache afterAdd lru-cache@2.6.2
+780 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\lru-cache\2.6.2\package\package.json not in flight; writing
+781 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\sigmund\1.0.0\package\package.json written
+782 verbose afterAdd C:\Users\JHow\AppData\Roaming\npm-cache\lru-cache\2.6.2\package\package.json written
+783 silly install resolved [ { name: 'sigmund',
+783 silly install resolved     version: '1.0.0',
+783 silly install resolved     description: 'Quick and dirty signatures for Objects.',
+783 silly install resolved     main: 'sigmund.js',
+783 silly install resolved     directories: { test: 'test' },
+783 silly install resolved     dependencies: {},
+783 silly install resolved     devDependencies: { tap: '~0.3.0' },
+783 silly install resolved     scripts: { test: 'tap test/*.js', bench: 'node bench.js' },
+783 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/sigmund' },
+783 silly install resolved     keywords: [ 'object', 'signature', 'key', 'data', 'psychoanalysis' ],
+783 silly install resolved     author:
+783 silly install resolved      { name: 'Isaac Z. Schlueter',
+783 silly install resolved        email: 'i@izs.me',
+783 silly install resolved        url: 'http://blog.izs.me/' },
+783 silly install resolved     license: 'BSD',
+783 silly install resolved     readme: '# sigmund\n\nQuick and dirty signatures for Objects.\n\nThis is like a much faster `deepEquals` comparison, which returns a\nstring key suitable for caches and the like.\n\n## Usage\n\n```javascript\nfunction doSomething (someObj) {\n  var key = sigmund(someObj, maxDepth) // max depth defaults to 10\n  var cached = cache.get(key)\n  if (cached) return cached)\n\n  var result = expensiveCalculation(someObj)\n  cache.set(key, result)\n  return result\n}\n```\n\nThe resulting key will be as unique and reproducible as calling\n`JSON.stringify` or `util.inspect` on the object, but is much faster.\nIn order to achieve this speed, some differences are glossed over.\nFor example, the object `{0:\'foo\'}` will be treated identically to the\narray `[\'foo\']`.\n\nAlso, just as there is no way to summon the soul from the scribblings\nof a cocain-addled psychoanalyst, there is no way to revive the object\nfrom the signature string that sigmund gives you.  In fact, it\'s\nbarely even readable.\n\nAs with `sys.inspect` and `JSON.stringify`, larger objects will\nproduce larger signature strings.\n\nBecause sigmund is a bit less strict than the more thorough\nalternatives, the strings will be shorter, and also there is a\nslightly higher chance for collisions.  For example, these objects\nhave the same signature:\n\n    var obj1 = {a:\'b\',c:/def/,g:[\'h\',\'i\',{j:\'\',k:\'l\'}]}\n    var obj2 = {a:\'b\',c:\'/def/\',g:[\'h\',\'i\',\'{jkl\']}\n\nLike a good Freudian, sigmund is most effective when you already have\nsome understanding of what you\'re looking for.  It can help you help\nyourself, but you must be willing to do some work as well.\n\nCycles are handled, and cyclical objects are silently omitted (though\nthe key is included in the signature output.)\n\nThe second argument is the maximum depth, which defaults to 10,\nbecause that is the maximum object traversal depth covered by most\ninsurance carriers.\n',
+783 silly install resolved     _id: 'sigmund@1.0.0',
+783 silly install resolved     dist:
+783 silly install resolved      { shasum: '66a2b3a749ae8b5fb89efd4fcc01dc94fbe02296',
+783 silly install resolved        tarball: 'http://registry.npmjs.org/sigmund/-/sigmund-1.0.0.tgz' },
+783 silly install resolved     _npmVersion: '1.1.48',
+783 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+783 silly install resolved     maintainers: [ [Object] ],
+783 silly install resolved     _shasum: '66a2b3a749ae8b5fb89efd4fcc01dc94fbe02296',
+783 silly install resolved     _resolved: 'https://registry.npmjs.org/sigmund/-/sigmund-1.0.0.tgz',
+783 silly install resolved     _from: 'sigmund@>=1.0.0 <1.1.0',
+783 silly install resolved     bugs: { url: 'https://github.com/isaacs/sigmund/issues' },
+783 silly install resolved     homepage: 'https://github.com/isaacs/sigmund' },
+783 silly install resolved   { name: 'lru-cache',
+783 silly install resolved     description: 'A cache object that deletes the least-recently-used items.',
+783 silly install resolved     version: '2.6.2',
+783 silly install resolved     author: { name: 'Isaac Z. Schlueter', email: 'i@izs.me' },
+783 silly install resolved     keywords: [ 'mru', 'lru', 'cache' ],
+783 silly install resolved     scripts: { test: 'tap test --gc' },
+783 silly install resolved     main: 'lib/lru-cache.js',
+783 silly install resolved     repository:
+783 silly install resolved      { type: 'git',
+783 silly install resolved        url: 'git://github.com/isaacs/node-lru-cache.git' },
+783 silly install resolved     devDependencies: { tap: '^0.7.1', weak: '' },
+783 silly install resolved     license:
+783 silly install resolved      { type: 'MIT',
+783 silly install resolved        url: 'http://github.com/isaacs/node-lru-cache/raw/master/LICENSE' },
+783 silly install resolved     gitHead: '278d05fcc714636eeedb3959bca80c20c19a61df',
+783 silly install resolved     bugs: { url: 'https://github.com/isaacs/node-lru-cache/issues' },
+783 silly install resolved     homepage: 'https://github.com/isaacs/node-lru-cache#readme',
+783 silly install resolved     _id: 'lru-cache@2.6.2',
+783 silly install resolved     _shasum: '77741638c6dc972e503dbe41dcb6bfdfba499a38',
+783 silly install resolved     _from: 'lru-cache@>=2.0.0 <3.0.0',
+783 silly install resolved     _npmVersion: '2.8.4',
+783 silly install resolved     _nodeVersion: '1.4.2',
+783 silly install resolved     _npmUser: { name: 'isaacs', email: 'isaacs@npmjs.com' },
+783 silly install resolved     dist:
+783 silly install resolved      { shasum: '77741638c6dc972e503dbe41dcb6bfdfba499a38',
+783 silly install resolved        tarball: 'http://registry.npmjs.org/lru-cache/-/lru-cache-2.6.2.tgz' },
+783 silly install resolved     maintainers: [ [Object] ],
+783 silly install resolved     directories: {},
+783 silly install resolved     _resolved: 'https://registry.npmjs.org/lru-cache/-/lru-cache-2.6.2.tgz',
+783 silly install resolved     readme: 'ERROR: No README data found!' } ]
+784 info install sigmund@1.0.0 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+785 info install lru-cache@2.6.2 into C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+786 info installOne sigmund@1.0.0
+787 verbose installOne of sigmund to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch not in flight; installing
+788 info installOne lru-cache@2.6.2
+789 verbose installOne of lru-cache to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch not in flight; installing
+790 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\sigmund-07f786aa82fcb00c.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+791 silly install write writing sigmund 1.0.0 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+792 silly cache addNamed cb sigmund@1.0.0
+793 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+794 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund is being purged from base C:\Users\JHow\AppData\Roaming\npm
+795 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+796 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\sigmund\1.0.0\package.tgz
+797 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+798 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund is being purged
+799 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+800 silly gunzTarPerm modes [ '777', '666' ]
+801 verbose lock using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\lru-cache-0216561ef817f711.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+802 silly install write writing lru-cache 2.6.2 to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+803 silly cache addNamed cb lru-cache@2.6.2
+804 verbose unbuild node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+805 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache is being purged from base C:\Users\JHow\AppData\Roaming\npm
+806 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+807 verbose tar unpack C:\Users\JHow\AppData\Roaming\npm-cache\lru-cache\2.6.2\package.tgz
+808 verbose tar unpacking to C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+809 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache is being purged
+810 verbose gentlyRm don't care about contents; nuking C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+811 silly gunzTarPerm modes [ '777', '666' ]
+812 silly gunzTarPerm extractEntry package.json
+813 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+814 silly gunzTarPerm extractEntry package.json
+815 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+816 silly gunzTarPerm extractEntry .npmignore
+817 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+818 silly gunzTarPerm extractEntry README.md
+819 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+820 silly gunzTarPerm extractEntry README.md
+821 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+822 silly gunzTarPerm extractEntry LICENSE
+823 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+824 silly gunzTarPerm extractEntry bench.js
+825 silly gunzTarPerm modified mode [ 'bench.js', 420, 438 ]
+826 silly gunzTarPerm extractEntry sigmund.js
+827 silly gunzTarPerm modified mode [ 'sigmund.js', 420, 438 ]
+828 silly gunzTarPerm extractEntry LICENSE
+829 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+830 silly gunzTarPerm extractEntry bar.js
+831 silly gunzTarPerm modified mode [ 'bar.js', 420, 438 ]
+832 silly gunzTarPerm extractEntry foo.js
+833 silly gunzTarPerm modified mode [ 'foo.js', 420, 438 ]
+834 silly gunzTarPerm extractEntry CONTRIBUTORS
+835 silly gunzTarPerm modified mode [ 'CONTRIBUTORS', 420, 438 ]
+836 silly gunzTarPerm extractEntry test/basic.js
+837 silly gunzTarPerm modified mode [ 'test/basic.js', 420, 438 ]
+838 silly gunzTarPerm extractEntry lib/lru-cache.js
+839 silly gunzTarPerm modified mode [ 'lib/lru-cache.js', 420, 438 ]
+840 silly gunzTarPerm extractEntry test/basic.js
+841 silly gunzTarPerm modified mode [ 'test/basic.js', 420, 438 ]
+842 silly gunzTarPerm extractEntry test/foreach.js
+843 silly gunzTarPerm modified mode [ 'test/foreach.js', 420, 438 ]
+844 silly gunzTarPerm extractEntry test/memory-leak.js
+845 silly gunzTarPerm modified mode [ 'test/memory-leak.js', 420, 438 ]
+846 info preinstall sigmund@1.0.0
+847 silly install resolved []
+848 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+849 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+850 verbose linkStuff [ true,
+850 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+850 verbose linkStuff   false,
+850 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\findup-sync\\node_modules\\glob\\node_modules\\minimatch\\node_modules' ]
+851 info linkStuff sigmund@1.0.0
+852 verbose linkBins sigmund@1.0.0
+853 verbose linkMans sigmund@1.0.0
+854 verbose rebuildBundles sigmund@1.0.0
+855 info install sigmund@1.0.0
+856 info postinstall sigmund@1.0.0
+857 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\sigmund-07f786aa82fcb00c.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund
+858 info preinstall lru-cache@2.6.2
+859 silly install resolved []
+860 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+861 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+862 verbose linkStuff [ true,
+862 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+862 verbose linkStuff   false,
+862 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\findup-sync\\node_modules\\glob\\node_modules\\minimatch\\node_modules' ]
+863 info linkStuff lru-cache@2.6.2
+864 verbose linkBins lru-cache@2.6.2
+865 verbose linkMans lru-cache@2.6.2
+866 verbose rebuildBundles lru-cache@2.6.2
+867 info install lru-cache@2.6.2
+868 info postinstall lru-cache@2.6.2
+869 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\lru-cache-0216561ef817f711.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache
+870 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+871 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+872 verbose linkStuff [ true,
+872 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+872 verbose linkStuff   false,
+872 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\findup-sync\\node_modules\\glob\\node_modules' ]
+873 info linkStuff minimatch@0.3.0
+874 verbose linkBins minimatch@0.3.0
+875 verbose linkMans minimatch@0.3.0
+876 verbose rebuildBundles minimatch@0.3.0
+877 verbose rebuildBundles [ 'lru-cache', 'sigmund' ]
+878 info install minimatch@0.3.0
+879 info postinstall minimatch@0.3.0
+880 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\minimatch-6620cff3066f7c32.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob\node_modules\minimatch
+881 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+882 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+883 verbose linkStuff [ true,
+883 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+883 verbose linkStuff   false,
+883 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules\\findup-sync\\node_modules' ]
+884 info linkStuff glob@3.2.11
+885 verbose linkBins glob@3.2.11
+886 verbose linkMans glob@3.2.11
+887 verbose rebuildBundles glob@3.2.11
+888 verbose rebuildBundles [ 'inherits', 'minimatch' ]
+889 info install glob@3.2.11
+890 info postinstall glob@3.2.11
+891 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\glob-89bba96b687e8701.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync\node_modules\glob
+892 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+893 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+894 verbose linkStuff [ true,
+894 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+894 verbose linkStuff   false,
+894 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\node_modules' ]
+895 info linkStuff findup-sync@0.1.3
+896 verbose linkBins findup-sync@0.1.3
+897 verbose linkMans findup-sync@0.1.3
+898 verbose rebuildBundles findup-sync@0.1.3
+899 verbose rebuildBundles [ 'glob', 'lodash' ]
+900 info install findup-sync@0.1.3
+901 info postinstall findup-sync@0.1.3
+902 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\findup-sync-309985ee42b1c310.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli\node_modules\findup-sync
+903 verbose about to build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+904 info build C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+905 verbose linkStuff [ true,
+905 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules',
+905 verbose linkStuff   true,
+905 verbose linkStuff   'C:\\Users\\JHow\\AppData\\Roaming\\npm\\node_modules' ]
+906 info linkStuff grunt-cli@0.1.13
+907 verbose linkBins grunt-cli@0.1.13
+908 verbose link bins [ { grunt: 'bin/grunt' },
+908 verbose link bins   'C:\\Users\\JHow\\AppData\\Roaming\\npm',
+908 verbose link bins   true ]
+909 verbose linkMans grunt-cli@0.1.13
+910 verbose rebuildBundles grunt-cli@0.1.13
+911 verbose rebuildBundles [ '.bin', 'findup-sync', 'nopt', 'resolve' ]
+912 verbose unlock done using C:\Users\JHow\AppData\Roaming\npm-cache\_locks\grunt-cli-ccaf5ca30522846b.lock for C:\Users\JHow\AppData\Roaming\npm\node_modules\grunt-cli
+913 verbose stack Error: EPERM, open 'C:\Users\JHow\AppData\Roaming\npm\grunt'
+913 verbose stack     at Error (native)
+914 verbose cwd c:\Sites\sambal
+915 error Windows_NT 6.3.9600
+916 error argv "c:\\Program Files (x86)\\nodejs\\node.exe" "c:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "grunt-cli"
+917 error node v0.12.2
+918 error npm  v2.7.4
+919 error path C:\Users\JHow\AppData\Roaming\npm\grunt
+920 error code EPERM
+921 error errno -4048
+922 error Error: EPERM, open 'C:\Users\JHow\AppData\Roaming\npm\grunt'
+922 error     at Error (native)
+922 error  { [Error: EPERM, open 'C:\Users\JHow\AppData\Roaming\npm\grunt']
+922 error   errno: -4048,
+922 error   code: 'EPERM',
+922 error   path: 'C:\\Users\\JHow\\AppData\\Roaming\\npm\\grunt' }
+923 error Please try running this command again as root/Administrator.
+924 verbose exit [ -4048, true ]
+925 verbose unbuild node_modules\grunt-cli
+926 info preuninstall grunt-cli@0.1.13
+927 info uninstall grunt-cli@0.1.13
+928 verbose unbuild rmStuff grunt-cli@0.1.13 from C:\Users\JHow\AppData\Roaming\npm\node_modules
+929 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\grunt.cmd is being gently removed
+930 silly gentlyRm verifying C:\Users\JHow\AppData\Roaming\npm is an npm working directory
+931 silly gentlyRm containing path C:\Users\JHow\AppData\Roaming\npm is under npm's control, in C:\Users\JHow\AppData\Roaming\npm
+932 silly gentlyRm deletion target C:\Users\JHow\AppData\Roaming\npm\grunt.cmd is under C:\Users\JHow\AppData\Roaming\npm
+933 verbose gentlyRm vacuuming from C:\Users\JHow\AppData\Roaming\npm\grunt.cmd up to C:\Users\JHow\AppData\Roaming\npm
+934 silly vacuum-fs removing C:\Users\JHow\AppData\Roaming\npm\grunt.cmd
+935 silly vacuum-fs finished vacuuming up to C:\Users\JHow\AppData\Roaming\npm
+936 silly gentlyRm C:\Users\JHow\AppData\Roaming\npm\grunt is being gently removed
+937 silly gentlyRm verifying C:\Users\JHow\AppData\Roaming\npm is an npm working directory
+938 silly gentlyRm containing path C:\Users\JHow\AppData\Roaming\npm is under npm's control, in C:\Users\JHow\AppData\Roaming\npm
+939 silly gentlyRm deletion target C:\Users\JHow\AppData\Roaming\npm\grunt is under C:\Users\JHow\AppData\Roaming\npm
+940 verbose gentlyRm vacuuming from C:\Users\JHow\AppData\Roaming\npm\grunt up to C:\Users\JHow\AppData\Roaming\npm
+941 silly vacuum-fs Error: EPERM, lstat 'C:\Users\JHow\AppData\Roaming\npm\grunt'
+941 silly vacuum-fs     at Error (native)
+942 error error rolling back Error: EPERM, lstat 'C:\Users\JHow\AppData\Roaming\npm\grunt'
+942 error error rolling back     at Error (native)
+942 error error rolling back  { [Error: EPERM, lstat 'C:\Users\JHow\AppData\Roaming\npm\grunt']
+942 error error rolling back   errno: -4048,
+942 error error rolling back   code: 'EPERM',
+942 error error rolling back   path: 'C:\\Users\\JHow\\AppData\\Roaming\\npm\\grunt' }

@@ -9,9 +9,17 @@ default: &default
   pool: 5
   timeout: 5000
 
+develdata: &develdata
+  adapter: postgresql
+  encoding: unicode
+  database: sambaltest
+  username: sambaltester
+  password: erty%mmg15&
+  host: 45.55.203.194
+
 development:
-  <<: *default
-  database: db/development.sqlite3
+  <<: *develdata
+  #database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

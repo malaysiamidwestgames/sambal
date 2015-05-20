@@ -20,7 +20,8 @@ angular
     'ui.bootstrap',
     'ui.validate',
     'uiGmapgoogle-maps',
-    'ui.gravatar'
+    'ui.gravatar',
+    'ui.bootstrap.datetimepicker'
   ])
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -39,8 +40,8 @@ angular
         controller: 'ActivationCtrl'
       })
       .when('/userlist' , {
-        templateUrl: 'views/userlist.html',
-        controller: 'UserlistCtrl',
+        templateUrl: 'views/a_userlist.html',
+        controller: 'AdminUserlistCtrl',
         requireLogin: true,
         requireAdmin: true
       })
@@ -101,15 +102,78 @@ angular
         templateUrl: 'views/eventmaps.html',
         controller: 'EventmapsCtrl'
       })
+      .when('/livedraw', {
+        templateUrl: 'views/livedraw.html',
+        controller: 'LivedrawCtrl'
+      })
       .when('/sportsreg', {
         templateUrl: 'views/sportsreg.html',
         controller: 'SportsregCtrl',
         requireLogin: true,
         requirePaidGen: false
       })
+      .when('/transportation', {
+        templateUrl: 'views/transportation.html',
+        controller: 'TransportationCtrl',
+        requireLogin: true
+      })
       .when('/teams', {
         templateUrl: 'views/teams.html',
-        controller: 'TeamsCtrl'
+        controller: 'TeamsCtrl',
+        requireLogin: true
+      })
+      .when('/consular', {
+        templateUrl: 'views/consular.html',
+        controller: 'ConsularCtrl'
+      })
+      .when('/schedule', {
+        templateUrl: 'views/schedule.html',
+        controller: 'ScheduleCtrl'
+      })
+      .when('/livescore', {
+        templateUrl: 'views/livescore.html',
+        controller: 'LivescoreCtrl'
+      })
+      .when('/points', {
+        templateUrl: 'views/points.html',
+        controller: 'PointsCtrl'
+      })
+      .when('/admin/checkin-events', {
+        templateUrl: 'views/checkinevent.html',
+        controller: 'CheckinEventCtrl',
+        requireAdmin: true
+      })
+      .when('/admin/checkin-events/:id', {
+        templateUrl: 'views/checkineventinfo.html',
+        controller: 'CheckinEventInfoCtrl'
+      })
+      .when('/admin/checkin/express/user/:userId', {
+        templateUrl: 'views/expresscheckin.html',
+        controller: 'ExpresscheckinCtrl',
+        requireAdmin: true
+      })
+      .when('/credits', {
+        templateUrl: 'views/credits.html',
+        controller: 'CreditsCtrl'
+      })
+      .when('/checkin', {
+        templateUrl: 'views/checkin.html',
+        controller: 'CheckinCtrl'
+      })
+      .when('/msgboard', {
+        templateUrl: 'views/msgboard.html',
+        controller: 'MsgsCtrl',
+        requireLogin: true
+      })
+      .when('/msgboard/post/:id', {
+        templateUrl: 'views/post.html',
+        controller: 'PostsCtrl',
+        requireLogin: true
+      })
+      .when('/msgboard/edit/:mode/:id', {
+        templateUrl: 'views/editpost.html',
+        controller: 'EditPostsCtrl',
+        requireLogin: true
       })
       .otherwise({
         redirectTo: '/'
@@ -119,7 +183,7 @@ angular
   .constant('_', window._)
 
   .config(/*@ngInject*/function($httpProvider) {
-    $httpProvider.interceptors.push( /*@ngInject*/function($browser, $cookieStore, $q) {
+    $httpProvider.interceptors.push( /*@ngInject*/function($browser, $cookieStore, $q, $location) {
       return {
         request: function(config) {
           /* jshint -W106 */
@@ -130,6 +194,7 @@ angular
         responseError: function(response) {
           if (response.status === 403 || response.status === 401) {
             $cookieStore.remove('access_token');
+            $location.path('/');
           }
           return $q.reject(response);
         }
@@ -151,7 +216,7 @@ angular
             $location.path('/');
             event.preventDefault();
           }
-        })
+        });
       }
       else if (next.requireLogout && session.isLoggedIn()) {
         $location.path('/dashboard/');
@@ -163,8 +228,16 @@ angular
             $location.path('/');
             event.preventDefault();
           }
-        })
+        });
       }
       $rootScope.bodyClass = next.bodyClass;
     });
-  });
+  })
+
+  .constant('_', window._)
+
+  .constant('google', window.google)
+
+  .constant('$', window.$)
+
+  .constant('toastr', window.toastr);

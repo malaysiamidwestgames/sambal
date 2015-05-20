@@ -10,6 +10,11 @@ angular.module('midwestApp')
     };
     $scope.isReady = false;
     $scope.isError = false;
+    $scope.selected = 'account';
+
+    $scope.select = function(type) {
+      $scope.selected = type;
+    };
 
     universityResource().then(function(resp) {
       $scope.universities = resp.universities;
