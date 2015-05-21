@@ -13,7 +13,7 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-          <li role="presentation menuitem" ng-repeat="team in teams" ng-show="showTeams(team)">
+          <li role="presentation menuitem" ng-repeat="team in teams">
             <a ng-click="setTeam(team)">{{ team.name }}</a>
           </li>
         </ul>
@@ -25,8 +25,10 @@
 
 <div class="row teams" ng-show="team && team.is_member">
   <div class="col-md-12">
-    <alert class="alert-danger" ng-show="team.team_exceed_member > 0">Your team has <b>too many members!</b> You will have to remove <b>{{team.team_exceed_member}}</b>
-      players before your team is allowed to play any of its matches or invite any new players.</alert>
+    <alert class="alert-danger" ng-show="team.team_exceed_member > 0">
+      Your team has <b>too many members!</b> You will have to remove <b>{{team.team_exceed_member}}</b>
+      players before your team is allowed to play any of its matches or invite any new players.
+    </alert>
   </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
