@@ -657,6 +657,12 @@ button#update-info-btn, button#update-info-btn2 {
   }
 }
 
+.inner-panel {
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 .teams {
 
   .dropdown {
