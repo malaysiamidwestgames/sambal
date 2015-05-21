@@ -8,7 +8,7 @@
               <div style="height: 400px; width: 100%">
                 <carousel interval="myInterval">
                   <slide ng-repeat="slide in slides" active="slide.active">
-                    <img src="{{slide.image}}" style="margin:auto; width: 100%; height: 400px">
+                    <img ng-src="{{ slide.image }}" style="margin:auto; width: 100%; height: 400px">
                     <div class="carousel-caption">
                       <h3>{{slide.text}}</h3>
                     </div>
