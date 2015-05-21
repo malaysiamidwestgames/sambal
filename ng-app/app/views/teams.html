@@ -50,15 +50,21 @@
         </div>
       </div>
       <ul class="list-group team-members-list">
-        <li class="list-group-item" ng-repeat="participant in team.participants">
+        <li class="list-group-item" ng-repeat="participant in team.participants" ng-show="participant.status !== 'removed'">
           {{participant.user.first_name}} {{participant.user.last_name}}
-          <span ng-show="participant.status == 'team_captain'">Captain</span>
-          <span ng-show="participant.status == 'join_request'">
-            Requested <a ng-show="team.is_captain" href="" ng-click="acceptReq(participant)">Accept</a>/
-            <a href="" ng-show="team.is_captain" ng-click="declineReq(participant)">Reject</a></span>
-          <span ng-show="participant.status == 'invite_request'">Invited</span>
-          <span ng-show="participant.status == 'accepted'">Member</span>
-          <span ng-show="participant.status == 'declined'">Declined</span>
+          <span ng-show="participant.status === 'team_captain'">Captain</span>
+          <span ng-show="participant.status === 'join_request'">
+            Requested
+            <a ng-show="team.is_captain" href="" ng-click="acceptReq(participant)">Accept</a>
+            <span ng-show="team.is_captain">/</span>
+            <a href="" ng-show="team.is_captain" ng-click="rejectReq(participant)">Reject</a></span>
+          <span ng-show="participant.status === 'invite_request'">Invited</span>
+          <span ng-show="participant.status === 'accepted'">Member</span>
+          <span ng-show="participant.status === 'declined'">Declined</span>
+          <span ng-show="(participant.status !== 'join_request' &&
+            participant.status != 'invite_request' && participant.status !== 'team_captain') && team.is_captain">
+            <a  href="" ng-show="team.is_captain" ng-click="removeReq(participant)">Remove</a>
+          </span>
         </li>
       </ul>
     </div>

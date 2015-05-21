@@ -92,6 +92,8 @@ Rails.application.routes.draw do
     get 'participants/get_invite' => 'participants#get_invitations'
     patch 'participants/accept/:id' => 'participants#accept'
     patch 'participants/decline/:id' => 'participants#decline'
+    patch 'participants/reject/:id' => 'participants#reject'
+    patch 'participants/remove/:id' => 'participants#remove'
     post 'participants/check' => 'participants#check_if_user_is_participating'
     resources :password_resets, only: [:new, :create, :edit, :update]
 

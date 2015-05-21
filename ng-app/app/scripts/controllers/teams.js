@@ -69,6 +69,22 @@ angular.module('midwestApp')
         });
     };
 
+    $scope.removeReq = function(participant) {
+      participantsResource.removeReq({id: participant.id})
+        .then(function() {
+          participant.status = 'removed';
+          toastr.success(getDeclineMessage(),  participant.user.first_name + 's request to join your team has been declined');
+        });
+    };
+
+    $scope.rejectReq = function(participant) {
+      participantsResource.rejectReq({id: participant.id})
+        .then(function() {
+          participant.status = 'rejected';
+          toastr.success(getDeclineMessage(),  participant.user.first_name + 's request to join your team has been rejected');
+        });
+    };
+
     $scope.postMsg = function(message) {
       $http
         .post('/api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})

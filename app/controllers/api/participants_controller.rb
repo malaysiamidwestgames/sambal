@@ -23,7 +23,11 @@ class Api::ParticipantsController < ApplicationController
   end
 
   def join_team
-    @participant = Participant.new(user_id: current_user.id, team_id: params['team_id'])
+    @participant = Participant.find_by_user_id(current_user.id)
+    if @participant.nil?
+      @participant = Participant.new(user_id: current_user.id, team_id: params['team_id'])
+    end
+    
     @participant.status = "join_request"
     if @participant.save
       render json: @participant, status: :created
@@ -35,7 +39,10 @@ class Api::ParticipantsController < ApplicationController
   def invite_team
     invited_user = User.find_by! email: params['email']
     team = Team.find(params['team_id'])
-    @participant = Participant.new(user_id: invited_user.id, team_id: params['team_id'])
+    @participant = Participant.find_by_user_id(invited_user.id)
+    if @participant.nil?
+      @participant = Participant.new(user_id: invited_user.id, team_id: params['team_id'])
+    end
     @participant.status = "invite_request"
     if @participant.save
       render json: @participant, status: :created, root: false
@@ -57,6 +64,26 @@ class Api::ParticipantsController < ApplicationController
   def decline
     @participant = Participant.find(params[:id])
     @participant.update_attribute(:status, "declined")
+    if @participant.save
+      render json: @participant, status: :created
+    else
+      render json: @participant.errors, status: :unprocessable_entity
+    end
+  end
+
+  def reject
+    @participant = Participant.find(params[:id])
+    @participant.update_attribute(:status, "rejected")
+    if @participant.save
+      render json: @participant, status: :created
+    else
+      render json: @participant.errors, status: :unprocessable_entity
+    end
+  end
+
+  def remove
+    @participant = Participant.find(params[:id])
+    @participant.update_attribute(:status, 'removed')
     if @participant.save
       render json: @participant, status: :created
     else
