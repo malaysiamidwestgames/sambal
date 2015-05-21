@@ -22,7 +22,12 @@
   </div>
 </div>
 
+
 <div class="row teams" ng-show="team && team.is_member">
+  <div class="col-md-12">
+    <alert class="alert-danger" ng-show="team.team_exceed_member > 0">Your team has <b>too many members!</b> You will have to remove <b>{{team.team_exceed_member}}</b>
+      players before your team is allowed to play any of its matches or invite any new players.</alert>
+  </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
       <div class="panel-body" ng-hide="team.name == 'Choose a team'">
@@ -45,7 +50,7 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Enter invitee email" ng-model="inviteEmail">
           <span class="input-group-btn">
-            <button class="btn btn-themed" type="button" ng-click="inviteReq()">Invite</button>
+            <button class="btn btn-themed" type="button" ng-click="inviteReq()" ng-disabled="(team.team_exceed_member > 0)">Invite</button>
           </span>
         </div>
       </div>
