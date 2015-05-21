@@ -61,6 +61,7 @@
           <span ng-show="participant.status === 'invite_request'">Invited</span>
           <span ng-show="participant.status === 'accepted'">Member</span>
           <span ng-show="participant.status === 'declined'">Declined</span>
+          <!--I should really functionize the ng-show for the span below -->
           <span ng-show="(participant.status !== 'join_request' &&
             participant.status != 'invite_request' && participant.status !== 'team_captain') && team.is_captain">
             <a  href="" ng-show="team.is_captain" ng-click="removeReq(participant)">Remove</a>
