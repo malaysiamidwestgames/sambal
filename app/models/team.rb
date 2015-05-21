@@ -40,8 +40,11 @@ class Team < ActiveRecord::Base
     return idx != nil
   end
 
-
   def team_payment_status
     self.payment != nil && self.payment.regtype == 'Sports registration' && self.payment.status == 'Completed'
+  end
+
+  def team_exceed_member
+    self.participants.count - self.game.max_players_per_team
   end
 end

@@ -15,6 +15,8 @@ angular.module('midwestApp')
       invite: httpWrapper.post('/api/participants/invite'),
       acceptReq: httpWrapper.patch('/api/participants/accept/:id'),
       declineReq: httpWrapper.patch('/api/participants/decline/:id'),
+      rejectReq: httpWrapper.patch('/api/participants/reject/:id'),
+      removeReq: httpWrapper.delete('/api/participants/remove/:id'),
       joinReq: httpWrapper.post('/api/participants/join')
     };
   });

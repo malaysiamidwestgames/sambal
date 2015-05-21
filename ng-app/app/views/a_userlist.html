@@ -17,6 +17,7 @@
           <li class="dropdown-list" ng-repeat = "university in universities" ng-click="toggle('=' + university.name)">{{university.name}}<span class="badge badge-themed pull-right">{{university.count}}</span></a></li>
         </ul>
       </div>
+      <div class="inner-panel">
       <table class="table table-hover" style="width:100%">
         <thead>
           <th class="admin-header">
@@ -67,6 +68,7 @@
           <td><a href="admin-settings/{{user.id}}">Edit</a></td>
         </tr>
       </table>
+    </div>
     </div>
   </div>
 
