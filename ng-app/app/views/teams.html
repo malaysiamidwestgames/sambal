@@ -13,7 +13,7 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-          <li role="presentation menuitem" ng-repeat="team in teams">
+          <li role="presentation menuitem" ng-repeat="team in teams" ng-show="showTeams(team)">
             <a ng-click="setTeam(team)">{{ team.name }}</a>
           </li>
         </ul>

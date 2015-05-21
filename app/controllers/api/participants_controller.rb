@@ -3,7 +3,7 @@ class Api::ParticipantsController < ApplicationController
 
 
   def create
-    @participant = Participant.new(participant_params_2)
+    @participant = Participant.new(participant_params)
     if @participant.save
       render json: @participant, status: :created
     else
@@ -83,9 +83,8 @@ class Api::ParticipantsController < ApplicationController
 
   def remove
     @participant = Participant.find(params[:id])
-    @participant.update_attribute(:status, 'removed')
-    if @participant.save
-      render json: @participant, status: :created
+    if @participant.destroy
+      render json: {:message => "destroy success"}.to_json, status: :created
     else
       render json: @participant.errors, status: :unprocessable_entity
     end
@@ -107,11 +106,7 @@ class Api::ParticipantsController < ApplicationController
   end
 
   private
-    def participant_params_2
-      params.permit(:user_id, :team_id, :status)
-    end
-
     def participant_params
-      params.permit(:team_id, :user_id)
+      params.permit(:user_id, :team_id, :status)
     end
 end

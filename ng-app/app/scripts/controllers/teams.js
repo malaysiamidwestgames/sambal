@@ -85,6 +85,11 @@ angular.module('midwestApp')
         });
     };
 
+    $scope.showTeams = function(team) {
+      console.log(team);
+      return true;
+    };
+
     $scope.postMsg = function(message) {
       $http
         .post('/api/messages', {team_id: $scope.team.id, user_id: $rootScope.currentUser.id, message: message})
