@@ -29,6 +29,10 @@
       Your team has <b>too many members!</b> You will have to remove <b>{{team.team_exceed_member}}</b>
       players before your team is allowed to play any of its matches or invite any new players.
     </alert>
+    <alert class="alert-danger" ng-show="team.team_payment_status === false">
+      Your team has <b>not been paid yet</b> You will have to <b> pay the sports registration fee for your team</b>
+      before your team is allowed to play any of its matches or invite any new players.
+    </alert>
   </div>
   <div class="col-md-5">
     <div class="panel panel-themed user-info-panel">
@@ -52,7 +56,7 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Enter invitee email" ng-model="inviteEmail">
           <span class="input-group-btn">
-            <button class="btn btn-themed" type="button" ng-click="inviteReq()" ng-disabled="(team.team_exceed_member > 0)">Invite</button>
+            <button class="btn btn-themed" type="button" ng-click="inviteReq()" ng-disabled="evaluate()">Invite</button>
           </span>
         </div>
       </div>

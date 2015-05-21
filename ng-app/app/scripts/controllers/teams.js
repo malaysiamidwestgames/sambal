@@ -34,6 +34,7 @@ angular.module('midwestApp')
     });
 
     $scope.setTeam = function(team) {
+      console.log(team);
       $scope.team = team;
     };
 
@@ -115,5 +116,14 @@ angular.module('midwestApp')
             $scope.teams[idx] = team.team;
           });
         });
+    };
+
+    $scope.evaluate = function() {
+      if ($scope.team) {
+        return $scope.team.team_payment_status === false || $scope.team.team_exceed_member > 0;
+      }
+      else {
+        return false;
+      }
     };
   });
