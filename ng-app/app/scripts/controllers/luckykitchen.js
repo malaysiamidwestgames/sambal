@@ -12,7 +12,7 @@ angular.module('midwestApp')
     $scope.myInterval = 5000;
     $scope.slides = [];
     $scope.slides.push({
-      image: 'images/LK_Spring Rolls.jpg',
+      image: 'app/images/LK_Spring Rolls.jpg',
       text: 'Yummy Lucky Kitchen Spring Rolls'
     });
     $scope.slides.push({
