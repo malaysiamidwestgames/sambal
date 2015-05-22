@@ -141,6 +141,9 @@ angular
         templateUrl: 'views/points.html',
         controller: 'PointsCtrl'
       })
+      .when('/program_book', {
+        templateUrl: 'views/program_book.html'
+      })
       .when('/admin/checkin-events', {
         templateUrl: 'views/checkinevent.html',
         controller: 'CheckinEventCtrl',
