@@ -113,7 +113,7 @@ body {
 
 .panel-themed {
   border-color: $michigan-darkblue;
-  opacity: 0.95;
+  //opacity: 0.95;
 
   > .panel-heading {
     color: #FFF;
@@ -134,7 +134,7 @@ body {
 
 .panel-themed-light {
   border-color: $michigan-maize-light;
-  opacity: 0.95;
+  //opacity: 0.95;
 
   > .panel-heading {
     color: #FFF;
@@ -516,6 +516,16 @@ button#update-info-btn, button#update-info-btn2 {
   }
 }
 
+.scroller-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.scroller-wrapper iframe {
+  height: 400px;
+  width: 100%;
+}
+
 .contact-us {
   .error {
     color: #d9534f;
@@ -539,6 +549,12 @@ button#update-info-btn, button#update-info-btn2 {
 
 .text-linking {
   border-bottom: 1px grey dotted;
+}
+
+.center_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sportsreg {
@@ -777,7 +793,7 @@ button#update-info-btn, button#update-info-btn2 {
 .transportation {
   .bs-docs-sidebar {
     background-color: $michigan-blue;
-    opacity: 0.95;
+    //opacity: 0.95;
     border-radius: 3%;
   }
 
@@ -869,7 +885,7 @@ button#update-info-btn, button#update-info-btn2 {
   .scroll-top-wrapper.show {
     visibility:visible;
     cursor:pointer;
-    opacity: 1.0;
+    //opacity: 1.0;
   }
 }
 
@@ -1067,7 +1083,7 @@ button#update-info-btn, button#update-info-btn2 {
     padding-left: 5%;
     padding-right: 5%;
   }
-  
+
   p {
     text-align: justify;
   }
@@ -1118,3 +1134,4 @@ button#update-info-btn, button#update-info-btn2 {
   }
 
 }
+
