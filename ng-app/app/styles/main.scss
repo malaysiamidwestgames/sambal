@@ -516,6 +516,16 @@ button#update-info-btn, button#update-info-btn2 {
   }
 }
 
+.scroller-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.scroller-wrapper iframe {
+  height: 400px;
+  width: 100%;
+}
+
 .contact-us {
   .error {
     color: #d9534f;
