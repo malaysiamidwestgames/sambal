@@ -122,7 +122,8 @@ angular
         requireLogin: true
       })
       .when('/luckykitchen', {
-        templateUrl: 'views/luckykitchen.html'
+        templateUrl: 'views/luckykitchen.html',
+        controller: 'LuckykitchenCtrl'
       })
       .when('/consular', {
         templateUrl: 'views/consular.html',
