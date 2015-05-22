@@ -541,6 +541,12 @@ button#update-info-btn, button#update-info-btn2 {
   border-bottom: 1px grey dotted;
 }
 
+.center_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .sportsreg {
   word-wrap:break-word;
 
@@ -1067,7 +1073,7 @@ button#update-info-btn, button#update-info-btn2 {
     padding-left: 5%;
     padding-right: 5%;
   }
-  
+
   p {
     text-align: justify;
   }
