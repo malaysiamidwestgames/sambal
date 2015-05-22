@@ -406,7 +406,7 @@ div.hotel-registration input {
 }
 
 .angular-google-map-container {
-  height: 400px;
+  height: 415px;
 }
 
 
@@ -644,6 +644,11 @@ button#update-info-btn, button#update-info-btn2 {
       color: #ffffff;
       font-size: 1.5em;
     }
+  }
+
+  select.form-control {
+    width: 200px;
+    margin-left: 10px;
   }
 
 

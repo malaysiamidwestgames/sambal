@@ -21,8 +21,8 @@ angular.module('midwestApp')
           {name: 'Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104 '},
           {name: 'Mason Hall', address: '505 South State Street, Ann Arbor, MI 48109'},
           {name: 'Colonial Lanes', address:'950 South Industrial Highway, Ann Arbor, MI 48104'},
-          /*{name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'},
-          {name: 'Holiday Inn/Fairfield Inn', address: '3285 Boardwalk Dr, Ann Arbor, MI 48108'}*/
+          {name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'}
+
         ],
         end: [
           {name: 'CCRB', address: '401 Washtenaw Avenue, Ann Arbor, Michigan, 48109'},
@@ -30,8 +30,8 @@ angular.module('midwestApp')
           {name: 'Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104'},
           {name: 'Mason Hall', address: '505 South State Street, Ann Arbor, MI 48109'},
           {name: 'Colonial Lanes', address:'950 South Industrial Highway, Ann Arbor, MI 48104'},
-          /*{name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'},
-          {name: 'Holiday Inn/Fairfield Inn', address: '3285 Boardwalk Dr, Ann Arbor, MI 48108'}*/
+          {name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'}
+
         ]
       },
       marker: {}
@@ -42,6 +42,7 @@ angular.module('midwestApp')
     };
     $scope.routePoints.start = $scope.map.routes.start[0];
     $scope.routePoints.end = $scope.map.routes.end[0];
+    $scope.travelMode = $scope.mode;
 
     var directionsDisplay = new google.maps.DirectionsRenderer();
     var geocoder = new google.maps.Geocoder();

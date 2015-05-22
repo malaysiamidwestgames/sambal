@@ -24,7 +24,16 @@
     <div class="row">
       <div class="panel panel-themed">
         <div class="panel-heading">
-          <h3 class="panel-title">Directions</h3>
+          <form class="form-inline">
+            <h3 class="panel-title">Directions
+              <div class="form-group">
+                <select class="form-control travel-mode" ng-model="mode">
+                  <option value="DRIVING" selected >Driving</option>
+                  <option value="WALKING">Walking</option>
+                </select>
+              </div>
+            </h3>
+          </form>
         </div>
         <div class="panel-body" id="panel">
           <b ng-hide="received">Directions will appear here</b>
