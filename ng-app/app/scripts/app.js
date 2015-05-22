@@ -177,6 +177,10 @@ angular
         controller: 'EditPostsCtrl',
         requireLogin: true
       })
+      .when('/suvai', {
+        templateUrl: 'views/suvai.html',
+        controller: 'SuvaiCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
