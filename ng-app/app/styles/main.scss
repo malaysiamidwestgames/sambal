@@ -1072,3 +1072,49 @@ button#update-info-btn, button#update-info-btn2 {
     text-align: justify;
   }
 }
+
+.parking {
+  .btn-block label {
+    font-weight: 800;
+    font-size: 110%;
+  }
+
+  .row-title {
+    font-weight: 700;
+  }
+
+  .warning {
+    opacity: 1;
+  }
+
+  .warning p {
+    font-size: 125%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .table tr td {
+    padding-left: 2%;
+  }
+
+  .inner-table {
+    margin-bottom: 0px;
+  }
+
+  .inner-table tr td {
+    border-top: 0px;
+    font-size: 90%;
+    padding-right: 3%;
+
+    &:first-child {
+      width: 30%;
+    }
+
+    &:nth-child(2) {
+      width: 70%;
+    }
+  }
+
+}

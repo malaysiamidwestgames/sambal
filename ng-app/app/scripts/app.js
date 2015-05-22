@@ -182,6 +182,10 @@ angular
         templateUrl: 'views/suvai.html',
         controller: 'SuvaiCtrl'
       })
+      .when('/parking', {
+        templateUrl: 'views/parking.html',
+        controller: 'ParkingCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
