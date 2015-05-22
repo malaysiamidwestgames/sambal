@@ -12,7 +12,7 @@ angular.module('midwestApp')
     $scope.myInterval = 5000;
     $scope.slides = [];
     $scope.slides.push({
-      image: 'app/images/LK_Spring Rolls.jpg',
+      image: 'images/LK_Spring Rolls.jpg',
       text: 'Yummy Lucky Kitchen Spring Rolls'
     });
     $scope.slides.push({
@@ -24,7 +24,7 @@ angular.module('midwestApp')
       text: 'How do you say no this these awesome Lucky Kitchen Dumplings?'
     });
     $scope.slides.push({
-      image: 'images/LK_Gen Tso\'s Chicken.jpg',
+      image: 'images/LK_Gen Tso Chicken.jpg',
       text: 'General Tso\'s Chicken'
     });
     $scope.slides.push({
