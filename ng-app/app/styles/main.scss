@@ -66,6 +66,10 @@ body {
   .navbar-nav>.active>.nav-item, .navbar-nav>.active>.nav-item:hover, .navbar-nav>.active>.nav-item:focus {
     background-color: $michigan-blue;
   }
+
+  .navbar > li > .nav-item > .dropdown-menu {
+    background-color: $michigan-blue;
+  }
   // wolverine logo
   .navbar-header img {
     width: 48px;
@@ -108,11 +112,13 @@ body {
 }
 
 .panel-themed {
-  border-color: $michigan-lightblue;
+  border-color: $michigan-darkblue;
+  //opacity: 0.95;
+
   > .panel-heading {
     color: #FFF;
-    background-color: $michigan-blue;
-    border-color: $michigan-lightblue;
+    background-color: $michigan-darkblue;
+    border-color: $michigan-darkblue;
   }
   &.info-panel {
     color: #FFF;
@@ -123,10 +129,13 @@ body {
       color: $michigan-maize-light;
     }
   }
+
 }
 
 .panel-themed-light {
   border-color: $michigan-maize-light;
+  //opacity: 0.95;
+
   > .panel-heading {
     color: #FFF;
     background-color: $michigan-maize;
@@ -152,6 +161,7 @@ body {
 }
 
 .btn-themed {
+  color: $michigan-darkblue;
   color: #000;
   background-color: $michigan-maize;
   border-color: $michigan-maize-light;
@@ -506,6 +516,16 @@ button#update-info-btn, button#update-info-btn2 {
   }
 }
 
+.scroller-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.scroller-wrapper iframe {
+  height: 400px;
+  width: 100%;
+}
+
 .contact-us {
   .error {
     color: #d9534f;
@@ -529,6 +549,12 @@ button#update-info-btn, button#update-info-btn2 {
 
 .text-linking {
   border-bottom: 1px grey dotted;
+}
+
+.center_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sportsreg {
@@ -662,6 +688,12 @@ button#update-info-btn, button#update-info-btn2 {
   }
 }
 
+.inner-panel {
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 .teams {
 
   .dropdown {
@@ -766,7 +798,7 @@ button#update-info-btn, button#update-info-btn2 {
 .transportation {
   .bs-docs-sidebar {
     background-color: $michigan-blue;
-    border: 1px solid #FFF;
+    //opacity: 0.95;
     border-radius: 3%;
   }
 
@@ -858,7 +890,7 @@ button#update-info-btn, button#update-info-btn2 {
   .scroll-top-wrapper.show {
     visibility:visible;
     cursor:pointer;
-    opacity: 1.0;
+    //opacity: 1.0;
   }
 }
 
@@ -883,6 +915,7 @@ button#update-info-btn, button#update-info-btn2 {
 }
 
 .nav > li > .nav-item {
+
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -974,6 +1007,17 @@ button#update-info-btn, button#update-info-btn2 {
       font-size: 130%;
     }
   }
+
+  .box-circle {
+    background-color: $michigan-darkblue;
+    color: #FFF;
+    border-radius: 50%;
+    padding: 1%;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    display: inline-block;
+  }
 }
 
 .check-in-info {
@@ -1036,3 +1080,63 @@ button#update-info-btn, button#update-info-btn2 {
     }
   }
 }
+
+
+.foodinfo {
+
+  .panel-body {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+.parking {
+  .btn-block label {
+    font-weight: 800;
+    font-size: 110%;
+  }
+
+  .row-title {
+    font-weight: 700;
+  }
+
+  .warning {
+    opacity: 1;
+  }
+
+  .warning p {
+    font-size: 125%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .table tr td {
+    padding-left: 2%;
+  }
+
+  .inner-table {
+    margin-bottom: 0px;
+  }
+
+  .inner-table tr td {
+    border-top: 0px;
+    font-size: 90%;
+    padding-right: 3%;
+
+    &:first-child {
+      width: 30%;
+    }
+
+    &:nth-child(2) {
+      width: 70%;
+    }
+  }
+
+}
+

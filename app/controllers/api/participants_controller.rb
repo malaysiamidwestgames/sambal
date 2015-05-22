@@ -3,7 +3,7 @@ class Api::ParticipantsController < ApplicationController
 
 
   def create
-    @participant = Participant.new(participant_params_2)
+    @participant = Participant.new(participant_params)
     if @participant.save
       render json: @participant, status: :created
     else
@@ -24,6 +24,7 @@ class Api::ParticipantsController < ApplicationController
 
   def join_team
     @participant = Participant.new(user_id: current_user.id, team_id: params['team_id'])
+
     @participant.status = "join_request"
     if @participant.save
       render json: @participant, status: :created
@@ -64,6 +65,25 @@ class Api::ParticipantsController < ApplicationController
     end
   end
 
+  def reject
+    @participant = Participant.find(params[:id])
+    @participant.update_attribute(:status, "rejected")
+    if @participant.save
+      render json: @participant, status: :created
+    else
+      render json: @participant.errors, status: :unprocessable_entity
+    end
+  end
+
+  def remove
+    @participant = Participant.find(params[:id])
+    if @participant.destroy
+      render json: {:message => "destroy success"}.to_json, status: :created
+    else
+      render json: @participant.errors, status: :unprocessable_entity
+    end
+  end
+
   def get_team
     @participant = Participant.where(user_id: current_user.id).where(status: ['accepted','team_captain'])
     render json: @participant
@@ -80,11 +100,7 @@ class Api::ParticipantsController < ApplicationController
   end
 
   private
-    def participant_params_2
-      params.permit(:user_id, :team_id, :status)
-    end
-
     def participant_params
-      params.permit(:team_id, :user_id)
+      params.permit(:user_id, :team_id, :status)
     end
 end

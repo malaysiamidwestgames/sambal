@@ -19,19 +19,21 @@ angular.module('midwestApp')
           {name: 'CCRB', address: '401 Washtenaw Avenue, Ann Arbor, Michigan 48109'},
           {name: 'Mitchell Field', address: '1910 Fuller Road, Ann Arbor, MI 48105'},
           {name: 'Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104 '},
-          {name: 'Mason Hall', address: '505 South State Street, Ann Arbor, MI 48109'},
-          {name: 'Colonial Lanes', address:'950 South Industrial Highway, Ann Arbor, MI 48104'},
-          {name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'}
-
+          {name: 'Mason Hall', address: '419 South State Street, Ann Arbor, MI 48109'},
+          {name: 'Michigan Union', address: '530 South State Street, Ann Arbor, MI 48109'},
+          {name: 'Belmark Lanes', address:'3530 Jackson Rd, Ann Arbor, MI 48104'},
+          {name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'},
+          {name: 'Holiday Inn/Fairfield Inn', address: '3285 Boardwalk Dr, Ann Arbor, MI 48108'}
         ],
         end: [
           {name: 'CCRB', address: '401 Washtenaw Avenue, Ann Arbor, Michigan, 48109'},
           {name: 'Mitchell Field', address: '1910 Fuller Road, Ann Arbor, MI 48105'},
           {name: 'Coliseum', address: '721 S. Fifth Ave, Ann Arbor, MI 48104'},
-          {name: 'Mason Hall', address: '505 South State Street, Ann Arbor, MI 48109'},
-          {name: 'Colonial Lanes', address:'950 South Industrial Highway, Ann Arbor, MI 48104'},
-          {name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'}
-
+          {name: 'Mason Hall', address: '419 South State Street, Ann Arbor, MI 48109'},
+          {name: 'Michigan Union', address: '530 South State Street, Ann Arbor, MI 48109'},
+          {name: 'Belmark Lanes', address:'3530 Jackson Rd, Ann Arbor, MI 48104'},
+          {name: 'Red Roof Inn North Campus', address: '3621 Plymouth Rd, Ann Arbor, MI 48105'},
+          {name: 'Holiday Inn/Fairfield Inn', address: '3285 Boardwalk Dr, Ann Arbor, MI 48108'}
         ]
       },
       marker: {}

@@ -1,0 +1,509 @@
+<div class="parking">
+	<div class="col-md-3">
+	    <div class="panel panel-themed">
+	      	<div class="btn-group-vertical btn-block">
+		        <label type="button" class="btn btn-themed" ng-click="select('ccrb')">
+		          CCRB
+		        </label>
+		        <label type="button" class="btn btn-themed" ng-click="select('coliseum')">
+		          Coliseum
+		        </label>
+		        <label type="button" class="btn btn-themed" ng-click="select('mason')">
+		          Mason Hall
+		        </label>
+		        <label type="button" class="btn btn-themed" ng-click="select('mitchell')">
+		          Mitchell Field
+		        </label>
+		        <label type="button" class="btn btn-themed" ng-click="select('hill')">
+		          Hill Auditorium
+		        </label>
+		  	</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="col-md-12">
+			<div class="panel panel-themed row warning" style="border: solid 1px lightgoldenrodyellow; background-color: lightgoldenrodyellow">
+				<p class="panel-body">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span>Overnight parking is not allowed for all metered lots.</span>
+				</p>
+				<p class="panel-body">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span>Please check the respective locations of the events for the list of suggested parking facilities.</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="col-md-12 parking-info" ng-show="selected==='ccrb'">
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">M28 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>M28 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>Available for public after 5pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>Free parking all day</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										1312 Washington Heights, Ann Arbor, MI 48109
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=M28 Parking Lot, Ann Arbor, MI 48104" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">Palmer Structure</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>Palmer Structure</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>$1.40 per hour between 6am and 10pm (Visitor parking lots only), Free parking after 10pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>$1.40 per hour between 6am and 10pm (Visitor parking lots only), Free parking after 10pm</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										Palmer Drive, Ann Arbor, MI 48109
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=Palmer Drive Parking Structure, Palmer Drive, Ann Arbor, MI" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 parking-info" ng-show="selected==='coliseum'">
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">SC9 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>SC9 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>Available for public after 5pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>Free parking all day</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										365 Hill St, Ann Arbor, MI 48104
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=SC9 Parking Lot, Ann Arbor, MI 48104" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">SC38 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>SC38 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>Available for public after 5pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>Free parking all day</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										362 Hill St, Ann Arbor, MI 48104
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=SC38 Parking Lot, Ann Arbor, MI 48104" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 parking-info" ng-show="selected==='mason'">
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">W13 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>W13 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>Free parking after 6pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>Free parking after 6pm</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										435 Thompson St, Ann Arbor, MI 48104
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=W13 Parking Lot, Ann Arbor, MI 48104" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">W5 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>W5 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>$1.40 per hour between 6am to 6pm (Maximum 3 hours), Free parking after 6pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>$1.40 per hour between 6am to 6pm (Maximum 3 hours), Free parking after 6pm</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										435 Maynard St, Ann Arbor, MI 48109
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=435 Maynard St, Ann Arbor, Michigan 48109" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 parking-info" ng-show="selected==='mitchell'">
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">M75 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>M75 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>Available for public after 4pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>Free parking all day</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										1900 Fuller Rd, Ann Arbor, MI 48109
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=Mitchell Field Parking Lot, Fuller Rd, Ann Arbor, MI 48109" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">NC78 Parking Lot</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>NC78 Parking Lot</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>Available for public after 5pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>Free parking all day</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										1900 Fuller Rd, Ann Arbor, MI 48109
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=NC78 Parking Lot, Ann Arbor, MI 48104" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 parking-info" ng-show="selected==='hill'">
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">Thayer Structure</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td class="row-title">Name</td>
+								<td>Thayer Structure</td>
+							</tr>
+							<tr>
+								<td class="row-title">Hours</td>
+								<td>
+									<table class="table table-condensed inner-table table-bordered">
+										<tbody>
+											<tr>
+												<td>Friday</td>
+												<td>$1.40 per hour between 6am and 10pm (Visitor parking lots only), Free parking after 10pm</td>
+											</tr>
+											<tr>
+												<td>Saturday</td>
+												<td>$1.40 per hour between 6am and 10pm (Visitor parking lots only), Free parking after 10pm</td>
+											</tr>
+											<tr>
+												<td>Sunday</td>
+												<td>Free parking all day</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="row-title">Direction</td>
+								<td>
+									<span>
+										300 S Thayer St, Ann Arbor, MI 48104
+									</span>
+									<a class="btn btn-themed btn-sm" href="http://maps.google.com/?saddr=Current+Location&daddr=Thayer Street Parking Structure, 300 S Thayer St, Ann Arbor, MI 48104" role="button" target="_blank">
+										Click here for direction
+										<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 parking-info">
+			<div class="panel panel-themed row" >
+				<div class="panel-heading">
+					<h3 class="panel-title">Street Parking</h3>
+				</div>
+				<div class="panel-body">
+					<p>
+						Participants for Malaysian Midwest Games can opted to park their vehicles along the street at the metered lots.
+					</p>
+					<p>
+						The rate is $1.60 per hour between 6:00am and 6:00pm. 
+					</p>
+					<p>
+						All the metered lots are free for public after 6pm everyday and Sunday all day.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>

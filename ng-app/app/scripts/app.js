@@ -122,7 +122,8 @@ angular
         requireLogin: true
       })
       .when('/luckykitchen', {
-        templateUrl: 'views/luckykitchen.html'
+        templateUrl: 'views/luckykitchen.html',
+        controller: 'LuckykitchenCtrl'
       })
       .when('/consular', {
         templateUrl: 'views/consular.html',
@@ -139,6 +140,9 @@ angular
       .when('/points', {
         templateUrl: 'views/points.html',
         controller: 'PointsCtrl'
+      })
+      .when('/program_book', {
+        templateUrl: 'views/program_book.html'
       })
       .when('/admin/checkin-events', {
         templateUrl: 'views/checkinevent.html',
@@ -176,6 +180,14 @@ angular
         templateUrl: 'views/editpost.html',
         controller: 'EditPostsCtrl',
         requireLogin: true
+      })
+      .when('/suvai', {
+        templateUrl: 'views/suvai.html',
+        controller: 'SuvaiCtrl'
+      })
+      .when('/parking', {
+        templateUrl: 'views/parking.html',
+        controller: 'ParkingCtrl'
       })
       .otherwise({
         redirectTo: '/'

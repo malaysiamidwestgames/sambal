@@ -1,5 +1,7 @@
 class TeamSerializer < BaseSerializer
-  attributes :id, :team_captain, :name, :payment_id, :team_payment_status, :is_member, :is_captain, :gravatar_hex, :invite_pending, :request_pending, :participant_id
+  attributes :id, :team_captain, :name, :payment_id, :team_payment_status, :is_member,
+             :is_captain, :gravatar_hex, :invite_pending, :request_pending, :participant_id,
+             :team_exceed_member
   has_one :captain, serializer: UserSerializer
   has_one :game
   has_one :university
