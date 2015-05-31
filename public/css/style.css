@@ -1171,6 +1171,12 @@ div.countdown .desc {
 	margin-top: 13px;
 }
 
+div.countdown .isover {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 div.reg-button {
 	margin-top: 0.5em;
 	font-size: 1.5em;
