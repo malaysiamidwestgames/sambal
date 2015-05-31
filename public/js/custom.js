@@ -1,6 +1,6 @@
 $(function() {
-	var midwest2015Date = new Date(2015, 4, 22);
-	var midwest2016Date = new Date(2015, 4, 27);
+	var midwest2015Date = new Date(2015, 5, 22);
+	var midwest2016Date = new Date(2016, 5, 27);
 	var todayDate = new Date();
 
 	var diffInDay = Math.floor((midwest2015Date - todayDate)/(1000 * 60 * 60 * 24));
